@@ -1,0 +1,258 @@
+\documentclass[12pt]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{thmtools}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{example}{Example}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bC}{\mathbb{C}}
+
+\setlist[enumerate,1]{label=(\roman*)}
+
+\title{Local Fields}
+
+\begin{document}
+
+\maketitle
+
+\section{Absolute Value}
+
+\begin{definition}
+    Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \bR_{\ge 0}$ such that
+    \begin{enumerate}
+        \item (Definiteness) $\forall x \in K,\, \abs{x} = 0 \iff x = 0$
+        \item (Multiplicativity) $\forall x, y \in K,\, \abs{x y} = \abs{x} \abs{y}$
+        \item (Triangle inequality) $\forall x, y \in K,\, \abs{x + y} \le \abs{x} + \abs{y}$
+    \end{enumerate}
+    $(K, \abs{\cdot})$ is said to be a \emph{valued field}.
+\end{definition}
+
+\begin{example}\phantom{}
+    \begin{itemize}
+        \item $K = \bQ, \bR, \bC$ with the usual absolute value, denoted $\abs{\cdot}_\infty$.
+        \item Let $K$ be any field, then there is a \emph{trivial absolute value} given by
+            \begin{equation*}
+                \abs{x} =
+                \begin{cases}
+                    0 & \text{if } x = 0 \\
+                    1 & \text{if } x \neq 0
+                \end{cases}
+            \end{equation*}
+        \item The only absolute value on a finite field is trivial. This follows from the easy fact that for $n \ge 1$, $x^n = 1$ implies that $\abs{x} = 1$.
+        \item Let $K = \bQ$, and let $p$ be a prime. The \emph{$p$-adic absolute value} is defined to be
+            \begin{equation*}
+                \abs{x}_p =
+                \begin{cases}
+                    0 & \text{if } x = 0 \\
+                    p^{-n} & \text{if } x = p^n \frac{a}{b}\text{, where } p \nmid a, b.
+                \end{cases}
+            \end{equation*}
+            In fact, $\abs{\cdot}_p$ satisfies the stronger inequality $\abs{x + y}_p \le \max\{\abs{x}_p, \abs{y}_p\}$.
+    \end{itemize}
+\end{example}
+
+\noindent An absolute value $\abs{\cdot}$ on $K$ induces a metric $d(x, y) = \abs{x - y}$, which in turn induces a topology on $K$.
+
+\begin{definition}
+    Let $\abs{\cdot}, \abs{\cdot}'$ be absolute values on $K$. We say $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent} if they define the same topology.
+\end{definition}
+
+\begin{proposition}\label{prop:1_3}
+    Let $\abs{\cdot}, \abs{\cdot}'$ be non-trivial absolute values on $K$. The following are equivalent:
+    \begin{enumerate}
+        \item $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent}
+        \item $\forall x \in K, \abs{x} < 1 \iff \abs{x}' < 1$
+        \item $\exists c \in \bR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (i) $\Rightarrow$ (ii):
+    \begin{align*}
+        \abs{x} < 1
+        &\iff x^n \rightarrow 0 \text{ wrt } \abs{\cdot}\\
+        &\iff x^n \rightarrow 0 \text{ wrt } \abs{\cdot}'\\
+        &\iff \abs{x}' < 1
+    \end{align*}
+
+    \noindent(ii) $\Rightarrow$ (iii): Let $a \in K^\times$ be such that $\abs{a} < 1$ (which exists since $\abs{\cdot}$ is non-trivial). It suffices to show that $\forall x \in K^\times$,
+    \begin{equation*}
+        \frac{\log{\abs{x}}}{\log{\abs{a}}} = \frac{\log{\abs{x}'}}{\log{\abs{a}'}}
+    \end{equation*}
+    Fix $x \in K^\times$ and suppose that the equality does not hold. WLOG we may assume that
+    \begin{equation*}
+        \frac{\log{\abs{x}}}{\log{\abs{a}}} < \frac{\log{\abs{x}'}}{\log{\abs{a}'}}
+    \end{equation*}
+    Pick a rational number $m/n$ (with $n > 0$) such that
+    \begin{equation*}
+        \frac{\log{\abs{x}}}{\log{\abs{a}}} < \frac{m}{n} < \frac{\log{\abs{x}'}}{\log{\abs{a}'}}
+    \end{equation*}
+    Then
+    \begin{align*}
+        n \log{\abs{x}} &> m \log{\abs{a}} \\
+        n \log{\abs{x}'} &< m \log{\abs{a}'}
+    \end{align*}
+    By exponentiating, we find that
+    \begin{equation*}
+        \abs{\frac{x^n}{a^m}}' < 1 < \abs{\frac{x^n}{a^m}}
+    \end{equation*}
+    contradiction.
+    (iii) $\Rightarrow$ (i): (iii) implies that the topologies have the same open balls.
+\end{proof}
+
+\begin{definition}
+    An absolute value $\abs{\cdot}$ on $K$ is \emph{non-archimedean} if it satisfies the ultrametric inequality
+    \begin{equation*}
+        \abs{x + y} \le \max\{\abs{x}, \abs{y}\} \qquad \forall x, y \in K
+    \end{equation*}
+    $\abs{\cdot}$ is \emph{archimedean} if it is not non-archimedean.
+\end{definition}
+
+\begin{example}
+    $\abs{\cdot}_\infty$ is archimedean, while $\abs{\cdot}_p$ on $\bQ$ is non-archimedean.
+\end{example}
+
+\begin{lemma}[All triangles are isoceles]
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $x, y \in K$. If $\abs{x} < \abs{y}$, then $\abs{x - y} = \abs{y}$.
+\end{lemma}
+\begin{proof}
+    \begin{align*}
+        \abs{x - y}
+        &\le \max\{\abs{x}, \abs{y}\}\\
+        &= \abs{y}\\
+        &= \abs{x + (y - x)}\\
+        &\le \max\{\abs{x}, \abs{x - y}\} \\
+        &= \abs{x - y} \qquad(\text{since } \abs{y} \not\le \abs{x}) \qedhere
+    \end{align*}
+\end{proof}
+
+\begin{proposition}\label{prop:1_6}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $(x_n)_{n=1}^\infty$ be a sequence in $K$. If $\abs{x_n - x_{n+1}} \to 0$, then $(x_n)_{n=1}^\infty$ is Cauchy.
+
+    In particular, if in addition $K$ is complete, then $(x_n)$ converges.
+\end{proposition}
+\begin{proof}
+    Fix $\varepsilon > 0$. Choose $N$ such that $\forall n \ge N, \abs{x_n - x_{n+1}} < \varepsilon$. Then for $m \ge n \ge N$, we have
+    \begin{align*}
+        \abs{x_n - x_m}
+        &= \abs{(x_n - x_{n+1}) + \ldots + (x_{m-1} - x_m)}\\
+        &\le \max\{\abs{x_n - x_{n+1}}, \ldots, \abs{x_{m-1} - x_m} \}\\
+        &< \varepsilon \qedhere
+    \end{align*}
+\end{proof}
+
+\begin{example}
+    We construct a sequence $(x_n)$ in $\bZ$ such that
+    \begin{enumerate}
+        \item $x_n^2 + 1 \equiv 0 \pmod{5^n}$
+        \item $x_{n + 1} \equiv x_n \pmod{5^n}$
+    \end{enumerate}
+
+    Set $x_1 = 2$. Suppose we have constructed the sequence up to $x_n$, where $n \ge 1$. We have $x_n^2 + 1 = 5^n a$. It suffices to find $b$ such that $x_{n+1} = x_n + 5^n b$. We have
+    \begin{align*}
+        x_{n+1}^2 + 1
+        &= x_n^2 + 2 \cdot 5^n b x_n + 5^{2n} b^2 + 1\\
+        &= 5^n a + 2 \cdot 5^n b x_n + 5^{2n} b^2\\
+        &\equiv 5^n (a + 2 b x_n) \pmod{5^{n+1}}
+    \end{align*}
+    Thus we just take any $b$ with $a + 2b x_n \equiv 0 \pmod{5}$.
+
+    Now (ii) says that $\abs{x_n - x_{n+1}}_5 \le 5^{-n}$, so by \autoref{prop:1_6}, $(x_n)$ is Cauchy in $(\bQ, \abs{\cdot}_5)$. Suppose that $x_n$ converges to $\ell \in \bQ$. Then $x_n^2 \rightarrow \ell^2 \in \bQ$. However (i) implies that $x_n^2 \rightarrow -1$, so that $\ell^2 = -1$. This shows that $(\bQ, \abs{\cdot}_5)$ is not complete.
+\end{example}
+
+\begin{definition}
+    The \emph{$p$-adic numbers} $\bQ_p$ is the completion of $\bQ$ with respect to $\abs{\cdot}_p$.
+\end{definition}
+
+\begin{remark}
+    $\bR$ is the completion of $\bQ$ with respect to $\abs{\cdot}_\infty$.
+\end{remark}
+
+\noindent Let $(K, \abs{\cdot})$ be a valued field. For $x \in K$ and $r \in \bR_{> 0}$, define
+\begin{align*}
+    B(x, r) &= \{y \in K \mid \abs{x - y} < r\}\\
+    \overline{B}(x, r) &= \{y \in K \mid \abs{x - y} \le r\}
+\end{align*}
+
+\begin{lemma}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field.
+    \begin{enumerate}
+        \item (Open balls don't have centres) If $z \in B(x, r)$, then $B(z, r) = B(x, r)$
+        \item (Closed balls don't have centres) If $z \in \overline{B}(x, r)$, then $\overline{B}(z, r) = \overline{B}(x, r)$
+        \item (Open balls are closed) $B(x, r)$ is closed.
+        \item (Closed balls are open) $\overline{B}(x, r)$ is open.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item Let $y \in B(x, r)$. Then
+            \begin{equation*}
+                \abs{z - y} \le \max\{\abs{z-x}, \abs{x-y}\} < r
+            \end{equation*}
+            so $y \in B(z, r)$. The other inclusion follows by symmetry.
+        \item Same as (i) with $<$ replaced with $\le$.
+        \item Let $y \in B(x, r)^c$. We show that $y \in B(y, r) \subseteq B(x, r)^c$. Suppose there is a $z \in B(x, r) \cap B(y, r)$. Then $B(x, r) = B(z, r) = B(y, r)$ by (i), so $y \in B(x, r)$, contradiction.
+        \item Let $z \in \overline{B}(x, r)$. Then $z \in B(z, r) \subseteq \overline{B}(z, r) = \overline{B}(x, r)$ by (ii).
+    \end{enumerate}
+\end{proof}
+
+\section{Valuation Rings}
+
+\begin{definition}
+    Let $K$ be a field. A valuation on $K$ is a function $\nu : K^\times \to \bR$ such that
+    \begin{enumerate}
+        \item $\nu(xy) = \nu(x) + \nu(y)$
+        \item $\nu(x + y) \ge \min\{\nu(x), \nu(y)\}$
+    \end{enumerate}
+\end{definition}
+
+\noindent Fix $0 < \alpha < 1$. If $\nu$ is a valuation on $K$, then
+\begin{equation*}
+    \abs{x} =
+    \begin{cases}
+        \alpha^{\nu(x)} & \text{if } x \neq 0\\
+        0 & \text{if } x = 0
+    \end{cases}
+\end{equation*}
+determines a non-archimedean absolute value on $K$.
+
+Conversely a non-archimedean absolute value determines a valuation by taking $\nu(x) = \log_\alpha \abs{x}$.
+
+\begin{remark}
+    We ignore the trivial valuation $\nu(x) = 0 \forall x \in K^\times$.
+\end{remark}
+\begin{remark}
+    We say that $\nu_1, \nu_2$ are \emph{equivalent} if $\exists c \in \bR_{> 0}, \forall x \in K^\times, \nu_1(x) = c \nu_2(x)$.
+\end{remark}
+
+\begin{example}\phantom{}
+    \begin{itemize}
+        \item For $K = \bQ$,
+    \end{itemize}
+\end{example}
+
+\end{document}
