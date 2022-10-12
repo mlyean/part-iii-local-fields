@@ -8,6 +8,7 @@
 \usepackage{commath}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{stmaryrd}
 \usepackage{thmtools}
 \usepackage{tikz}
 \usepackage{tikz-cd}
@@ -20,17 +21,21 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{lemma}[definition]{Lemma}
-\newtheorem{corollary}{Corollary}
+\newtheorem{corollary}[definition]{Corollary}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
+\DeclareMathOperator{\Frac}{\mathrm{Frac}}
+
 \newcommand{\bZ}{\mathbb{Z}}
 \newcommand{\bQ}{\mathbb{Q}}
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\bC}{\mathbb{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fm}{\mathfrak{m}}
 
 \setlist[enumerate,1]{label=(\roman*)}
 
@@ -121,7 +126,8 @@
         \abs{\frac{x^n}{a^m}}' < 1 < \abs{\frac{x^n}{a^m}}
     \end{equation*}
     contradiction.
-    (iii) $\Rightarrow$ (i): (iii) implies that the topologies have the same open balls.
+
+    \noindent (iii) $\Rightarrow$ (i): (iii) implies that the topologies have the same open balls.
 \end{proof}
 
 \begin{definition}
@@ -136,7 +142,7 @@
     $\abs{\cdot}_\infty$ is archimedean, while $\abs{\cdot}_p$ on $\bQ$ is non-archimedean.
 \end{example}
 
-\begin{lemma}[All triangles are isoceles]
+\begin{lemma}[All triangles are isoceles]\label{lem:1_5}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $x, y \in K$. If $\abs{x} < \abs{y}$, then $\abs{x - y} = \abs{y}$.
 \end{lemma}
 \begin{proof}
@@ -198,7 +204,7 @@
     \overline{B}(x, r) &= \{y \in K \mid \abs{x - y} \le r\}
 \end{align*}
 
-\begin{lemma}
+\begin{lemma}\label{lem:1_8}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field.
     \begin{enumerate}
         \item (Open balls don't have centres) If $z \in B(x, r)$, then $B(z, r) = B(x, r)$
@@ -216,7 +222,7 @@
             so $y \in B(z, r)$. The other inclusion follows by symmetry.
         \item Same as (i) with $<$ replaced with $\le$.
         \item Let $y \in B(x, r)^c$. We show that $y \in B(y, r) \subseteq B(x, r)^c$. Suppose there is a $z \in B(x, r) \cap B(y, r)$. Then $B(x, r) = B(z, r) = B(y, r)$ by (i), so $y \in B(x, r)$, contradiction.
-        \item Let $z \in \overline{B}(x, r)$. Then $z \in B(z, r) \subseteq \overline{B}(z, r) = \overline{B}(x, r)$ by (ii).
+        \item Let $z \in \overline{B}(x, r)$. Then $z \in B(z, r) \subseteq \overline{B}(z, r) = \overline{B}(x, r)$ by (ii). \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -243,7 +249,7 @@ determines a non-archimedean absolute value on $K$.
 Conversely a non-archimedean absolute value determines a valuation by taking $\nu(x) = \log_\alpha \abs{x}$.
 
 \begin{remark}
-    We ignore the trivial valuation $\nu(x) = 0 \forall x \in K^\times$.
+    We ignore the trivial valuation $\nu(x) = 0 \quad \forall x \in K^\times$.
 \end{remark}
 \begin{remark}
     We say that $\nu_1, \nu_2$ are \emph{equivalent} if $\exists c \in \bR_{> 0}, \forall x \in K^\times, \nu_1(x) = c \nu_2(x)$.
@@ -251,8 +257,142 @@ Conversely a non-archimedean absolute value determines a valuation by taking $\n
 
 \begin{example}\phantom{}
     \begin{itemize}
-        \item For $K = \bQ$,
+        \item For $K = \bQ$, $\nu_p(x) = -\log_p \abs{x}_p$ is the $p$-adic valuation.
+        \item Let $k$ be a field and let $K = k(t)$ be the rational function field. Define $\nu(t^n \frac{f(t)}{g(t)}) = n$, where $f, g \in k[t]$ are such that $f(0), g(0) \neq 0$. This gives the \emph{$t$-adic valuation}.
+        \item Let $k$ be a field and let $K = k \llbracket t \rrbracket$ be the field of formal Laurent series. Define $\nu(\sum a_i t^i) = \min \{i \mid a_i \neq 0\}$. This is also called the $t$-adic valuation.
     \end{itemize}
 \end{example}
+
+\begin{definition}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field. The \emph{valuation ring} of $K$ is defined to be
+    \begin{equation*}
+        \cO_K = \{x \in K \mid \abs{x} \le 1\} = \overline{B}(0, 1)
+    \end{equation*}
+\end{definition}
+\noindent Note that we also have $\cO_K = \{0\} \cup \{x \in K^\times \mid \nu(x) \ge 0\}$.
+
+\begin{proposition}\label{prop:2_3}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field.
+    \begin{enumerate}
+        \item $\cO_K$ is an open subring of $K$.
+        \item The subsets $\{x \in K \mid \abs{x} \le r\}$ and $\{x \in K \mid \abs{x} < r\}$ for $r \le 1$ are open ideals of $\cO_K$.
+        \item $\cO_K^\times = \{x \in K \mid \abs{x} = 1\}$
+    \end{enumerate}
+\end{proposition}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item Openness follows from \autoref{lem:1_8}.
+
+            \noindent We have $\abs{0} = 0$ and $\abs{1} = 1$, so $0, 1 \in \cO_K$.
+
+            \noindent If $x \in \cO_K$, then $\abs{-x} = \abs{-1}\abs{x} = \abs{x} \le 1$, so $-x \in \cO_K$.
+
+            \noindent If $x, y \in \cO_K$, then $\abs{x + y} \le \max \{\abs{x}, \abs{y}\} \le 1$. Also $\abs{x y} = \abs{x} \abs{y} \le 1$, so $x + y, x y \in \cO_K$.
+
+        \item Similar to (i).
+
+        \item $\abs{x} \abs{x^{-1}} = 1$ and $\abs{x}, \abs{x^{-1}} \le 1$ together imply that $\abs{x} = \abs{x^{-1}} = 1$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\noindent The above proposition shows that $\cO_K$ is a local ring with maximal ideal $\fm = \{x \in K \mid \abs{x} < 1\} = \{x \in K \mid \nu(x) > 0\}$. We let $k = \cO_K / \fm$ denote the residue field.
+
+\begin{corollary}\label{cor:2_4}
+    $\cO_K$ is a local ring with unique maximal ideal $\fm$.
+\end{corollary}
+
+\begin{definition}
+    Let $\nu : K^\times \to \bR$ be a valuation. If $\nu(K^\times) \cong \bZ$, then we say that $\nu$ is a \emph{discrete valuation} and that $k$ is \emph{discretely valued}.
+
+    An element $\pi \in \cO_K$ is a \emph{uniformiser} if $\nu(\pi) > 0$ and $\nu(\pi)$ generates $\nu(K^\times)$.
+\end{definition}
+
+\begin{example}
+    $K = \bQ$ with the $p$-adic valuation and $K = k(t)$ with $t$-adic valuation are both discretely valued fields.
+\end{example}
+
+\begin{remark}
+    If $\nu$ is a discrete valuation, we can always replace it with an equivalent one such that $\nu(K^\times) = \bZ$. Such a $\nu$ will be called a normalised valuation.
+
+    In this case, $\nu(\pi) = 1$ iff $\pi$ is a uniformiser.
+\end{remark}
+
+\begin{lemma}\label{lem:2_6}
+    Let $\nu$ be a valuation on $K$. The following are equivalent:
+    \begin{enumerate}
+        \item $\nu$ is discrete
+        \item $\cO_K$ is a PID
+        \item $\cO_K$ is Noetherian
+        \item $\fm$ is principal
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    (i) $\rightarrow$ (ii): $\cO_K$ is a domain since it is a subring of the field $K$.
+
+    Let $I \subseteq \cO_K$ be a non-zero ideal. Let $x \in I \setminus 0$ be such that $\nu(x)$ is minimal. We show that $I = x \cO_K$.
+
+    Let $y \in I \setminus 0$. Then $\nu(x^{-1} y) = \nu(y) - \nu(x) \ge 0$, so $x^{-1} y \in \cO_K$, and $y = x(x^{-1} y) \in x \cO_K$.
+
+    (ii) $\Rightarrow$ (iii) Clear.
+
+    (iii) $\Rightarrow$ (iv) Write $\fm = x_1 \cO_K + \ldots + x_n \cO_K$. WLOG assume that $\nu(x_1) \le \ldots \le \nu(x_n)$. Then $x_2, \ldots x_n \in x_1 \cO_K$, so $\fm = x_1 \cO_K$.
+
+    (iv) $\Rightarrow$ (i) Suppose that $\fm = \pi \cO_K$. Let $c = \nu(\pi)$. If $x \in \cO_K$ is such that $\nu(x) > 0$, then $x \in \fm$, so $\nu(x) \ge c$. Thus $\nu(K^\times) \cap (0, c) = \emptyset$. Since $\nu(K^\times)$ is a subgroup of $\bR$, we have $\nu(K^\times) = c \bZ$.
+\end{proof}
+
+\begin{remark}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field. Then $\cO_K[x^{-1}] = K$ for any $x \in \fm$. In particular, $K = \Frac(\cO_K)$.
+
+    Indeed let $y \in K$. Then $\abs{x^n y} \le 1$ for some $n$ sufficiently large. Then $y = x^n y / x^n \in \cO_K[x^{-1}]$.
+\end{remark}
+
+\begin{definition}
+    A ring $R$ is called a \emph{discrete valuation ring} (DVR) if it is a PID and has exactly one non-zero prime ideal (necessarily maximal).
+\end{definition}
+
+\begin{lemma}\label{lem:2_8}\phantom{}
+    \begin{enumerate}
+        \item Let $\nu$ be a discrete valuation on a field $K$. Then $\cO_K$ is a DVR.
+        \item Given a DVR $R$, there exists a valuation on $K = \Frac(R)$ such that $\cO_K = R$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item $\cO_K$ is a PID by \autoref{lem:2_6}, so any non-zero prime ideal of $\cO_K$ is maximal. The result follows by \autoref{cor:2_4}.
+
+        \item Let $R$ be a DVR with maximal ideal $\fm = \pi R$, where $\pi \in R$. By unique factorisation, we may write each $x \in R \setminus 0$ uniquely in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \ge 0$. Thus any $x \in K^\times$ can be written uniquely\footnote{if $\pi^m u = \pi^n v$ for some $m, n \in \bZ$ and $u, v \in R^\times$, then $\pi^{n-m} = u v^{-1} \in R^\times$, so $n = m$.} in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \in \bZ$.
+
+        Define $\nu(\pi^m u) = m$. It is easy to check that $\nu$ is a valuation, and that $\cO_K = R$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    $\bZ_(p)$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
+\end{example}
+
+\section{$p$-adic numbers}
+
+\noindent Recall that $\bQ_p$ is the completion of $\bQ$ with respect to $\abs{\cdot}_p$.
+
+An exercise on Example Sheet 1 shows that $\bQ_p$ is a field, that $\abs{\cdot}_p$ extends to $\bQ_p$, and the associated valuation is discrete.
+
+\begin{definition}
+    The ring of $p$-adic integers is the valuation ring
+    \begin{equation*}
+        \bZ_p = \{x \in \bQ_p \mid \abs{x}_p \le 1\} = \{x \in \bQ_p \mid \nu_p(x) \ge 0\}
+    \end{equation*}
+\end{definition}
+
+\noindent $\bZ_p$ is a DVR with maximal ideal $p \bZ_p$. Its non-zero ideals are given by $p^n \bZ_p$ for $n \ge 0$.
+
+\begin{proposition}
+    $\bZ_p$ is the closure of $\bZ$ inside $\bQ_p$. In particular, $\bZ_p$ is the completion of $\bZ$ with respect to $\abs{\cdot}_p$.
+\end{proposition}
+\begin{proof}
+    We need to show that $\bZ$ is dense inside $\bZ_p$. Note that $\bQ$ is dense inside $\bQ_p$. By \autoref{lem:1_8}, $\bZ_p$ is open in $\bQ_p$, so $\bZ_p \cap \bQ$ is dense in $\bZ_p$.
+    \begin{equation*}
+        \bZ_p \cap \bQ = \{x \in \bQ \mid \abs{x}_p \le 1\} = \{a/b \in \bQ \mid p \nmid b\} = \bZ_{(p)}
+    \end{equation*}
+\end{proof}
 
 \end{document}

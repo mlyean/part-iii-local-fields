@@ -9,17 +9,27 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+$p$-adic numbers	main.tex	/^\\section{$p$-adic numbers}$/;"	s
 Absolute Value	main.tex	/^\\section{Absolute Value}$/;"	s
 Valuation Rings	main.tex	/^\\section{Valuation Rings}$/;"	s
+\\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
 \\bQ	main.tex	/^\\newcommand{\\bQ}{\\mathbb{Q}}$/;"	C
 \\bR	main.tex	/^\\newcommand{\\bR}{\\mathbb{R}}$/;"	C
 \\bZ	main.tex	/^\\newcommand{\\bZ}{\\mathbb{Z}}$/;"	C
+\\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
+\\fm	main.tex	/^\\newcommand{\\fm}{\\mathfrak{m}}$/;"	C
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
-corollary	main.tex	/^\\newtheorem{corollary}{Corollary}$/;"	t
+cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
+corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[section]$/;"	t
+lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
+lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
+lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
+lem:2_8	main.tex	/^\\begin{lemma}\\label{lem:2_8}\\phantom{}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
+prop:2_3	main.tex	/^\\begin{proposition}\\label{prop:2_3}$/;"	l
 proposition	main.tex	/^\\newtheorem{proposition}[definition]{Proposition}$/;"	t
 theorem	main.tex	/^\\newtheorem{theorem}{Theorem}$/;"	t
