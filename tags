@@ -11,6 +11,7 @@
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
 Absolute Value	main.tex	/^\\section{Absolute Value}$/;"	s
 Inverse limits	main.tex	/^\\subsection*{Inverse limits}$/;"	u	section:\\texorpdfstring{$p$}{p}-adic numbers
+Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
 Valuation Rings	main.tex	/^\\section{Valuation Rings}$/;"	s
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
