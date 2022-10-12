@@ -16,6 +16,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem*{example}{Example}
+\newtheorem*{warning}{Warning}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -30,6 +31,7 @@
 
 \DeclareMathOperator{\Frac}{\mathrm{Frac}}
 
+\newcommand{\bN}{\mathbb{N}}
 \newcommand{\bZ}{\mathbb{Z}}
 \newcommand{\bQ}{\mathbb{Q}}
 \newcommand{\bR}{\mathbb{R}}
@@ -131,7 +133,7 @@
 \end{proof}
 
 \begin{definition}
-    An absolute value $\abs{\cdot}$ on $K$ is \emph{non-archimedean} if it satisfies the ultrametric inequality
+    An absolute value $\abs{\cdot}$ on $K$ is \emph{non-archimedean} if it satisfies the \emph{ultrametric inequality}
     \begin{equation*}
         \abs{x + y} \le \max\{\abs{x}, \abs{y}\} \qquad \forall x, y \in K
     \end{equation*}
@@ -370,7 +372,7 @@ Conversely a non-archimedean absolute value determines a valuation by taking $\n
     $\bZ_(p)$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
 \end{example}
 
-\section{$p$-adic numbers}
+\section{\texorpdfstring{$p$}{p}-adic numbers}
 
 \noindent Recall that $\bQ_p$ is the completion of $\bQ$ with respect to $\abs{\cdot}_p$.
 
@@ -385,14 +387,101 @@ An exercise on Example Sheet 1 shows that $\bQ_p$ is a field, that $\abs{\cdot}_
 
 \noindent $\bZ_p$ is a DVR with maximal ideal $p \bZ_p$. Its non-zero ideals are given by $p^n \bZ_p$ for $n \ge 0$.
 
-\begin{proposition}
+\begin{proposition}\label{prop:3_2}
     $\bZ_p$ is the closure of $\bZ$ inside $\bQ_p$. In particular, $\bZ_p$ is the completion of $\bZ$ with respect to $\abs{\cdot}_p$.
 \end{proposition}
 \begin{proof}
-    We need to show that $\bZ$ is dense inside $\bZ_p$. Note that $\bQ$ is dense inside $\bQ_p$. By \autoref{lem:1_8}, $\bZ_p$ is open in $\bQ_p$, so $\bZ_p \cap \bQ$ is dense in $\bZ_p$.
+    We need to show that $\bZ$ is dense inside $\bZ_p$. We divide this into two parts:
+    \begin{enumerate}
+        \item $\bZ_{(p)}$ is dense in $\bZ_p$: Note that $\bQ$ is dense inside $\bQ_p$. By \autoref{lem:1_8}, $\bZ_p$ is open in $\bQ_p$, so $\bZ_p \cap \bQ$ is dense in $\bZ_p$.
+            \begin{equation*}
+                \bZ_p \cap \bQ = \{x \in \bQ \mid \abs{x}_p \le 1\} = \{a/b \in \bQ \mid p \nmid b\} = \bZ_{(p)}
+            \end{equation*}
+        \item $\bZ$ is dense inside $\bZ_{(p)}$:
+    Let $a/b \in \bZ_{(p)}$, with $a, b \in \bZ$ and $p \nmid b$. For $n \in \bN$, choose $y_n \in \bZ$ such that $b y_n \equiv a \pmod{p^n}$. Then $y_n \to a/b$ as $n \to \infty$ with respect to $\abs{\cdot}_p$.
+    \end{enumerate}
+    Since being dense is transitive\footnote{if $A \subseteq B \subseteq C$, $A$ is dense in $B$ and $B$ is dense in $C$, then $A$ is dense in $C$.}, we are done. The last part follows since $\bZ_p$ is complete\footnote{as it is closed in $\bQ_p$} and $\bZ$ is dense in $\bZ_p$.
+\end{proof}
+
+\subsection*{Inverse limits}
+
+Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings together with homomorphisms $\varphi_n : A_{n+1} \to A_n$ called \emph{transition maps}. The \emph{inverse limit} of $(A_n)_{n=1}^\infty$ is the set/group/ring
+\begin{equation*}
+    \varprojlim A_n = \left\{(a_n) \in \prod_{n=1}^\infty A_n \mid \varphi_n(a_{n+1}) = a_n\right\} \subseteq \prod_{n=1}^\infty A_n
+\end{equation*}
+
+\noindent Fact: If $A_n$ is a group/ring, then $\varprojlim A_n$ is a group/ring, with group/ring operations defined component-wise.
+
+Let $\theta_m : \varprojlim A_n \to A_m$ denote the natural projection. Then the inverse limit satisfies the following universal property:
+
+\begin{proposition}\label{prop:3_3}
+    For any set/group/ring $B$ together with homomorphisms $\psi_n : B \to A_n$ such that
     \begin{equation*}
-        \bZ_p \cap \bQ = \{x \in \bQ \mid \abs{x}_p \le 1\} = \{a/b \in \bQ \mid p \nmid b\} = \bZ_{(p)}
+    \begin{tikzcd}
+        & B \arrow[ld, "\psi_{n+1}"'] \arrow[rd, "\psi_n"] &\\
+        A_{n+1} \arrow[rr, "\varphi_n"'] & & A_n
+    \end{tikzcd}
     \end{equation*}
+    commutes for all $n$. Then there exists a unique homomorphism $\phi : B \to \varprojlim A_n$ such that $\theta_m \circ \psi = \psi_m$
+\end{proposition}
+\begin{proof}
+    Define $\psi : B \to \prod_{n=1}^\infty A_n$ by $\psi(b) = (\psi_n(b))_n$. Then $\psi_n = \varphi_n \circ \psi_{n+1}$ implies that $\psi(b) \in \varprojlim A_n$. The map is clearly unique, since we want $\theta_m \circ \psi = \psi_m$, and is a homomorphism (of sets/groups/rings).
+\end{proof}
+
+\begin{definition}
+    Let $I$ be an ideal of a ring $R$. Then the \emph{$I$-adic completion} of $R$ is the ring
+    \begin{equation*}
+        \widehat{R} = \varprojlim R/I^n
+    \end{equation*}
+    where $R/I^{n+1} \to R/I^n$ is the natural projection.
+\end{definition}
+
+Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural projections $R \to R/I^n$. We say that $R$ is \emph{$I$-adically complete} if $i$ is an isomorphism.
+
+\noindent Fact: $\ker{i} = \bigcap_{n=1}^\infty I^n$.
+
+\begin{proposition}\label{prop:3_5}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $\pi \in \cO_K$ be such that $\abs{\pi} < 1$. Assume that $K$ is complete with respect to $\abs{\cdot}$. Then
+    \begin{enumerate}
+        \item $i : \cO_K \to \varprojlim \cO_K / \pi^n \cO_K$ is an isomorphism ($\cO_K$ is $\pi$-adically complete)
+        \item Fix a set of coset representatives $A$ for $\cO_K / \pi \cO_K$. Then every $x \in \cO_K$ can be written uniquely in the form
+            \begin{equation*}
+                x = \sum_{i=0}^\infty a_i \pi^i
+            \end{equation*}
+            with $a_i \in A$.
+            Moreover any such power series $\sum_{i=0}^\infty a_i \pi^i$ converges.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item $i$ is injective: Since $K$ is complete and $\cO_K$ is closed in $K$, $\cO_K$ is complete.
+            \begin{align*}
+                x \in \ker i
+                &\implies x \in \bigcap_{n=1}^\infty \pi^n \cO_K\\
+                &\implies \forall n \ge 1, \nu(x) \ge \nu(\pi)\\
+                &\implies x = 0
+            \end{align*}
+            $i$ is surjective: Let $(x_n) \in \varprojlim \cO_K / \pi^n \cO_K$. For each $n$, let $y_n \in \cO_K$ be a lift of $x_n$. Then $y_n - y_{n+1} \in \pi^n \cO_K$, so that $\nu(y_n - y_{n+1}) \ge n \nu(\pi)$. In terms of absolute values, $\abs{y_n - y_{n+1}} \le \abs{\pi}^n \to 0$. Thus by \autoref{prop:1_6}, $(y_n)$ converges, say $y_n \to y \in \cO_K$. We show that $i(y) = (x_n)$.
+
+            This is equivalent to showing $y_n - y \in \pi^n \cO_K$ for each $n$, or in terms of absolute values, $\abs{y_n - y} \le \abs{\pi}^n$. This follows because for $m > n$, we have
+            \begin{equation*}
+                \abs{y_n - y_m} \le \max\{\abs{y_n - y_{n+1}}, \ldots, \abs{y_{m-1} - y_m} \} \le \abs{\pi}^n
+            \end{equation*}
+            so taking $m \to \infty$ gives the result.
+
+        \item See exercise sheet. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{warning}
+    If $(K, \abs{\cdot})$ is not discretely valued, then $\cO_K$ is not necessarily $\fm$-adically complete.
+\end{warning}
+
+\begin{corollary}\label{cor:3_7}
+    Let $K, A$ be as in part (ii) of \autoref{prop:3_5}. Then every $x \in K$ can be written uniquely as $x = \sum_{i=n}^\infty a_i \pi^i$ for some $n \in \bZ$, $a_i \in A$. Conversely, any such expansion $x = \sum_{i=n}^\infty a_i \pi^i$ defines an element of $K$.
+\end{corollary}
+\begin{proof}
+    Let $n \in \bZ$ be such that $\pi^{-n} x \in \cO_K$ and apply \autoref{prop:3_5} (ii) to $\pi^{-n} x$.
 \end{proof}
 
 \end{document}
