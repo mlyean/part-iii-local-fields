@@ -12,3 +12,5 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "main.pdf"
+          tag: v1.0
+          commit: main
