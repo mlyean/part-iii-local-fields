@@ -24,6 +24,7 @@
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{lemma}[definition]{Lemma}
 \newtheorem{corollary}[definition]{Corollary}
+\newtheorem*{fact}{Fact}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
@@ -422,7 +423,9 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings together with homomo
     \varprojlim A_n = \left\{(a_n) \in \prod_{n=1}^\infty A_n \mid \varphi_n(a_{n+1}) = a_n\right\} \subseteq \prod_{n=1}^\infty A_n
 \end{equation*}
 
-\noindent Fact: If $A_n$ is a group/ring, then $\varprojlim A_n$ is a group/ring, with group/ring operations defined component-wise.
+\begin{fact}
+    If $A_n$ is a group/ring, then $\varprojlim A_n$ is a group/ring, with group/ring operations defined component-wise.
+\end{fact}
 
 Let $\theta_m : \varprojlim A_n \to A_m$ denote the natural projection. Then the inverse limit satisfies the following universal property:
 
@@ -450,7 +453,9 @@ Let $\theta_m : \varprojlim A_n \to A_m$ denote the natural projection. Then the
 
 Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural projections $R \to R/I^n$. We say that $R$ is \emph{$I$-adically complete} if $i$ is an isomorphism.
 
-\noindent Fact: $\ker{i} = \bigcap_{n=1}^\infty I^n$.
+\begin{fact}
+    $\ker{i} = \bigcap_{n=1}^\infty I^n$.
+\end{fact}
 
 \begin{proposition}\label{prop:3_5}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $\pi \in \cO_K$ be such that $\abs{\pi} < 1$. Assume that $K$ is complete with respect to $\abs{\cdot}$. Then
