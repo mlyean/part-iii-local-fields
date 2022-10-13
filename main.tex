@@ -560,11 +560,49 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     so $\abs{f'(x) \delta} \le \abs{\delta}^2$, and\footnote{as $a \equiv x \pmod{\pi^{r+1}}$, $0 \not\equiv f'(a) \equiv f'(x) \pmod{\pi^{r+1}}$} $\abs{f'(a)} = \abs{f'(x)} \le \abs{\delta}$, which gives a contradiction.
 \end{proof}
 
+\begin{remark}
+    The proof above uses the iteration $x_{n=1} = x_n - \frac{f(x_n)}{f'(x_n)}$. This is the non-archimedean analogue of the Newton-Raphson method.
+\end{remark}
+
 \begin{corollary}\label{cor:4_2}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
 \end{corollary}
 \begin{proof}
-    Apply \autoref{thm:4_1} to a lift $c \in \cO_K$ of $\overline{c}$. Then $\abs{f(c)} < \abs{f'(c)}^2 = 1$ since $\overline{c}$ is a simple root.
+    Apply \autoref{thm:4_1} to a lift $c \in \cO_K$ of $\overline{c}$. Then $\abs{f(c)} < 1 = \abs{f'(c)}^2$ since $\overline{c}$ is a simple root.
+\end{proof}
+
+\begin{example}
+    $f(X) = X^2 - 2$ has a simple root mod $7$. Thus $\sqrt{2} \in \bZ_7$.
+\end{example}
+
+\begin{corollary}\label{cor:4_3}
+    \begin{equation*}
+        \bQ_p^\times / (\bQ_p^\times)^2 \cong
+        \begin{cases}
+            (\bZ / 2 \bZ)^2 & \text{if } p > 2\\
+            (\bZ / 2 \bZ)^3 & \text{if } p = 2
+        \end{cases}
+    \end{equation*}
+\end{corollary}
+\begin{proof}
+    Case $p > 2$: Let $b \in \bZ_p^\times$. Applying \autoref{cor:4_2} to $f(X) = X^2 - b$, we find that $b \in (\bZ_p^\times)^2$ iff $\overline{b} \in (\bF_p^\times)^2$. Thus we have an isomorphism $\bZ_p^\times / (\bZ_p^\times)^2 \cong \bF_p^\times / (\bF_p^\times)^2 \cong \bZ / 2\bZ$.
+
+    We have an isomorphism $\bZ_p^\times \times \bZ \xrightarrow{\sim} \bQ_p^\times$ given by $(u, n) \mapsto u p^n$, so $\bQ_p^\times / (\bQ_p)^2 \cong \bZ_p^\times / (\bZ_p^\times)^2 \times \bZ / 2\bZ \cong (\bZ / 2\bZ)^2$
+
+    Case $p = 2$: Let $b \in \bZ_2^\times$. Consider $f(X) = X^2 - b$. We have $f'(X) = 2X \equiv 0 \pmod{2}$.
+
+    Suppose that $b \equiv 1 \pmod{8}$. Then
+    \begin{equation*}
+        \abs{f(1)}_2 \le 2^{-3} < 2^{-2} = \abs{f'(1)}_2^2
+    \end{equation*}
+    Hensel's lemma implies that $f(X)$ has a root in $\bZ_2$, so $b \in (\bZ_2^\times)^2$. Conversely if $b \in (\bZ_2^\times)^2$, then $b \pmod{8} \in ((\bZ / 8\bZ)^\times)^2 = \{1\}$. Thus $b \in (\bZ_2^\times)^2$ iff $b \equiv 1 \pmod{8}$. Thus we have an isomorphism $\bZ_2^\times / (\bZ_2^\times)^2 \cong (\bZ / 8 \bZ)^\times \cong (\bZ / 2\bZ)^2$. We can conclude using the isomorphism $\bZ_2^\times \times \bZ \cong \bQ_2^\times$ as in the previous case.
+\end{proof}
+
+\begin{theorem}[Hensel's Lemma Version 2]
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field, and $f(X) \in \cO_K[X]$. Suppose $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$ factorises as $\overline{f}(X) = \overline{g}(X) \overline{h}(X)$ in $k[X]$ with $\overline{g}(X)$ and $\overline{h}(X)$ coprime. Then there is a factorisation $f(X) = g(X) h(X)$ in $\cO_K[X]$ with $\overline{g}(X) \equiv g(X) \pmod{\fm}$, $\overline{h}(X) \equiv h(X) \pmod{\fm}$, and $\deg{g} = \deg{\overline{g}}$.
+\end{theorem}
+\begin{proof}
+    See Example Sheet 1.
 \end{proof}
 
 \end{document}

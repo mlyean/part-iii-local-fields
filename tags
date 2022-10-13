@@ -31,6 +31,7 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
 cor:4_2	main.tex	/^\\begin{corollary}\\label{cor:4_2}$/;"	l
+cor:4_3	main.tex	/^\\begin{corollary}\\label{cor:4_3}$/;"	l
 corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[subsection]$/;"	t
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
