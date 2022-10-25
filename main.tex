@@ -18,13 +18,14 @@
 \newtheorem{definition}{Definition}[subsection]
 \newtheorem*{example}{Example}
 \newtheorem*{warning}{Warning}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{fact}{Fact}
 
 \theoremstyle{plain}
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{lemma}[definition]{Lemma}
 \newtheorem{corollary}[definition]{Corollary}
-\newtheorem*{fact}{Fact}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
@@ -732,6 +733,82 @@ More generally, we have
         \varphi(\sum_{i=0}^\infty a_i t_i) = \sum_{i=0}^\infty [a_i] \pi^i
     \end{equation*}
     Then $\varphi$ is a ring homomorphism since $[\cdot]$ is and it is a bijection by \autoref{prop:3_5} (ii).
+\end{proof}
+
+\subsection{Extensions of Complete Valued Fields}
+
+\begin{theorem}\label{thm:6_1}
+    Let $(K, \abs{\cdot})$ be a complete, non-archimedean discretely valued field, and $L / K$ a finite extension of degree $n$. Then
+    \begin{enumerate}
+        \item $\abs{\cdot}$ extends uniquely to an absolute value $\abs{\cdot}_L$ defined by $\abs{y}_L = \abs{N_{L/K}(y)}^\frac{1}{n}$ for $y \in L$.
+        \item $L$ is complete with respect to $\abs{\cdot}_L$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Recall if $L / K$ is finite, then $N_{L/K}$ is defined by $N_{L/K}(y) = \det (m_y)$, where $m_y : L \to L$ is the $K$-linear map induced by multiplication by $y$.
+\end{remark}
+
+\begin{fact}\phantom{}
+    \begin{itemize}
+        \item $N_{L/K}(xy) = N_{L/K}(x) N_{L/K}(y)$
+        \item Let $X^n + a_{n-1}X^{n-1} + \ldots + a_0 \in K[X]$ be the minimal polynomial of $y \in L$. Then $N_{L/K}(y) = \pm a_0^m$ for some $m \ge 1$. In particular, $N_{L/K}(y) = 0$ iff $x = 0$.
+    \end{itemize}
+\end{fact}
+
+\begin{definition}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field, $V$ a vector space over $K$. A \emph{norm} on $V$ is a function $\norm{\cdot} : V \to \bR_{\ge 0}$ satisfying
+    \begin{enumerate}
+        \item $\norm{x} = 0 \iff x = 0$
+        \item $\forall x \in V, \forall \lambda \in K, \norm{\lambda x} = \abs{\lambda} \norm{x}$
+        \item $\forall x, y \in V, \norm{x + y} \le \max\{\norm{x}, \norm{y}\}$
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    If $V$ is finite-dimensional and $e_1, \ldots, e_n$ is a basis of $V$, the \emph{sup norm} $\norm{\cdot}_\mathrm{sup}$ on $V$ is defined by
+    \begin{equation*}
+        \norm{x}_\mathrm{sup} = \max_i \abs{x_i}
+    \end{equation*}
+    where $x = \sum_{i=1}^n x_i e_i$.
+\end{example}
+\begin{exercise}
+    Show that $\norm{\cdot}_\mathrm{sup}$ is a norm.
+\end{exercise}
+
+\begin{definition}
+    Two norms $\norm{\cdot}_1, \norm{\cdot}_2$ are equivalent if there are $C, D \in \bR_{>0}$ such that
+    \begin{equation*}
+        C \norm{x}_1 \le \norm{x}_2 \le D \norm{x}_1
+    \end{equation*}
+    for all $x \in V$.
+\end{definition}
+\begin{fact}
+    A norm defines a topology on $V$ and equivalent norms induce the same topology.
+\end{fact}
+
+\begin{proposition}\label{prop:6_4}
+    Let $(K, \abs{\cdot})$ be a complete, non-archimedean valued field, and $V$ a finite-dimensional vector space over $K$. Then $V$ is complete with respect to $\norm{\cdot}_\mathrm{sup}$.
+\end{proposition}
+\begin{proof}
+    Let $e_1, \ldots e_n$ be the basis for $V$ used to defined $\norm{\cdot}_\mathrm{sup}$. Let $(v_i)_{i=1}^\infty$ be a Cauchy sequence in $V$. Write $v_i = \sum_{j=1}^n x_j^i e_j$. Then $(x_j^i)_{i=1}^\infty$ is a Cauchy sequence in $K$. Let $x_j^i \to x_j \in K$. Then $v_i \to v = \sum_{j=1}^n x_j e_j$.
+\end{proof}
+
+\begin{theorem}
+    Let $(K, \abs{\cdot})$ be a complete non-archimedean valued field, and $V$ a finite-dimensional vector space over $K$. Then any two norms on $V$ are equivalent. In particular, $V$ is complete with respect to any norm.
+\end{theorem}
+\begin{proof}
+    Since equivalence defines an equivalence relation on the set of norms, it suffices to show that any norm is equivalent to $\norm{\cdot}_\mathrm{sup}$.
+
+    Let $e_1, \ldots, e_n$ be a basis for $V$ used to define $\norm{\cdot}_\mathrm{sup}$. Set $D = \max_i \norm{e_i}$. Then for $x = \sum_{i=1}^n x_i e_i$, we have $\norm{x} \le \max_i \norm{x_i e_i} = \max_i \abs{x_i} \norm{e_i} \le D \norm{x}_\mathrm{sup}$.
+
+    To find $C$ such that $C \norm{\cdot}_\mathrm{sup} \le \norm{\cdot}$, we induct on $n = \dim{V}$. For $n = 1$, $\norm{x} = \norm{x_1 e_1} = \abs{x_1}\norm{e_1} = \norm{x}_\mathrm{sup} \norm{e_1}$, so we may take $C = \norm{e_1}$. Now suppose $n > 1$. Set $V_i = \langle e_1, \ldots, e_{i-1}, e_{i+1}, \ldots, e_n \rangle$. By induction, $V_i$ is complete with respect to $\norm{\cdot}$, hence is closed. Then $e_i + V_i$ is closed for all $i$, hence $S = \bigcup_{i=1}^n e_i + V_i$ is a closed subset not containing $0$. Thus there is a $C > 0$ such that $B(0, c) \cap S = \emptyset$. Let $x = \sum_{i=1}^n x_i e_i \neq 0$ and let $j$ be such that $\abs{x_j} = \max_i \abs{x_i}$. Then $\norm{x}_\mathrm{sup} = \abs{x_j}$, and $x_j^{-1} x \in S$. Thus $\norm{x_j^{-1} x} \ge C$, which implies that $\norm{x} \ge C \abs{x_j} = C \norm{x}_\mathrm{sup}$.
+
+    The completeness of $V$ follows by \autoref{prop:6_4}.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:6_1}]
+    We show that $\abs{\cdot}_L = \abs{N_{L/K}(\cdot)}^\frac{1}{n}$ satisfies the 3 axioms in the definition of absolute value:
 \end{proof}
 
 \end{document}
