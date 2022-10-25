@@ -32,6 +32,7 @@
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
 \DeclareMathOperator{\Frac}{\mathrm{Frac}}
+\DeclareMathOperator{\Char}{\mathrm{char}}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -535,7 +536,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \subsection{Hensel's Lemma}
 
 \begin{theorem}[Hensel's Lemma Version 1]\label{thm:4_1}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $f(X) \in \cO_K[X]$ and assume that there is an $a \in \cO_K$ such that $\abs{f(a)} < \abs{f'(a)}^2$. Then there exists a unique $x \in \cO_K$ such that $f(x) = 0$ and $\abs{x - a} < \abs{f'(a)}$.
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) \in \cO_K[X]$ and assume that there is an $a \in \cO_K$ such that $\abs{f(a)} < \abs{f'(a)}^2$. Then there exists a unique $x \in \cO_K$ such that $f(x) = 0$ and $\abs{x - a} < \abs{f'(a)}$.
 \end{theorem}
 \begin{proof}
     Let $v$ be a normalized valuation and let $\pi \in \cO_K$ be a uniformiser. Let $r = v(f'(a))$. We shall construct a sequence $(x_n)_{n=1}^\infty$ in $\cO_K$ such that
@@ -570,7 +571,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{remark}
 
 \begin{corollary}\label{cor:4_2}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
 \end{corollary}
 \begin{proof}
     Apply \autoref{thm:4_1} to a lift $c \in \cO_K$ of $\overline{c}$. Then $\abs{f(c)} < 1 = \abs{f'(c)}^2$ since $\overline{c}$ is a simple root.
@@ -603,11 +604,134 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Hensel's lemma implies that $f(X)$ has a root in $\bZ_2$, so $b \in (\bZ_2^\times)^2$. Conversely if $b \in (\bZ_2^\times)^2$, then $b \pmod{8} \in ((\bZ / 8\bZ)^\times)^2 = \{1\}$. Thus $b \in (\bZ_2^\times)^2$ iff $b \equiv 1 \pmod{8}$. Thus we have an isomorphism $\bZ_2^\times / (\bZ_2^\times)^2 \cong (\bZ / 8 \bZ)^\times \cong (\bZ / 2\bZ)^2$. We can conclude using the isomorphism $\bZ_2^\times \times \bZ \cong \bQ_2^\times$ as in the previous case.
 \end{proof}
 
-\begin{theorem}[Hensel's Lemma Version 2]
+\begin{theorem}[Hensel's Lemma Version 2]\label{thm:4_4}
     Let $(K, \abs{\cdot})$ be a complete, discretely valued field, and $f(X) \in \cO_K[X]$. Suppose $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$ factorises as $\overline{f}(X) = \overline{g}(X) \overline{h}(X)$ in $k[X]$ with $\overline{g}(X)$ and $\overline{h}(X)$ coprime. Then there is a factorisation $f(X) = g(X) h(X)$ in $\cO_K[X]$ with $\overline{g}(X) \equiv g(X) \pmod{\fm}$, $\overline{h}(X) \equiv h(X) \pmod{\fm}$, and $\deg{g} = \deg{\overline{g}}$.
 \end{theorem}
 \begin{proof}
     See Example Sheet 1.
+\end{proof}
+
+\begin{corollary}
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) = a_n X^n + \ldots a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
+\end{corollary}
+
+\begin{proof}
+    Upon scaling, we may assume that $f(X) \in \cO_K[X]$, with $\max_i \abs{a_i} = 1$. We need to show that $\max \{\abs{a_0}, \abs{a_n}\} = 1$. If not, let $r$ be minimal such that $\abs{a_r} = 1$. Then $0 < r < n$. Reducing mod $\fm$,
+    \begin{equation*}
+        \overline{f}(X) = X^r (a_n X^{n-r} + \ldots a_r) \pmod{m}
+    \end{equation*}
+    Then \autoref{thm:4_4} implies that $f(X) = g(X) h(X)$ for some $g(X), h(X) \in \cO_K$ with $0 < \deg{g} = r < n$, contradicting irreduciblity of $f$.
+\end{proof}
+
+\subsection{Teichm\"uller Lifts}
+
+\begin{definition}
+    A ring $R$ of characteristic $p > 0$ ($p$ prime) is a \emph{perfect ring} if the Frobenius map $x \mapsto x^p$ is a bijection. A field of characteristic $p$ is a \emph{perfect field} if it is perfect as a ring.
+\end{definition}
+
+\begin{remark}
+    Since $\Char R = p$, $(x+y)^p = x^p + y^p$, so the Frobenius map is a ring homomorphism.
+\end{remark}
+
+\begin{example}\phantom{}
+    \begin{enumerate}
+        \item $\bF_{p^n}, \overline{\bF}_p$ are perfect fields.
+        \item $\bF_p[t]$ is not perfect, since $t$ does not lie in the image of the Frobenius map.
+        \item $\bF_p(t^\frac{1}{p^n}) = \bF_p(t, t^\frac{1}{p}, t^\frac{1}{p^2}, \ldots)$ is a perfect field (it is the \emph{perfection} of $\bF_p(t)$).
+    \end{enumerate}
+\end{example}
+
+\begin{fact}
+    A field $k$ of characteristic $p > 0$ is perfect iff any finite extension of $k$ is separable.
+\end{fact}
+
+\begin{theorem}\label{thm:5_2}
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field such that $k = \cO_K / \fm$ is a perfect field of characteristic $p$. Then there exists a unique map $[\cdot] : k \to \cO_K$ such that
+    \begin{enumerate}
+        \item $a \equiv [a] \pmod{m}$
+        \item $\forall a, b \in k, [a b] = [a] [b]$
+    \end{enumerate}
+    Moreover if $\Char K = p$, then $[\cdot]$ is a ring homomorphism.
+\end{theorem}
+
+\begin{definition}
+    The element $[a] \in \cO_K$ constructed in \autoref{thm:5_2} is called the Teichm\"uller lift of $a$.
+\end{definition}
+
+\begin{lemma}\label{lem:5_4}
+    Let $(K, \abs{\cdot})$ be as in \autoref{thm:5_2}, and fix a uniformiser $\pi \in \cO_K$. Let $x, y \in \cO_K$ and $k \ge 1$ be such that $x \equiv y \pmod{\pi^k}$. Then $x^p \equiv y^p \pmod{\pi^{k+1}}$.
+\end{lemma}
+\begin{proof}
+    Write $x = y + u \pi^k$ with $u \in \cO_K$. Then
+    \begin{equation*}
+        x^p
+        = \sum_{i=0}^p \binom{p}{i} y^{p-i} (u \pi^k)^i
+        = y^p + \sum_{i=1}^p \binom{p}{i} y^{p-i} (u \pi^k)^i
+    \end{equation*}
+    Since $\cO_K / \pi \cO_K$ has characteristic $p$, we have $p \in \pi \cO_K$. Thus $\binom{p}{i} y^{p-i} (u \pi^k)^i \in \pi^{k+1} \cO_K$ for $1 \le i \le p$.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:5_2}]
+    Let $a \in k$. For each $i \ge 0$, we choose a lift $y_i \in \cO_K$ of $a^{\frac{1}{p^i}}$ and we define $x_i = y_i^{p^i}$. We claim that $(x_i)_{i=1}^\infty$ is a Cauchy sequence and its limit $x$ is independent of the choice of $y_i$.
+
+    By construction, $y_i \equiv y_{i+1}^p \pmod{\pi}$. By \autoref{lem:5_4} and induction, $y_i^{p^r} \equiv y_{i+1}^{p^{r+1}} \pmod{\pi^{r+1}}$ for any $r \ge 0$. By taking $r = i$, we see that $x_i \equiv x_{i+1} \pmod{\pi^i}$. Thus $(x_i)$ is Cauchy, hence $x_i \to x$ for some $x \in \cO_K$.
+
+    Suppose that $(x'_i)$ arises from another choice of $y'_i$ lifting $a^\frac{1}{p^i}$. Then $x'_i$ is Cauchy, and $x'_i \to x' \in \cO_K$. Define
+    \begin{gather*}
+        x''_i = \begin{cases}
+            x_i & \text{if } i \text{ is even}\\
+            x'_i & \text{if } i \text{ is odd}
+        \end{cases}\\
+        y''_i = \begin{cases}
+            y_i & \text{if } i \text{ is even}\\
+            y'_i & \text{if } i \text{ is odd}
+        \end{cases}
+    \end{gather*}
+    Then $x''_i$ arises from lifting $y''_i$. As before, $(x''_i)$ is Cauchy, and it converges to both $x$ and $x'$, so $x = x'$. Thus $x$ is independent of $y_i$, so we may define $[a] = x$.
+
+    Now $x_i \equiv y_i^{p^i} \equiv (a^\frac{1}{p^i})^{p^i} \equiv a \pmod{\pi}$. Thus $x \equiv a \pmod{\pi}$, proving (i).
+
+    Let $b \in k$, and choose $u_i \in \cO_K$ a lift of $b^\frac{1}{p^i}$. Let $z_i = u_i^{p^i}$. Then $[b] = \lim_{i \to \infty} z_i$. Now $u_i y_i$ is a lift of $(a b)^\frac{1}{p^i}$, hence
+    \begin{equation*}
+        [a b] = \lim_{i \to \infty} x_i z_i = \left(\lim_{i \to \infty} x_i\right) \left(\lim_{i \to \infty} z_i\right) = [a] [b]
+    \end{equation*}
+    so (ii) is satisfied.
+
+    If $\Char K = p$, then $y_i + u_i$ is a lift of $a_i^\frac{1}{p^i} + b_i^\frac{1}{p^i} = (a_i + b_i)^\frac{1}{p^i}$. Then
+    \begin{equation*}
+        [a + b] = \lim_{i \to \infty}(y_i + u_i)^{p^i} = \lim_{i \to \infty} y_i^{p^i} + u_i^{p^i} = \lim_{i \to \infty} x_i + \lim_{i \to \infty} z_i = [a] + [b]
+    \end{equation*}
+    It is easy to check that $[0] = 0$ and $[1] = [1]$, so $[\cdot]$ is a ring homomorphism.
+
+    For uniqueness, let $\phi : k \to \cO_K$ be another such map. Then for $a \in k$, $\phi(a^\frac{1}{p^i})$ is a lift of $a^\frac{1}{p^i}$. It follows that
+    \begin{equation*}
+        [a] = \lim_{i \to \infty} \phi(a^\frac{1}{p^i})^{p^i} = \lim_{i \to \infty} \phi(a) = \phi(a)
+    \end{equation*}
+    as required.
+\end{proof}
+
+\begin{example}
+    Take $K = \bQ_p$, then $[\cdot] : \bF_p \to \bZ_p$. Take $a \in \bF_p^\times$. Then $[a]^{p-1} = [a^{p-1}] = [1] = 1$, so $[a]$ is a $(p-1)$\textsuperscript{th} root of unity.
+\end{example}
+
+More generally, we have
+
+\begin{lemma}\label{lem:5_5}
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. If $k \subseteq \overline{\bF}_p$, then for $a \in k^\times$, $[a] \in \cO_K^\times$ is a root of unity.
+\end{lemma}
+\begin{proof}
+    $a \in \overline{\bF}_p$ implies that $a \in \bF_{p^n}$ for some $n$. Then $[a]^{p^n-1} = [a^{p^n-1}] = [1] = 1$.
+\end{proof}
+
+\begin{theorem}\label{thm:5_6}
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field with $\Char K = p > 0$ . Assume that $k$ is perfect, then $K \cong k((t))$
+\end{theorem}
+\begin{proof}
+    Since $K = \Frac{\cO_K}$, it suffices to show that $\cO_K \cong k\llbracket t \rrbracket$ as rings. Fix a uniformiser $\pi \in \cO_K$. Let $[\cdot] : k \to \cO_K$ be the Teichm\"uller lift. Define $\varphi : k\llbracket t \rrbracket \to \cO_K$ by
+    \begin{equation*}
+        \varphi(\sum_{i=0}^\infty a_i t_i) = \sum_{i=0}^\infty [a_i] \pi^i
+    \end{equation*}
+    Then $\varphi$ is a ring homomorphism since $[\cdot]$ is and it is a bijection by \autoref{prop:3_5} (ii).
 \end{proof}
 
 \end{document}

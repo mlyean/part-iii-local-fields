@@ -15,7 +15,9 @@ Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
 Inverse limits	main.tex	/^\\subsubsection*{Inverse limits}$/;"	b	subsection:Basic Theory""\\texorpdfstring{$p$}{p}-adic numbers
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
+Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
+\\Char	main.tex	/^\\DeclareMathOperator{\\Char}{\\mathrm{char}}$/;"	o
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
 \\bF	main.tex	/^\\newcommand{\\bF}{\\mathbb{F}}$/;"	C
@@ -38,6 +40,8 @@ lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;
 lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
 lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
 lem:2_8	main.tex	/^\\begin{lemma}\\label{lem:2_8}\\phantom{}$/;"	l
+lem:5_4	main.tex	/^\\begin{lemma}\\label{lem:5_4}$/;"	l
+lem:5_5	main.tex	/^\\begin{lemma}\\label{lem:5_5}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
@@ -48,3 +52,6 @@ prop:3_5	main.tex	/^\\begin{proposition}\\label{prop:3_5}$/;"	l
 proposition	main.tex	/^\\newtheorem{proposition}[definition]{Proposition}$/;"	t
 theorem	main.tex	/^\\newtheorem{theorem}[definition]{Theorem}$/;"	t
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
+thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
+thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
+thm:5_6	main.tex	/^\\begin{theorem}\\label{thm:5_6}$/;"	l
