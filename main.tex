@@ -34,6 +34,7 @@
 
 \DeclareMathOperator{\Frac}{\mathrm{Frac}}
 \DeclareMathOperator{\Char}{\mathrm{char}}
+\DeclareMathOperator{\Int}{\mathrm{int}}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -808,7 +809,39 @@ More generally, we have
 \end{proof}
 
 \begin{proof}[Proof of \autoref{thm:6_1}]
-    We show that $\abs{\cdot}_L = \abs{N_{L/K}(\cdot)}^\frac{1}{n}$ satisfies the 3 axioms in the definition of absolute value:
+    We show that $\abs{\cdot}_L = \abs{N_{L/K}(\cdot)}^\frac{1}{n}$ satisfies the three axioms in the definition of absolute value:
+    \begin{enumerate}
+        \item $\abs{y}_L = 0 \iff \abs{N_{L/K}(y)}^\frac{1}{n} = 0 \iff N_{L/K}(y) = 0 \iff y = 0$.
+        \item $\abs{y_1 y_2}_L = \abs{N_{L/K}(y_1 y_2)}^\frac{1}{n} = \abs{N_{L/K}(y_1) N_{L/K}(y_2)}^\frac{1}{n} = \abs{N_{L/K}(y_1)}^\frac{1}{n} \abs{N_{L/K}(y_2)}^\frac{1}{n} = \abs{y_1}_L \abs{y_2}_L$.
+    \end{enumerate}
+    For (iii), we need a proposition:
+    \renewcommand*{\qedsymbol}{}
+\end{proof}
+
+\begin{definition}\phantom{}
+    \begin{itemize}
+        \item Let $R$ be a subring of $S$. We say $s \in S$ is integral over $R$ if there exists a monic polynomial $f(X) \in R[X]$ such that $f(s) = 0$.
+        \item The integral closure $R^{\Int(S)}$ of $R$ in $S$ is defined to be $R^{\Int(S)} = \{s \in S \mid s \text{ is integral over } R\}$.
+        \item We say $R$ is integrally closed in $S$ if $R^{\Int(S)} = R$.
+    \end{itemize}
+\end{definition}
+
+\begin{proposition}
+    $R^{\int(S)}$ is a subring of $S$. Moreover, $R^{\int(S)}$ is integrally closed in $S$.
+\end{proposition}
+\begin{proof}
+    See Example Sheet 2.
+\end{proof}
+
+\begin{lemma}
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field. Then $\cO_K$ is integrally closed in $K$.
+\end{lemma}
+\begin{proof}
+    Let $x \in K$ be integral over $\cO_K$. WLOG $x \neq 0$. Let $f(X) = X^n + a_{n-1} + \ldots + a_0 \in \cO_K$  be such that $f(x) = 0$. Then $x = -a_{n-1} - \ldots - \frac{a_0}{x^{n-1}}$. If $\abs{x} > 1$, then $\abs{-a_{n-1} - \ldots - \frac{a_0}{x^{n-1}}} \le 1$, contradiction. Thus $\abs{x} \le 1$, so $x \in \cO_K$.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:6_1} (iii)]
+    Set $\cO_L = \{y \in L \mid \abs{y}_L \le 1\}$. We claim that $\cO_L$ is the integral closure of $\cO_K$ in $L$. Assuming this, we shall prove (iii). Let $x, y \in L$. WLOG assume that $\abs{x}_L \le \abs{y}_L$. Then $\abs{\frac{x}{y}}_L \le 1$, so $\frac{x}{y} \in \cO_L$. Since $1 \in \cO_L$ and $\cO_L$ is a ring by our claim, $1 + \frac{x}{y} \in \cO_L$. Thus $\abs{1 + \frac{x}{y}}_L \le 1$, so $\abs{x + y}_L \le \abs{y}_L = \max \{\abs{x}_L, \abs{y}_L\}$ as required.
 \end{proof}
 
 \end{document}
