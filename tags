@@ -36,6 +36,7 @@ cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
 cor:4_2	main.tex	/^\\begin{corollary}\\label{cor:4_2}$/;"	l
 cor:4_3	main.tex	/^\\begin{corollary}\\label{cor:4_3}$/;"	l
+cor:4_5	main.tex	/^\\begin{corollary}\\label{cor:4_5}$/;"	l
 corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[subsection]$/;"	t
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
@@ -44,6 +45,8 @@ lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
 lem:2_8	main.tex	/^\\begin{lemma}\\label{lem:2_8}\\phantom{}$/;"	l
 lem:5_4	main.tex	/^\\begin{lemma}\\label{lem:5_4}$/;"	l
 lem:5_5	main.tex	/^\\begin{lemma}\\label{lem:5_5}$/;"	l
+lem:6_8	main.tex	/^\\begin{lemma}\\label{lem:6_8}$/;"	l
+lem:6_9	main.tex	/^\\begin{lemma}\\label{lem:6_9}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
@@ -52,6 +55,7 @@ prop:3_2	main.tex	/^\\begin{proposition}\\label{prop:3_2}$/;"	l
 prop:3_3	main.tex	/^\\begin{proposition}\\label{prop:3_3}$/;"	l
 prop:3_5	main.tex	/^\\begin{proposition}\\label{prop:3_5}$/;"	l
 prop:6_4	main.tex	/^\\begin{proposition}\\label{prop:6_4}$/;"	l
+prop:6_7	main.tex	/^\\begin{proposition}\\label{prop:6_7}$/;"	l
 proposition	main.tex	/^\\newtheorem{proposition}[definition]{Proposition}$/;"	t
 theorem	main.tex	/^\\newtheorem{theorem}[definition]{Theorem}$/;"	t
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
@@ -59,3 +63,4 @@ thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
 thm:5_6	main.tex	/^\\begin{theorem}\\label{thm:5_6}$/;"	l
 thm:6_1	main.tex	/^\\begin{theorem}\\label{thm:6_1}$/;"	l
+thm:6_5	main.tex	/^\\begin{theorem}\\label{thm:6_5}$/;"	l

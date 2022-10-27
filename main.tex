@@ -613,7 +613,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     See Example Sheet 1.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:4_5}
     Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) = a_n X^n + \ldots a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
 \end{corollary}
 
@@ -795,7 +795,7 @@ More generally, we have
     Let $e_1, \ldots e_n$ be the basis for $V$ used to defined $\norm{\cdot}_\mathrm{sup}$. Let $(v_i)_{i=1}^\infty$ be a Cauchy sequence in $V$. Write $v_i = \sum_{j=1}^n x_j^i e_j$. Then $(x_j^i)_{i=1}^\infty$ is a Cauchy sequence in $K$. Let $x_j^i \to x_j \in K$. Then $v_i \to v = \sum_{j=1}^n x_j e_j$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{thm:6_5}
     Let $(K, \abs{\cdot})$ be a complete non-archimedean valued field, and $V$ a finite-dimensional vector space over $K$. Then any two norms on $V$ are equivalent. In particular, $V$ is complete with respect to any norm.
 \end{theorem}
 \begin{proof}
@@ -826,22 +826,65 @@ More generally, we have
     \end{itemize}
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\label{prop:6_7}
     $R^{\int(S)}$ is a subring of $S$. Moreover, $R^{\int(S)}$ is integrally closed in $S$.
 \end{proposition}
 \begin{proof}
     See Example Sheet 2.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:6_8}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field. Then $\cO_K$ is integrally closed in $K$.
 \end{lemma}
 \begin{proof}
     Let $x \in K$ be integral over $\cO_K$. WLOG $x \neq 0$. Let $f(X) = X^n + a_{n-1} + \ldots + a_0 \in \cO_K$  be such that $f(x) = 0$. Then $x = -a_{n-1} - \ldots - \frac{a_0}{x^{n-1}}$. If $\abs{x} > 1$, then $\abs{-a_{n-1} - \ldots - \frac{a_0}{x^{n-1}}} \le 1$, contradiction. Thus $\abs{x} \le 1$, so $x \in \cO_K$.
 \end{proof}
 
-\begin{proof}[Proof of \autoref{thm:6_1} (iii)]
-    Set $\cO_L = \{y \in L \mid \abs{y}_L \le 1\}$. We claim that $\cO_L$ is the integral closure of $\cO_K$ in $L$. Assuming this, we shall prove (iii). Let $x, y \in L$. WLOG assume that $\abs{x}_L \le \abs{y}_L$. Then $\abs{\frac{x}{y}}_L \le 1$, so $\frac{x}{y} \in \cO_L$. Since $1 \in \cO_L$ and $\cO_L$ is a ring by our claim, $1 + \frac{x}{y} \in \cO_L$. Thus $\abs{1 + \frac{x}{y}}_L \le 1$, so $\abs{x + y}_L \le \abs{y}_L = \max \{\abs{x}_L, \abs{y}_L\}$ as required.
+\begin{proof}[Proof of \autoref{thm:6_1} (continued)]
+    Set $\cO_L = \{y \in L \mid \abs{y}_L \le 1\}$. We claim that $\cO_L$ is the integral closure of $\cO_K$ in $L$, which will be proved in \autoref{lem:6_9}. Assuming this, we shall prove (iii). Let $x, y \in L$. WLOG assume that $\abs{x}_L \le \abs{y}_L$. Then $\abs{\frac{x}{y}}_L \le 1$, so $\frac{x}{y} \in \cO_L$. Since $1 \in \cO_L$ and $\cO_L$ is a ring by our claim, $1 + \frac{x}{y} \in \cO_L$. Thus $\abs{1 + \frac{x}{y}}_L \le 1$, so $\abs{x + y}_L \le \abs{y}_L = \max \{\abs{x}_L, \abs{y}_L\}$ as required.
+    \renewcommand*{\qedsymbol}{}
+\end{proof}
+
+\begin{lemma}\label{lem:6_9}
+    $\cO_L$ is the integral closure of $\cO_K$ in $L$.
+\end{lemma}
+\begin{proof}
+    Let $0 \neq y \in L$. Let $f(X) = X^d + a_{d-1} X^{d-1} + \ldots + a_0 \in K[X]$ be the minimal polynomial of $y$. We claim that $y$ is integral over $\cO_K$ iff $f(X) \in \cO_K[X]$.
+
+    \noindent ($\Leftarrow$) Clear.
+
+    \noindent ($\Rightarrow$) Let $g(X) \in \cO_K[X]$ be a monic polynomial such that $g(y) = 0$. Then $f \mid g$, so every root of $f$ is a root of $g$. Thus every root of $f$ (in $\overline{K}$) is integral over $\cO_K$, so the $a_i$'s are integral over $\cO_K$, since they are elementary symmetric polynomials in the roots. Thus $a_i \in \cO_K$ by \autoref{lem:6_8}.
+
+    By \autoref{cor:4_5}, $\abs{a_i} \le \max\{\abs{a_0}, 1\}$ for $0 \le i \le d - 1$. Recall that $N_{L/K}(y) = \pm a_0^m$ for some $m$. Hence we have
+    \begin{align*}
+        y \in \cO_L
+        &\iff \abs{N_{L/K}(y)} \le 1\\
+        &\iff \abs{a_0} \le 1\\
+        &\iff \forall 0 \le i \le d - 1, \abs{a_i} \le 1\\
+        &\iff \forall 0 \le i \le d - 1, a_i \in \cO_K\\
+        &\iff y \text{ is integral over } \cO_K
+    \end{align*}
+    which completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:6_1} (continued)]
+    We have already shown that $\abs{x}_L$ defines an absolute value on $L$. Since $N_{L/K}(x) = x^n$ for $x \in K$, $\abs{\cdot}_L$ indeed extends $\abs{\cdot}$ on $K$.
+
+    For uniqueness, suppose that $\abs{\cdot}'_L$ is another absolute value on $L$ extending $\abs{\cdot}$. Then $\abs{\cdot}_L$ and $\abs{\cdot}'_L$ are norms on $L$, so \autoref{thm:6_5} implies that they induce the same topology on $L$. Thus by \autoref{prop:1_3}, there is a $c \in \bR_{>0}$ such that $\abs{\cdot}'_L = \abs{\cdot}_L^c$. Since $\abs{\cdot}'_L$ extends $\abs{\cdot}$ on $K$, we have $c = 1$.
+
+    By \autoref{thm:6_5}, $L$ is complete with respect to $\abs{\cdot}_L$.
+\end{proof}
+
+\begin{corollary}Let $(K, \abs{\cdot})$ be a complete, non-archimedean discretely valued field. Let $L / K$ be a finite extension. Then
+    \begin{enumerate}
+        \item $L$ is discretely valued with respect to $\abs{\cdot}_L$.
+        \item $\cO_L$ is the integral closure of $\cO_K$ in $L$.
+    \end{enumerate}
+\end{corollary}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item Let $v$ be a valuation on $K$ and $v_L$ be a valuation on $L$ such that $v_L$ extends $v$.
+    \end{enumerate}
 \end{proof}
 
 \end{document}
