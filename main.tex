@@ -350,11 +350,11 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 
     Let $y \in I \setminus 0$. Then $v(x^{-1} y) = v(y) - v(x) \ge 0$, so $x^{-1} y \in \cO_K$, and $y = x(x^{-1} y) \in x \cO_K$.
 
-    (ii) $\Rightarrow$ (iii) Clear.
+    \noindent (ii) $\Rightarrow$ (iii): Clear.
 
-    (iii) $\Rightarrow$ (iv) Write $\fm = x_1 \cO_K + \ldots + x_n \cO_K$. WLOG assume that $v(x_1) \le \ldots \le v(x_n)$. Then $x_2, \ldots, x_n \in x_1 \cO_K$, so $\fm = x_1 \cO_K$.
+    \noindent (iii) $\Rightarrow$ (iv): Write $\fm = x_1 \cO_K + \ldots + x_n \cO_K$. WLOG assume that $v(x_1) \le \ldots \le v(x_n)$. Then $x_2, \ldots, x_n \in x_1 \cO_K$, so $\fm = x_1 \cO_K$.
 
-    (iv) $\Rightarrow$ (i) Suppose that $\fm = \pi \cO_K$. Let $c = v(\pi)$. If $x \in \cO_K$ is such that $v(x) > 0$, then $x \in \fm$, so $v(x) \ge c$. Thus $v(K^\times) \cap (0, c) = \emptyset$. Since $v(K^\times)$ is a subgroup of $\bR$, we have $v(K^\times) = c \bZ$.
+    \noindent (iv) $\Rightarrow$ (i): Suppose that $\fm = \pi \cO_K$. Let $c = v(\pi)$. If $x \in \cO_K$ is such that $v(x) > 0$, then $x \in \fm$, so $v(x) \ge c$. Thus $v(K^\times) \cap (0, c) = \emptyset$. Since $v(K^\times)$ is a subgroup of $\bR$, we have $v(K^\times) = c \bZ$.
 \end{proof}
 
 \begin{remark}
@@ -537,7 +537,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \subsection{Hensel's Lemma}
 
 \begin{theorem}[Hensel's Lemma Version 1]\label{thm:4_1}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) \in \cO_K[X]$ and assume that there is an $a \in \cO_K$ such that $\abs{f(a)} < \abs{f'(a)}^2$. Then there exists a unique $x \in \cO_K$ such that $f(x) = 0$ and $\abs{x - a} < \abs{f'(a)}$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $f(X) \in \cO_K[X]$ and assume that there is an $a \in \cO_K$ such that $\abs{f(a)} < \abs{f'(a)}^2$. Then there exists a unique $x \in \cO_K$ such that $f(x) = 0$ and $\abs{x - a} < \abs{f'(a)}$.
 \end{theorem}
 \begin{proof}
     Let $v$ be a normalised valuation and let $\pi \in \cO_K$ be a uniformiser. Let $r = v(f'(a))$. We shall construct a sequence $(x_n)_{n=1}^\infty$ in $\cO_K$ such that
@@ -572,7 +572,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{remark}
 
 \begin{corollary}\label{cor:4_2}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
 \end{corollary}
 \begin{proof}
     Apply \autoref{thm:4_1} to a lift $c \in \cO_K$ of $\overline{c}$. Then $\abs{f(c)} < 1 = \abs{f'(c)}^2$ since $\overline{c}$ is a simple root.
@@ -606,14 +606,14 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{theorem}[Hensel's Lemma Version 2]\label{thm:4_4}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field, and $f(X) \in \cO_K[X]$. Suppose $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$ factorises as $\overline{f}(X) = \overline{g}(X) \overline{h}(X)$ in $k[X]$ with $\overline{g}(X)$ and $\overline{h}(X)$ coprime. Then there is a factorisation $f(X) = g(X) h(X)$ in $\cO_K[X]$ with $\overline{g}(X) \equiv g(X) \pmod{\fm}$, $\overline{h}(X) \equiv h(X) \pmod{\fm}$, and $\deg{g} = \deg{\overline{g}}$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field, and $f(X) \in \cO_K[X]$. Suppose $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$ factorises as $\overline{f}(X) = \overline{g}(X) \overline{h}(X)$ in $k[X]$ with $\overline{g}(X)$ and $\overline{h}(X)$ coprime. Then there is a factorisation $f(X) = g(X) h(X)$ in $\cO_K[X]$ with $\overline{g}(X) \equiv g(X) \pmod{\fm}$, $\overline{h}(X) \equiv h(X) \pmod{\fm}$, and $\deg{g} = \deg{\overline{g}}$.
 \end{theorem}
 \begin{proof}
     See Example Sheet 1.
 \end{proof}
 
 \begin{corollary}\label{cor:4_5}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) = a_n X^n + \ldots + a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $f(X) = a_n X^n + \ldots + a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
 \end{corollary}
 
 \begin{proof}
@@ -647,7 +647,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{fact}
 
 \begin{theorem}\label{thm:5_2}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field such that $k = \cO_K / \fm$ is a perfect field of characteristic $p$. Then there exists a unique map $[\cdot] : k \to \cO_K$ such that
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field such that $k = \cO_K / \fm$ is a perfect field of characteristic $p$. Then there exists a unique map $[\cdot] : k \to \cO_K$ such that
     \begin{enumerate}
         \item $a \equiv [a] \pmod{m}$
         \item $\forall a, b \in k, [a b] = [a] [b]$
@@ -717,15 +717,17 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 
 More generally, we have
 
-\begin{lemma}\label{lem:5_5}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. If $k \subseteq \overline{\bF}_p$, then for $a \in k^\times$, $[a] \in \cO_K^\times$ is a root of unity.
+\stepcounter{definition} % Numbering issue
+
+\begin{lemma}\label{lem:5_6}
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. If $k \subseteq \overline{\bF}_p$, then for $a \in k^\times$, $[a] \in \cO_K^\times$ is a root of unity.
 \end{lemma}
 \begin{proof}
     $a \in \overline{\bF}_p$ implies that $a \in \bF_{p^n}$ for some $n$. Then $[a]^{p^n-1} = [a^{p^n-1}] = [1] = 1$.
 \end{proof}
 
-\begin{theorem}\label{thm:5_6}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field with $\Char K = p > 0$ . Assume that $k$ is perfect, then $K \cong k((t))$
+\begin{theorem}\label{thm:5_7}
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field with $\Char K = p > 0$ . Assume that $k$ is perfect, then $K \cong k((t))$
 \end{theorem}
 \begin{proof}
     Since $K = \Frac{\cO_K}$, it suffices to show that $\cO_K \cong k\llbracket t \rrbracket$ as rings. Fix a uniformiser $\pi \in \cO_K$. Let $[\cdot] : k \to \cO_K$ be the Teichm\"uller lift. Define $\varphi : k\llbracket t \rrbracket \to \cO_K$ by
@@ -907,7 +909,7 @@ More generally, we have
     $\overline{\bQ_p}$ is not complete. On Example Sheet 2, we will see that if $\bC_p$ is the completion of $\overline{\bQ_p}$ with respect to $\abs{\cdot}_{\overline{\bQ_p}}$, then $\bC_p$ is algebraically closed.
 \end{remark}
 
-\begin{proposition}
+\begin{proposition}\label{prop:6_12}
     Let $L/K$ be a finite extension of complete discretely valued fields. Assume that
     \begin{enumerate}
         \item $\cO_K$ is compact
@@ -941,8 +943,8 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
     $\bR$ and $\bC$ are local fields.
 \end{example}
 
-\begin{proposition}
-    Let $(K, \abs{\cdot})$ be a non-archimedean completely valued field. The following are equivalent:
+\begin{proposition}\label{prop:7_2}
+    Let $(K, \abs{\cdot})$ be a non-archimedean complete valued field. The following are equivalent:
     \begin{enumerate}
         \item $K$ is locally compact
         \item $\cO_K$ is compact
@@ -952,11 +954,92 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \begin{proof}
     (i) $\Rightarrow$ (ii): Let $U$ be a compact neighbourhood of $0$. Then there is a non-zero $x \in \cO_K$ such that $x \cO_K \subseteq U$. Since $x \cO_K$ is closed, it is compact, so $\cO_K$ is also compact, since multiplying by $x^{-1}$ gives a homeomorphism $x \cO_K \to \cO_K$.
 
-    (ii) $\Rightarrow$ (i): For $a \in K$, $a + \cO_K$ is a compact neighbourhood of $a$.
+    \noindent (ii) $\Rightarrow$ (i): For $a \in K$, $a + \cO_K$ is a compact neighbourhood of $a$.
 
-    (ii) $\Rightarrow$ (iii): Let $x \in \fm$ and $A_x$ be a set of coset representatives for $\cO_K / x \cO_K$. Then $\cO_K = \bigcup_{y \in A_x} y + x \cO_K$ is a disjoint open cover. Thus $A_x$ is finite by compactness, and so $\cO_K / x \cO_K$ is finite. It follows that $k$ is finite, since we have a surjection $\cO_K / x \cO_K \to k$.
+    \noindent (ii) $\Rightarrow$ (iii): Let $x \in \fm$ and $A_x$ be a set of coset representatives for $\cO_K / x \cO_K$. Then $\cO_K = \bigcup_{y \in A_x} y + x \cO_K$ is a disjoint open cover. Thus $A_x$ is finite by compactness, and so $\cO_K / x \cO_K$ is finite. It follows that $k$ is finite, since we have a surjection $\cO_K / x \cO_K \to k$.
 
-    (iii) $\Rightarrow$ (ii):
+    Suppose that $v$ is not discrete. Let $x = x_1, x_2, \ldots$ be such that $v(x_1) > v(x_2) > \ldots$. Then $x \cO_K = x_1 \cO_K \subsetneq x_2 \cO_K \subsetneq \ldots \subsetneq \cO_K$. This contradicts the fact that $\cO_K / x \cO_K$ is finite.
+
+    \noindent (iii) $\Rightarrow$ (ii): Since $\cO_K$ is a metric space, it suffices to show that $\cO_K$ is sequentially compact. Let $(x_n)_{n=1}^\infty$ be a sequence in $\cO_K$ and let $\pi \in \cO_K$ be a uniformiser. Since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong k$, we have that $\cO_K / \pi^i \cO_K$ is finite for all $i$.
+
+    Since $\cO_K/\pi \cO_K$ is finite, there is an $a_1 \in \cO_K/\pi \cO_K$ and a subsequence $(x_{1,n})_{n=1}^\infty$ of $(x_n)_{n=1}^\infty$ such that $x_{1,n} \equiv a_1 \pmod{\pi}$ for all $n$.
+
+    Since $\cO_K/\pi^2 \cO_K$ is finite, there is an $a_2 \in \cO_K/\pi^2 \cO_K$ and a subsequence $(x_{2,n})_{n=1}^\infty$ of $(x_{1,n})_{n=1}^\infty$ such that $x_{2,n} \equiv a_2 \pmod{\pi}$ for all $n$.
+
+    Continuing in this fashion, we obtain sequences $(x_{in})_{n=1}^\infty$ for $i \ge 1$ such that
+    \begin{enumerate}
+        \item $(x_{i+1, n})_{n=1}^\infty$ is a subsequence of $(x_{i, n})_{n=1}^\infty$
+        \item For any $i$, there is an $a_i \in \cO_K / \pi^i \cO_K$ such that for all $n \ge 1$, we have $x_{i,n} \equiv a_i \pmod{\pi^i}$.
+    \end{enumerate}
+    Necessary $a_i \equiv a_{i+1} \pmod{\pi^i}$. Now define $y_i = x_{i,i}$. This defines a subsequence of $(x_n)_{n=1}^\infty$. Moreover, $y_i \equiv a_i \equiv a_{i+1} \equiv y_{i+1} \pmod{\pi^i}$. Thus $y_i$ converges by \autoref{prop:1_6}.
+\end{proof}
+
+\begin{example}
+    $\bQ_p$ and $\bF_p((t))$ are local fields.
+\end{example}
+
+\subsubsection*{More on inverse limits}
+Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{n+1} \to A_n$ homomorphisms.
+
+\begin{definition}
+    Assume that the $A_n$ are finite. The \emph{profinite topology} on $A = \varprojlim A_n$ is the weakest topology on $A$ such that $A \to A_n$ is continuous for all $n$, where $A_n$ is equipped with the discrete topology.
+\end{definition}
+
+\begin{fact}
+    $A = \varprojlim A_n$ with the profinite topology is compact, totally disconnected\footnote{the connected components are 1-point sets}, and Hausdorff.
+\end{fact}
+
+\begin{proposition}\label{prop:7_4}
+    Let $K$ be a non-archimedean local field with uniformiser $\pi$. Under the isomorphism
+    \begin{equation*}
+        \cO_K \cong \varprojlim \cO_K / \pi^n \cO_K
+    \end{equation*}
+    given by \autoref{prop:3_5}, the topology on $\cO_K$ coincides with the profinite topology.
+\end{proposition}
+\begin{proof}
+    We check that $\mathcal{B} = \{a + \pi^n\cO_K \mid n \ge 1, a \in \cO_K\}$ is a basis of open sets for both topologies. Note that $\mathcal{B}$ indeed defines a basis. For the topology given by $\abs{\cdot}$, this is clear. For the profinite topology, note that $\cO_K \to \cO_K \pi^n \cO_K$ is continuous iff $a + \pi^n \cO_K$ is open for all $a \in \cO_K$.
+\end{proof}
+
+\begin{lemma}\label{lem:7_5}
+    Let $K$ be a non-archimedean local field, and let $L/K$ be a finite extension. Then $L$ is a local field.
+\end{lemma}
+\begin{proof}
+    \autoref{thm:6_1} and \autoref{cor:6_10} implies that $L$ is complete and discretely valued. By \autoref{prop:7_2}, it suffices to show that $k_L = \cO_L / \fm_L$ is finite.
+
+    Let $\alpha_1, \ldots, \alpha_n$ be a basis for $L$ as a $K$-vector space. By \autoref{thm:6_5}, $\norm{\cdot}_\mathrm{sup}$ (with respect to the basis) is equivalent to $\abs{\cdot}_L$ as norms. Thus there is an $r > 0$ such that $\cO_L \subseteq \{x \in L \mid \norm{x}_\mathrm{sup} \le r\}$. Take $a \in K$ such that $\abs{a} > r$, then $\cO_L \subseteq \bigoplus_{i=1}^n a \alpha_i \cO_K$. Since $\cO_K$ is Noetherian by \autoref{lem:2_6}, and $\bigoplus_{i=1}^n a \alpha_i \cO_K$ is a finitely generated $\cO_K$-module, it is Noetherian. Thus $\cO_L$ is finitely generated as an $\cO_K$-module, so $k_L$ is finitely generated as a $k$-module. Since $k$ is finite by \autoref{prop:7_2}, it follows that $k_L$ is finite.
+\end{proof}
+
+\stepcounter{definition} % Numbering issue
+
+\begin{definition}
+    A non-archimedean valued field $(K, \abs{\cdot})$ is said to have \emph{equal characteristic} if $\Char{K} = \Char{k}$, otherwise it has \emph{mixed characteristic}.
+\end{definition}
+
+\begin{example}
+    $\bQ_p$ has mixed characteristic, while $\bF_p((t))$ has equal characteristic.
+\end{example}
+
+\begin{theorem}\label{thm:7_8}
+    Let $K$ be a local field of equal characteristic $p > 0$. Then $K \cong \bF_{p^n}((t))$ for some prime $n \ge 1$.
+\end{theorem}
+\begin{proof}
+    $K$ is complete, discretely valued, and $k$ is finite by \autoref{prop:7_2}. Hence $k \cong \bF_{p^n}$ for some $n$, which is perfect. By \autoref{thm:5_7}, $K \cong \bF_{p^n}((t))$.
+\end{proof}
+
+\begin{lemma}\label{lem:7_9}
+    An absolute value $\abs{\cdot}$ on a field $K$ is non-archimedean iff $\abs{\cdot}$ is bounded on $\bZ$.
+\end{lemma}
+\begin{proof}
+    ($\Rightarrow$) Since $\abs{-n} = \abs{n}$, it suffices to show that $\abs{n}$ is bounded for $n \ge 1$. Indeed $\abs{n} = \abs{1 + \ldots + 1} \le \abs{1} = 1$.
+
+    \noindent ($\Leftarrow$) Suppose that there is a $B$ such that $\abs{n} \le B$ for all $n \in \bZ$. Let $x, y \in K$ be such that $\abs{x} \le \abs{y}$. Then for $m \ge 0$,
+    \begin{align*}
+        \abs{x + y}^m
+        &= \abs{\sum_{i=0}^m \binom{m}{i} x^i y^{m-i}}\\
+        &\le \sum_{i=0}^m \abs{\binom{m}{i} x^i y^{m-i}}\\
+        &\le \abs{y}^m B (m+1)
+    \end{align*}
+    Taking $m$\textsuperscript{th} roots, $\abs{x + y} \le \abs{y} (B (m + 1))^\frac{1}{m}$. Taking $m \to \infty$, we get $\abs{x + y} \le y$.
 \end{proof}
 
 \end{document}
