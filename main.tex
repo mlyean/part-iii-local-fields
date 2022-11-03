@@ -615,13 +615,13 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{corollary}\label{cor:4_5}
-    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) = a_n X^n + \ldots a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
+    Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) = a_n X^n + \ldots + a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
 \end{corollary}
 
 \begin{proof}
     Upon scaling, we may assume that $f(X) \in \cO_K[X]$, with $\max_i \abs{a_i} = 1$. We need to show that $\max \{\abs{a_0}, \abs{a_n}\} = 1$. If not, let $r$ be minimal such that $\abs{a_r} = 1$. Then $0 < r < n$. Reducing mod $\fm$,
     \begin{equation*}
-        \overline{f}(X) = X^r (a_n X^{n-r} + \ldots a_r) \pmod{m}
+        \overline{f}(X) = X^r (a_n X^{n-r} + \ldots + a_r) \pmod{m}
     \end{equation*}
     Then \autoref{thm:4_4} implies that $f(X) = g(X) h(X)$ for some $g(X), h(X) \in \cO_K$ with $0 < \deg{g} = r < n$, contradicting irreduciblity of $f$.
 \end{proof}
@@ -793,7 +793,7 @@ More generally, we have
     Let $(K, \abs{\cdot})$ be a complete, non-archimedean valued field, and $V$ a finite-dimensional vector space over $K$. Then $V$ is complete with respect to $\norm{\cdot}_\mathrm{sup}$.
 \end{proposition}
 \begin{proof}
-    Let $e_1, \ldots e_n$ be the basis for $V$ used to defined $\norm{\cdot}_\mathrm{sup}$. Let $(v_i)_{i=1}^\infty$ be a Cauchy sequence in $V$. Write $v_i = \sum_{j=1}^n x_j^i e_j$. Then $(x_j^i)_{i=1}^\infty$ is a Cauchy sequence in $K$. Let $x_j^i \to x_j \in K$. Then $v_i \to v = \sum_{j=1}^n x_j e_j$.
+    Let $e_1, \ldots, e_n$ be the basis for $V$ used to defined $\norm{\cdot}_\mathrm{sup}$. Let $(v_i)_{i=1}^\infty$ be a Cauchy sequence in $V$. Write $v_i = \sum_{j=1}^n x_j^i e_j$. Then $(x_j^i)_{i=1}^\infty$ is a Cauchy sequence in $K$. Let $x_j^i \to x_j \in K$. Then $v_i \to v = \sum_{j=1}^n x_j e_j$.
 \end{proof}
 
 \begin{theorem}\label{thm:6_5}
@@ -926,6 +926,36 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
     Let $A$ be an integrally closed domain with $K = \Frac(A)$. Let $L/K$ be a finite extension, and let $B$ be the integral closure of $A$ in $L$. If $x \in B$, then its minimal polynomial over $K$ has coefficients in $A$.} of $\cO_K^n$ under the continuous map $\varphi$. Since $\cO_K$ is compact, so is $\cO_K[\alpha]$, hence $\cO_K[\alpha]$ is closed in $L$.
 
     Since $k_L = k(\overline{\alpha})$, $\cO_K[\alpha]$ contains a set of coset representatives for $k_L = \cO_L / \pi_L \cO_L = \cO_L / \beta \cO_L$. Let $y \in \cO_L$. By \autoref{prop:3_5}, $y = \sum_{i=0}^\infty \lambda_i \beta^i$ for some $\lambda_i \in \cO_K[\alpha]$. If we let $y_m = \sum_{i=0}^m \lambda_i \beta^i \in \cO_K[\alpha]$, then we see that $y_m \to y$, so $y \in \cO_K[\alpha]$ since $\cO_K[\alpha]$ is closed.
+\end{proof}
+
+\section{Local Fields}
+
+\subsection{Local Fields}
+
+\begin{definition}
+    Let $(K, \abs{\cdot})$ be a valued field. $K$ is a \emph{local field} if it is complete and locally compact\footnote{every point has a compact neighbourhood}.
+\end{definition}
+
+\begin{example}
+    $\bR$ and $\bC$ are local fields.
+\end{example}
+
+\begin{proposition}
+    Let $(K, \abs{\cdot})$ be a non-archimedean completely valued field. The following are equivalent:
+    \begin{enumerate}
+        \item $K$ is locally compact
+        \item $\cO_K$ is compact
+        \item $v$ is discrete and $k = \cO_K / \fm$ is finite.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (i) $\Rightarrow$ (ii): Let $U$ be a compact neighbourhood of $0$. Then there is a non-zero $x \in \cO_K$ such that $x \cO_K \subseteq U$. Since $x \cO_K$ is closed, it is compact, so $\cO_K$ is also compact, since multiplying by $x^{-1}$ gives a homeomorphism $x \cO_K \to \cO_K$.
+
+    (ii) $\Rightarrow$ (i): For $a \in K$, $a + \cO_K$ is a compact neighbourhood of $a$.
+
+    (ii) $\Rightarrow$ (iii): Let $x \in \fm$ and $A_x$ be a set of coset representatives for $\cO_K / x \cO_K$. Then $\cO_K = \bigcup_{y \in A_x} y + x \cO_K$ is a disjoint open cover. Thus $A_x$ is finite by compactness, and so $\cO_K / x \cO_K$ is finite. It follows that $k$ is finite, since we have a surjection $\cO_K / x \cO_K \to k$.
+
+    (iii) $\Rightarrow$ (ii):
 \end{proof}
 
 \end{document}

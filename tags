@@ -15,6 +15,8 @@ Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
 Inverse limits	main.tex	/^\\subsubsection*{Inverse limits}$/;"	b	subsection:Basic Theory""\\texorpdfstring{$p$}{p}-adic numbers
+Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
+Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
