@@ -58,13 +58,11 @@
 
 \maketitle
 
+\noindent These lecture notes were based on the Part III course Local Fields taught during Michaelmas 2022 by Dr. Rong Zhou.
+
 \section{Basic Theory}
 
 \subsection{Absolute Value}
-
-\let\svthefootnote\thefootnote
-\let\thefootnote\relax\footnotetext{These lecture notes were based on the Part III course Local Fields taught during Michaelmas 2022 by Dr. Rong Zhou.}
-\let\thefootnote\svthefootnote
 
 \begin{definition}
     Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \bR_{\ge 0}$ such that
@@ -265,7 +263,7 @@
 \end{equation*}
 determines a non-archimedean absolute value on $K$.
 
-Conversely a non-archimedean absolute value determines a valuation by taking $v(x) = \log_\alpha \abs{x}$.
+Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_\alpha \abs{x}$.
 
 \begin{remark}
     We ignore the trivial valuation $v(x) = 0 \quad \forall x \in K^\times$.
@@ -560,7 +558,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
         f(x_{n+1}) \equiv f(x_n) + f'(x_n) c \equiv 0 \pmod{\pi^{n + 2r + 1}}
     \end{equation*}
 
-    Now (ii) implies that $(x_n)$ is Cauchy, say $x_n \to x \in \cO_K$. Then $f(x) = \lim_{n \to \infty} f(x_n) = 0$ by (i). Moreover, (ii) implies that $a = x_1 \equiv x_n \pmod{\pi^{r+1}}$ for all $n$, so $x \equiv a \pmod{\pi^{r+1}}$, which implies that $\abs{x - a} < \abs{f'(a)}$. This completes the existence part of the proof.
+    Now (ii) implies that $(x_n)$ is Cauchy, say it converges to $x \in \cO_K$. Then $f(x) = \lim_{n \to \infty} f(x_n) = 0$ by (i). Moreover, (ii) implies that $a = x_1 \equiv x_n \pmod{\pi^{r+1}}$ for all $n$, so $x \equiv a \pmod{\pi^{r+1}}$, which implies that $\abs{x - a} < \abs{f'(a)}$. This completes the existence part of the proof.
 
     For uniqueness, suppose that $x'$ also satisfies $f(x') = 0$ and $\abs{x' - a} < \abs{f'(a)}$, but $x' \neq x$. Let $\delta = x' - x \neq 0$. Then $\abs{x' - a}, \abs{x - a} < \abs{f'(a)}$ so by the ultrametric inequality, $\abs{\delta} = \abs{x' - x} < \abs{f'(a)}$. However,
     \begin{equation*}
@@ -822,7 +820,10 @@ More generally, we have
 \begin{definition}\phantom{}
     \begin{itemize}
         \item Let $R$ be a subring of $S$. We say $s \in S$ is \emph{integral over $R$} if there exists a monic polynomial $f(X) \in R[X]$ such that $f(s) = 0$.
-        \item The \emph{integral closure} $R^{\Int(S)}$ of $R$ in $S$ is defined to be $R^{\Int(S)} = \{s \in S \mid s \text{ is integral over } R\}$.
+        \item The \emph{integral closure} $R^{\Int(S)}$ of $R$ in $S$ is defined to be
+            \begin{equation*}
+                R^{\Int(S)} = \{s \in S \mid s \text{ is integral over } R\}
+            \end{equation*}
         \item We say $R$ is \emph{integrally closed in $S$} if $R^{\Int(S)} = R$.
     \end{itemize}
 \end{definition}
