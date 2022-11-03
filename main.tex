@@ -51,7 +51,7 @@
 \setlist[enumerate,1]{label=(\roman*), nosep}
 \setlist[itemize,1]{nosep}
 
-\title{Local Fields}
+\title{Part III Local Fields Lecture Notes}
 \author{Ming Yean Lim}
 
 \begin{document}
@@ -542,7 +542,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Let $(K, \abs{\cdot})$ be a complete, discretely valued field. Let $f(X) \in \cO_K[X]$ and assume that there is an $a \in \cO_K$ such that $\abs{f(a)} < \abs{f'(a)}^2$. Then there exists a unique $x \in \cO_K$ such that $f(x) = 0$ and $\abs{x - a} < \abs{f'(a)}$.
 \end{theorem}
 \begin{proof}
-    Let $v$ be a normalized valuation and let $\pi \in \cO_K$ be a uniformiser. Let $r = v(f'(a))$. We shall construct a sequence $(x_n)_{n=1}^\infty$ in $\cO_K$ such that
+    Let $v$ be a normalised valuation and let $\pi \in \cO_K$ be a uniformiser. Let $r = v(f'(a))$. We shall construct a sequence $(x_n)_{n=1}^\infty$ in $\cO_K$ such that
     \begin{enumerate}
         \item $f(x_n) \equiv 0 \pmod{\pi^{n + 2r}}$.
         \item $x_{n+1} \equiv x_n \pmod{\pi^{n+r}}$.
@@ -876,7 +876,8 @@ More generally, we have
     By \autoref{thm:6_5}, $L$ is complete with respect to $\abs{\cdot}_L$.
 \end{proof}
 
-\begin{corollary}Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $L / K$ be a finite extension. Then
+\begin{corollary}\label{cor:6_10}
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $L / K$ be a finite extension. Then
     \begin{enumerate}
         \item $L$ is discretely valued with respect to $\abs{\cdot}_L$.
         \item $\cO_L$ is the integral closure of $\cO_K$ in $L$.
@@ -884,8 +885,47 @@ More generally, we have
 \end{corollary}
 \begin{proof}\phantom{}
     \begin{enumerate}
-        \item Let $v$ be a valuation on $K$ and $v_L$ be a valuation on $L$ such that $v_L$ extends $v$.
+        \item Let $v$ be a valuation on $K$ and $v_L$ be a valuation on $L$ such that $v_L$ extends $v$. Let $n = [L : K]$. For $y \in L^\times$, we have $\abs{y}_L = \abs{N_{L/K}(y)}^\frac{1}{n}$, so $v_L(y) = \frac{1}{n} v(N_{L/K}(y))$. Thus $v_L(L^\times) \subseteq \frac{1}{n} v(K^\times)$. It follows that $v_L$ is discrete.
+
+        \item This is \autoref{lem:6_9}.\qedhere
     \end{enumerate}
+\end{proof}
+
+\begin{corollary}\label{cor:6_11}
+    Let $\overline{K}$ be the algebraic closure of $K$. Then $\abs{\cdot}$ extends to a unique absolute value $\abs{\cdot}_{\overline{K}}$ on $\overline{K}$.
+\end{corollary}
+\begin{proof}
+    Let $x \in \overline{K}$. Then $x \in L$ for some finite extension $L/K$. Define $\abs{x}_{\overline{K}} = \abs{x}_L$. This is well-defined, since the absolute value is independent of $L$ by the uniqueness assertion in \autoref{thm:6_1}. The axioms for $\abs{\cdot}_{\overline{K}}$ to be an absolute value can be checked over finite extensions.
+
+    The uniqueness of $\abs{\cdot}_{\overline{K}}$ is clear.
+\end{proof}
+
+\begin{remark}
+    $\abs{\cdot}_{\overline{K}}$ is never discrete. For example, take $K = \bQ_p$, consider $p^\frac{1}{n} \in \overline{\bQ_p}$. Then $v_p(p^\frac{1}{n}) = \frac{1}{n} v_p(p) = \frac{1}{n}$.
+
+    $\overline{\bQ_p}$ is not complete. On Example Sheet 2, we will see that if $\bC_p$ is the completion of $\overline{\bQ_p}$ with respect to $\abs{\cdot}_{\overline{\bQ_p}}$, then $\bC_p$ is algebraically closed.
+\end{remark}
+
+\begin{proposition}
+    Let $L/K$ be a finite extension of complete discretely valued fields. Assume that
+    \begin{enumerate}
+        \item $\cO_K$ is compact
+        \item $k_L / k$ is a finite separable extension
+    \end{enumerate}
+Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
+\end{proposition}
+\begin{proof}
+    Fix a uniformiser $\pi_L \in \cO_L$, and let $v_L$ be the normalised valuation.
+
+    Since $k_L/k$ is finite separable, by the primitive element theorem, there is an $\overline{\alpha} \in k_L$ such that $k_L = k(\overline{\alpha})$. Let $\alpha \in \cO_L$ be a lift of $\overline{\alpha}$, and $g(X) \in \cO_K[X]$ be a monic lift of the minimal polynomial $\overline{g}(X) \in k[X]$ of $\overline{\alpha}$. Then since $\overline{g}$ is irreducible and separable, $\overline{\alpha}$ is a simple root of $\overline{g}$, so $g(\alpha) \equiv 0 \pmod{\pi_L}$, and $g'(\alpha) \not\equiv 0 \pmod{\pi_L}$.
+
+    If $g(\alpha) \equiv 0 \pmod{\pi_L^2}$, then $g(\alpha + \pi_L) \equiv g(\alpha) + \pi_L g'(\alpha) \equiv \pi_L g'(\alpha) \pmod{\pi_L^2}$. Thus $v_L(g(\alpha + \pi_L)) = v_L(\pi_L g'(\alpha)) = 1$. Thus either $v_L(g(\alpha)) = 1$ or $v_L(g(\alpha + \pi_L)) = 1$. Upon possibly replacing $\alpha$ by $\alpha + \pi_L$, we may assume that $v_L(g(\alpha)) = 1$.
+
+    Set $\beta = g(\alpha) \in \cO_K[\alpha]$, which is a uniformiser. Let $n = [K(\alpha) : K]$ and define $\varphi : \cO_K^n \to L$ by $\varphi(x_0, \ldots, x_{n-1}) = \sum_{i=0}^{n-1} x_i \alpha^i$. $\cO_K[\alpha]$ is the image\footnote{We need to show that $\alpha$ is a root of a monic polynomial in $\cO_K[X]$ of degree $n$. This follows from the following fact (with $A = \cO_K, B = \cO_L$, using \autoref{lem:6_8} and \autoref{lem:6_9}):
+
+    Let $A$ be an integrally closed domain with $K = \Frac(A)$. Let $L/K$ be a finite extension, and let $B$ be the integral closure of $A$ in $L$. If $x \in B$, then its minimal polynomial over $K$ has coefficients in $A$.} of $\cO_K^n$ under the continuous map $\varphi$. Since $\cO_K$ is compact, so is $\cO_K[\alpha]$, hence $\cO_K[\alpha]$ is closed in $L$.
+
+    Since $k_L = k(\overline{\alpha})$, $\cO_K[\alpha]$ contains a set of coset representatives for $k_L = \cO_L / \pi_L \cO_L = \cO_L / \beta \cO_L$. Let $y \in \cO_L$. By \autoref{prop:3_5}, $y = \sum_{i=0}^\infty \lambda_i \beta^i$ for some $\lambda_i \in \cO_K[\alpha]$. If we let $y_m = \sum_{i=0}^m \lambda_i \beta^i \in \cO_K[\alpha]$, then we see that $y_m \to y$, so $y \in \cO_K[\alpha]$ since $\cO_K[\alpha]$ is closed.
 \end{proof}
 
 \end{document}
