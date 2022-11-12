@@ -74,4 +74,5 @@ thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
 thm:5_7	main.tex	/^\\begin{theorem}\\label{thm:5_7}$/;"	l
 thm:6_1	main.tex	/^\\begin{theorem}\\label{thm:6_1}$/;"	l
 thm:6_5	main.tex	/^\\begin{theorem}\\label{thm:6_5}$/;"	l
+thm:7_10	main.tex	/^\\begin{theorem}[Ostrowski's Theorem]\\label{thm:7_10}$/;"	l
 thm:7_8	main.tex	/^\\begin{theorem}\\label{thm:7_8}$/;"	l

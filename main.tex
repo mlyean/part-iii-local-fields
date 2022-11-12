@@ -102,6 +102,8 @@
 
 \begin{definition}
     Let $\abs{\cdot}, \abs{\cdot}'$ be absolute values on $K$. We say $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent} if they define the same topology.
+
+    An equivalence class of absolute values is called a \emph{place}.
 \end{definition}
 
 \begin{proposition}\label{prop:1_3}
@@ -384,7 +386,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 \end{proof}
 
 \begin{example}
-    $\bZ_(p)$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
+    $\bZ_{(p)}$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
 \end{example}
 
 \subsection{\texorpdfstring{$p$}{p}-adic numbers}
@@ -924,9 +926,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 
     If $g(\alpha) \equiv 0 \pmod{\pi_L^2}$, then $g(\alpha + \pi_L) \equiv g(\alpha) + \pi_L g'(\alpha) \equiv \pi_L g'(\alpha) \pmod{\pi_L^2}$. Thus $v_L(g(\alpha + \pi_L)) = v_L(\pi_L g'(\alpha)) = 1$. Thus either $v_L(g(\alpha)) = 1$ or $v_L(g(\alpha + \pi_L)) = 1$. Upon possibly replacing $\alpha$ by $\alpha + \pi_L$, we may assume that $v_L(g(\alpha)) = 1$.
 
-    Set $\beta = g(\alpha) \in \cO_K[\alpha]$, which is a uniformiser. Let $n = [K(\alpha) : K]$ and define $\varphi : \cO_K^n \to L$ by $\varphi(x_0, \ldots, x_{n-1}) = \sum_{i=0}^{n-1} x_i \alpha^i$. $\cO_K[\alpha]$ is the image\footnote{We need to show that $\alpha$ is a root of a monic polynomial in $\cO_K[X]$ of degree $n$. This follows from the following fact (with $A = \cO_K, B = \cO_L$, using \autoref{lem:6_8} and \autoref{lem:6_9}):
-
-    Let $A$ be an integrally closed domain with $K = \Frac(A)$. Let $L/K$ be a finite extension, and let $B$ be the integral closure of $A$ in $L$. If $x \in B$, then its minimal polynomial over $K$ has coefficients in $A$.} of $\cO_K^n$ under the continuous map $\varphi$. Since $\cO_K$ is compact, so is $\cO_K[\alpha]$, hence $\cO_K[\alpha]$ is closed in $L$.
+    Set $\beta = g(\alpha) \in \cO_K[\alpha]$, which is a uniformiser. Let $n = [K(\alpha) : K]$ and define $\varphi : \cO_K^n \to L$ by $\varphi(x_0, \ldots, x_{n-1}) = \sum_{i=0}^{n-1} x_i \alpha^i$. $\cO_K[\alpha]$ is the image\footnote{the minimal polynomial of $\alpha$ over $K$ has degree $n$ and coefficients in $\cO_K$ by the proof of \autoref{lem:6_9}} of $\cO_K^n$ under the continuous map $\varphi$. Since $\cO_K$ is compact, so is $\cO_K[\alpha]$, hence $\cO_K[\alpha]$ is closed in $L$.
 
     Since $k_L = k(\overline{\alpha})$, $\cO_K[\alpha]$ contains a set of coset representatives for $k_L = \cO_L / \pi_L \cO_L = \cO_L / \beta \cO_L$. Let $y \in \cO_L$. By \autoref{prop:3_5}, $y = \sum_{i=0}^\infty \lambda_i \beta^i$ for some $\lambda_i \in \cO_K[\alpha]$. If we let $y_m = \sum_{i=0}^m \lambda_i \beta^i \in \cO_K[\alpha]$, then we see that $y_m \to y$, so $y \in \cO_K[\alpha]$ since $\cO_K[\alpha]$ is closed.
 \end{proof}
@@ -1020,7 +1020,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 \end{example}
 
 \begin{theorem}\label{thm:7_8}
-    Let $K$ be a local field of equal characteristic $p > 0$. Then $K \cong \bF_{p^n}((t))$ for some prime $n \ge 1$.
+    Let $K$ be a local field of equal characteristic $p > 0$. Then $K \cong \bF_{p^n}((t))$ for some $n \ge 1$.
 \end{theorem}
 \begin{proof}
     $K$ is complete, discretely valued, and $k$ is finite by \autoref{prop:7_2}. Hence $k \cong \bF_{p^n}$ for some $n$, which is perfect. By \autoref{thm:5_7}, $K \cong \bF_{p^n}((t))$.
@@ -1039,7 +1039,14 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
         &\le \sum_{i=0}^m \abs{\binom{m}{i} x^i y^{m-i}}\\
         &\le \abs{y}^m B (m+1)
     \end{align*}
-    Taking $m$\textsuperscript{th} roots, $\abs{x + y} \le \abs{y} (B (m + 1))^\frac{1}{m}$. Taking $m \to \infty$, we get $\abs{x + y} \le y$.
+    Taking $m$\textsuperscript{th} roots, $\abs{x + y} \le \abs{y} (B (m + 1))^\frac{1}{m}$. Taking $m \to \infty$, we get $\abs{x + y} \le \abs{y}$.
+\end{proof}
+
+\begin{theorem}[Ostrowski's Theorem]\label{thm:7_10}
+    Any non-trivial absolute value on $\bQ$ is equivalent to either the usual absolute value $\abs{\cdot}_\infty$ or the $p$-adic absolute value $\abs{\cdot}_p$ for some prime $p$.
+\end{theorem}
+\begin{proof}
+    \underline{Case 1:} $\abs{\cdot}$ is archimedean.
 \end{proof}
 
 \end{document}
