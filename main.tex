@@ -1047,6 +1047,32 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 \end{theorem}
 \begin{proof}
     \underline{Case 1:} $\abs{\cdot}$ is archimedean.
+    By \autoref{lem:7_9}, there is a integer $b > 1$ such that $\abs{b} > 1$. Let $a > 1$ be an integer and write $b^n$ in base $a$:
+    \begin{equation*}
+        b^n = c_m a^m + c_{m-1} + a^{m-1} + \ldots + c
+    \end{equation*}
+    where $0 \le c_i < a$ and $c_m \neq 0$. Let $B = \max_{0 \le c < a} \abs{c}$, then we have
+    \begin{equation*}
+        \abs{b}^n \le (m + 1) B \max \{\abs{a}^m, 1\}
+    \end{equation*}
+    Since $m \le n \log_a{b}$,
+    \begin{equation*}
+        \abs{b} \le \left[(n \log_a{b} + 1) B \right]^{\frac{1}{n}} \max \{\abs{a}^{\log_a{b}}, 1\}
+    \end{equation*}
+    Taking $n \to \infty$, we see that $\abs{b} \le \max \{\abs{a}^{\log_a{b}}, 1\}$, so $\abs{a} > 1$, and $\abs{b} \le \abs{a}^{\log_a{b}}$. Thus we may switch the roles of $a$ and $b$ to obtain $\abs{a} \le \abs{b}^{\log_b{a}}$. Thus
+    \begin{equation*}
+        \frac{\log{\abs{a}}}{\log{a}} = \frac{\log{\abs{b}}}{\log{b}}
+    \end{equation*}
+    for any $a, b > 1$. Let $\lambda > 0$ be this common value. Then for $a \in \bZ_{>1}$, $\abs{a} = a^\lambda$, and it follows that for any $x \in \bQ$, $\abs{x} = \abs{x}_\infty^\lambda$, i.e. $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\infty$.
+
+    \underline{Case 2:} $\abs{\cdot}$ is non-archimedean. As in \autoref{lem:7_9}, we have $\abs{n} \le 1$ for all $n \in \bZ$. Since $\abs{\cdot}$ is non-trivial, there is an $n > 1$ such that $\abs{n} < 1$. Then $\abs{p} < 1$ for some prime $p$ dividing $n$. Suppose that $\abs{q} < 1$ for some other prime $q \neq p$. Then $rp + sq = 1$ for some $r, s \in \bZ$. Thus $1 = \abs{rp + sq} \le \max\{\abs{rp}, \abs{sq}\} < 1$, contradiction. Thus $\abs{\cdot}$ is equivalent to $\abs{\cdot}_p$.
+\end{proof}
+
+\begin{theorem}\label{thm:7_11}
+    Let $(K, \abs{\cdot})$ be a non-archimedean local field of mixed characteristic. Then $K$ is a finite extension of $\bQ_p$ for some prime $p$.
+\end{theorem}
+\begin{proof}
+    Since $K$ is mixed characteristic, $\Char{K} = 0$, so $\bQ \subseteq K$.
 \end{proof}
 
 \end{document}
