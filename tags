@@ -12,6 +12,8 @@
 Absolute Value	main.tex	/^\\subsection{Absolute Value}$/;"	u	section:Basic Theory
 Basic Theory	main.tex	/^\\section{Basic Theory}$/;"	s
 Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
+Dedekind Domains	main.tex	/^\\section{Dedekind Domains}$/;"	s
+Dedekind Domains	main.tex	/^\\subsection{Dedekind Domains}$/;"	u	section:Dedekind Domains
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
 Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
@@ -34,6 +36,8 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\bZ	main.tex	/^\\newcommand{\\bZ}{\\mathbb{Z}}$/;"	C
 \\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
 \\fm	main.tex	/^\\newcommand{\\fm}{\\mathfrak{m}}$/;"	C
+\\fp	main.tex	/^\\newcommand{\\fp}{\\mathfrak{p}}$/;"	C
+\\fq	main.tex	/^\\newcommand{\\fq}{\\mathfrak{q}}$/;"	C
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
 \\thesection	main.tex	/^\\renewcommand\\thesection{\\Roman{section}}$/;"	C
@@ -58,6 +62,8 @@ lem:7_5	main.tex	/^\\begin{lemma}\\label{lem:7_5}$/;"	l
 lem:7_9	main.tex	/^\\begin{lemma}\\label{lem:7_9}$/;"	l
 lem:8_2	main.tex	/^\\begin{lemma}\\label{lem:8_2}$/;"	l
 lem:8_3	main.tex	/^\\begin{lemma}[Krasner's Lemma]\\label{lem:8_3}$/;"	l
+lem:9_3	main.tex	/^\\begin{lemma}\\label{lem:9_3}$/;"	l
+lem:9_4	main.tex	/^\\begin{lemma}\\label{lem:9_4}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
@@ -70,6 +76,7 @@ prop:6_4	main.tex	/^\\begin{proposition}\\label{prop:6_4}$/;"	l
 prop:6_7	main.tex	/^\\begin{proposition}\\label{prop:6_7}$/;"	l
 prop:7_2	main.tex	/^\\begin{proposition}\\label{prop:7_2}$/;"	l
 prop:7_4	main.tex	/^\\begin{proposition}\\label{prop:7_4}$/;"	l
+prop:8_4	main.tex	/^\\begin{proposition}\\label{prop:8_4}$/;"	l
 proposition	main.tex	/^\\newtheorem{proposition}[definition]{Proposition}$/;"	t
 theorem	main.tex	/^\\newtheorem{theorem}[definition]{Theorem}$/;"	t
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
@@ -81,3 +88,5 @@ thm:6_5	main.tex	/^\\begin{theorem}\\label{thm:6_5}$/;"	l
 thm:7_10	main.tex	/^\\begin{theorem}[Ostrowski's Theorem]\\label{thm:7_10}$/;"	l
 thm:7_11	main.tex	/^\\begin{theorem}\\label{thm:7_11}$/;"	l
 thm:7_8	main.tex	/^\\begin{theorem}\\label{thm:7_8}$/;"	l
+thm:8_5	main.tex	/^\\begin{theorem}\\label{thm:8_5}$/;"	l
+thm:9_2	main.tex	/^\\begin{theorem}\\label{thm:9_2}$/;"	l

@@ -44,6 +44,8 @@
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\bC}{\mathbb{C}}
 \newcommand{\cO}{\mathcal{O}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
 \newcommand{\fm}{\mathfrak{m}}
 
 \renewcommand\thesection{\Roman{section}}
@@ -1117,7 +1119,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     Let $L = K(\beta)$, $L' = L(\alpha_1, \ldots, \alpha_n)$. Let $\sigma \in \Gal(L' / L)$. By \autoref{lem:8_2}, we have $\abs{\beta - \sigma(\alpha_1)} = \abs{\sigma(\beta - \alpha_1)} = \abs{\beta - \alpha_1}$. Thus $\sigma(\alpha_1) = \alpha_1$, so $\alpha_1 \in L = K(\beta)$.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{prop:8_4}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field, and $f(X) = \sum_{i=0}^n a_i X^i \in \cO_K[X]$ be a separable irreducible monic polynomial. Let $\alpha \in \overline{K}$ be a root of $f$. Then there is an $\varepsilon > 0$ such that for any monic polynomial $g(X) = \sum_{i=0}^n b_i X^i \in \cO_K[X]$ with $\abs{a_i - b_i} < \varepsilon$, there exists a root $\beta$ of $g(X)$ such that $K(\alpha) = K(\beta)$.
 \end{proposition}
 \begin{proof}
@@ -1126,6 +1128,55 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
         \abs{g'(\alpha_1)} = \abs{f'(\alpha_1)} = \prod_{i=2}^n \abs{\alpha_1 - \alpha_i} \le \abs{\alpha_1 - \alpha_i}
     \end{equation*}
     for each $2 \le i \le n$, since $\abs{\alpha_1 - \alpha_i} \le 1$ by \autoref{lem:6_8}. Since $\abs{\beta - \alpha_1} < \abs{\alpha_1 - \alpha_1} = \abs{\beta - \alpha_i}$. By \autoref{lem:8_3}, $\alpha \in K(\beta)$, so $K(\beta) = K(\alpha_1)$.
+\end{proof}
+
+\begin{theorem}\label{thm:8_5}
+    Let $K$ be a local field. Then $K$ is the completion of a global field.
+\end{theorem}
+\begin{proof}
+    \underline{Case 1:} $K$ is archimedean. In this case $K \cong \bR$ or $\bC$. $\bR$ and $\bC$ are the completions of $\bQ$ and $\bQ(i)$ respectively with respect to $\abs{\cdot}_\infty$.
+
+    \underline{Case 2:} $K$ is non-archimedean of equal characteristic. In this case $K \cong \bF_q((t))$, so $K$ is the completion of $\bF_q(t)$ with respect to the $t$-adic absolute value.
+
+    \underline{Case 3:} $K$ is non-archimedean of mixed characteristic. In this case $K$ is a finite extension of $\bQ_p$. By the primitive element theorem, $K = \bQ_p(\alpha)$, for some $\alpha \in K$. By normalising, we can take $\alpha$ to be a root of a monic irreducible polynomial with coefficients in $\bZ_p$. Since $\bZ$ is dense in $\bZ_p$, by \autoref{prop:8_4}, there is a monic polynomial $g(X) \in \bZ[X]$ and a root $\beta \in K$ of $g(X)$ such that $K = \bQ_p(\alpha) = \bQ_p(\beta)$. Since $\bQ(\beta)$ is dense in $\bQ_p(\beta) = K$, $K$ is the completion of $\bQ(\beta)$.
+\end{proof}
+
+\section{Dedekind Domains}
+
+\subsection{Dedekind Domains}
+
+\begin{definition}
+    A \emph{Dedekind domain} is a ring $R$ such that
+    \begin{enumerate}
+        \item $R$ is a Noetherian integral domain
+        \item $R$ is integrally closed in $\Frac(R)$
+        \item Every non-zero prime ideal is maximal
+    \end{enumerate}
+\end{definition}
+
+\begin{example}\phantom{}
+    \begin{enumerate}
+        \item The ring of integers in a number field is a Dedekind domain.
+        \item Any PID (hence DVR) is a Dedekind domain.
+    \end{enumerate}
+\end{example}
+
+\begin{theorem}\label{thm:9_2}
+    A ring $R$ is a DVR if and only if $R$ is a Dedekind domain with exactly one non-zero prime ideal.
+\end{theorem}
+
+\begin{lemma}\label{lem:9_3}
+    Let $R$ be a Noetherian ring and $I \subseteq R$ be a non-zero ideal. Then there exists non-zero prime ideals $\fp_1, \ldots \fp_r \subseteq I$ such that $\fp_1 \ldots \fp_r \subseteq I$.
+\end{lemma}
+\begin{proof}
+    Suppose otherwise. Since $R$ is Noetherian, we may choose $I$ maximal with this property. Then $I$ is not prime, so there are $x, y \in R \setminus I$ such that $xy \in I$. Let $I_1 = I + (x)$ and $I_2 = I + (y)$. By maximality of $I$, there are non-zero prime ideals $\fp_1, \ldots, \fp_r, \fq_1, \ldots \fq_s$ such that $\fp_1 \ldots \fp_r \subseteq I_1$ and $\fq_1 \ldots \fq_s \subseteq I_2$. Then $\fp_1 \ldots \fp_r \fq_1 \ldots \fq_s \subseteq I_1 I_2 \subseteq I$.
+\end{proof}
+
+\begin{lemma}\label{lem:9_4}
+    Let $R$ be an integrally closed integral domain, $I \subseteq R$ a non-zero finitely generated ideal, and $x \in K$. If $x I \subseteq I$, then $x \in R$.
+\end{lemma}
+\begin{proof}
+    
 \end{proof}
 
 \end{document}
