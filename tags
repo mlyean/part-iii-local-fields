@@ -13,6 +13,7 @@ Absolute Value	main.tex	/^\\subsection{Absolute Value}$/;"	u	section:Basic Theor
 Basic Theory	main.tex	/^\\section{Basic Theory}$/;"	s
 Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
+Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
 Inverse limits	main.tex	/^\\subsubsection*{Inverse limits}$/;"	b	subsection:Basic Theory""\\texorpdfstring{$p$}{p}-adic numbers
 Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
@@ -23,6 +24,7 @@ Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{\\mathrm{char}}$/;"	o
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
+\\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{\\mathrm{Gal}}$/;"	o
 \\Int	main.tex	/^\\DeclareMathOperator{\\Int}{\\mathrm{int}}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
 \\bF	main.tex	/^\\newcommand{\\bF}{\\mathbb{F}}$/;"	C
@@ -54,6 +56,8 @@ lem:6_8	main.tex	/^\\begin{lemma}\\label{lem:6_8}$/;"	l
 lem:6_9	main.tex	/^\\begin{lemma}\\label{lem:6_9}$/;"	l
 lem:7_5	main.tex	/^\\begin{lemma}\\label{lem:7_5}$/;"	l
 lem:7_9	main.tex	/^\\begin{lemma}\\label{lem:7_9}$/;"	l
+lem:8_2	main.tex	/^\\begin{lemma}\\label{lem:8_2}$/;"	l
+lem:8_3	main.tex	/^\\begin{lemma}[Krasner's Lemma]\\label{lem:8_3}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
