@@ -36,6 +36,7 @@
 \DeclareMathOperator{\Char}{\mathrm{char}}
 \DeclareMathOperator{\Int}{\mathrm{int}}
 \DeclareMathOperator{\Gal}{\mathrm{Gal}}
+\DeclareMathOperator{\Adj}{\mathrm{Adj}}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -624,7 +625,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{proof}
     Upon scaling, we may assume that $f(X) \in \cO_K[X]$, with $\max_i \abs{a_i} = 1$. We need to show that $\max \{\abs{a_0}, \abs{a_n}\} = 1$. If not, let $r$ be minimal such that $\abs{a_r} = 1$. Then $0 < r < n$. Reducing mod $\fm$,
     \begin{equation*}
-        \overline{f}(X) = X^r (a_n X^{n-r} + \ldots + a_r) \pmod{m}
+        \overline{f}(X) = X^r (a_n X^{n-r} + \ldots + a_r) \pmod{\fm}
     \end{equation*}
     Then \autoref{thm:4_4} implies that $f(X) = g(X) h(X)$ for some $g(X), h(X) \in \cO_K$ with $0 < \deg{g} = r < n$, contradicting irreduciblity of $f$.
 \end{proof}
@@ -922,6 +923,9 @@ More generally, we have
     \end{enumerate}
 Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \end{proposition}
+
+\noindent We will soon see (in \autoref{prop:7_2}) that condition (i) implies condition (ii).
+
 \begin{proof}
     Fix a uniformiser $\pi_L \in \cO_L$, and let $v_L$ be the normalised valuation.
 
@@ -1166,17 +1170,75 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 \end{theorem}
 
 \begin{lemma}\label{lem:9_3}
-    Let $R$ be a Noetherian ring and $I \subseteq R$ be a non-zero ideal. Then there exists non-zero prime ideals $\fp_1, \ldots \fp_r \subseteq I$ such that $\fp_1 \ldots \fp_r \subseteq I$.
+    Let $R$ be a Noetherian ring and $I \subseteq R$ be a non-zero ideal. Then there exists non-zero prime ideals $\fp_1, \ldots, \fp_r \subseteq I$ such that $\fp_1 \ldots \fp_r \subseteq I$.
 \end{lemma}
 \begin{proof}
-    Suppose otherwise. Since $R$ is Noetherian, we may choose $I$ maximal with this property. Then $I$ is not prime, so there are $x, y \in R \setminus I$ such that $xy \in I$. Let $I_1 = I + (x)$ and $I_2 = I + (y)$. By maximality of $I$, there are non-zero prime ideals $\fp_1, \ldots, \fp_r, \fq_1, \ldots \fq_s$ such that $\fp_1 \ldots \fp_r \subseteq I_1$ and $\fq_1 \ldots \fq_s \subseteq I_2$. Then $\fp_1 \ldots \fp_r \fq_1 \ldots \fq_s \subseteq I_1 I_2 \subseteq I$.
+    Suppose otherwise. Since $R$ is Noetherian, we may choose $I$ maximal with this property. Then $I$ is not prime, so there are $x, y \in R \setminus I$ such that $xy \in I$. Let $I_1 = I + (x)$ and $I_2 = I + (y)$. By maximality of $I$, there are non-zero prime ideals $\fp_1, \ldots, \fp_r, \fq_1, \ldots, \fq_s$ such that $\fp_1 \ldots \fp_r \subseteq I_1$ and $\fq_1 \ldots \fq_s \subseteq I_2$. Then $\fp_1 \ldots \fp_r \fq_1 \ldots \fq_s \subseteq I_1 I_2 \subseteq I$.
 \end{proof}
 
 \begin{lemma}\label{lem:9_4}
     Let $R$ be an integrally closed integral domain, $I \subseteq R$ a non-zero finitely generated ideal, and $x \in K$. If $x I \subseteq I$, then $x \in R$.
 \end{lemma}
 \begin{proof}
-    
+    Let $I = \langle c_1, \ldots, c_n \rangle$. Then there are $a_{ij} \in R$ such that
+    \begin{equation*}
+        x c_i = \sum_{j=1}^\infty a_{ij} c_j
+    \end{equation*}
+    Let $A$ be the matrix $(a_{ij})$ and set $B = x I - A$. Let $\Adj(B)$ denote the adjugate matrix for $B$. Then multiplying the equality $B (c_1, \ldots, c_n)^t = 0$ on the left by $\Adj(B)$, we get $(\det{B}) (c_1, \ldots, c_n)^t = 0$. Since some $c_i$ is non-zero, we have $\det(B) = 0$, which gives an integral relation for $x$.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:9_2}]\phantom{}\\
+    \noindent ($\Rightarrow$) Clear.
+
+    \noindent ($\Leftarrow$) We need to show that $R$ is a PID. The assumption implies that $R$ is a local ring with unique maximal ideal $\fm$.
+
+    \noindent \underline{Step 1:} $\fm$ is principal.
+
+    Let $0 \neq x \in \fm$. By \autoref{lem:9_3}, $(x) \supseteq \fm^n$ for some $n \ge 1$. Let $n$ be minimal such that $(x) \supseteq \fm^n$. Then there is some $y \in \fm^{n-1} \setminus (x)$. Set $\pi = x / y$. Then $y \fm \subseteq \fm^n \subseteq (x)$, so $\pi^{-1} \fm \subseteq R$. If $\pi^{-1} \fm \neq R$, then $\pi^{-1} \in R$ by \autoref{lem:9_4}, so $y \in (x)$, contradiction.
+
+    \noindent \underline{Step 2:} $R$ is a PID.
+
+    Let $I \subseteq R$ be a non-zero ideal. Consider the sequence of fractional ideals $I \subseteq \pi^{-1} I \subseteq \pi^{-2} I \subseteq \ldots$ in $K$. Since $\pi^{-1} \notin R$, $\pi^{-k} I \neq \pi^{-(k+1)} I$ by \autoref{lem:9_4}. Since $R$ is Noetherian, we may choose $n$ maximal such that $\pi^{-n} \subseteq R$. If $\pi^{-n} I \neq R$, then $\pi^{-n} I \subseteq \fm = (\pi)$, so $\pi^{-(n+1)} I \subseteq R$, contradiction.
+
+    Thus $\pi^{-n} I = R$, so $I = (\pi^n)$.
+\end{proof}
+
+Let $R$ be an integral domain and $S \subseteq R$ be a multiplicatively closed subset, i.e. $x, y \in S \implies xy \in S$, $1 \in S$, and $0 \notin S$.
+
+The \emph{localisation} $S^{-1}R$ of $R$ with respect to $S$ is the ring $S^{-1} R = \{r/s \mid r \in R, s \in S\} \subseteq \Frac(R)$.
+
+If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with respect to $S = R \setminus \fp$.
+
+\begin{example}\phantom{}
+    \begin{itemize}
+        \item If $\fp = (0)$, then $R_{(\fp)} = \Frac(R)$
+        \item If $R = \bZ$, then $\bZ_{(p)} = \{a / b \mid a \in \bZ, (b, p) = 1\}$.
+    \end{itemize}
+\end{example}
+
+\begin{fact}\phantom{}
+    \begin{itemize}
+        \item If $R$ is Noetherian, then so is $S^{-1}R$.
+        \item There is a bijection
+
+            \begin{tabular}{ccc}
+                $\{\text{prime ideals in } S^{-1}R\}$ & $\longleftrightarrow$ & $\{\text{prime ideals } \fp \subseteq R \text{ such that } \fp \cap S = \emptyset\}$\\
+                $\fp S^{-1}R$ & $\mapsfrom$ & $\fp$
+            \end{tabular}
+    \end{itemize}
+\end{fact}
+
+\begin{corollary}\label{cor:9_5}
+    Let $R$ be a Dedekind domain, $\fp \subseteq R$ be a non-zero prime ideal. Then $R_{(\fp)}$ is a DVR.
+\end{corollary}
+\begin{proof}
+    By the properties of localisation, $R_{(\fp)}$ is a Noetherian integral domain with unique non-zero prime ideal $\fp R_{(\fp)}$. By \autoref{thm:9_2}, it suffices to show that $R_{(\fp)}$ is integrally closed in $\Frac(R_{(\fp)}) = \Frac(R)$.
+
+    Let $x \in \Frac(R)$ be integral over $R_{(\fp)}$. Clearing denominators in the integral relation satisfied by $x$, we obtain
+    \begin{equation*}
+        s x^n + a_{n-1} x^{n-1} + \ldots + a_0 = 0
+    \end{equation*}
+    for some $a_i \in R$ and $s \in S = R \setminus \fp$. Multiplying by $s^{n-1}$, we see that $xs$ is integral over $R$, so $xs \in R$, $x \in R_{(\fp)}$ as required.
 \end{proof}
 
 \end{document}

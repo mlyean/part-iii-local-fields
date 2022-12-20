@@ -24,6 +24,7 @@ More on inverse limits	main.tex	/^\\subsubsection*{More on inverse limits}$/;"	b
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
+\\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{\\mathrm{Adj}}$/;"	o
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{\\mathrm{char}}$/;"	o
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
 \\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{\\mathrm{Gal}}$/;"	o
@@ -48,6 +49,7 @@ cor:4_3	main.tex	/^\\begin{corollary}\\label{cor:4_3}$/;"	l
 cor:4_5	main.tex	/^\\begin{corollary}\\label{cor:4_5}$/;"	l
 cor:6_10	main.tex	/^\\begin{corollary}\\label{cor:6_10}$/;"	l
 cor:6_11	main.tex	/^\\begin{corollary}\\label{cor:6_11}$/;"	l
+cor:9_5	main.tex	/^\\begin{corollary}\\label{cor:9_5}$/;"	l
 corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[subsection]$/;"	t
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
