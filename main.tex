@@ -37,6 +37,7 @@
 \DeclareMathOperator{\Int}{\mathrm{int}}
 \DeclareMathOperator{\Gal}{\mathrm{Gal}}
 \DeclareMathOperator{\Adj}{\mathrm{Adj}}
+\DeclareMathOperator{\Tr}{\mathrm{Tr}}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -45,6 +46,7 @@
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\bC}{\mathbb{C}}
 \newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
 \newcommand{\fp}{\mathfrak{p}}
 \newcommand{\fq}{\mathfrak{q}}
 \newcommand{\fm}{\mathfrak{m}}
@@ -1240,5 +1242,97 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
     \end{equation*}
     for some $a_i \in R$ and $s \in S = R \setminus \fp$. Multiplying by $s^{n-1}$, we see that $xs$ is integral over $R$, so $xs \in R$, $x \in R_{(\fp)}$ as required.
 \end{proof}
+
+\begin{definition}
+    If $R$ is a Dedekind domain, $\fp \subseteq R$ a non-zero prime ideal, then we write $v_p$ for the normalised valuation on $\Frac(R) = \Frac(R_{(\fp)})$ corresponding to the DVR $R_{(\fp)}$.
+\end{definition}
+
+\begin{example}
+    If $R = \bZ$, $\fp = (p)$, then $v_p$ is the $p$-adic valuation.
+\end{example}
+
+\begin{theorem}
+    Let $R$ be a Dedekind domain. Then every non-zero ideal in $I \subseteq R$ can be uniquely written as a product of prime ideals
+    \begin{equation*}
+        I = \fp_1^{e_1} \ldots \fp_r^{e_1}
+    \end{equation*}
+    where $\fp$ are distinct primes, and $e_i > 0$.
+\end{theorem}
+\begin{proof}
+    We quote the following properties of localisation:
+    \begin{enumerate}
+        \item $I = J \iff I R_{(\fp)} = J R_{(\fp)}$ for all prime ideals $\fp$.
+        \item If $R$ is a Dedekind domain and $\fp_1, \fp_2$ are non-zero prime ideals, then
+            \begin{equation*}
+                \fp_1 R_{(\fp_2)} =
+                \begin{cases}
+                    R_{(\fp_2)} &\text{if } \fp_1 \neq \fp_2\\
+                    \fp_2 R_{(\fp_2)} &\text{if } \fp_1 = \fp_2
+                \end{cases}
+            \end{equation*}
+    \end{enumerate}
+
+    Let $I \subseteq R$ be a non-zero ideal. Then by \autoref{lem:9_3}, there are distinct prime ideals $\fp_1, \ldots, \fp_r$ and $\beta_i > 0$ such that $\fp_1^{\beta_1} \ldots \fp_r^{\beta_r} \subseteq I$. Let $\fp$ be a non-zero prime ideal with $\fp \neq \fp_i$ for each $i$. Then (ii) implies that $\fp_i R_{(\fp)} = R_{(\fp)}$, so $I R_{(\fp)} = R_{(\fp)}$. By \autoref{cor:9_5}, $I R_{(\fp_i)} = \fp_i^{\alpha_i} R_{(\fp_i)}$ for some $0 \le \alpha_i \le \beta_i$. Thus $I = \fp_1^{\alpha_1} \ldots \fp_r^{\alpha_r}$ by (i).
+
+    For uniqueness, suppose that $I = \fp_1^{\alpha_1} \ldots \fp_r^{\alpha_r} = \fp_1^{\gamma_1} \ldots \fp_r^{\gamma_r}$. Then $\fp_i^{\alpha_i} R_{(\fp_i)} = \fp_i^{\gamma_i} R_{(\fp_i)}$, so $\alpha_i = \gamma_i$ by unique factorisation in DVRs.
+\end{proof}
+
+\subsection{Extensions of Dedekind Domains}
+
+Let $L / K$ be a finite extension. For $x \in L$, we write $\Tr_{L/K}(x) \in K$ for the trace of the $K$-linear map $y \mapsto x y$. If $L/K$ is separable of degree $n$, let $\sigma_1, \ldots, \sigma_n : L \to \overline{K}$ denote the set of distinct embeddings of $L$ into an algebraic closure $\overline{K}$. Then
+\begin{equation*}
+    \Tr_{L/K}(x) = \sum_{i=1}^n \sigma_i(x)
+\end{equation*}
+
+\begin{lemma}\label{lem:10_1}
+    Let $L / K$ be a finite separable extension of fields. Then the symmetric bilinear pairing $(\cdot, \cdot) : L \times L \to K$ defined by $(x, y) = \Tr_{L/K}(xy)$ is non-degenerate.
+\end{lemma}
+\begin{proof}
+    Since $L/K$ is separable, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix $A$ of $(\cdot, \cdot)$ with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$. We have
+    \begin{equation*}
+        A_{ij} = Tr_{L/K}(\alpha^{i+j}) = [B B^t]_{ij}
+    \end{equation*}
+    where $B_{ij} = \sigma_j(\alpha^i)$.
+
+    Then $\det(A) = \det(B)^2 = \prod_{1 \le i < j \le n} (\sigma_i(\alpha) - \sigma_j(\alpha))^2 \neq 0$, since $\sigma_i(\alpha) \neq \sigma_j(\alpha)$ for $i \neq j$ by separability.
+\end{proof}
+
+On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff the trace form is non-degenerate.
+
+\begin{theorem}\label{thm:10_2}
+    Let $\cO_K$ be a Dedekind domain and $L$ a finite separable extension of $K = \Frac(\cO_K)$. Then the integral closure $\cO_L$ of $\cO_K$ in $L$ is also a Dedekind domain.
+\end{theorem}
+\begin{proof}
+    Since $\cO_L$ is a subring of $L$, $\cO_L$ is an integral domain. We need to show that
+    \begin{enumerate}
+        \item $\cO_L$ is Noetherian,
+        \item $\cO_L$ is integrally closed in $L$,
+        \item Every non-zero prime ideal $\cP$ in $\cO_L$ is maximal.
+    \end{enumerate}
+
+    \begin{enumerate}
+        \item Let $e_1, \ldots, e_n \in L$ be a $K$-basis for $L$. Upon rescaling by $K$, we may assume that $e_i \in \cO_L$ for all $i$. Let $f_1, \ldots, f_n$ be the dual basis for $e_1, \ldots, e_n$ with respect to the trace form $(\cdot, \cdot)$, i.e. $(e_i, f_j) = \delta_{ij}$.
+
+            Let $x \in \cO_L$ and write $x = \sum_{i=1}^n \lambda_i f_i$, with $\lambda_i \in K$. Then $\lambda_i = \Tr_{L/K}(x e_i) \in \cO_K$. Thus $\cO_L \subseteq \cO_K f_1 + \ldots \cO_K f_n$, which is a finitely generated $\cO_K$-module. Since $\cO_K$ is Noetherian, it follows that $\cO_L$ is a finitely generated $\cO_K$-module, hence Noetherian.
+
+        \item This is an exercise on Example Sheet 2.
+
+        \item Let $\cP$ be a non-zero prime ideal in $\cO_L$. Let $\fp = \cP \cap \cO_K$, which is a prime in $\cO_K$. Let $0 \neq x \in \cP$ Then $x$ satisfies an equation of the form $x^n + a_{n-1}x^{n-1} + \ldots + a_0 = 0$, with $a_i \in \cO_K$ and $a_0 \neq 0$. Thus $a_0 \in \fp$, so $\fp \neq 0$ hence is maximal.
+
+            We have an inclusion $\cO_K / \fp \hookrightarrow \cO_L / \cP$ that makes $\cO_L / \cP$ a finite-dimensional\footnote{recall that $\cO_L$ is a finitely generated $\cO_K$-module} vector space over $\cO_K / \fp$. Since $\cO_L / \cP$ is an integral domain, it is a field\footnote{for $0 \neq z \in \cO_L / \cP$, the map $y \mapsto z y$ is injective hence an isomorphism by rank-nullity}. Thus $\cP$ is maximal. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    \autoref{thm:10_2} holds without the assumption that $L / K$ is separable.
+\end{remark}
+
+\begin{corollary}
+    The ring of integers of a number field is a Dedekind domain.
+\end{corollary}
+
+As a convention, if $\cO_K$ is the ring of integers of a number field $K$, and $\fp \subseteq \cO_K$ is a non-zero prime ideal, we normalise $\abs{\cdot}_\fp$ by $\abs{x}_\fp = N_\fp^{-v_\fp(x)}$, where $N_\fp = \abs{\cO_K / \fp}$. Note that $N_\fp$ is finite. We can see this from the proof of \autoref{thm:10_2}: Let $\fp \cap \bZ = (p)$. Then $\cO_K / \fp$ is a finite-dimensional vector space over $\bF_p$.
+
+Also if $K = \bQ$, $\cO_K = \bZ$, $\fp = (p)$, then $N_\fp = p$, so the convention is consistent with the $p$-adic valuation defined previously.
 
 \end{document}

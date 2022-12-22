@@ -15,6 +15,7 @@ Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Dedekind Domains	main.tex	/^\\section{Dedekind Domains}$/;"	s
 Dedekind Domains	main.tex	/^\\subsection{Dedekind Domains}$/;"	u	section:Dedekind Domains
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
+Extensions of Dedekind Domains	main.tex	/^\\subsection{Extensions of Dedekind Domains}$/;"	u	section:Dedekind Domains
 Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
 Inverse limits	main.tex	/^\\subsubsection*{Inverse limits}$/;"	b	subsection:Basic Theory""\\texorpdfstring{$p$}{p}-adic numbers
@@ -29,6 +30,7 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
 \\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{\\mathrm{Gal}}$/;"	o
 \\Int	main.tex	/^\\DeclareMathOperator{\\Int}{\\mathrm{int}}$/;"	o
+\\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{\\mathrm{Tr}}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
 \\bF	main.tex	/^\\newcommand{\\bF}{\\mathbb{F}}$/;"	C
 \\bN	main.tex	/^\\newcommand{\\bN}{\\mathbb{N}}$/;"	C
@@ -36,6 +38,7 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\bR	main.tex	/^\\newcommand{\\bR}{\\mathbb{R}}$/;"	C
 \\bZ	main.tex	/^\\newcommand{\\bZ}{\\mathbb{Z}}$/;"	C
 \\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
+\\cP	main.tex	/^\\newcommand{\\cP}{\\mathcal{P}}$/;"	C
 \\fm	main.tex	/^\\newcommand{\\fm}{\\mathfrak{m}}$/;"	C
 \\fp	main.tex	/^\\newcommand{\\fp}{\\mathfrak{p}}$/;"	C
 \\fq	main.tex	/^\\newcommand{\\fq}{\\mathfrak{q}}$/;"	C
@@ -52,6 +55,7 @@ cor:6_11	main.tex	/^\\begin{corollary}\\label{cor:6_11}$/;"	l
 cor:9_5	main.tex	/^\\begin{corollary}\\label{cor:9_5}$/;"	l
 corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[subsection]$/;"	t
+lem:10_1	main.tex	/^\\begin{lemma}\\label{lem:10_1}$/;"	l
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
 lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
 lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
@@ -81,6 +85,7 @@ prop:7_4	main.tex	/^\\begin{proposition}\\label{prop:7_4}$/;"	l
 prop:8_4	main.tex	/^\\begin{proposition}\\label{prop:8_4}$/;"	l
 proposition	main.tex	/^\\newtheorem{proposition}[definition]{Proposition}$/;"	t
 theorem	main.tex	/^\\newtheorem{theorem}[definition]{Theorem}$/;"	t
+thm:10_2	main.tex	/^\\begin{theorem}\\label{thm:10_2}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
