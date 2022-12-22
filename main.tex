@@ -1335,4 +1335,91 @@ As a convention, if $\cO_K$ is the ring of integers of a number field $K$, and $
 
 Also if $K = \bQ$, $\cO_K = \bZ$, $\fp = (p)$, then $N_\fp = p$, so the convention is consistent with the $p$-adic valuation defined previously.
 
+For the remaining of this section, let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_K}$, $L / K$ a finite separable extension, $\cO_L$ the integral closure of $\cO_K$ in $L$, which is a Dedekind domain by \autoref{thm:10_2}.
+
+\begin{lemma}\label{lem:10_4}
+    Let $0 \neq x \in \cO_K$. Then
+    \begin{equation*}
+        (x) = \prod_{\fp \neq 0} \fp^{v_\fp(x)}
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    By definition of $v_\fp(x)$, $x \cO_{K(p)} = \fp^{v_\fp(x)} \cO_{K(\fp)}$. The lemma follows by the properties of localisation: $I = J \iff \forall \text{ prime ideals } \fp, I \cO_{K(p)} = J \cO_{K(p)}$.
+\end{proof}
+
+Let $\cP \subseteq \cO_L$ and $\fp \subseteq \cO_K$ be non-zero prime ideals. We write $\cP \mid \fp$ if $\cP$ is one of the primes occurring in the prime factorisation of $\fp \cO_L$, i.e. if $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$ where $e_i > 0$ and $\cP = \cP_i$ for some $i$.
+
+\begin{theorem}\label{thm:10_5}
+    For a non-zero prime ideal $\fp \subseteq \cO_K$, write $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$, where $e_i > 0$. Then the absolute values on $L$ extending $\abs{\cdot}_\fp$ are precisely $\abs{\cdot}_{\cP_1}, \ldots, \abs{\cdot}_{\cP_r}$ (up to equivalence).
+\end{theorem}
+\begin{proof}
+    By \autoref{lem:10_4}, for any $0 \neq x \in \cO_K$ and $1 \le i \le r$, we have $v_{\cP_i}(x) = e_i v_\fp(x)$. Hence up to equivalence, $\abs{\cdot}_{\cP_i}$ extends $\abs{\cdot}_\fp$.
+
+    Now suppose $\abs{\cdot}$ is an absolute value on $L$ extending $\abs{\cdot}_\fp$. Then $\abs{\cdot}$ is non-archimedean since $\abs{\cdot}_\fp$ is, by \autoref{lem:7_9}. Let $R = \{x \in L \mid \abs{x} \le 1\}$ be the valuation ring for $\abs{\cdot}$. Then $\cO_K \subseteq R$ as $\abs{\cdot}$ extends $\abs{\cdot}_\fp$. Since $R$ is integrally closed in $L$ by \autoref{lem:6_8}, we have $\cO_L \subseteq R$. Set $\cP = \{x \in \cO_L \mid \abs{x} < 1\} = \cO_L \cap \fm_R$, where $\fm_R \subseteq R$ is the maximal ideal. Then $\cP$ is a prime ideal of $\cO_L$, non-zero since $\fp \subseteq \cP$. Then $\cO_{L(\cP)} \subseteq R$, since $s \in \cO_L \setminus \cP$ implies $\abs{s} = 1$. Since $\cO_{L(\cP)}$ is a DVR, it is a maximal subring of $L = \Frac(\cO_{L(\cP)})$. Thus $\cO_{L(\cP)} = R$. Thus $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\cP$, since by \autoref{prop:1_3}, the absolute values are determined by their valuation rings. Finally, note that $\fp \subseteq \cP$ implies that $\cP$ is one of the $\cP_i$.
+\end{proof}
+
+Let $K$ be a number field. If $\sigma : K \to \bR, \bC$ is a real or complex embedding, then $\abs{x}_\sigma = \abs{\sigma(x)}_\infty$ defines an absolute value on $K$.
+
+\begin{corollary}
+    Let $K$ be a number field with ring of integers $\cO_K$. Then any absolute value on $K$ is equivalent to
+    \begin{enumerate}
+        \item $\abs{\cdot}_\fp$ for some non-zero prime ideal $\fp \subseteq \cO_K$
+        \item $\abs{\cdot}_\sigma$ for some $\sigma : K \to \bR$ or $\bC$.
+    \end{enumerate}
+\end{corollary}
+\begin{proof}
+    \underline{Case 1:} $\abs{\cdot}$ is non-archimedean. By \autoref{thm:7_10}, $\abs{\cdot} \vert_\bQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. By \autoref{thm:10_5}, $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\fp$ for some prime $\fp \mid (p)$.
+
+    \underline{Case 2:} $\abs{\cdot}$ is non-archimedean. See Example Sheet 2.
+\end{proof}
+
+\subsection*{Completions}
+
+Let $\fp \subseteq \cO_K$ and $\cP \subseteq \cO_L$ be non-zero prime ideals with $\cP \mid \fp$. Write $K_\fp$ and $L_\cP$ for the completions of $K$ and $L$ with respect to the absolute values $\abs{\cdot}_\fp$ and $\abs{\cdot}_\cP$ respectively.
+
+Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_\fp \subseteq L_\cP$, since $\abs{\cdot}_\cP \vert_K$ is equivalent to $\abs{\cdot}_\fp$.
+
+\begin{lemma}\label{lem:10_7}\phantom{}
+    \begin{enumerate}
+        \item The natural map $\pi_\cP : L \otimes_K K_\fp \to L_\cP$ is surjective,
+        \item $[L_\cP : K_\fp] \le [L : K]$
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    Let $M = L K_\fp \subseteq L_\cP$. Write $L = K(\alpha)$. Then $M = K_\fp(\alpha)$. Hence $M$ is a finite extension of $K_\fp$ and $[M : K_\fp] \le [L : K]$. Moreover $M$ is complete by \autoref{thm:6_1}, and $L \subseteq M \subseteq L_\cP$, so $M = L_\cP$.
+\end{proof}
+
+\begin{lemma}[Chinese Remainder Theorem]\label{lem:10_8}
+    Let $R$ be a ring and $I_1, \ldots, I_n$ be ideals of $R$ such that $I_i + I_j = R$ for $i \neq j$. Then
+    \begin{enumerate}
+        \item $\bigcap_{i=1}^n I_i = \prod_{i=1}^n I_i$
+        \item $R / I \cong \prod_{i=1}^n R/I_i$, where $I$ is the ideal in (i).
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    See Example Sheet 2.
+\end{proof}
+
+\begin{theorem}\label{thm:10_9}
+    The natural map $L \otimes_K K_\fp \to \prod_{\fp \mid \cP} L_\cP$ is an isomorphism.
+\end{theorem}
+\begin{proof}
+    Write $L = K(\alpha)$ and let $f(X) \in K[X]$ be the minimal polynomial of $\alpha$. Factorize $f$ as $f = f_1 \ldots f_r$ in $K_\fp[X]$, where $f_i \in K_\fp[X]$ are irreducible, distinct by separability. Since $L \cong K[X] / (f(X))$, we have
+    \begin{equation*}
+        L \otimes_K K_\fp \cong K_\fp[X]/(f(X)) \cong \prod_{i=1}^r K_\fp[X]/(f_i(X))
+    \end{equation*}
+    where the last isomorphism follows from \autoref{lem:10_8}. Set $L_i = K_\fp[X] / (f_i(X))$, which is a finite extension of $K_\fp$. $L_i$ contains $L$, since we have an inclusion $L \cong K[X] / (f(X)) \to K_\fp[X] / (f_i(X)) = L_i$. Also $L$ is dense in $L_i$, since $K$ is dense in $K_\fp$. The theorem follows from the following three claims:
+    \begin{enumerate}
+        \item $L_i \cong L_\cP$ for some prime $\cP \mid \fp$,
+        \item Each $\cP$ appears at most once
+        \item Each $\cP$ appears at least once
+    \end{enumerate}
+    Proof of claims:
+    \begin{enumerate}
+        \item
+        \item
+        \item
+    \end{enumerate}
+\end{proof}
+
 \end{document}
