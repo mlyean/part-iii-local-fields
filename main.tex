@@ -1416,10 +1416,14 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{enumerate}
     Proof of claims:
     \begin{enumerate}
-        \item
-        \item
-        \item
+        \item Since $L_i/K_\fp$ is a finite extension, there is a unique absolute value on $L_i$ extending $\abs{\cdot}_\fp$ by \autoref{thm:6_1}. By \autoref{thm:10_5}, $\abs{\cdot} \vert_L$ is equivalent to $\abs{\cdot} \vert_\cP$ for some $\cP \mid \fp$. Since $L$ is dense in $L_i$ and $L_i$ is complete, we have $L_i \cong L_\cP$.
+        \item Suppose $\phi_i : L_i \xrightarrow{\sim} L_j$ is an isomorphism preserving $L$ and $K_\fp$. Then $\varphi : K_\fp[X] / f_i(X) \to K_\fp[X] / f_j(X)$ takes $X$ to $X$, so $f_i = f_j$, and $i = j$.
+        \item By \autoref{lem:10_7}, the natural map $\pi_\cP : L \otimes_K K_\fp \to L_\cP$ is surjective for any $\cP \mid \fp$. Since $L_\cP$ is a field, $\pi_\cP$ factors through $L_i$ for some $i$, and hence $L_i \cong L_\cP$ by surjectivity. \qedhere
     \end{enumerate}
 \end{proof}
+
+\begin{example}
+    Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. $\bQ(i) \otimes_\bQ \bQ_5 \cong \bQ_5 \otimes_\bQ \bQ[X]/(X^2 + 1) \cong \bQ_5[X]/(X^2+1) \cong \bQ_5[X]/(X-\sqrt{-1}) \times \bQ_5[X]/(X+\sqrt{-1}) \cong \bQ_5 \times \bQ_5$. Thus $5$ splits in $\bQ(i)$ as $5 \cO_L = \fp_1 \fp_2$.
+\end{example}
 
 \end{document}
