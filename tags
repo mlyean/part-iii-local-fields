@@ -46,6 +46,7 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
 \\thesection	main.tex	/^\\renewcommand\\thesection{\\Roman{section}}$/;"	C
+cor:10_6	main.tex	/^\\begin{corollary}\\label{cor:10_6}$/;"	l
 cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
 cor:4_2	main.tex	/^\\begin{corollary}\\label{cor:4_2}$/;"	l
