@@ -16,6 +16,7 @@ Completions	main.tex	/^\\subsection*{Completions}$/;"	u	section:Dedekind Domains
 Decomposition Groups	main.tex	/^\\subsection{Decomposition Groups}$/;"	u	section:Dedekind Domains
 Dedekind Domains	main.tex	/^\\section{Dedekind Domains}$/;"	s
 Dedekind Domains	main.tex	/^\\subsection{Dedekind Domains}$/;"	u	section:Dedekind Domains
+Different and Discriminant	main.tex	/^\\subsection{Different and Discriminant}$/;"	u	section:Ramification Theory
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
 Extensions of Dedekind Domains	main.tex	/^\\subsection{Extensions of Dedekind Domains}$/;"	u	section:Dedekind Domains
 Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
@@ -25,34 +26,39 @@ Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
 Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
 More on inverse limits	main.tex	/^\\subsubsection*{More on inverse limits}$/;"	b	subsection:Local Fields""Local Fields
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
+Ramification Theory	main.tex	/^\\section{Ramification Theory}$/;"	s
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
-\\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{\\mathrm{Adj}}$/;"	o
-\\Char	main.tex	/^\\DeclareMathOperator{\\Char}{\\mathrm{char}}$/;"	o
-\\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{\\mathrm{Frac}}$/;"	o
-\\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{\\mathrm{Gal}}$/;"	o
-\\Int	main.tex	/^\\DeclareMathOperator{\\Int}{\\mathrm{int}}$/;"	o
-\\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{\\mathrm{Tr}}$/;"	o
+\\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
+\\Char	main.tex	/^\\DeclareMathOperator{\\Char}{char}$/;"	o
+\\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{Frac}$/;"	o
+\\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{Gal}$/;"	o
+\\Int	main.tex	/^\\DeclareMathOperator{\\Int}{int}$/;"	o
+\\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{Tr}$/;"	o
 \\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
 \\bF	main.tex	/^\\newcommand{\\bF}{\\mathbb{F}}$/;"	C
 \\bN	main.tex	/^\\newcommand{\\bN}{\\mathbb{N}}$/;"	C
 \\bQ	main.tex	/^\\newcommand{\\bQ}{\\mathbb{Q}}$/;"	C
 \\bR	main.tex	/^\\newcommand{\\bR}{\\mathbb{R}}$/;"	C
 \\bZ	main.tex	/^\\newcommand{\\bZ}{\\mathbb{Z}}$/;"	C
+\\cD	main.tex	/^\\newcommand{\\cD}{\\mathcal{D}}$/;"	C
 \\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
 \\cP	main.tex	/^\\newcommand{\\cP}{\\mathcal{P}}$/;"	C
 \\fm	main.tex	/^\\newcommand{\\fm}{\\mathfrak{m}}$/;"	C
 \\fp	main.tex	/^\\newcommand{\\fp}{\\mathfrak{p}}$/;"	C
 \\fq	main.tex	/^\\newcommand{\\fq}{\\mathfrak{q}}$/;"	C
-\\mult	main.tex	/^\\DeclareMathOperator{\\mult}{\\mathrm{mult}}$/;"	o
+\\mult	main.tex	/^\\DeclareMathOperator{\\mult}{mult}$/;"	o
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
+\\res	main.tex	/^\\DeclareMathOperator{\\res}{res}$/;"	o
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
 \\thesection	main.tex	/^\\renewcommand\\thesection{\\Roman{section}}$/;"	C
 cor:10_6	main.tex	/^\\begin{corollary}\\label{cor:10_6}$/;"	l
 cor:11_5	main.tex	/^\\begin{corollary}\\label{cor:11_5}$/;"	l
 cor:11_6	main.tex	/^\\begin{corollary}\\label{cor:11_6}$/;"	l
+cor:12_4	main.tex	/^\\begin{corollary}\\label{cor:12_4}$/;"	l
 cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
+cor:3_7	main.tex	/^\\begin{corollary}\\label{cor:3_7}\\phantom{}$/;"	l
 cor:4_2	main.tex	/^\\begin{corollary}\\label{cor:4_2}$/;"	l
 cor:4_3	main.tex	/^\\begin{corollary}\\label{cor:4_3}$/;"	l
 cor:4_5	main.tex	/^\\begin{corollary}\\label{cor:4_5}$/;"	l
@@ -65,6 +71,8 @@ lem:10_1	main.tex	/^\\begin{lemma}\\label{lem:10_1}$/;"	l
 lem:10_4	main.tex	/^\\begin{lemma}\\label{lem:10_4}$/;"	l
 lem:10_7	main.tex	/^\\begin{lemma}\\label{lem:10_7}\\phantom{}$/;"	l
 lem:10_8	main.tex	/^\\begin{lemma}[Chinese Remainder Theorem]\\label{lem:10_8}$/;"	l
+lem:12_1	main.tex	/^\\begin{lemma}\\label{lem:12_1}$/;"	l
+lem:12_6	main.tex	/^\\begin{lemma}\\label{lem:12_6}$/;"	l
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
 lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
 lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
@@ -99,6 +107,7 @@ thm:10_2	main.tex	/^\\begin{theorem}\\label{thm:10_2}$/;"	l
 thm:10_5	main.tex	/^\\begin{theorem}\\label{thm:10_5}$/;"	l
 thm:10_9	main.tex	/^\\begin{theorem}\\label{thm:10_9}$/;"	l
 thm:11_3	main.tex	/^\\begin{theorem}\\label{thm:11_3}$/;"	l
+thm:12_2	main.tex	/^\\begin{theorem}\\label{thm:12_2}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
@@ -110,3 +119,4 @@ thm:7_11	main.tex	/^\\begin{theorem}\\label{thm:7_11}$/;"	l
 thm:7_8	main.tex	/^\\begin{theorem}\\label{thm:7_8}$/;"	l
 thm:8_5	main.tex	/^\\begin{theorem}\\label{thm:8_5}$/;"	l
 thm:9_2	main.tex	/^\\begin{theorem}\\label{thm:9_2}$/;"	l
+thm:9_7	main.tex	/^\\begin{theorem}\\label{thm:9_7}$/;"	l

@@ -20,25 +20,28 @@
 \newtheorem*{warning}{Warning}
 \newtheorem*{exercise}{Exercise}
 \newtheorem*{fact}{Fact}
+\newtheorem*{notation}{Notation}
 
 \theoremstyle{plain}
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{lemma}[definition]{Lemma}
 \newtheorem{corollary}[definition]{Corollary}
+\newtheorem*{lemma*}{Lemma}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
-\DeclareMathOperator{\Frac}{\mathrm{Frac}}
-\DeclareMathOperator{\Char}{\mathrm{char}}
-\DeclareMathOperator{\Int}{\mathrm{int}}
-\DeclareMathOperator{\Gal}{\mathrm{Gal}}
-\DeclareMathOperator{\Adj}{\mathrm{Adj}}
-\DeclareMathOperator{\Tr}{\mathrm{Tr}}
-\DeclareMathOperator{\mult}{\mathrm{mult}}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\res}{res}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -46,6 +49,7 @@
 \newcommand{\bQ}{\mathbb{Q}}
 \newcommand{\bR}{\mathbb{R}}
 \newcommand{\bC}{\mathbb{C}}
+\newcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\fp}{\mathfrak{p}}
@@ -512,7 +516,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Let $n \in \bZ$ be such that $\pi^{-n} x \in \cO_K$ and apply \autoref{prop:3_5} (ii) to $\pi^{-n} x$.
 \end{proof}
 
-\begin{corollary}\phantom{}
+\begin{corollary}\label{cor:3_7}\phantom{}
     \begin{enumerate}
         \item $\bZ_p \cong \varprojlim \bZ / p^n \bZ$.
         \item Every element of $x \in \bQ_p$ can be written uniquely as a Laurent series $x = \sum_{i=n}^\infty a_i p^i$ where $n \in \bZ$ and $a_i \in \{0, \ldots, p - 1\}$
@@ -524,7 +528,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
             \begin{equation*}
                 \ker{f_n} = \{x \in \bZ \mid \abs{x}_p \le p^{-n}\} = p^n \bZ
             \end{equation*}
-            $f_n$ is surjective: Let $\overline{c} \in \bZ_p / p^n \bZ_p$, and let $c \in \bZ_p$ be a lift. Since $\bZ$ is dense in $\bZ_p$, there is\footnote{recall that closed balls are open, and $x \in \bZ$ iff $x \in \overline{B}(c, p^{-n})$} an $x \in \bZ$ such that $x \in c + p^n \bZ$. Then $f_n(x) = \overline{c}$.
+            $f_n$ is surjective: Let $\overline{c} \in \bZ_p / p^n \bZ_p$, and let $c \in \bZ_p$ be a lift. Since $\bZ$ is dense in $\bZ_p$, there is\footnote{recall that closed balls are open, and $x \in \bZ$ iff $x \in \overline{B}(c, p^{-n})$} an $x \in \bZ$ such that $x \in c + p^n \bZ_p$. Then $f_n(x) = \overline{c}$.
 
             Thus $f_n$ induces an isomorphism $\tilde{f}_n : \bZ / p^n \bZ \to \bZ_p / p^n \bZ_p$. Note that the diagram
             \begin{equation*}
@@ -1252,7 +1256,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
     If $R = \bZ$, $\fp = (p)$, then $v_p$ is the $p$-adic valuation.
 \end{example}
 
-\begin{theorem}
+\begin{theorem}\label{thm:9_7}
     Let $R$ be a Dedekind domain. Then every non-zero ideal in $I \subseteq R$ can be uniquely written as a product of prime ideals
     \begin{equation*}
         I = \fp_1^{e_1} \ldots \fp_r^{e_1}
@@ -1438,7 +1442,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \end{proof}
 
 \subsection{Decomposition Groups}
-Let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_K}$, $L / K$ a finite separable extension, $\cO_L$ the integral closure of $\cO_K$ in $L$, $\fp$ a non-zero prime ideal of $\cO_K$. Suppose that $\fp$ factors as a product of distinct primes $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$ in $\cO_L$, where $e_i > 0$.
+Unless specified otherwise, we let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_K}$, $L / K$ a finite separable extension, $\cO_L$ the integral closure of $\cO_K$ in $L$, $\fp$ a non-zero prime ideal of $\cO_K$. Suppose that $\fp$ factors as a product of distinct primes $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$ in $\cO_L$, where $e_i > 0$.
 
 Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp = \cO_K \cap \cP_i$, since $\fp$ is maximal.
 
@@ -1471,7 +1475,7 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
         \item $(S^{-1} \fp) (S^{-1} \cO_L) \cong S^{-1}(\cP_1^{e_1} \ldots \cP_r^{e_r})$,
         \item $S^{-1} \cO_L / S^{-1} \cP_i \cong \cO_L / \cP_i$, and $S^{-1} \cO_K / S^{-1} \fp \cong \cO_K / \fp$.
     \end{enumerate}
-    In particular, (ii) and (iii) imply that $e_i$ and $f_i$ don't change when we replace $cO_K$ and $\cO_L$ by $S^{-1}\cO_K$ and $S^{-1} \cO_L$.
+    In particular, (ii) and (iii) imply that $e_i$ and $f_i$ don't change when we replace $\cO_K$ and $\cO_L$ by $S^{-1}\cO_K$ and $S^{-1} \cO_L$.
 
     Thus we may assume that $\cO_K$ is a DVR (hence a PID). By CRT, we have
     \begin{equation*}
@@ -1485,7 +1489,7 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
     \end{equation*}
     Thus $\dim_k \cO_L / \cP_i^{e_i} = \sum_{j=0}^{e_i - 1} \dim_k \cP_i^{j} / \cP_i^{j+1}$. Note that $\cP_i^{j} / \cP_i^{j+1} \cong \cO_L / \cP_i$ as $\cO_L / \cP_i$-modules: let $x \in \cP_i^j \setminus \cP_i^{j+1}$ and define a map $\cO_L \to \cP_i^j / \cP_i^{j+1}$ by $a \mapsto a x$. This is surjective since $\cP_i = x \cO_L + \cP_i^{j+1}$, and has kernel $\cP_i$. Thus $\dim_k \cP_i^j / \cP_i^{j+1} = f_i$, hence $\dim_k \cO_L / \cP_i^{e_i} = e_i f_i$ and $\dim_k \prod_{i=1}^r \cO_L / \cP_i^{e_i} = \sum_{i=1}^{r} e_i f_i$
 
-    For the LHS, the structure theorem for finitely-generated modules over PIDs implies that\footnote{since $\cO_L$ is torsion-free} $\cO_L$ is a free $\cO_K$-module of rank $n = [L : K]$. Thus $\cO_L / \fp \cO_L \cong (\cO_K / \fp)^n$ as $\cO_K / \fp$-modules, hence $\dim_K \cO_L / \fp \cO_L = n$.
+    For the LHS, the structure theorem for finitely generated modules over PIDs implies that\footnote{since $\cO_L$ is torsion-free, and finitely generated over $\cO_K$ by the proof of \autoref{thm:10_2}} $\cO_L$ is a free $\cO_K$-module of rank $n = [L : K]$. Thus $\cO_L / \fp \cO_L \cong (\cO_K / \fp)^n$ as $\cO_K / \fp$-modules, hence $\dim_K \cO_L / \fp \cO_L = n$.
 \end{proof}
 
 Now assume that $L / K$ is Galois. Then for $\sigma \in \Gal(L / K)$, $\sigma(\cP_i) \cap \cO_K = \fp$, and hence $\sigma(\cP_i) \in \{\cP_1, \ldots, \cP_r\}$. Thus $\Gal(L / K)$ acts on $\{\cP_1, \ldots, \cP_r\}$. We can say more:
@@ -1525,5 +1529,156 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 \end{definition}
 
 \autoref{prop:11_4} implies that for any $\cP, \cP' \mid \fp$, the subgroups $G_\cP$ and $G_{\cP'}$ are conjugate.
+
+\begin{proposition}
+    Suppose $L / K$ is Galois and $\cP \mid \fp$ is a prime of $\cO_L$. Then
+    \begin{enumerate}
+        \item $L_\cP / K_\fp$ is Galois,
+        \item There is a natural map $\res : \Gal(L_\cP) \to \Gal(L / K)$ which is injective and has image $G_\cP$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item Since $L/K$ is Galois, it is the splitting field of  a separable polynomial $f(X) \in K[X]$. Then $L_\cP / K_\fp$ is the splitting field of $f(X) \in K_\fp[X]$, as the splitting field of $f$ contains $L$ and is complete. Thus $L_\cP / K_\fp$ is Galois as required.
+
+        \item Let $\sigma \in \Gal(L_\cP / K_\fp)$. Since $L / K$ is normal, $\sigma(L) = L$, so we have a map $\res : \Gal(L_\cP / K_\fp) \to \Gal(L / K)$ given by restriction. $\res$ is injective, since $L$ is dense in $L_\cP$, and $\sigma \in \Gal(L_\cP / K_\fp)$ is continuous by \autoref{lem:8_2} say.
+
+            By \autoref{lem:8_2}, for any $\sigma \in \Gal(L_\cP / K_\fp)$, we have $\sigma(\cP) = \cP$, so $\res(\sigma) \in G_\cP$.
+
+            To show surjectivity, it suffices to show that $[L_\cP : K_\fp] = e_{L_\cP / K_\fp} f_{L_\cP / K_\fp} = e_{\cP / \fp} f_{\cP / \fp} = \abs{G_\cP}$. The first equality follows from \autoref{cor:11_6}. For the last equality, the orbit-stabilizer theorem with \autoref{prop:11_4} implies that $[G : G_\cP] = r$. Now use \autoref{cor:11_5}. The middle inequality is proven the next lemma. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma*}
+    Ramification indices and residue class degree do not change under completions, i.e.
+    \begin{enumerate}
+        \item $e_{\cP / \fp} = e_{L_\cP / K_\fp}$,
+        \item $f_{\cP / \fp} = f_{L_\cP / K_\fp}$.
+    \end{enumerate}
+\end{lemma*}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item $\pi \in \fp \setminus \fp^2$. Then $e_{\cP / \fp} =v_\cP(x) = e_{L_\cP / K_\fp}$, where the first follows by considering the factorisation of $x \cO_L$, and the second follows since $x$ is a uniformiser of $K_\fp$.
+
+        \item The inclusion $\cO_K \to \cO_{K_\fp}$ induces an inclusion $\cO_K / \fp \to \cO_{K_\fp} / \fp \cO_{K_\fp}$. This is surjective: Let $\overline{c} \in \cO_{K_\fp} / \fp\cO_{K_\fp}$, and let $c \in \cO_{K_\fp}$ be a lift of $\overline{x}$. Since $\cO_K$ is dense in $\cO_{K_\fp}$, there is an $x \in \cO_K$ such that $x \in c + \fp \cO_{K_\fp}$. Thus $x$ maps to $\overline{c}$. We have shown that $\cO_K / \fp \cong \cO_{K_\fp} / \fp \cO_{K_\fp}$. Similarly, $\cO_L / \cP \cong \cO_{L_\cP} / \fp \cO_{L_\cP}$. Thus the ramification indices are the same. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\section{Ramification Theory}
+
+\subsection{Different and Discriminant}
+
+Let $L / K$ be an extension of algebraic number fields of degree $n$.
+
+\begin{notation}
+    For $x_1, \ldots, x_n \in L$, define
+    \begin{equation*}
+        \Delta(x_1, \ldots, x_n) = \det(\Tr_{x_i x_j}) = \det(\sigma_i(x_j))^2 \in K
+    \end{equation*}
+    where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L$ in an algebraic closure.
+\end{notation}
+
+\begin{remark}\phantom{}
+    \begin{enumerate}
+        \item If $y = \sum_{j=1}^n a_{ij}x_j$, where $a_{ij} \in K$, then
+            \begin{equation*}
+                \Delta(y_1, \ldots, y_n) = \det(A)^2 \Delta(x_1, \ldots, x_n)
+            \end{equation*}
+        \item If $x_1, \ldots, x_n \in \cO_L$, then $\Delta(x_1, \ldots, x_n) \in \cO_K$.
+    \end{enumerate}
+\end{remark}
+
+\begin{lemma}\label{lem:12_1}
+    Let $k$ be a perfect field and $R$ a finite $k$-algebra. The trace form $(\cdot, \cdot) : R \times R \to k$ defined by
+    \begin{equation*}
+        (x, y) = \Tr_{R/k}(xy) = \Tr(\mult(xy))
+    \end{equation*}
+    is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite (hence separable) extensions.
+\end{lemma}
+\begin{proof}
+    TODO
+\end{proof}
+
+\begin{theorem}\label{thm:12_2}
+    Let $\fp \subseteq \cO_K$ be a non-zero prime ideal.
+    \begin{enumerate}
+        \item If $\fp$ ramifies in $L$, then for every $x_1, \ldots, x_n \in \cO_L$, we have $\fp \mid \Delta(x_1, \ldots, x_n)$.
+        \item If $\fp$ is unramified in $L$, then there exists $x_1, \ldots, x_n \in \cO_L$ such that $\fp \nmid \Delta(x_1, \ldots, x_n)$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Write $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$, where $\cP_i$ are distinct non-zero prime ideals of $\cO_L$, and $e_i > 0$. Let $R = \cO_L / \fp \cO_L$ and $k = \cO_K / \fp \cO_K$. CRT implies that $R \cong \prod_{i=1}^r \cO_L / \cP_i^{e_i}$.
+    \begin{enumerate}
+        \item If $\fp$ ramifies in $L$, then $R$ has nilpotents. Thus by \autoref{lem:12_1}, the trace form $(\cdot, \cdot)_{R/k}$ is degenerate. Thus for any $\overline{x_1}, \ldots, \overline{x_n} \in \cO_L / \fp \cO_L$, we have $\Delta(\overline{x_1}, \ldots, \overline{x_n}) = 0$, we can see this by casing on whether $\overline{x_1}, \ldots, \overline{x_n}$ forms a basis of $R$ over $k$. Thus (see lemma below) $\Delta(x_1, \ldots, x_n) \equiv 0 \pmod{\fp}$ for any $x_1, \ldots, x_n \in \cO_L$.
+
+        \item If $\cO_p$ is unramified, then $\cO_L / \fp \cO_L$ is a product of finite extensions of $k$. Thus by \autoref{lem:12_1}, the trace form $(\cdot, \cdot)_{R/k}$ is non-degenerate. Pick $x_1, \ldots, x_n \in \cO_L$ such that $\overline{x_i} \in R$ forms a basis as a $k$-vector space. Then $\Delta(\overline{x_1}, \ldots, \overline{x_n}) \neq 0$. Thus $\Delta(x_1, \ldots, x_n) \not\equiv 0 \pmod{\fp}$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma*}
+    Let $R$, $k$ be as in the proof of \autoref{thm:12_2} above. Then for $x \in \cO_L$, we have $Tr_{R/k}(\overline{x}) = \overline{Tr_{L/K}(x)}$.
+\end{lemma*}
+\begin{proof}
+    By localizing at $\fp$ (as in the proof of \autoref{thm:11_3}), we may assume that $\cO_K$ is a PID. By the structure theorem for finitely generated modules over PIDs, $\cO_L$ is a free $\cO_K$-module. Let $x_1, \ldots, x_n$ be an $\cO_K$-basis for $\cO_L$. Then $x_1, \ldots, x_n$ is a $K$-basis for $L$, and $\overline{x_1}, \ldots, \overline{x_n}$ is a $k$-basis for $R$. Now it is easy to check that for $x \in \cO_L$, the matrix of $\mult(\overline{x})$ is just the matrix of $\mult(x)$ reduced modulo $\fp$, so the same holds for traces.
+\end{proof}
+
+\begin{definition}
+    The \emph{discriminant} is the ideal $d_{L / K} \subseteq \cO_K$ given by
+    \begin{equation*}
+        d_{L/K} = \langle \Delta(x_1, \ldots, x_n) \mid x_1, \ldots, x_n \in \cO_L \rangle
+    \end{equation*}
+\end{definition}
+
+\begin{corollary}\label{cor:12_4}
+    $\fp$ ramifies in $L$ iff $\fp \mid d_{L/K}$.
+\end{corollary}
+
+\begin{definition}
+    The \emph{inverse different} is $\cD_{L/K}^{-1} = \{y \in L \mid \forall x \in \cO_L, \Tr_{L/K}(xy) \in \cO_K \}$
+\end{definition}
+
+\begin{lemma}\label{lem:12_6}
+    $\cD_{L/K}^{-1}$ is a fractional ideal, i.e. there exists $0 \neq \alpha \in \cO_L$ such that $\alpha \cD_{L/K}^{-1} \subseteq \cO_L$.
+\end{lemma}
+\begin{proof}
+    Let $x_1, \ldots, x_n$ be a basis for $L$ as a $K$-vector space. Set $d = \Delta(x_1, \ldots, x_n) \in \cO_K$. For $x \in \cD_{L/K}^{-1}$, write $x = \sum_{j=1}^n \lambda_j x_j$, where $\lambda_j \in K$. Then $\Tr_{L/K}(x x_i) = \sum_{j=1}^n \lambda_j \Tr_{L/K}(x_i x_j)$. Set $a_{ij} = \Tr_{L/K}(x_i x_j)$, $A = (a_{ij})$. Then
+    \begin{equation*}
+        A
+        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix} 
+        =
+        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix} 
+    \end{equation*}
+    Multiplying both sides by $\Adj(A) \in M_n(\cO_K)$, we get
+    \begin{equation*}
+        d
+        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix} 
+        = \Adj(A)
+        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix} 
+    \end{equation*}
+    Thus $\lambda_i \in \frac{1}{d} \cO_K$, so $x \in \frac{1}{d} \cO_L$. This shows that $d \cD_{L/K}^{-1} \subseteq \cO_L$.
+\end{proof}
+
+The inverse $\cD_{L/K} \subseteq \cO_L$ of $\cD_{L/K}^{-1}$ is called the \emph{different ideal}.
+
+Let $I_L, I_K$ denote the groups of fractional ideals in $L$ and $K$ respectively. \autoref{thm:9_7} implies that $\cO_K$ is a free abelian group generated by non-zero primes ideals $\fp \subseteq \cO_K$, and similarly for $I_L$.
+
+Define a group homomorphism $N_{L/K} : I_L \to I_K$ by $\cP \mapsto \fp^f$, where $\fp = \cP \cap \cO_K$, $f = f_{\cP / \fp}$. We have natural group homomorphisms $K^\times \to I_K$ and $L^\times \to I_L$ sending a unit to the principal fractional ideal that it generates.
+
+\begin{remark}
+    Consider the extension $K / \bQ$. For an ideal $I \subseteq \cO_K$ $N_{K / \bQ}(I) = [\cO_K : I]$.
+\end{remark}
+
+\begin{fact} The diagram
+    \begin{equation*}
+    \begin{tikzcd}
+        L^\times \arrow[d, "N_{L/K}"'] \arrow[r] & I_L \arrow[d, "N_{L/K}"]\\
+        K^\times \arrow[r] & I_K
+    \end{tikzcd}
+    \end{equation*}
+    commutes. This follows from $v_\fp(N_{L_\cP/K_\fp}(x)) = f_{\cP / \fp} v_\cP(x)$, where $v_\cP$ and $v_\fp$ are normalised valuations on $L_\cP$ and $K_\fp$ respectively.
+\end{fact}
+\begin{theorem}
+    $N_{L/K}(\cD_{L/K}) = d_{L/K}$.
+\end{theorem}
 
 \end{document}
