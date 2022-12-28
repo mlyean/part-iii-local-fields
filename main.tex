@@ -38,6 +38,7 @@
 \DeclareMathOperator{\Gal}{\mathrm{Gal}}
 \DeclareMathOperator{\Adj}{\mathrm{Adj}}
 \DeclareMathOperator{\Tr}{\mathrm{Tr}}
+\DeclareMathOperator{\mult}{\mathrm{mult}}
 
 \newcommand{\bF}{\mathbb{F}}
 \newcommand{\bN}{\mathbb{N}}
@@ -1425,5 +1426,104 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \begin{example}
     Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. $\bQ(i) \otimes_\bQ \bQ_5 \cong \bQ_5 \otimes_\bQ \bQ[X]/(X^2 + 1) \cong \bQ_5[X]/(X^2+1) \cong \bQ_5[X]/(X-\sqrt{-1}) \times \bQ_5[X]/(X+\sqrt{-1}) \cong \bQ_5 \times \bQ_5$. Thus $5$ splits in $\bQ(i)$ as $5 \cO_L = \fp_1 \fp_2$.
 \end{example}
+
+\begin{corollary}
+    For $x \in L$,
+    \begin{equation*}
+        N_{L/K}(x) = \prod_{\cP \mid \fp} N_{L_\cP/K_\fp}(x)
+    \end{equation*}
+\end{corollary}
+\begin{proof}
+    Let $B_1, \ldots, B_r$ be bases for $L_{\cP_1}, \ldots, L_{\cP_r}$ as $K_\fp$-vector spaces, where $\cP_i$ are the primes dividing $\fp$. Then $B = \cup B_i$ is a basis for $L \otimes K_\fp$ over $K_\fp$ by \autoref{thm:10_9}. Let $[\mathrm{mult}(x)]_B$ and $[\mathrm{mult}(x)]_{B_i}$ denote the matrices for $\mult(x) : L \otimes K_\fp \to L \otimes K_\fp$ with respect to the basis $B$ and $\mult(x) : L_{\cP_i} \to L_{\cP_i}$ with respect to the basis $B_i$ respectively. Then $[\mult(x)]_B$ is a block-diagonal matrix with blocks $[\mult(x)]_{B_i}$. Thus taking determinants, $N_{L/K}(x) = \det [\mult(x)]_B = \prod_{i=1}^r \det [\mult(x)]_{B_i} = \prod_{i=1}^r N_{L_{\cP_i} / K_\fp}(x)$.\footnote{The first equality follows since if $v_1, \ldots, v_n$ is a basis for $L$ as a $K$-vector space, then $v_1 \otimes 1, \ldots v_n \otimes 1$ is a basis for $L \otimes_K K_\fp$ as a $K_\fp$-vector space, and multiplying by $x$ gives the same basis in either case.}
+\end{proof}
+
+\subsection{Decomposition Groups}
+Let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_K}$, $L / K$ a finite separable extension, $\cO_L$ the integral closure of $\cO_K$ in $L$, $\fp$ a non-zero prime ideal of $\cO_K$. Suppose that $\fp$ factors as a product of distinct primes $\fp \cO_L = \cP_1^{e_1} \ldots \cP_r^{e_r}$ in $\cO_L$, where $e_i > 0$.
+
+Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp = \cO_K \cap \cP_i$, since $\fp$ is maximal.
+
+\begin{definition}\phantom{}
+    \begin{enumerate}
+        \item We call $e_i$ the \emph{ramification index} of $\cP_i$ over $\fp$.
+        \item We say that $\fp$ \emph{ramifies} in $L$ if $e_i > 1$ for some $i$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Consider $\cO_K = \bC[t], \cO_L = \bC[T]$ and the inclusion $\cO_K \to \cO_L$ given by $t \mapsto T^n$. Then $t \cO_L = T^n \cO_L$, so the ramification index of $(T)$ over $(t)$ is $n$.
+
+    This corresponds geometrically to the degree $n$ covering of Riemann surfaces $\bC \to \bC$ given by $x \mapsto x^n$, which is ramified at $0$ with ramification index $n$.
+\end{example}
+
+\begin{definition}
+    $f_i = [\cO_L / \cP_i : \cO_K / \fp]$ is the \emph{residue class degree of} $\cP_i$ over $\fp$.
+\end{definition}
+
+\begin{theorem}\label{thm:11_3}
+    \begin{equation*}
+        \sum_{i=1}^r e_i f_i = [L : K]
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    Let $S = \cO_K \setminus \fp$. We shall use the following properties of localisation:
+    \begin{enumerate}
+        \item $S^{-1} \cO_L$ is the integral closure of $S^{-1} \cO_K$ in $L$,
+        \item $(S^{-1} \fp) (S^{-1} \cO_L) \cong S^{-1}(\cP_1^{e_1} \ldots \cP_r^{e_r})$,
+        \item $S^{-1} \cO_L / S^{-1} \cP_i \cong \cO_L / \cP_i$, and $S^{-1} \cO_K / S^{-1} \fp \cong \cO_K / \fp$.
+    \end{enumerate}
+    In particular, (ii) and (iii) imply that $e_i$ and $f_i$ don't change when we replace $cO_K$ and $\cO_L$ by $S^{-1}\cO_K$ and $S^{-1} \cO_L$.
+
+    Thus we may assume that $\cO_K$ is a DVR (hence a PID). By CRT, we have
+    \begin{equation*}
+        \cO_L / \fp \cO_L \cong \prod_{i=1}^r \cO_L / \cP_i^{e_i}
+    \end{equation*}
+    We count the dimensions of both sides as $k = \cO_K / \fp$-vector spaces.
+
+    For the RHS, we have an increasing sequence of $k$-subspaces
+    \begin{equation*}
+        0 \subseteq \frac{\cP_i^{e_i - 1}}{\cP_i^{e_i}} \subseteq \ldots \subseteq \frac{\cP_i}{\cP_i^{e_i}} \subseteq \frac{\cO_L}{\cP_i^{e_i}}
+    \end{equation*}
+    Thus $\dim_k \cO_L / \cP_i^{e_i} = \sum_{j=0}^{e_i - 1} \dim_k \cP_i^{j} / \cP_i^{j+1}$. Note that $\cP_i^{j} / \cP_i^{j+1} \cong \cO_L / \cP_i$ as $\cO_L / \cP_i$-modules: let $x \in \cP_i^j \setminus \cP_i^{j+1}$ and define a map $\cO_L \to \cP_i^j / \cP_i^{j+1}$ by $a \mapsto a x$. This is surjective since $\cP_i = x \cO_L + \cP_i^{j+1}$, and has kernel $\cP_i$. Thus $\dim_k \cP_i^j / \cP_i^{j+1} = f_i$, hence $\dim_k \cO_L / \cP_i^{e_i} = e_i f_i$ and $\dim_k \prod_{i=1}^r \cO_L / \cP_i^{e_i} = \sum_{i=1}^{r} e_i f_i$
+
+    For the LHS, the structure theorem for finitely-generated modules over PIDs implies that\footnote{since $\cO_L$ is torsion-free} $\cO_L$ is a free $\cO_K$-module of rank $n = [L : K]$. Thus $\cO_L / \fp \cO_L \cong (\cO_K / \fp)^n$ as $\cO_K / \fp$-modules, hence $\dim_K \cO_L / \fp \cO_L = n$.
+\end{proof}
+
+Now assume that $L / K$ is Galois. Then for $\sigma \in \Gal(L / K)$, $\sigma(\cP_i) \cap \cO_K = \fp$, and hence $\sigma(\cP_i) \in \{\cP_1, \ldots, \cP_r\}$. Thus $\Gal(L / K)$ acts on $\{\cP_1, \ldots, \cP_r\}$. We can say more:
+
+\begin{proposition}\label{prop:11_4}
+    The action of $\Gal(L / K)$ on $\cP_1, \ldots, \cP_r$ is transitive.
+\end{proposition}
+\begin{proof}
+    Suppose that there are $i \neq j$ such that $\sigma(\cP_i) \neq \cP_j$ for any $\sigma \in \Gal(L / K)$. By CRT, there is an $x \in \cO_L$ such that $x \equiv 0 \pmod{\cP_i}$ and $x \equiv 1 \pmod{\sigma(\cP_j)}$ for all $\sigma \in \Gal(L/K)$. Consider
+    \begin{equation*}
+        N_{L/K}(x) = \prod_{\sigma \in \Gal(L/K)} \sigma(x) \in \cO_K \cap \cP_i = \fp \subseteq \cP_j
+    \end{equation*}
+    Then $\tau(j) \in \cP_j$ for some $\tau \in \Gal(L/K)$, since $\cP_j$ is prime. Thus $x \in \tau^{-1}(\cP_j)$, i.e. $x \equiv 0 \pmod{\tau^{-1}(\cP_j)}$, contradiction.
+\end{proof}
+
+\begin{corollary}\label{cor:11_5}
+    Suppose that $L/K$ is Galois. Then $e_1 = \ldots = e_r$ and $f_1 = \ldots = f_r$. Let $e$ and $f$ denote this common value. Then $n = e f r$.
+\end{corollary}
+\begin{proof}
+    Let $1 \le i \le r$ and $\sigma \in \Gal(L/K)$ be such that $\sigma(\cP_1) = \cP_i$. Then considering the factorisation of $\fp \cO_L = \sigma(\fp) \cO_L$ gives $e_1 = e_i$. Also $\sigma$ induces a $\cO_K / \fp$-vector space isomorphism $\cO_L / \cP_1 \cong \cO_L / \cP_i$, so $f_1 = f_i$.
+\end{proof}
+
+If $L / K$ is an extension of complete discretely valued fields with normalised valuations $v_L$ and $v_K$ and uniformisers $\pi_L$ and $\pi_K$ respectively, we define the \emph{ramification index} to be $e = e_{L/K} = v_L(\pi_K)$, i.e. such that $\pi_K \cO_L = \pi_L^e \cO_L$, and the \emph{residue class degree} to be $f = f_{L/K} = [k_L : k]$.
+
+\begin{corollary}\label{cor:11_6}
+    Let $L/K$ be a finite separable extension of complete discretely valued fields. Then $[L : K] = e f$.
+\end{corollary}
+\begin{proof}
+    This follows from \autoref{thm:11_3} with $r = 1$, since $\cO_K$ is a DVR, hence a Dedekind domain.
+\end{proof}
+
+\begin{definition}
+    Let $\cO_K$ be a Dedekind domain, $L/K$ a finite Galois extension. Then the \emph{decomposition group} $G_\cP$ at a prime $\cP$ of $\cO_L$ is the stabilizer of $\cP$ under the action of $\Gal(L/K)$, i.e.
+    \begin{equation*}
+        G_\cP = \{\sigma \in \Gal(L/K) \mid \sigma(\cP) = \cP\}
+    \end{equation*}
+\end{definition}
+
+\autoref{prop:11_4} implies that for any $\cP, \cP' \mid \fp$, the subgroups $G_\cP$ and $G_{\cP'}$ are conjugate.
 
 \end{document}
