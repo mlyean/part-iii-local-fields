@@ -1406,7 +1406,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \end{proof}
 
 \begin{theorem}\label{thm:10_9}
-    The natural map $L \otimes_K K_\fp \to \prod_{\fp \mid \cP} L_\cP$ is an isomorphism.
+    The natural map $L \otimes_K K_\fp \to \prod_{\cP \mid \fp} L_\cP$ is an isomorphism.
 \end{theorem}
 \begin{proof}
     Write $L = K(\alpha)$ and let $f(X) \in K[X]$ be the minimal polynomial of $\alpha$. Factorize $f$ as $f = f_1 \ldots f_r$ in $K_\fp[X]$, where $f_i \in K_\fp[X]$ are irreducible, distinct by separability. Since $L \cong K[X] / (f(X))$, we have
@@ -1436,7 +1436,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \end{example}
 
 \begin{corollary}\label{cor:10_10}
-    For $x \in L$,
+    For a fixed non-zero prime $\fp$ of $\cO_K$, we have for $x \in L$ that
     \begin{equation*}
         N_{L/K}(x) = \prod_{\cP \mid \fp} N_{L_\cP/K_\fp}(x)
     \end{equation*}
@@ -1747,9 +1747,17 @@ Let $\cP$ be a non-zero prime of $\cO_L$, and $\fp = \cP \cap \cO_K$. We can def
 \begin{proof}
     For $x \in L$ and $\fp$ a non-zero prime in $\cO_K$, we have (c.f. \autoref{cor:10_10})
     \begin{equation}\label{eq:3}
-        \Tr_{L/K}(x) = \prod_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(x)
+        \Tr_{L/K}(x) = \sum_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(x)
     \end{equation}
-    TODO: continue
+    We show that $\cD_{L/K}^{-1} = \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. Fix a non-zero prime $\cP$ in $\cO_L$ and let $\fp = \cP \cap \cO_K$.
+
+    \noindent ($\subseteq$) Fix $\cP \mid \fp$. It suffices to show that $\cD_{L/K}^{-1} \subseteq \cD_{L_\cP / K_\fp}^{-1}$. Let $x \in \cD_{L/K}^{-1}$, $y \in \cO_{L_\cP}$. We need to show that $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$. For $\cP' \mid \fp$, the map $L \to K_\fp$ given by $z \mapsto \Tr_{L_{\cP'} / K_\fp}(x z)$ is continuous. By Weak Approximation (see Example Sheet 1), for any $\varepsilon > 0$, there is an $\eta \in L$ such that $\abs{\eta - y}_\cP < \varepsilon$ and $\abs{\eta}_{\cP'} < \varepsilon$ for $\cP' \neq \cP$. By \eqref{eq:3}, we have
+    \begin{equation*}
+        \Tr_{L_\cP / K_\fp}(xy) = \left(\Tr_{L_\cP / K_\fp}(xy) - \Tr_{L_\cP / K_\fp}(x \eta)\right) + \underbrace{\Tr_{L/K}(x \eta)}_{\in \cO_K} - \sum_{\substack{\cP' \mid \fp\\\cP' \neq \cP}} \Tr_{L_{\cP'} / K_\fp}(x \eta)
+    \end{equation*}
+    By choosing $\varepsilon$ sufficiently small, we may ensure that the bracketed terms and summands are in $\cO_{K_\fp}$. Thus $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$ as required.
+
+    \noindent ($\supseteq$) Let $x \in \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. For fixed $\cP \mid \fp$, we have $x \in \cD_{L_\cP / K_\fp}^{-1}$, so that for all $y \in \cO_L \subseteq \cO_{L_\cP}$, $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$. Allowing $\cP$ to vary, \eqref{eq:3} shows that for any $y \in \cO_L$, $\Tr_{L/K}(xy) \in \cO_{K_\fp}$. Allowing $\fp$ to vary, we see that for any $y \in \cO_L$, $Tr_{L/K}(xy) \in \bigcap_\fp \cO_{K_\fp} = \cO_K$. Thus $x \in \cD_{L/K}^{-1}$.
 \end{proof}
 
 \begin{corollary}\label{cor:12_10}
