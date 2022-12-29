@@ -33,6 +33,7 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{char}$/;"	o
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{Frac}$/;"	o
+\\Frob	main.tex	/^\\DeclareMathOperator{\\Frob}{Frob}$/;"	o
 \\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{Gal}$/;"	o
 \\Int	main.tex	/^\\DeclareMathOperator{\\Int}{int}$/;"	o
 \\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{Tr}$/;"	o
@@ -120,6 +121,8 @@ thm:12_2	main.tex	/^\\begin{theorem}\\label{thm:12_2}$/;"	l
 thm:12_7	main.tex	/^\\begin{theorem}\\label{thm:12_7}$/;"	l
 thm:12_8	main.tex	/^\\begin{theorem}\\label{thm:12_8}$/;"	l
 thm:12_9	main.tex	/^\\begin{theorem}\\label{thm:12_9}$/;"	l
+thm:13_3	main.tex	/^\\begin{theorem}\\label{thm:13_3}$/;"	l
+thm:13_4	main.tex	/^\\begin{theorem}\\label{thm:13_4}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
