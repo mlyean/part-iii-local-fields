@@ -1589,14 +1589,24 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
 \end{remark}
 
 \begin{lemma}\label{lem:12_1}
-    Let $k$ be a perfect field and $R$ a finite $k$-algebra. The trace form $(\cdot, \cdot) : R \times R \to k$ defined by
+    Let $k$ be a field and $R$ a finite $k$-algebra. The trace form $(\cdot, \cdot) : R \times R \to k$ defined by
     \begin{equation*}
         (x, y) = \Tr_{R/k}(xy) = \Tr(\mult(xy))
     \end{equation*}
-    is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite (hence separable) extensions.
+    is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite separable extensions\footnote{such an $R$ is an \emph{\'etale $k$-algebra}}. In particular if $k$ is perfect, then the trace form is non-degenerate.
 \end{lemma}
 \begin{proof}
-    TODO
+    Suppose $R$ is not reduced. In this case, $R$ is obviously not a product of fields. Let $0 \neq x \in R$ be nilpotent. For any $y \in R$, $xy$ is nilpotent, so $Tr_{R/k}(xy) = 0$, since the trace of a nilpotent matrix\footnote{the characteristic polynomial of a nilpotent matrix is $X^n$ for some $n$} is $0$.
+
+    Thus we may assume that $R$ is reduced. Then $R$ is Artinian, since $R$ is a finite-dimensional $k$-vector space, and ideals of $R$ are $k$-subspaces. There are only finitely many maximal ideals $\fm_1, \ldots, \fm_n$ in $R$, whose intersection is the nilradical, which in this case is $0$. Then CRT gives an isomorphism $R \cong R/\fm_1 \times \ldots \times R/\fm_n$. Thus $k_i = R / \fm_i$, up to reordering. $(\cdot, \cdot)_{R/k}$ is non-degenerate iff $(\cdot, \cdot)_{k_i/k}$ is non-degenerate for all $i$.
+
+    We are left to show that a finite extension $L/K$ is separable iff the trace form $(\cdot, \cdot)_{L/K}$ is non-degenerate.
+
+    \noindent ($\Rightarrow$) Suppose that $L/K$ is separable. By the primitive element theorem, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix of the trace form with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$, where $n = [L : K]$. We have $\det(\Tr_{L/K}(\alpha^{i+j})) = \det(\sigma_i(\alpha)^j)^2 \neq 0$, where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L$.
+
+    \noindent ($\Leftarrow$) Suppose that $L/K$ is not separable. Then $\Char K = p > 0$. First assume that $L = K(\alpha)$, where $\alpha \in L$ is a purely inseparable element of degree $p$. $\alpha$ has minimal polynomial $X^p - a$ for some $a \in K$. $L / K$ has basis $1, \alpha, \ldots, \alpha^{p-1}$. We have $\Tr_{L/K}(1) = [L : K] = p = 0$, and for $1 \le i \le p-1$, $\alpha^i$ has minimal polynomial $X^p - a^i$, so $\Tr_{L/K}(\alpha^i) = 0$. This shows that $\Tr_{L/K} = 0$.
+
+    Now in general there is a subextension $L/M/K$ such that $L/M$ is purely inseparable of degree $p$. From the above, $\Tr_{L/M} = 0$, so $\Tr_{L/K} = \Tr_{M/K} \circ \Tr_{L/M} = 0$. Thus the trace form is zero, hence degenerate.
 \end{proof}
 
 \begin{theorem}\label{thm:12_2}
