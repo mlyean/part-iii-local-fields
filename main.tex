@@ -1429,7 +1429,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \end{proof}
 
 \begin{remark}
-    From the proof above, we see that if $L = K(\alpha)$, $f(X) \in K[X]$ is the minimal polynomial of $\alpha$, $f = f_1 \ldots f_r$ the factorisation of $f$ in $K_\fp[X]$, then each $f_i$ corresponds to a prime $\cP_i$. Thus $r$ is the number of $\cP$ dividing $\fp$. Also $\deg f_i = [L_{\cP_i} : K_\fp] = e_{\cP_i/\fp} f_{\cP_i/\fp}$ (see \autoref{cor:11_6} below).
+    From the proof above, we see that if $L = K(\alpha)$, $f(X) \in K[X]$ is the minimal polynomial of $\alpha$, $f = f_1 \ldots f_r$ the factorisation of $f$ in $K_\fp[X]$, then each $f_i$ corresponds to a prime $\cP_i \mid \fp$. Thus $r$ is the number of $\cP$ dividing $\fp$. Also $\deg f_i = [L_{\cP_i} : K_\fp] = e_{\cP_i/\fp} f_{\cP_i/\fp}$ (see \autoref{cor:11_6} below).
 \end{remark}
 
 \begin{example}
@@ -1663,16 +1663,16 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     Let $x_1, \ldots, x_n$ be a basis for $L$ as a $K$-vector space. Set $d = \Delta(x_1, \ldots, x_n) \in \cO_K$. For $x \in \cD_{L/K}^{-1}$, write $x = \sum_{j=1}^n \lambda_j x_j$, where $\lambda_j \in K$. Then $\Tr_{L/K}(x x_i) = \sum_{j=1}^n \lambda_j \Tr_{L/K}(x_i x_j)$. Set $a_{ij} = \Tr_{L/K}(x_i x_j)$, $A = (a_{ij})$. Then
     \begin{equation*}
         A
-        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix} 
+        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix}
         =
-        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix} 
+        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix}
     \end{equation*}
     Multiplying both sides by $\Adj(A) \in M_n(\cO_K)$, we get
     \begin{equation*}
         d
-        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix} 
+        \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix}
         = \Adj(A)
-        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix} 
+        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix}
     \end{equation*}
     Thus $\lambda_i \in \frac{1}{d} \cO_K$, so $x \in \frac{1}{d} \cO_L$. This shows that $d \cD_{L/K}^{-1} \subseteq \cO_L$.
 \end{proof}
@@ -1780,7 +1780,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
         \item $e_{M/K} = e_{M/L} e_{L/K}$.
     \end{enumerate}
 \end{lemma}
-\begin{proof}
+\begin{proof}\phantom{}
     \begin{enumerate}
         \item $f_{M/K} = [k_M : k] = [k_M : k_L] [k_L : k] = f_{M/K} f_{L/K}$.
         \item Follows from (i) and \autoref{cor:11_6}. \qedhere
@@ -1824,5 +1824,56 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{proof}
     
 \end{proof}
+
+\begin{corollary}\label{cor:13_5}
+    Let $L/K$ be a finite Galois extension. Then the map $\res : \Gal(L/K) \to \Gal(k_L / k)$ is surjective.
+\end{corollary}
+\begin{proof}
+    
+\end{proof}
+
+\begin{definition}
+    Let $L/K$ be a finite Galois extension. The \emph{inertia subgroup} is
+    \begin{equation*}
+        I_{L/K} = \ker(\res : \Gal(L/K) \to \Gal(k_L / k)) \subseteq \Gal(L/K)
+    \end{equation*}
+\end{definition}
+
+\begin{remark}\phantom{}
+    \begin{enumerate}
+        \item Since $e_{L/K} f_{L/K} = [L:K]$, we have $\abs{I_{L/K}} = e_{L/K}$.
+        \item $I_{L/K} = \Gal(L/K_0)$, where $K_0$ is as in \autoref{thm:13_3}.
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}
+    A monic polynomial $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ is \emph{Eisenstein} if $v_K(a_i) \ge 1$ for all $i$, and $v(a_0) = 1$.
+\end{definition}
+
+Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irreducible.
+
+\begin{theorem}\label{thm:13_8}\phantom{}
+    \begin{enumerate}
+        \item Let $L/K$ be finite, totally ramified, with uniformiser $\pi_L \in \cO_L$. Then the minimal polynomial of $\pi_L$ is Eisenstein, and $\cO_L = \cO_K[\pi_L]$.
+        \item Conversely, if $f(X) \in \cO_K[X]$ is Eisenstein and $\alpha$ is a root of $f$, then $L = K(\alpha) / K$ is totally ramified, and $\alpha$ is a uniformiser in $L$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item
+        \item
+    \end{enumerate}
+\end{proof}
+
+\subsection*{Structure of Units}
+
+Let $K / \bQ_p$ be a finite extension, $e = e_{K/\bQ_p}$, and $\pi \in \cO_K$ a uniformiser.
+
+\begin{proposition}\label{prop:13_9}
+    If $r > \frac{e}{p-1}$, then $\exp(x) = \sum_{n=0}^\infty \frac{x^n}{n!}$ converges on $\pi^r \cO_K$ and induces an isomorphism
+    \begin{equation*}
+        (\pi^r \cO_K, +) \cong (1 + \pi^r \cO_K, \times)
+    \end{equation*}
+\end{proposition}
 
 \end{document}

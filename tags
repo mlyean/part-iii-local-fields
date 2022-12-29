@@ -27,6 +27,7 @@ Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
 More on inverse limits	main.tex	/^\\subsubsection*{More on inverse limits}$/;"	b	subsection:Local Fields""Local Fields
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
 Ramification Theory	main.tex	/^\\section{Ramification Theory}$/;"	s
+Structure of Units	main.tex	/^\\subsection*{Structure of Units}$/;"	u	section:Ramification Theory
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Unramified and Totally Ramified Extensions of Local Fields	main.tex	/^\\subsection{Unramified and Totally Ramified Extensions of Local Fields}$/;"	u	section:Ramification Theory
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
@@ -61,6 +62,7 @@ cor:11_5	main.tex	/^\\begin{corollary}\\label{cor:11_5}$/;"	l
 cor:11_6	main.tex	/^\\begin{corollary}\\label{cor:11_6}$/;"	l
 cor:12_10	main.tex	/^\\begin{corollary}\\label{cor:12_10}$/;"	l
 cor:12_4	main.tex	/^\\begin{corollary}\\label{cor:12_4}$/;"	l
+cor:13_5	main.tex	/^\\begin{corollary}\\label{cor:13_5}$/;"	l
 cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
 cor:3_7	main.tex	/^\\begin{corollary}\\label{cor:3_7}\\phantom{}$/;"	l
@@ -99,6 +101,7 @@ lem:9_4	main.tex	/^\\begin{lemma}\\label{lem:9_4}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:11_4	main.tex	/^\\begin{proposition}\\label{prop:11_4}$/;"	l
 prop:11_8	main.tex	/^\\begin{proposition}\\label{prop:11_8}$/;"	l
+prop:13_9	main.tex	/^\\begin{proposition}\\label{prop:13_9}$/;"	l
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
 prop:2_3	main.tex	/^\\begin{proposition}\\label{prop:2_3}$/;"	l
@@ -123,6 +126,7 @@ thm:12_8	main.tex	/^\\begin{theorem}\\label{thm:12_8}$/;"	l
 thm:12_9	main.tex	/^\\begin{theorem}\\label{thm:12_9}$/;"	l
 thm:13_3	main.tex	/^\\begin{theorem}\\label{thm:13_3}$/;"	l
 thm:13_4	main.tex	/^\\begin{theorem}\\label{thm:13_4}$/;"	l
+thm:13_8	main.tex	/^\\begin{theorem}\\label{thm:13_8}\\phantom{}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
