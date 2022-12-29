@@ -1284,7 +1284,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
 
 \subsection{Extensions of Dedekind Domains}
 
-Let $L / K$ be a finite extension. For $x \in L$, we write $\Tr_{L/K}(x) \in K$ for the trace of the $K$-linear map $y \mapsto x y$. If $L/K$ is separable of degree $n$, let $\sigma_1, \ldots, \sigma_n : L \to \overline{K}$ denote the set of distinct embeddings of $L$ into an algebraic closure $\overline{K}$. Then
+Let $L / K$ be a finite extension. For $x \in L$, we write $\Tr_{L/K}(x) \in K$ for the trace of the $K$-linear map $y \mapsto x y$. If $L/K$ is separable of degree $n$, let $\sigma_1, \ldots, \sigma_n : L \to \overline{K}$ denote the set of distinct embeddings of $L/K$ into an algebraic closure $\overline{K}$. Then
 \begin{equation*}
     \Tr_{L/K}(x) = \sum_{i=1}^n \sigma_i(x)
 \end{equation*}
@@ -1332,7 +1332,7 @@ On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff t
     \autoref{thm:10_2} holds without the assumption that $L / K$ is separable.
 \end{remark}
 
-\begin{corollary}
+\begin{corollary}\label{cor:10_3}
     The ring of integers of a number field is a Dedekind domain.
 \end{corollary}
 
@@ -1431,7 +1431,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. $\bQ(i) \otimes_\bQ \bQ_5 \cong \bQ_5 \otimes_\bQ \bQ[X]/(X^2 + 1) \cong \bQ_5[X]/(X^2+1) \cong \bQ_5[X]/(X-\sqrt{-1}) \times \bQ_5[X]/(X+\sqrt{-1}) \cong \bQ_5 \times \bQ_5$. Thus $5$ splits in $\bQ(i)$ as $5 \cO_L = \fp_1 \fp_2$.
 \end{example}
 
-\begin{corollary}
+\begin{corollary}\label{cor:10_10}
     For $x \in L$,
     \begin{equation*}
         N_{L/K}(x) = \prod_{\cP \mid \fp} N_{L_\cP/K_\fp}(x)
@@ -1530,7 +1530,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 
 \autoref{prop:11_4} implies that for any $\cP, \cP' \mid \fp$, the subgroups $G_\cP$ and $G_{\cP'}$ are conjugate.
 
-\begin{proposition}
+\begin{proposition}\label{prop:11_8}
     Suppose $L / K$ is Galois and $\cP \mid \fp$ is a prime of $\cO_L$. Then
     \begin{enumerate}
         \item $L_\cP / K_\fp$ is Galois,
@@ -1575,7 +1575,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     \begin{equation*}
         \Delta(x_1, \ldots, x_n) = \det(\Tr_{x_i x_j}) = \det(\sigma_i(x_j))^2 \in K
     \end{equation*}
-    where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L$ in an algebraic closure.
+    where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L/K$ in an algebraic closure.
 \end{notation}
 
 \begin{remark}\phantom{}
@@ -1602,7 +1602,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
 
     We are left to show that a finite extension $L/K$ is separable iff the trace form $(\cdot, \cdot)_{L/K}$ is non-degenerate.
 
-    \noindent ($\Rightarrow$) Suppose that $L/K$ is separable. By the primitive element theorem, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix of the trace form with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$, where $n = [L : K]$. We have $\det(\Tr_{L/K}(\alpha^{i+j})) = \det(\sigma_i(\alpha)^j)^2 \neq 0$, where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L$.
+    \noindent ($\Rightarrow$) Suppose that $L/K$ is separable. By the primitive element theorem, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix of the trace form with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$, where $n = [L : K]$. We have $\det(\Tr_{L/K}(\alpha^{i+j})) = \det(\sigma_i(\alpha)^j)^2 \neq 0$, where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L/K$.
 
     \noindent ($\Leftarrow$) Suppose that $L/K$ is not separable. Then $\Char K = p > 0$. First assume that $L = K(\alpha)$, where $\alpha \in L$ is a purely inseparable element of degree $p$. $\alpha$ has minimal polynomial $X^p - a$ for some $a \in K$. $L / K$ has basis $1, \alpha, \ldots, \alpha^{p-1}$. We have $\Tr_{L/K}(1) = [L : K] = p = 0$, and for $1 \le i \le p-1$, $\alpha^i$ has minimal polynomial $X^p - a^i$, so $\Tr_{L/K}(\alpha^i) = 0$. This shows that $\Tr_{L/K} = 0$.
 
@@ -1644,7 +1644,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
 \end{corollary}
 
 \begin{definition}
-    The \emph{inverse different} is $\cD_{L/K}^{-1} = \{y \in L \mid \forall x \in \cO_L, \Tr_{L/K}(xy) \in \cO_K \}$
+    The \emph{inverse different} is $\cD_{L/K}^{-1} = \{y \in L \mid \forall x \in \cO_L, \Tr_{L/K}(xy) \in \cO_K \}$. It is an $\cO_L$-submodule of $L$ containing $\cO_L$.
 \end{definition}
 
 \begin{lemma}\label{lem:12_6}
@@ -1687,8 +1687,104 @@ Define a group homomorphism $N_{L/K} : I_L \to I_K$ by $\cP \mapsto \fp^f$, wher
     \end{equation*}
     commutes. This follows from $v_\fp(N_{L_\cP/K_\fp}(x)) = f_{\cP / \fp} v_\cP(x)$, where $v_\cP$ and $v_\fp$ are normalised valuations on $L_\cP$ and $K_\fp$ respectively.
 \end{fact}
-\begin{theorem}
+
+\begin{theorem}\label{thm:12_7}
     $N_{L/K}(\cD_{L/K}) = d_{L/K}$.
 \end{theorem}
+\begin{proof}[Proof sketch]
+    First assume that $\cO_K$ and $\cO_L$ are PIDs. Let $x_1, \ldots, x_n$ be an $\cO_K$ basis of $\cO_L$ and $y_1, \ldots, y_n$ the dual basis of the trace form. Then $y_1, \ldots, y_n$ forms an $\cO_K$-basis of $\cD_{L/K}^{-1}$. Let $\sigma_1, \ldots, \sigma_n : L \to \overline{K}$ be distinct embeddings of $L/K$. Then
+    \begin{equation*}
+        \sum_{i=1}^n \sigma_i(x_j) \sigma_i(y_k) = \Tr_{L/K}(x_j y_k) = \delta_{j k}
+    \end{equation*}
+    Since $\Delta(x_1, \ldots, x_n) = \det(\sigma_i(x_j))^2$, we have $\Delta(x_1, \ldots, x_n) \Delta(y_1, \ldots, y_n) = 1$. Write\footnote{Since $\cO_L$ is a PID, all fractional ideals are principal} $\cD_{L/K}^{-1} = \beta \cO_L$ for some $\beta \in L$. Then
+    \begin{align}
+        d_{L/K}^{-1}
+        &= \langle \Delta(x_1, \ldots, x_n) \rangle^{-1} \notag\\
+        &= \langle \Delta(y_1, \ldots, y_n) \rangle \notag\\
+        &= \langle \Delta(\beta x_1, \ldots, \beta x_n) \rangle \label{eq:1}\\
+        &= \langle N_{L/K}(\beta)^2 \Delta(x_1, \ldots, x_n) \rangle \label{eq:2}\\
+        &= N_{L/K}(\beta)^2 d_{L/K}\notag
+    \end{align}
+    where \eqref{eq:1} follows since $y_1, \ldots, y_n$ and $\beta x_1, \ldots, \beta x_n$ are both $\cO_K$-bases of $\cD_{L/K}^{-1}$, and the change of basis matrix is invertible, while \eqref{eq:2} follows since the change of basis matrix is $\mult(\beta)$.
+
+    Thus $d_{L/K}^{-1} = \langle N_{L/K}(\beta) \rangle = N_{L/K}(\cD_{L/K}^{-1})$, where the second equality follows from the commutativity of the diagram above.
+
+    In the general case, localize at $S = \cO_K \setminus \fp$, and use $S^{-1} \cD_{L/K} = \cD_{S^{-1} \cO_L / S^{-1} \cO_K}$, $S^{-1} d_{L/K} = d_{S^{-1} \cO_L / S^{-1} \cO_K}$. We omit the details.
+\end{proof}
+
+\begin{theorem}\label{thm:12_8}
+    If $\cO_L = \cO_K[\alpha]$ and $\alpha$ has (monic) minimal polynomial $g(X) \in \cO_K[X]$, then $\cD_{L/K} = \langle g'(\alpha) \rangle$.
+\end{theorem}
+\begin{proof}
+    Let $\alpha = \alpha_1, \ldots, \alpha_n$ be the (distinct) roots of $g$. Write $\frac{g(X)}{X-\alpha} = \beta_{n-1}X^{n-1} + \beta_{n-2} X^{n-2} + \ldots + \beta_0$, where $\beta_i \in \cO_L$, and $\beta_{n-1} = 1$. We claim\footnote{one can obtain this identity by considering Lagrange interpolation of $X^r$ through $\alpha_1, \ldots, \alpha_n$} that
+    \begin{equation*}
+        \sum_{i=1}^n \frac{g(X)}{X - \alpha_i} \frac{\alpha_i^r}{g'(\alpha_i)} = X^r
+    \end{equation*}
+    for any $0 \le r \le n-1$. Indeed, the difference is a polynomial of degree $< n$ which vanishes at $X = \alpha_1, \ldots, \alpha_n$. Let $\sigma_1, \ldots, \sigma_n : L \to \overline{K}$ be the distinct embeddings of $L/K$. Then
+    \begin{equation*}
+        \sum_{i=1}^n \sigma_i\left(\frac{g(X)}{X - \alpha} \frac{\alpha^r}{g'(\alpha)}\right) = X^r
+    \end{equation*}
+    Equating coefficients of $X^s$, we get
+    \begin{equation*}
+        \Tr_{L/K}\left(\alpha^r \frac{\beta_s}{g'(\alpha)}\right) = \delta_{rs}
+    \end{equation*}
+    Since $\cO_L$ has $\cO_K$-basis $1, \alpha, \ldots, \alpha^{n-1}$, $\cD_{L/K}^{-1}$ has $\cO_K$-basis $\frac{\beta_0}{g'(\alpha)}, \frac{\beta_1}{g'(\alpha)}, \ldots, \frac{\beta_{n-1}}{g'(\alpha)} = \frac{1}{g'(\alpha)}$. Thus $\cD_{L/K}^{-1} = \langle \frac{1}{g'(\alpha)} \rangle$ as fractional ideals, so $\cD_{L/K} = \langle g'(\alpha) \rangle$, as required.
+\end{proof}
+
+Let $\cP$ be a non-zero prime of $\cO_L$, and $\fp = \cP \cap \cO_K$. We can define the different $\cD_{L_\cP / K_\fp} \subseteq \cO_{L_\cP}$ as before. We identify $\cD_{L_\cP / K_\fp}$ with a power of $\cP$.
+
+\begin{theorem}\label{thm:12_9}
+    $\cD_{L/K} = \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}$.
+\end{theorem}
+\begin{proof}
+    For $x \in L$ and $\fp$ a non-zero prime in $\cO_K$, we have (c.f. \autoref{cor:10_10})
+    \begin{equation}
+        \Tr_{L/K}(x) = \prod_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(x)
+    \end{equation}
+    TODO: continue
+\end{proof}
+
+\begin{corollary}\label{cor:12_10}
+    $d_{L/K} = \prod_{\cP \mid \fp} d_{L_\cP / K_\fp}$.
+\end{corollary}
+\begin{proof}
+    Apply $N_{L/K}$ to both sides of \autoref{thm:12_9} and use \autoref{thm:12_7}. Note that $N_{L/K}(\cD_{L_\cP / K_\fp}) = N_{L_\cP / K_\fp}(\cD_{L_\cP / K_\fp})$, since the residue class degree does not change under completion by the lemma following \autoref{prop:11_8}.
+\end{proof}
+
+\subsection{Unramified and Totally Ramified Extensions of Local Fields}
+
+Let $L/K$ be a finite separable extension of non-archimedean local fields.
+Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
+
+\begin{lemma}\label{lem:13_1}
+    Let $M/L/K$ be finite separable extensions of local fields. Then
+    \begin{enumerate}
+        \item $f_{M/K} = f_{M/L} f_{L/K}$,
+        \item $e_{M/K} = e_{M/L} e_{L/K}$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    \begin{enumerate}
+        \item $f_{M/K} = [k_M : k] = [k_M : k_L] [k_L : k] = f_{M/K} f_{L/K}$.
+        \item Follows from (i) and \autoref{cor:11_6}. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    The extension $L/K$ is said to be
+    \begin{enumerate}
+        \item \emph{unramified} if $e_{L/K} = 1$, or equivalently $f_{L/K} = [L : K]$,
+        \item \emph{ramified} if $e_{L/K} > 1$, or equivalently $f_{L/K} < [L : K]$,
+        \item \emph{totally ramified} if $e_{L/K} = [L : K]$, or equivalently $f_{L/K} = 1$.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    \autoref{lem:13_1} immediately implies that for finite separable extensions of local fields $M/L/K$,
+    \begin{enumerate}
+        \item $M/K$ is unramified iff $M/L$ and $L/K$ are unramified,
+        \item $M/K$ is totally ramified iff $M/L$ and $L/K$ are totally ramified.
+    \end{enumerate}
+\end{remark}
 
 \end{document}
