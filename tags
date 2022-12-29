@@ -73,6 +73,7 @@ corollary	main.tex	/^\\newtheorem{corollary}[definition]{Corollary}$/;"	t
 definition	main.tex	/^\\newtheorem{definition}{Definition}[subsection]$/;"	t
 eq:1	main.tex	/^        &= \\langle \\Delta(\\beta x_1, \\ldots, \\beta x_n) \\rangle \\label{eq:1}\\\\$/;"	l
 eq:2	main.tex	/^        &= \\langle N_{L\/K}(\\beta)^2 \\Delta(x_1, \\ldots, x_n) \\rangle \\label{eq:2}\\\\$/;"	l
+eq:3	main.tex	/^    \\begin{equation}\\label{eq:3}$/;"	l
 lem:10_1	main.tex	/^\\begin{lemma}\\label{lem:10_1}$/;"	l
 lem:10_4	main.tex	/^\\begin{lemma}\\label{lem:10_4}$/;"	l
 lem:10_7	main.tex	/^\\begin{lemma}\\label{lem:10_7}\\phantom{}$/;"	l

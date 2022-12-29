@@ -1427,8 +1427,12 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{enumerate}
 \end{proof}
 
+\begin{remark}
+    From the proof above, we see that if $L = K(\alpha)$, $f(X) \in K[X]$ is the minimal polynomial of $\alpha$, $f = f_1 \ldots f_r$ the factorisation of $f$ in $K_\fp[X]$, then each $f_i$ corresponds to a prime $\cP_i$. Thus $r$ is the number of $\cP$ dividing $\fp$. Also $\deg f_i = [L_{\cP_i} : K_\fp] = e_{\cP_i/\fp} f_{\cP_i/\fp}$ (see \autoref{cor:11_6} below).
+\end{remark}
+
 \begin{example}
-    Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. $\bQ(i) \otimes_\bQ \bQ_5 \cong \bQ_5 \otimes_\bQ \bQ[X]/(X^2 + 1) \cong \bQ_5[X]/(X^2+1) \cong \bQ_5[X]/(X-\sqrt{-1}) \times \bQ_5[X]/(X+\sqrt{-1}) \cong \bQ_5 \times \bQ_5$. Thus $5$ splits in $\bQ(i)$ as $5 \cO_L = \fp_1 \fp_2$.
+    Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. Thus $f(X) = (X - \sqrt{-1})(X + \sqrt{-1})$ in $\bQ_5[X]$. Thus by the remark above, $5$ splits in $\bQ(i)$ as $(5) = \fp_1 \fp_2$.
 \end{example}
 
 \begin{corollary}\label{cor:10_10}
@@ -1639,6 +1643,10 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     \end{equation*}
 \end{definition}
 
+\begin{remark}
+    The discriminant (and later the inverse different and different) although denoted by $d_{L/K}$, depends on $\cO_K$ and $\cO_L$, not just $K$ and $L$.
+\end{remark}
+
 \begin{corollary}\label{cor:12_4}
     $\fp$ ramifies in $L$ iff $\fp \mid d_{L/K}$.
 \end{corollary}
@@ -1738,7 +1746,7 @@ Let $\cP$ be a non-zero prime of $\cO_L$, and $\fp = \cP \cap \cO_K$. We can def
 \end{theorem}
 \begin{proof}
     For $x \in L$ and $\fp$ a non-zero prime in $\cO_K$, we have (c.f. \autoref{cor:10_10})
-    \begin{equation}
+    \begin{equation}\label{eq:3}
         \Tr_{L/K}(x) = \prod_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(x)
     \end{equation}
     TODO: continue
