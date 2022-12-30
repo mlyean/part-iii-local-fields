@@ -1860,8 +1860,17 @@ Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irre
 \end{theorem}
 \begin{proof}\phantom{}
     \begin{enumerate}
-        \item
-        \item
+        \item By assumption, $[L : K] = e$. Let $f(X) = X^m + a_{m-1} X^{m-1} + \ldots + a_0 \in \cO_K[X]$ be the minimal polynomial of $\pi_L$. Then $m \le e$. Since $v_L(K^\times) = e \bZ$, we have $v_L(a_i \pi_L^i) \equiv i \pmod{e}$ for $i < m$. Hence the terms have distinct valuations. As $\pi_L^m = -\sum_{i=0}^{m-1} a_i \pi_L^i$, $m = v_L(m) = \min_{0 \le i \le m-1} v_L(a_i \pi_L^i) = \min_{0 \le i \le m-1} (i + e v_K(a_i))$. Thus $v_K(a_i) \ge 1$ for all $i$. Hence $v_k(a_0) = 1$ and $m = e$. Thus $f(X)$ is Eisenstein and $L = K(\pi_L)$.
+
+            Now we show that $\cO_L = \cO_K[\pi_L]$. For $y \in L$, write $y = \sum_{i=0}^{e-1} b_i \pi_L^i$, with $b_i \in K$. Then $v_L(y) = \min_{0 \le i \le e-1} (i + e v_K(b_i))$. Thus
+            \begin{align*}
+                y \in \cO_L
+                &\iff v_L(y) \ge 0\\
+                &\iff \forall 0 \le i \le e-1, e v_K(b_i) \ge 0\\
+                &\iff y \in \cO_K[\pi_L]
+            \end{align*}
+
+        \item Let $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ be an Eisenstein polynomial. Let $\alpha$ be a root of $f$, $L = K(a)$, and $e = e_{L/K}$. Then $v_L(a_i) \ge e$, and $v_L(a_0) = e$. If $v_L \le 0$, then $v_L(\alpha^n) < v_L(\sum_{i=1}^{n-1} a_i \alpha^i)$, contradiction. Thus $v_L(\alpha) > 0$. For $i \neq 0$, $v_L(a_i \alpha^i) > e = v_L(a_0)$. Therefore, $n v_L(\alpha) = v_L(\alpha^n) = v_L(-\sum_{i=0}^{n-1} a_i \alpha_i) = e$. Since $n = [L : K] \ge e$, we have $n = e$ and $v_L(\alpha) = 1$.\qedhere
     \end{enumerate}
 \end{proof}
 
