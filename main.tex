@@ -38,18 +38,19 @@
 \DeclareMathOperator{\Char}{char}
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Adj}{Adj}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\mult}{mult}
 \DeclareMathOperator{\res}{res}
 \DeclareMathOperator{\Frob}{Frob}
 
-\newcommand{\bF}{\mathbb{F}}
-\newcommand{\bN}{\mathbb{N}}
-\newcommand{\bZ}{\mathbb{Z}}
-\newcommand{\bQ}{\mathbb{Q}}
-\newcommand{\bR}{\mathbb{R}}
-\newcommand{\bC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
@@ -77,7 +78,7 @@
 \subsection{Absolute Value}
 
 \begin{definition}
-    Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \bR_{\ge 0}$ such that
+    Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \RR_{\ge 0}$ such that
     \begin{enumerate}
         \item (Definiteness) $\forall x \in K,\, \abs{x} = 0 \iff x = 0$
         \item (Multiplicativity) $\forall x, y \in K,\, \abs{x y} = \abs{x} \abs{y}$
@@ -88,7 +89,7 @@
 
 \begin{example}\phantom{}
     \begin{itemize}
-        \item $K = \bQ, \bR, \bC$ with the usual absolute value, denoted $\abs{\cdot}_\infty$.
+        \item $K = \QQ, \RR, \CC$ with the usual absolute value, denoted $\abs{\cdot}_\infty$.
         \item Let $K$ be any field, then there is a \emph{trivial absolute value} given by
             \begin{equation*}
                 \abs{x} =
@@ -98,7 +99,7 @@
                 \end{cases}
             \end{equation*}
         \item The only absolute value on a finite field is trivial. This follows from the easy fact that for $n \ge 1$, $x^n = 1$ implies that $\abs{x} = 1$.
-        \item Let $K = \bQ$, and let $p$ be a prime. The \emph{$p$-adic absolute value} is defined to be
+        \item Let $K = \QQ$, and let $p$ be a prime. The \emph{$p$-adic absolute value} is defined to be
             \begin{equation*}
                 \abs{x}_p =
                 \begin{cases}
@@ -123,7 +124,7 @@
     \begin{enumerate}
         \item $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent}
         \item $\forall x \in K, \abs{x} < 1 \iff \abs{x}' < 1$
-        \item $\exists c \in \bR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$
+        \item $\exists c \in \RR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$
     \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -170,7 +171,7 @@
 \end{definition}
 
 \begin{example}
-    $\abs{\cdot}_\infty$ is archimedean, while $\abs{\cdot}_p$ on $\bQ$ is non-archimedean.
+    $\abs{\cdot}_\infty$ is archimedean, while $\abs{\cdot}_p$ on $\QQ$ is non-archimedean.
 \end{example}
 
 \begin{lemma}[All triangles are isoceles]\label{lem:1_5}
@@ -203,7 +204,7 @@
 \end{proof}
 
 \begin{example}
-    We construct a sequence $(x_n)$ in $\bZ$ such that
+    We construct a sequence $(x_n)$ in $\ZZ$ such that
     \begin{enumerate}
         \item $x_n^2 + 1 \equiv 0 \pmod{5^n}$
         \item $x_{n + 1} \equiv x_n \pmod{5^n}$
@@ -218,18 +219,18 @@
     \end{align*}
     Thus we just take any $b$ with $a + 2b x_n \equiv 0 \pmod{5}$.
 
-    Now (ii) says that $\abs{x_n - x_{n+1}}_5 \le 5^{-n}$, so by \autoref{prop:1_6}, $(x_n)$ is Cauchy in $(\bQ, \abs{\cdot}_5)$. Suppose that $x_n$ converges to $\ell \in \bQ$. Then $x_n^2 \rightarrow \ell^2 \in \bQ$. However (i) implies that $x_n^2 \rightarrow -1$, so that $\ell^2 = -1$. This shows that $(\bQ, \abs{\cdot}_5)$ is not complete.
+    Now (ii) says that $\abs{x_n - x_{n+1}}_5 \le 5^{-n}$, so by \autoref{prop:1_6}, $(x_n)$ is Cauchy in $(\QQ, \abs{\cdot}_5)$. Suppose that $x_n$ converges to $\ell \in \QQ$. Then $x_n^2 \rightarrow \ell^2 \in \QQ$. However (i) implies that $x_n^2 \rightarrow -1$, so that $\ell^2 = -1$. This shows that $(\QQ, \abs{\cdot}_5)$ is not complete.
 \end{example}
 
 \begin{definition}
-    The \emph{$p$-adic numbers} $\bQ_p$ is the completion of $\bQ$ with respect to $\abs{\cdot}_p$.
+    The \emph{$p$-adic numbers} $\QQ_p$ is the completion of $\QQ$ with respect to $\abs{\cdot}_p$.
 \end{definition}
 
 \begin{remark}
-    $\bR$ is the completion of $\bQ$ with respect to $\abs{\cdot}_\infty$.
+    $\RR$ is the completion of $\QQ$ with respect to $\abs{\cdot}_\infty$.
 \end{remark}
 
-\noindent Let $(K, \abs{\cdot})$ be a valued field. For $x \in K$ and $r \in \bR_{> 0}$, define
+\noindent Let $(K, \abs{\cdot})$ be a valued field. For $x \in K$ and $r \in \RR_{> 0}$, define
 \begin{align*}
     B(x, r) &= \{y \in K \mid \abs{x - y} < r\}\\
     \overline{B}(x, r) &= \{y \in K \mid \abs{x - y} \le r\}
@@ -260,7 +261,7 @@
 \subsection{Valuation Rings}
 
 \begin{definition}
-    Let $K$ be a field. A valuation on $K$ is a function $v : K^\times \to \bR$ such that
+    Let $K$ be a field. A valuation on $K$ is a function $v : K^\times \to \RR$ such that
     \begin{enumerate}
         \item $v(xy) = v(x) + v(y)$
         \item $v(x + y) \ge \min\{v(x), v(y)\}$
@@ -283,12 +284,12 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     We ignore the trivial valuation $v(x) = 0 \quad \forall x \in K^\times$.
 \end{remark}
 \begin{remark}
-    We say that $v_1, v_2$ are \emph{equivalent} if $\exists c \in \bR_{> 0}, \forall x \in K^\times, v_1(x) = c v_2(x)$.
+    We say that $v_1, v_2$ are \emph{equivalent} if $\exists c \in \RR_{> 0}, \forall x \in K^\times, v_1(x) = c v_2(x)$.
 \end{remark}
 
 \begin{example}\phantom{}
     \begin{itemize}
-        \item For $K = \bQ$, $v_p(x) = -\log_p \abs{x}_p$ is the $p$-adic valuation.
+        \item For $K = \QQ$, $v_p(x) = -\log_p \abs{x}_p$ is the $p$-adic valuation.
         \item Let $k$ be a field and let $K = k(t)$ be the rational function field. Define $v(t^n \frac{f(t)}{g(t)}) = n$, where $f, g \in k[t]$ are such that $f(0), g(0) \neq 0$. This gives the \emph{$t$-adic valuation}.
         \item Let $k$ be a field and let $K = k \llbracket t \rrbracket$ be the field of formal Laurent series. Define $v(\sum a_i t^i) = \min \{i \mid a_i \neq 0\}$. This is also called the $t$-adic valuation.
     \end{itemize}
@@ -333,17 +334,17 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 \end{corollary}
 
 \begin{definition}
-    Let $v : K^\times \to \bR$ be a valuation. If $v(K^\times) \cong \bZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.\footnote{In this case, implicitly $K$ is non-archimedean.}
+    Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.\footnote{In this case, implicitly $K$ is non-archimedean.}
 
     An element $\pi \in \cO_K$ is a \emph{uniformiser} if $v(\pi) > 0$ and $v(\pi)$ generates $v(K^\times)$.
 \end{definition}
 
 \begin{example}
-    $K = \bQ$ with the $p$-adic valuation and $K = k(t)$ with $t$-adic valuation are both discretely valued fields.
+    $K = \QQ$ with the $p$-adic valuation and $K = k(t)$ with $t$-adic valuation are both discretely valued fields.
 \end{example}
 
 \begin{remark}
-    If $v$ is a discrete valuation, we can always replace it with an equivalent one such that $v(K^\times) = \bZ$. Such a $v$ will be called a \emph{normalised valuation}.
+    If $v$ is a discrete valuation, we can always replace it with an equivalent one such that $v(K^\times) = \ZZ$. Such a $v$ will be called a \emph{normalised valuation}.
 
     In this case, $v(\pi) = 1$ iff $\pi$ is a uniformiser.
 \end{remark}
@@ -368,7 +369,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 
     \noindent (iii) $\Rightarrow$ (iv): Write $\fm = x_1 \cO_K + \ldots + x_n \cO_K$. WLOG assume that $v(x_1) \le \ldots \le v(x_n)$. Then $x_2, \ldots, x_n \in x_1 \cO_K$, so $\fm = x_1 \cO_K$.
 
-    \noindent (iv) $\Rightarrow$ (i): Suppose that $\fm = \pi \cO_K$. Let $c = v(\pi)$. If $x \in \cO_K$ is such that $v(x) > 0$, then $x \in \fm$, so $v(x) \ge c$. Thus $v(K^\times) \cap (0, c) = \emptyset$. Since $v(K^\times)$ is a subgroup of $\bR$, we have $v(K^\times) = c \bZ$.
+    \noindent (iv) $\Rightarrow$ (i): Suppose that $\fm = \pi \cO_K$. Let $c = v(\pi)$. If $x \in \cO_K$ is such that $v(x) > 0$, then $x \in \fm$, so $v(x) \ge c$. Thus $v(K^\times) \cap (0, c) = \emptyset$. Since $v(K^\times)$ is a subgroup of $\RR$, we have $v(K^\times) = c \ZZ$.
 \end{proof}
 
 \begin{remark}
@@ -391,45 +392,45 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     \begin{enumerate}
         \item $\cO_K$ is a PID by \autoref{lem:2_6}, so any non-zero prime ideal of $\cO_K$ is maximal. The result follows by \autoref{cor:2_4}.
 
-        \item Let $R$ be a DVR with maximal ideal $\fm = \pi R$, where $\pi \in R$. By unique factorisation, we may write each $x \in R \setminus 0$ uniquely in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \ge 0$. Thus any $x \in K^\times$ can be written uniquely\footnote{if $\pi^m u = \pi^n v$ for some $m, n \in \bZ$ and $u, v \in R^\times$, then $\pi^{n-m} = u v^{-1} \in R^\times$, so $n = m$.} in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \in \bZ$.
+        \item Let $R$ be a DVR with maximal ideal $\fm = \pi R$, where $\pi \in R$. By unique factorisation, we may write each $x \in R \setminus 0$ uniquely in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \ge 0$. Thus any $x \in K^\times$ can be written uniquely\footnote{if $\pi^m u = \pi^n v$ for some $m, n \in \ZZ$ and $u, v \in R^\times$, then $\pi^{n-m} = u v^{-1} \in R^\times$, so $n = m$.} in the form $x = \pi^m u$ for some $u \in R^\times$ and $m \in \ZZ$.
 
         Define $v(\pi^m u) = m$. It is easy to check that $v$ is a valuation, and that $\cO_K = R$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{example}
-    $\bZ_{(p)}$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
+    $\ZZ_{(p)}$ and $k \llbracket t \rrbracket$ are DVRs, where $p$ is a prime and $k$ is a field.
 \end{example}
 
 \subsection{\texorpdfstring{$p$}{p}-adic numbers}
 
-\noindent Recall that $\bQ_p$ is the completion of $\bQ$ with respect to $\abs{\cdot}_p$.
+\noindent Recall that $\QQ_p$ is the completion of $\QQ$ with respect to $\abs{\cdot}_p$.
 
-An exercise on Example Sheet 1 shows that $\bQ_p$ is a field, that $\abs{\cdot}_p$ extends to $\bQ_p$, and the associated valuation is discrete.
+An exercise on Example Sheet 1 shows that $\QQ_p$ is a field, that $\abs{\cdot}_p$ extends to $\QQ_p$, and the associated valuation is discrete.
 
 \begin{definition}
     The ring of \emph{$p$-adic integers} is the valuation ring
     \begin{equation*}
-        \bZ_p = \{x \in \bQ_p \mid \abs{x}_p \le 1\} = \{x \in \bQ_p \mid v_p(x) \ge 0\}
+        \ZZ_p = \{x \in \QQ_p \mid \abs{x}_p \le 1\} = \{x \in \QQ_p \mid v_p(x) \ge 0\}
     \end{equation*}
 \end{definition}
 
-\noindent $\bZ_p$ is a DVR with maximal ideal $p \bZ_p$. Its non-zero ideals are given by $p^n \bZ_p$ for $n \ge 0$.
+\noindent $\ZZ_p$ is a DVR with maximal ideal $p \ZZ_p$. Its non-zero ideals are given by $p^n \ZZ_p$ for $n \ge 0$.
 
 \begin{proposition}\label{prop:3_2}
-    $\bZ_p$ is the closure of $\bZ$ inside $\bQ_p$. In particular, $\bZ_p$ is the completion of $\bZ$ with respect to $\abs{\cdot}_p$.
+    $\ZZ_p$ is the closure of $\ZZ$ inside $\QQ_p$. In particular, $\ZZ_p$ is the completion of $\ZZ$ with respect to $\abs{\cdot}_p$.
 \end{proposition}
 \begin{proof}
-    We need to show that $\bZ$ is dense inside $\bZ_p$. We divide this into two parts:
+    We need to show that $\ZZ$ is dense inside $\ZZ_p$. We divide this into two parts:
     \begin{enumerate}
-        \item $\bZ_{(p)}$ is dense in $\bZ_p$: Note that $\bQ$ is dense inside $\bQ_p$. By \autoref{lem:1_8}, $\bZ_p$ is open in $\bQ_p$, so $\bZ_p \cap \bQ$ is dense in $\bZ_p$.
+        \item $\ZZ_{(p)}$ is dense in $\ZZ_p$: Note that $\QQ$ is dense inside $\QQ_p$. By \autoref{lem:1_8}, $\ZZ_p$ is open in $\QQ_p$, so $\ZZ_p \cap \QQ$ is dense in $\ZZ_p$.
             \begin{equation*}
-                \bZ_p \cap \bQ = \{x \in \bQ \mid \abs{x}_p \le 1\} = \{a/b \in \bQ \mid p \nmid b\} = \bZ_{(p)}
+                \ZZ_p \cap \QQ = \{x \in \QQ \mid \abs{x}_p \le 1\} = \{a/b \in \QQ \mid p \nmid b\} = \ZZ_{(p)}
             \end{equation*}
-        \item $\bZ$ is dense inside $\bZ_{(p)}$:
-    Let $a/b \in \bZ_{(p)}$, with $a, b \in \bZ$ and $p \nmid b$. For $n \in \bN$, choose $y_n \in \bZ$ such that $b y_n \equiv a \pmod{p^n}$. Then $y_n \to a/b$ as $n \to \infty$ with respect to $\abs{\cdot}_p$.
+        \item $\ZZ$ is dense inside $\ZZ_{(p)}$:
+    Let $a/b \in \ZZ_{(p)}$, with $a, b \in \ZZ$ and $p \nmid b$. For $n \in \NN$, choose $y_n \in \ZZ$ such that $b y_n \equiv a \pmod{p^n}$. Then $y_n \to a/b$ as $n \to \infty$ with respect to $\abs{\cdot}_p$.
     \end{enumerate}
-    Since being dense is transitive\footnote{if $A \subseteq B \subseteq C$, $A$ is dense in $B$ and $B$ is dense in $C$, then $A$ is dense in $C$.}, we are done. The last part follows since $\bZ_p$ is complete\footnote{as it is closed in $\bQ_p$} and $\bZ$ is dense in $\bZ_p$.
+    Since being dense is transitive\footnote{if $A \subseteq B \subseteq C$, $A$ is dense in $B$ and $B$ is dense in $C$, then $A$ is dense in $C$.}, we are done. The last part follows since $\ZZ_p$ is complete\footnote{as it is closed in $\QQ_p$} and $\ZZ$ is dense in $\ZZ_p$.
 \end{proof}
 
 \subsubsection*{Inverse limits}
@@ -511,38 +512,38 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{warning}
 
 \begin{corollary}\label{cor:3_6}
-    Let $K, A$ be as in part (ii) of \autoref{prop:3_5}. Then every $x \in K$ can be written uniquely as $x = \sum_{i=n}^\infty a_i \pi^i$ for some $n \in \bZ$, $a_i \in A$. Conversely, any such expansion $x = \sum_{i=n}^\infty a_i \pi^i$ defines an element of $K$.
+    Let $K, A$ be as in part (ii) of \autoref{prop:3_5}. Then every $x \in K$ can be written uniquely as $x = \sum_{i=n}^\infty a_i \pi^i$ for some $n \in \ZZ$, $a_i \in A$. Conversely, any such expansion $x = \sum_{i=n}^\infty a_i \pi^i$ defines an element of $K$.
 \end{corollary}
 \begin{proof}
-    Let $n \in \bZ$ be such that $\pi^{-n} x \in \cO_K$ and apply \autoref{prop:3_5} (ii) to $\pi^{-n} x$.
+    Let $n \in \ZZ$ be such that $\pi^{-n} x \in \cO_K$ and apply \autoref{prop:3_5} (ii) to $\pi^{-n} x$.
 \end{proof}
 
 \begin{corollary}\label{cor:3_7}\phantom{}
     \begin{enumerate}
-        \item $\bZ_p \cong \varprojlim \bZ / p^n \bZ$.
-        \item Every element of $x \in \bQ_p$ can be written uniquely as a Laurent series $x = \sum_{i=n}^\infty a_i p^i$ where $n \in \bZ$ and $a_i \in \{0, \ldots, p - 1\}$
+        \item $\ZZ_p \cong \varprojlim \ZZ / p^n \ZZ$.
+        \item Every element of $x \in \QQ_p$ can be written uniquely as a Laurent series $x = \sum_{i=n}^\infty a_i p^i$ where $n \in \ZZ$ and $a_i \in \{0, \ldots, p - 1\}$
     \end{enumerate}
 \end{corollary}
 \begin{proof}\phantom{}
     \begin{enumerate}
-        \item Let $f_n : \bZ \to \bZ_p / p^n \bZ_p$ be the natural map. We have
+        \item Let $f_n : \ZZ \to \ZZ_p / p^n \ZZ_p$ be the natural map. We have
             \begin{equation*}
-                \ker{f_n} = \{x \in \bZ \mid \abs{x}_p \le p^{-n}\} = p^n \bZ
+                \ker{f_n} = \{x \in \ZZ \mid \abs{x}_p \le p^{-n}\} = p^n \ZZ
             \end{equation*}
-            $f_n$ is surjective: Let $\overline{c} \in \bZ_p / p^n \bZ_p$, and let $c \in \bZ_p$ be a lift. Since $\bZ$ is dense in $\bZ_p$, there is\footnote{recall that closed balls are open, and $x \in \bZ$ iff $x \in \overline{B}(c, p^{-n})$} an $x \in \bZ$ such that $x \in c + p^n \bZ_p$. Then $f_n(x) = \overline{c}$.
+            $f_n$ is surjective: Let $\overline{c} \in \ZZ_p / p^n \ZZ_p$, and let $c \in \ZZ_p$ be a lift. Since $\ZZ$ is dense in $\ZZ_p$, there is\footnote{recall that closed balls are open, and $x \in \ZZ$ iff $x \in \overline{B}(c, p^{-n})$} an $x \in \ZZ$ such that $x \in c + p^n \ZZ_p$. Then $f_n(x) = \overline{c}$.
 
-            Thus $f_n$ induces an isomorphism $\tilde{f}_n : \bZ / p^n \bZ \to \bZ_p / p^n \bZ_p$. Note that the diagram
+            Thus $f_n$ induces an isomorphism $\tilde{f}_n : \ZZ / p^n \ZZ \to \ZZ_p / p^n \ZZ_p$. Note that the diagram
             \begin{equation*}
             \begin{tikzcd}
-                \bZ/p^{n+1} \bZ \arrow[r]\arrow[d, "\tilde{f}_{n+1}", "\sim"'] & \bZ/p^n \bZ \arrow[d, "\tilde{f}_n", "\sim"']\\
-                \bZ_p/p^{n+1} \bZ_p \arrow[r] & \bZ_p/p^n \bZ_p
+                \ZZ/p^{n+1} \ZZ \arrow[r]\arrow[d, "\tilde{f}_{n+1}", "\sim"'] & \ZZ/p^n \ZZ \arrow[d, "\tilde{f}_n", "\sim"']\\
+                \ZZ_p/p^{n+1} \ZZ_p \arrow[r] & \ZZ_p/p^n \ZZ_p
             \end{tikzcd}
             \end{equation*}
-            commutes. Thus the $\tilde{f}_n$ induce an isomorphism $\varprojlim \bZ/p^n\bZ \cong \varprojlim \bZ_p/p^n\bZ_p$.
+            commutes. Thus the $\tilde{f}_n$ induce an isomorphism $\varprojlim \ZZ/p^n\ZZ \cong \varprojlim \ZZ_p/p^n\ZZ_p$.
 
-            On the other hand, \autoref{prop:3_5} implies that $\bZ_p \cong \varprojlim \bZ_p / p^n \bZ_p$, so we are done.
+            On the other hand, \autoref{prop:3_5} implies that $\ZZ_p \cong \varprojlim \ZZ_p / p^n \ZZ_p$, so we are done.
 
-        \item This follows from \autoref{cor:3_6}, using $\bZ_p / p \bZ_p \cong \bF_p$.\qedhere
+        \item This follows from \autoref{cor:3_6}, using $\ZZ_p / p \ZZ_p \cong \FF_p$.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -593,30 +594,30 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{example}
-    $f(X) = X^2 - 2$ has a simple root mod $7$. Thus $\sqrt{2} \in \bZ_7$.
+    $f(X) = X^2 - 2$ has a simple root mod $7$. Thus $\sqrt{2} \in \ZZ_7$.
 \end{example}
 
 \begin{corollary}\label{cor:4_3}
     \begin{equation*}
-        \bQ_p^\times / (\bQ_p^\times)^2 \cong
+        \QQ_p^\times / (\QQ_p^\times)^2 \cong
         \begin{cases}
-            (\bZ / 2 \bZ)^2 & \text{if } p > 2\\
-            (\bZ / 2 \bZ)^3 & \text{if } p = 2
+            (\ZZ / 2 \ZZ)^2 & \text{if } p > 2\\
+            (\ZZ / 2 \ZZ)^3 & \text{if } p = 2
         \end{cases}
     \end{equation*}
 \end{corollary}
 \begin{proof}
-    Case $p > 2$: Let $b \in \bZ_p^\times$. Applying \autoref{cor:4_2} to $f(X) = X^2 - b$, we find that $b \in (\bZ_p^\times)^2$ iff $\overline{b} \in (\bF_p^\times)^2$. Thus we have an isomorphism $\bZ_p^\times / (\bZ_p^\times)^2 \cong \bF_p^\times / (\bF_p^\times)^2 \cong \bZ / 2\bZ$.
+    Case $p > 2$: Let $b \in \ZZ_p^\times$. Applying \autoref{cor:4_2} to $f(X) = X^2 - b$, we find that $b \in (\ZZ_p^\times)^2$ iff $\overline{b} \in (\FF_p^\times)^2$. Thus we have an isomorphism $\ZZ_p^\times / (\ZZ_p^\times)^2 \cong \FF_p^\times / (\FF_p^\times)^2 \cong \ZZ / 2\ZZ$.
 
-    We have an isomorphism $\bZ_p^\times \times \bZ \xrightarrow{\sim} \bQ_p^\times$ given by $(u, n) \mapsto u p^n$, so $\bQ_p^\times / (\bQ_p)^2 \cong \bZ_p^\times / (\bZ_p^\times)^2 \times \bZ / 2\bZ \cong (\bZ / 2\bZ)^2$
+    We have an isomorphism $\ZZ_p^\times \times \ZZ \xrightarrow{\sim} \QQ_p^\times$ given by $(u, n) \mapsto u p^n$, so $\QQ_p^\times / (\QQ_p)^2 \cong \ZZ_p^\times / (\ZZ_p^\times)^2 \times \ZZ / 2\ZZ \cong (\ZZ / 2\ZZ)^2$
 
-    Case $p = 2$: Let $b \in \bZ_2^\times$. Consider $f(X) = X^2 - b$. We have $f'(X) = 2X \equiv 0 \pmod{2}$.
+    Case $p = 2$: Let $b \in \ZZ_2^\times$. Consider $f(X) = X^2 - b$. We have $f'(X) = 2X \equiv 0 \pmod{2}$.
 
     Suppose that $b \equiv 1 \pmod{8}$. Then
     \begin{equation*}
         \abs{f(1)}_2 \le 2^{-3} < 2^{-2} = \abs{f'(1)}_2^2
     \end{equation*}
-    Hensel's lemma implies that $f(X)$ has a root in $\bZ_2$, so $b \in (\bZ_2^\times)^2$. Conversely if $b \in (\bZ_2^\times)^2$, then $b \pmod{8} \in ((\bZ / 8\bZ)^\times)^2 = \{1\}$. Thus $b \in (\bZ_2^\times)^2$ iff $b \equiv 1 \pmod{8}$. Thus we have an isomorphism $\bZ_2^\times / (\bZ_2^\times)^2 \cong (\bZ / 8 \bZ)^\times \cong (\bZ / 2\bZ)^2$. We can conclude using the isomorphism $\bZ_2^\times \times \bZ \cong \bQ_2^\times$ as in the previous case.
+    Hensel's lemma implies that $f(X)$ has a root in $\ZZ_2$, so $b \in (\ZZ_2^\times)^2$. Conversely if $b \in (\ZZ_2^\times)^2$, then $b \pmod{8} \in ((\ZZ / 8\ZZ)^\times)^2 = \{1\}$. Thus $b \in (\ZZ_2^\times)^2$ iff $b \equiv 1 \pmod{8}$. Thus we have an isomorphism $\ZZ_2^\times / (\ZZ_2^\times)^2 \cong (\ZZ / 8 \ZZ)^\times \cong (\ZZ / 2\ZZ)^2$. We can conclude using the isomorphism $\ZZ_2^\times \times \ZZ \cong \QQ_2^\times$ as in the previous case.
 \end{proof}
 
 \begin{theorem}[Hensel's Lemma Version 2]\label{thm:4_4}
@@ -650,9 +651,9 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 
 \begin{example}\phantom{}
     \begin{enumerate}
-        \item $\bF_{p^n}, \overline{\bF}_p$ are perfect fields.
-        \item $\bF_p[t]$ is not perfect, since $t$ does not lie in the image of the Frobenius map.
-        \item $\bF_p(t^\frac{1}{p^n}) = \bF_p(t, t^\frac{1}{p}, t^\frac{1}{p^2}, \ldots)$ is a perfect field (it is the \emph{perfection} of $\bF_p(t)$).
+        \item $\FF_{p^n}, \overline{\FF}_p$ are perfect fields.
+        \item $\FF_p[t]$ is not perfect, since $t$ does not lie in the image of the Frobenius map.
+        \item $\FF_p(t^\frac{1}{p^n}) = \FF_p(t, t^\frac{1}{p}, t^\frac{1}{p^2}, \ldots)$ is a perfect field (it is the \emph{perfection} of $\FF_p(t)$).
     \end{enumerate}
 \end{example}
 
@@ -726,7 +727,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{example}
-    Take $K = \bQ_p$, then $[\cdot] : \bF_p \to \bZ_p$. Take $a \in \bF_p^\times$. Then $[a]^{p-1} = [a^{p-1}] = [1] = 1$, so $[a]$ is a $(p-1)$\textsuperscript{th} root of unity.
+    Take $K = \QQ_p$, then $[\cdot] : \FF_p \to \ZZ_p$. Take $a \in \FF_p^\times$. Then $[a]^{p-1} = [a^{p-1}] = [1] = 1$, so $[a]$ is a $(p-1)$\textsuperscript{th} root of unity.
 \end{example}
 
 More generally, we have
@@ -734,10 +735,10 @@ More generally, we have
 \stepcounter{definition} % Numbering issue
 
 \begin{lemma}\label{lem:5_6}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field. If $k \subseteq \overline{\bF}_p$, then for $a \in k^\times$, $[a] \in \cO_K^\times$ is a root of unity.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. If $k \subseteq \overline{\FF}_p$, then for $a \in k^\times$, $[a] \in \cO_K^\times$ is a root of unity.
 \end{lemma}
 \begin{proof}
-    $a \in \overline{\bF}_p$ implies that $a \in \bF_{p^n}$ for some $n$. Then $[a]^{p^n-1} = [a^{p^n-1}] = [1] = 1$.
+    $a \in \overline{\FF}_p$ implies that $a \in \FF_{p^n}$ for some $n$. Then $[a]^{p^n-1} = [a^{p^n-1}] = [1] = 1$.
 \end{proof}
 
 \begin{theorem}\label{thm:5_7}
@@ -773,7 +774,7 @@ More generally, we have
 \end{fact}
 
 \begin{definition}
-    Let $(K, \abs{\cdot})$ be a non-archimedean valued field, $V$ a vector space over $K$. A \emph{norm} on $V$ is a function $\norm{\cdot} : V \to \bR_{\ge 0}$ satisfying
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field, $V$ a vector space over $K$. A \emph{norm} on $V$ is a function $\norm{\cdot} : V \to \RR_{\ge 0}$ satisfying
     \begin{enumerate}
         \item $\norm{x} = 0 \iff x = 0$
         \item $\forall x \in V, \forall \lambda \in K, \norm{\lambda x} = \abs{\lambda} \norm{x}$
@@ -793,7 +794,7 @@ More generally, we have
 \end{exercise}
 
 \begin{definition}
-    Two norms $\norm{\cdot}_1, \norm{\cdot}_2$ are \emph{equivalent} if there are $C, D \in \bR_{>0}$ such that
+    Two norms $\norm{\cdot}_1, \norm{\cdot}_2$ are \emph{equivalent} if there are $C, D \in \RR_{>0}$ such that
     \begin{equation*}
         C \norm{x}_1 \le \norm{x}_2 \le D \norm{x}_1
     \end{equation*}
@@ -888,7 +889,7 @@ More generally, we have
 \begin{proof}[Proof of \autoref{thm:6_1} (continued)]
     We have already shown that $\abs{x}_L$ defines an absolute value on $L$. Since $N_{L/K}(x) = x^n$ for $x \in K$, $\abs{\cdot}_L$ indeed extends $\abs{\cdot}$ on $K$.
 
-    For uniqueness, suppose that $\abs{\cdot}'_L$ is another absolute value on $L$ extending $\abs{\cdot}$. Then $\abs{\cdot}_L$ and $\abs{\cdot}'_L$ are norms on $L$, so \autoref{thm:6_5} implies that they induce the same topology on $L$. Thus by \autoref{prop:1_3}, there is a $c \in \bR_{>0}$ such that $\abs{\cdot}'_L = \abs{\cdot}_L^c$. Since $\abs{\cdot}'_L$ extends $\abs{\cdot}$ on $K$, we have $c = 1$.
+    For uniqueness, suppose that $\abs{\cdot}'_L$ is another absolute value on $L$ extending $\abs{\cdot}$. Then $\abs{\cdot}_L$ and $\abs{\cdot}'_L$ are norms on $L$, so \autoref{thm:6_5} implies that they induce the same topology on $L$. Thus by \autoref{prop:1_3}, there is a $c \in \RR_{>0}$ such that $\abs{\cdot}'_L = \abs{\cdot}_L^c$. Since $\abs{\cdot}'_L$ extends $\abs{\cdot}$ on $K$, we have $c = 1$.
 
     By \autoref{thm:6_5}, $L$ is complete with respect to $\abs{\cdot}_L$.
 \end{proof}
@@ -918,9 +919,9 @@ More generally, we have
 \end{proof}
 
 \begin{remark}
-    $\abs{\cdot}_{\overline{K}}$ is never discrete. For example, take $K = \bQ_p$, consider $p^\frac{1}{n} \in \overline{\bQ_p}$. Then $v_p(p^\frac{1}{n}) = \frac{1}{n} v_p(p) = \frac{1}{n}$.
+    $\abs{\cdot}_{\overline{K}}$ is never discrete. For example, take $K = \QQ_p$, consider $p^\frac{1}{n} \in \overline{\QQ_p}$. Then $v_p(p^\frac{1}{n}) = \frac{1}{n} v_p(p) = \frac{1}{n}$.
 
-    $\overline{\bQ_p}$ is not complete. On Example Sheet 2, we will see that if $\bC_p$ is the completion of $\overline{\bQ_p}$ with respect to $\abs{\cdot}_{\overline{\bQ_p}}$, then $\bC_p$ is algebraically closed.
+    $\overline{\QQ_p}$ is not complete. On Example Sheet 2, we will see that if $\CC_p$ is the completion of $\overline{\QQ_p}$ with respect to $\abs{\cdot}_{\overline{\QQ_p}}$, then $\CC_p$ is algebraically closed.
 \end{remark}
 
 \begin{proposition}\label{prop:6_12}
@@ -955,7 +956,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \end{definition}
 
 \begin{example}
-    $\bR$ and $\bC$ are local fields.
+    $\RR$ and $\CC$ are local fields.
 \end{example}
 
 \begin{proposition}\label{prop:7_2}
@@ -990,7 +991,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \end{proof}
 
 \begin{example}
-    $\bQ_p$ and $\bF_p((t))$ are local fields.
+    $\QQ_p$ and $\FF_p((t))$ are local fields.
 \end{example}
 
 \subsubsection*{More on inverse limits}
@@ -1031,23 +1032,23 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 \end{definition}
 
 \begin{example}
-    $\bQ_p$ has mixed characteristic, while $\bF_p((t))$ has equal characteristic.
+    $\QQ_p$ has mixed characteristic, while $\FF_p((t))$ has equal characteristic.
 \end{example}
 
 \begin{theorem}\label{thm:7_8}
-    Let $K$ be a local field of equal characteristic $p > 0$. Then $K \cong \bF_{p^n}((t))$ for some $n \ge 1$.
+    Let $K$ be a local field of equal characteristic $p > 0$. Then $K \cong \FF_{p^n}((t))$ for some $n \ge 1$.
 \end{theorem}
 \begin{proof}
-    $K$ is complete, discretely valued, and $k$ is finite by \autoref{prop:7_2}. Hence $k \cong \bF_{p^n}$ for some $n$, which is perfect. By \autoref{thm:5_7}, $K \cong \bF_{p^n}((t))$.
+    $K$ is complete, discretely valued, and $k$ is finite by \autoref{prop:7_2}. Hence $k \cong \FF_{p^n}$ for some $n$, which is perfect. By \autoref{thm:5_7}, $K \cong \FF_{p^n}((t))$.
 \end{proof}
 
 \begin{lemma}\label{lem:7_9}
-    An absolute value $\abs{\cdot}$ on a field $K$ is non-archimedean iff $\abs{\cdot}$ is bounded on $\bZ$.
+    An absolute value $\abs{\cdot}$ on a field $K$ is non-archimedean iff $\abs{\cdot}$ is bounded on $\ZZ$.
 \end{lemma}
 \begin{proof}
     ($\Rightarrow$) Since $\abs{-n} = \abs{n}$, it suffices to show that $\abs{n}$ is bounded for $n \ge 1$. Indeed $\abs{n} = \abs{1 + \ldots + 1} \le \abs{1} = 1$.
 
-    \noindent ($\Leftarrow$) Suppose that there is a $B$ such that $\abs{n} \le B$ for all $n \in \bZ$. Let $x, y \in K$ be such that $\abs{x} \le \abs{y}$. Then for $m \ge 0$,
+    \noindent ($\Leftarrow$) Suppose that there is a $B$ such that $\abs{n} \le B$ for all $n \in \ZZ$. Let $x, y \in K$ be such that $\abs{x} \le \abs{y}$. Then for $m \ge 0$,
     \begin{align*}
         \abs{x + y}^m
         &= \abs{\sum_{i=0}^m \binom{m}{i} x^i y^{m-i}}\\
@@ -1058,7 +1059,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 \end{proof}
 
 \begin{theorem}[Ostrowski's Theorem]\label{thm:7_10}
-    Any non-trivial absolute value on $\bQ$ is equivalent to either the usual absolute value $\abs{\cdot}_\infty$ or the $p$-adic absolute value $\abs{\cdot}_p$ for some prime $p$.
+    Any non-trivial absolute value on $\QQ$ is equivalent to either the usual absolute value $\abs{\cdot}_\infty$ or the $p$-adic absolute value $\abs{\cdot}_p$ for some prime $p$.
 \end{theorem}
 \begin{proof}
     \underline{Case 1:} $\abs{\cdot}$ is archimedean.
@@ -1078,33 +1079,33 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
     \begin{equation*}
         \frac{\log{\abs{a}}}{\log{a}} = \frac{\log{\abs{b}}}{\log{b}}
     \end{equation*}
-    for any $a, b > 1$. Let $\lambda > 0$ be this common value. Then for $a \in \bZ_{>1}$, $\abs{a} = a^\lambda$, and it follows that for any $x \in \bQ$, $\abs{x} = \abs{x}_\infty^\lambda$, i.e. $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\infty$.
+    for any $a, b > 1$. Let $\lambda > 0$ be this common value. Then for $a \in \ZZ_{>1}$, $\abs{a} = a^\lambda$, and it follows that for any $x \in \QQ$, $\abs{x} = \abs{x}_\infty^\lambda$, i.e. $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\infty$.
 
-    \underline{Case 2:} $\abs{\cdot}$ is non-archimedean. As in \autoref{lem:7_9}, we have $\abs{n} \le 1$ for all $n \in \bZ$. Since $\abs{\cdot}$ is non-trivial, there is an $n > 1$ such that $\abs{n} < 1$. Then $\abs{p} < 1$ for some prime $p$ dividing $n$. Suppose that $\abs{q} < 1$ for some other prime $q \neq p$. Then $rp + sq = 1$ for some $r, s \in \bZ$. Thus $1 = \abs{rp + sq} \le \max\{\abs{rp}, \abs{sq}\} < 1$, contradiction. Thus $\abs{\cdot}$ is equivalent to $\abs{\cdot}_p$.
+    \underline{Case 2:} $\abs{\cdot}$ is non-archimedean. As in \autoref{lem:7_9}, we have $\abs{n} \le 1$ for all $n \in \ZZ$. Since $\abs{\cdot}$ is non-trivial, there is an $n > 1$ such that $\abs{n} < 1$. Then $\abs{p} < 1$ for some prime $p$ dividing $n$. Suppose that $\abs{q} < 1$ for some other prime $q \neq p$. Then $rp + sq = 1$ for some $r, s \in \ZZ$. Thus $1 = \abs{rp + sq} \le \max\{\abs{rp}, \abs{sq}\} < 1$, contradiction. Thus $\abs{\cdot}$ is equivalent to $\abs{\cdot}_p$.
 \end{proof}
 
 \begin{theorem}\label{thm:7_11}
-    Let $(K, \abs{\cdot})$ be a non-archimedean local field of mixed characteristic. Then $K$ is a finite extension of $\bQ_p$ for some prime $p$.
+    Let $(K, \abs{\cdot})$ be a non-archimedean local field of mixed characteristic. Then $K$ is a finite extension of $\QQ_p$ for some prime $p$.
 \end{theorem}
 \begin{proof}
-    Since $K$ is mixed characteristic, $\Char{K} = 0$, so $\bQ \subseteq K$. Since $(K, \abs{\cdot})$ is non-archimedean, so is $(\bQ, \abs{\cdot} \vert_\bQ)$ by \autoref{lem:7_9}. Thus $\abs{\cdot} \vert_\bQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. Since $K$ is complete, $\bQ_p \subseteq K$.
+    Since $K$ is mixed characteristic, $\Char{K} = 0$, so $\QQ \subseteq K$. Since $(K, \abs{\cdot})$ is non-archimedean, so is $(\QQ, \abs{\cdot} \vert_\QQ)$ by \autoref{lem:7_9}. Thus $\abs{\cdot} \vert_\QQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. Since $K$ is complete, $\QQ_p \subseteq K$.
 
-    To show that $K / \bQ_p$ is finite, it suffices to show that $\cO_K$ is finite as a $\bZ_p$-module\footnote{the generators of $\cO_K$ as a $\bZ_p$-module span generate $K$ as a $\bQ$-vector space}. Let $\pi \in \cO_K$ be a uniformiser, $v$ the normalised valuation on $K$, and set $e = v(p)$. Then $\cO_K / p \cO_K = \cO_K / \pi^e \cO_K$ is finite, since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong \cO_K / \pi \cO_K$ is finite. Via the map $\bF_p \cong \bZ_p / p \bZ_p \to \cO_K / p \cO_K$, $\cO_K / p \cO_K$ is a finite-dimensional $\bF_p$-vector space. Let $x_1, \ldots, x_n \in \cO_K$ be coset representatives for a $\bF_p$-basis of $\cO_K / p \cO_K$. Then $\{\sum_{j=1}^n a_j x_j \mid a_j \in \{0, \ldots, p-1\}\}$ is a set of coset representatives for $\cO_K / p \cO_K$.
+    To show that $K / \QQ_p$ is finite, it suffices to show that $\cO_K$ is finite as a $\ZZ_p$-module\footnote{the generators of $\cO_K$ as a $\ZZ_p$-module span generate $K$ as a $\QQ$-vector space}. Let $\pi \in \cO_K$ be a uniformiser, $v$ the normalised valuation on $K$, and set $e = v(p)$. Then $\cO_K / p \cO_K = \cO_K / \pi^e \cO_K$ is finite, since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong \cO_K / \pi \cO_K$ is finite. Via the map $\FF_p \cong \ZZ_p / p \ZZ_p \to \cO_K / p \cO_K$, $\cO_K / p \cO_K$ is a finite-dimensional $\FF_p$-vector space. Let $x_1, \ldots, x_n \in \cO_K$ be coset representatives for a $\FF_p$-basis of $\cO_K / p \cO_K$. Then $\{\sum_{j=1}^n a_j x_j \mid a_j \in \{0, \ldots, p-1\}\}$ is a set of coset representatives for $\cO_K / p \cO_K$.
 
     Let $y \in \cO_K$. By \autoref{prop:3_5} (ii), there are $a_{ij} \in \{0, \ldots, p-1\}$ such that
     \begin{align*}
         y
         &= \sum_{i=0}^\infty \left(\sum_{j=1}^n a_{ij} x_j\right) p^i\\
-        &= \sum_{j=1}^n \underbrace{\left(\sum_{i=0}^\infty a_{ij} p^i\right)}_{\in \bZ_p} x_j
+        &= \sum_{j=1}^n \underbrace{\left(\sum_{i=0}^\infty a_{ij} p^i\right)}_{\in \ZZ_p} x_j
     \end{align*}
-    Thus $\cO_K$ is generated by $x_1, \ldots, x_n$ is a $\bZ_p$-module.
+    Thus $\cO_K$ is generated by $x_1, \ldots, x_n$ is a $\ZZ_p$-module.
 \end{proof}
 
-On Example Sheet 2, we will show that if $K$ is a complete archimedean field, then $K \cong \bR$ or $\bC$. To summarise, if $K$ is a local field, then
+On Example Sheet 2, we will show that if $K$ is a complete archimedean field, then $K \cong \RR$ or $\CC$. To summarise, if $K$ is a local field, then
 \begin{enumerate}
-    \item if $K$ is archimedean, then $K \cong \bR, \bC$
-    \item if $K$ is non-archimedean of equal characteristic, then $K \cong \bF_{p^n}((t))$ for some prime $p$ and integer $n \ge 1$
-    \item if $K$ is non-archimedean of mixed characteristic, then $K$ is a finite extension of $\bQ_p$ for some prime $p$.
+    \item if $K$ is archimedean, then $K \cong \RR, \CC$
+    \item if $K$ is non-archimedean of equal characteristic, then $K \cong \FF_{p^n}((t))$ for some prime $p$ and integer $n \ge 1$
+    \item if $K$ is non-archimedean of mixed characteristic, then $K$ is a finite extension of $\QQ_p$ for some prime $p$.
 \end{enumerate}
 
 \subsection{Global Fields}
@@ -1113,7 +1114,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     A \emph{global field} is a field which is either
     \begin{enumerate}
         \item an algebraic number field
-        \item a global function field, i.e. a finite extension of $\bF_p(t)$
+        \item a global function field, i.e. a finite extension of $\FF_p(t)$
     \end{enumerate}
 \end{definition}
 
@@ -1132,7 +1133,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 \end{proof}
 
 \begin{proposition}\label{prop:8_4}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field, and $f(X) = \sum_{i=0}^n a_i X^i \in \cO_K[X]$ be a separable irreducible monic polynomial. Let $\alpha \in \overline{K}$ be a root of $f$. Then there is an $\varepsilon > 0$ such that for any monic polynomial $g(X) = \sum_{i=0}^n b_i X^i \in \cO_K[X]$ with $\abs{a_i - b_i} < \varepsilon$, there exists a root $\beta$ of $g(X)$ such that $K(\alpha) = K(\beta)$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field, and let $f(X) = \sum_{i=0}^n a_i X^i \in \cO_K[X]$ be a separable irreducible monic polynomial. Let $\alpha \in \overline{K}$ be a root of $f$. Then there is an $\varepsilon > 0$ such that for any monic polynomial $g(X) = \sum_{i=0}^n b_i X^i \in \cO_K[X]$ with $\abs{a_i - b_i} < \varepsilon$, there exists a root $\beta$ of $g(X)$ such that $K(\alpha) = K(\beta)$.
 \end{proposition}
 \begin{proof}
     Let $\alpha = \alpha_1, \ldots, \alpha_n$ be the roots of $f$, necessarily distinct. Then $f'(\alpha_1) \neq 0$. By continuity, there is an $\varepsilon > 0$ sufficiently small such that if $\abs{a_i - b_i} < \varepsilon$, then $\abs{g(\alpha_1)} < \abs{f'(\alpha_1)}^2$ and $\abs{f'(\alpha_1) - g'(\alpha_1)} < \abs{f'(\alpha)}$. Then by \autoref{lem:1_5}, we have $\abs{g(\alpha_1)} < \abs{f'(\alpha_1)}^2 = \abs{g'(\alpha_1)}^2$. By \autoref{thm:4_1} applied to the field $K(\alpha_1)$, there exists $\beta \in K(\alpha_1)$ such that $g(\beta) = 0$ and $\abs{\beta - \alpha_1} < \abs{g'(\alpha_1)}$. We have
@@ -1146,11 +1147,11 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     Let $K$ be a local field. Then $K$ is the completion of a global field.
 \end{theorem}
 \begin{proof}
-    \underline{Case 1:} $K$ is archimedean. In this case $K \cong \bR$ or $\bC$. $\bR$ and $\bC$ are the completions of $\bQ$ and $\bQ(i)$ respectively with respect to $\abs{\cdot}_\infty$.
+    \underline{Case 1:} $K$ is archimedean. In this case $K \cong \RR$ or $\CC$. $\RR$ and $\CC$ are the completions of $\QQ$ and $\QQ(i)$ respectively with respect to $\abs{\cdot}_\infty$.
 
-    \underline{Case 2:} $K$ is non-archimedean of equal characteristic. In this case $K \cong \bF_q((t))$, so $K$ is the completion of $\bF_q(t)$ with respect to the $t$-adic absolute value.
+    \underline{Case 2:} $K$ is non-archimedean of equal characteristic. In this case $K \cong \FF_q((t))$, so $K$ is the completion of $\FF_q(t)$ with respect to the $t$-adic absolute value.
 
-    \underline{Case 3:} $K$ is non-archimedean of mixed characteristic. In this case $K$ is a finite extension of $\bQ_p$. By the primitive element theorem, $K = \bQ_p(\alpha)$, for some $\alpha \in K$. By normalising, we can take $\alpha$ to be a root of a monic irreducible polynomial with coefficients in $\bZ_p$. Since $\bZ$ is dense in $\bZ_p$, by \autoref{prop:8_4}, there is a monic polynomial $g(X) \in \bZ[X]$ and a root $\beta \in K$ of $g(X)$ such that $K = \bQ_p(\alpha) = \bQ_p(\beta)$. Since $\bQ(\beta)$ is dense in $\bQ_p(\beta) = K$, $K$ is the completion of $\bQ(\beta)$.
+    \underline{Case 3:} $K$ is non-archimedean of mixed characteristic. In this case $K$ is a finite extension of $\QQ_p$. By the primitive element theorem, $K = \QQ_p(\alpha)$, for some $\alpha \in K$. By normalising, we can take $\alpha$ to be a root of a monic irreducible polynomial with coefficients in $\ZZ_p$. Since $\ZZ$ is dense in $\ZZ_p$, by \autoref{prop:8_4}, there is a monic polynomial $g(X) \in \ZZ[X]$ and a root $\beta \in K$ of $g(X)$ such that $K = \QQ_p(\alpha) = \QQ_p(\beta)$. Since $\QQ(\beta)$ is dense in $\QQ_p(\beta) = K$, $K$ is the completion of $\QQ(\beta)$.
 \end{proof}
 
 \section{Dedekind Domains}
@@ -1220,7 +1221,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
 \begin{example}\phantom{}
     \begin{itemize}
         \item If $\fp = (0)$, then $R_{(\fp)} = \Frac(R)$
-        \item If $R = \bZ$, then $\bZ_{(p)} = \{a / b \mid a \in \bZ, (b, p) = 1\}$.
+        \item If $R = \ZZ$, then $\ZZ_{(p)} = \{a / b \mid a \in \ZZ, (b, p) = 1\}$.
     \end{itemize}
 \end{example}
 
@@ -1254,7 +1255,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
 \end{definition}
 
 \begin{example}
-    If $R = \bZ$, $\fp = (p)$, then $v_p$ is the $p$-adic valuation.
+    If $R = \ZZ$, $\fp = (p)$, then $v_p$ is the $p$-adic valuation.
 \end{example}
 
 \begin{theorem}\label{thm:9_7}
@@ -1337,9 +1338,9 @@ On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff t
     The ring of integers of a number field is a Dedekind domain.
 \end{corollary}
 
-As a convention, if $\cO_K$ is the ring of integers of a number field $K$, and $\fp \subseteq \cO_K$ is a non-zero prime ideal, we normalise $\abs{\cdot}_\fp$ by $\abs{x}_\fp = N_\fp^{-v_\fp(x)}$, where $N_\fp = \abs{\cO_K / \fp}$. Note that $N_\fp$ is finite. We can see this from the proof of \autoref{thm:10_2}: Let $\fp \cap \bZ = (p)$. Then $\cO_K / \fp$ is a finite-dimensional vector space over $\bF_p$.
+As a convention, if $\cO_K$ is the ring of integers of a number field $K$, and $\fp \subseteq \cO_K$ is a non-zero prime ideal, we normalise $\abs{\cdot}_\fp$ by $\abs{x}_\fp = N_\fp^{-v_\fp(x)}$, where $N_\fp = \abs{\cO_K / \fp}$. Note that $N_\fp$ is finite. We can see this from the proof of \autoref{thm:10_2}: Let $\fp \cap \ZZ = (p)$. Then $\cO_K / \fp$ is a finite-dimensional vector space over $\FF_p$.
 
-Also if $K = \bQ$, $\cO_K = \bZ$, $\fp = (p)$, then $N_\fp = p$, so the convention is consistent with the $p$-adic valuation defined previously.
+Also if $K = \QQ$, $\cO_K = \ZZ$, $\fp = (p)$, then $N_\fp = p$, so the convention is consistent with the $p$-adic valuation defined previously.
 
 For the remaining of this section, let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_K}$, $L / K$ a finite separable extension, $\cO_L$ the integral closure of $\cO_K$ in $L$, which is a Dedekind domain by \autoref{thm:10_2}.
 
@@ -1364,17 +1365,17 @@ Let $\cP \subseteq \cO_L$ and $\fp \subseteq \cO_K$ be non-zero prime ideals. We
     Now suppose $\abs{\cdot}$ is an absolute value on $L$ extending $\abs{\cdot}_\fp$. Then $\abs{\cdot}$ is non-archimedean since $\abs{\cdot}_\fp$ is, by \autoref{lem:7_9}. Let $R = \{x \in L \mid \abs{x} \le 1\}$ be the valuation ring for $\abs{\cdot}$. Then $\cO_K \subseteq R$ as $\abs{\cdot}$ extends $\abs{\cdot}_\fp$. Since $R$ is integrally closed in $L$ by \autoref{lem:6_8}, we have $\cO_L \subseteq R$. Set $\cP = \{x \in \cO_L \mid \abs{x} < 1\} = \cO_L \cap \fm_R$, where $\fm_R \subseteq R$ is the maximal ideal. Then $\cP$ is a prime ideal of $\cO_L$, non-zero since $\fp \subseteq \cP$. Then $\cO_{L(\cP)} \subseteq R$, since $s \in \cO_L \setminus \cP$ implies $\abs{s} = 1$. Since $\cO_{L(\cP)}$ is a DVR, it is a maximal subring of $L = \Frac(\cO_{L(\cP)})$. Thus $\cO_{L(\cP)} = R$. Thus $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\cP$, since by \autoref{prop:1_3}, the absolute values are determined by their valuation rings. Finally, note that $\fp \subseteq \cP$ implies that $\cP$ is one of the $\cP_i$.
 \end{proof}
 
-Let $K$ be a number field. If $\sigma : K \to \bR, \bC$ is a real or complex embedding, then $\abs{x}_\sigma = \abs{\sigma(x)}_\infty$ defines an absolute value on $K$.
+Let $K$ be a number field. If $\sigma : K \to \RR, \CC$ is a real or complex embedding, then $\abs{x}_\sigma = \abs{\sigma(x)}_\infty$ defines an absolute value on $K$.
 
 \begin{corollary}\label{cor:10_6}
     Let $K$ be a number field with ring of integers $\cO_K$. Then any absolute value on $K$ is equivalent to
     \begin{enumerate}
         \item $\abs{\cdot}_\fp$ for some non-zero prime ideal $\fp \subseteq \cO_K$
-        \item $\abs{\cdot}_\sigma$ for some $\sigma : K \to \bR$ or $\bC$.
+        \item $\abs{\cdot}_\sigma$ for some $\sigma : K \to \RR$ or $\CC$.
     \end{enumerate}
 \end{corollary}
 \begin{proof}
-    \underline{Case 1:} $\abs{\cdot}$ is non-archimedean. By \autoref{thm:7_10}, $\abs{\cdot} \vert_\bQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. By \autoref{thm:10_5}, $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\fp$ for some prime $\fp \mid (p)$.
+    \underline{Case 1:} $\abs{\cdot}$ is non-archimedean. By \autoref{thm:7_10}, $\abs{\cdot} \vert_\QQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. By \autoref{thm:10_5}, $\abs{\cdot}$ is equivalent to $\abs{\cdot}_\fp$ for some prime $\fp \mid (p)$.
 
     \underline{Case 2:} $\abs{\cdot}$ is archimedean. See Example Sheet 2.
 \end{proof}
@@ -1433,7 +1434,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \end{remark}
 
 \begin{example}
-    Let $K = \bQ$, $L = \bQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \bQ_5$. By Hensel's lemma, $\sqrt{-1} \in \bQ_5$. Thus $f(X) = (X - \sqrt{-1})(X + \sqrt{-1})$ in $\bQ_5[X]$. Thus by the remark above, $5$ splits in $\bQ(i)$ as $(5) = \fp_1 \fp_2$.
+    Let $K = \QQ$, $L = \QQ(i)$, $f(X) = X^2 + 1$, $\fp = (5)$, $K_\fp = \QQ_5$. By Hensel's lemma, $\sqrt{-1} \in \QQ_5$. Thus $f(X) = (X - \sqrt{-1})(X + \sqrt{-1})$ in $\QQ_5[X]$. Thus by the remark above, $5$ splits in $\QQ(i)$ as $(5) = \fp_1 \fp_2$.
 \end{example}
 
 \begin{corollary}\label{cor:10_10}
@@ -1459,9 +1460,9 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
 \end{definition}
 
 \begin{example}
-    Consider $\cO_K = \bC[t], \cO_L = \bC[T]$ and the inclusion $\cO_K \to \cO_L$ given by $t \mapsto T^n$. Then $t \cO_L = T^n \cO_L$, so the ramification index of $(T)$ over $(t)$ is $n$.
+    Consider $\cO_K = \CC[t], \cO_L = \CC[T]$ and the inclusion $\cO_K \to \cO_L$ given by $t \mapsto T^n$. Then $t \cO_L = T^n \cO_L$, so the ramification index of $(T)$ over $(t)$ is $n$.
 
-    This corresponds geometrically to the degree $n$ covering of Riemann surfaces $\bC \to \bC$ given by $x \mapsto x^n$, which is ramified at $0$ with ramification index $n$.
+    This corresponds geometrically to the degree $n$ covering of Riemann surfaces $\CC \to \CC$ given by $x \mapsto x^n$, which is ramified at $0$ with ramification index $n$.
 \end{example}
 
 \begin{definition}
@@ -1539,7 +1540,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
     Suppose $L / K$ is Galois and $\cP \mid \fp$ is a prime of $\cO_L$. Then
     \begin{enumerate}
         \item $L_\cP / K_\fp$ is Galois,
-        \item There is a natural map $\res : \Gal(L_\cP) \to \Gal(L / K)$ which is injective and has image $G_\cP$.
+        \item There is a natural map $\res : \Gal(L_\cP / K_\fp) \to \Gal(L / K)$ which is injective and has image $G_\cP$.
     \end{enumerate}
 \end{proposition}
 \begin{proof}\phantom{}
@@ -1550,7 +1551,11 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 
             By \autoref{lem:8_2}, for any $\sigma \in \Gal(L_\cP / K_\fp)$, we have $\sigma(\cP) = \cP$, so $\res(\sigma) \in G_\cP$.
 
-            To show surjectivity, it suffices to show that $[L_\cP : K_\fp] = e_{L_\cP / K_\fp} f_{L_\cP / K_\fp} = e_{\cP / \fp} f_{\cP / \fp} = \abs{G_\cP}$. The first equality follows from \autoref{cor:11_6}. For the last equality, the orbit-stabilizer theorem with \autoref{prop:11_4} implies that $[G : G_\cP] = r$. Now use \autoref{cor:11_5}. The middle inequality is proven the next lemma. \qedhere
+            To show surjectivity, it suffices to show that
+            \begin{equation*}
+                [L_\cP : K_\fp] = e_{L_\cP / K_\fp} f_{L_\cP / K_\fp} = e_{\cP / \fp} f_{\cP / \fp} = \abs{G_\cP}
+            \end{equation*}
+            The first equality follows from \autoref{cor:11_6}. For the last equality, the orbit-stabilizer theorem with \autoref{prop:11_4} implies that $[G : G_\cP] = r$. Now use \autoref{cor:11_5}. The middle inequality is proven the next lemma. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -1618,7 +1623,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     Let $\fp \subseteq \cO_K$ be a non-zero prime ideal.
     \begin{enumerate}
         \item If $\fp$ ramifies in $L$, then for every $x_1, \ldots, x_n \in \cO_L$, we have $\fp \mid \Delta(x_1, \ldots, x_n)$.
-        \item If $\fp$ is unramified in $L$, then there exists $x_1, \ldots, x_n \in \cO_L$ such that $\fp \nmid \Delta(x_1, \ldots, x_n)$.
+        \item If $\fp$ is unramified in $L$, then there are $x_1, \ldots, x_n \in \cO_L$ such that $\fp \nmid \Delta(x_1, \ldots, x_n)$.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -1684,7 +1689,7 @@ Let $I_L, I_K$ denote the groups of fractional ideals in $L$ and $K$ respectivel
 Define a group homomorphism $N_{L/K} : I_L \to I_K$ by $\cP \mapsto \fp^f$, where $\fp = \cP \cap \cO_K$, $f = f_{\cP / \fp}$. We have natural group homomorphisms $K^\times \to I_K$ and $L^\times \to I_L$ sending a unit to the principal fractional ideal that it generates.
 
 \begin{remark}
-    Consider the extension $K / \bQ$. For an ideal $I \subseteq \cO_K$ $N_{K / \bQ}(I) = [\cO_K : I]$.
+    Consider the extension $K / \QQ$. For an ideal $I \subseteq \cO_K$ $N_{K / \QQ}(I) = [\cO_K : I]$.
 \end{remark}
 
 \begin{fact} The diagram
@@ -1813,7 +1818,11 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     Moreover, $[K_0 : K] = f_{L/K}$, $[L : K_0] = e_{L/K}$, and $K_0 / K$ is Galois.
 \end{theorem}
 \begin{proof}
-    Let $f = f_{L/K}$ and $k = \bF_q$, so that $k_L = \bF_{q^f}$. Set $m = q^f - 1$, and let $[\cdot] : \bF_{q^f} \to L$ denote the Teichm\"uller lift for $L$. Let $\zeta_m = [\alpha]$ for some generator $\alpha$ of $\bF_{q^f}^\times$. Then $\zeta_m$ is a primitive $m$th root of unity. Set $K_0 = K(\zeta_m)$, then $K_0 / K$ is Galois, since it is the splitting field of $X^m - 1$. $K_0$ has residue field $k_0 = \bF_q(\alpha) = \bF_{q^f} = k_L$. Let $\res : \Gal(K_0 / K) \to \Gal(k_0 / k)$ be the natural map. For $\sigma \in \Gal(K_0 / K)$, if $\sigma(\zeta_m) \equiv \zeta_m \pmod{\fm_0}$, then $\sigma(\zeta_m) = \zeta_m$, as $\cO_{K_0}^\times \to k_0^\times$ induces a bijection between $m$th roots of unity by Hensel's lemma. Hence $\res$ is injective. Thus $[K_0 : K] = \abs{\Gal(K_0 : K)} \le \Gal(k_0 / k) = f_{K_0 / K}$. We see that the inequality is actually an equality, so $\res$ is an isomorphism, and $K_0 / K$ is unramified.
+    Let $f = f_{L/K}$ and $k = \FF_q$, so that $k_L = \FF_{q^f}$. Set $m = q^f - 1$, and let $[\cdot] : \FF_{q^f} \to L$ denote the Teichm\"uller lift for $L$. Let $\zeta_m = [\alpha]$ for some generator $\alpha$ of $\FF_{q^f}^\times$. Then $\zeta_m$ is a primitive $m$\textsuperscript{th} root of unity. Set $K_0 = K(\zeta_m)$, then $K_0 / K$ is Galois, since it is the splitting field of $X^m - 1$. $K_0$ has residue field $k_0 = \FF_q(\alpha) = \FF_{q^f} = k_L$. Let $\res : \Gal(K_0 / K) \to \Gal(k_0 / k)$ be the natural map\footnote{the map is well-defined, since for $\sigma \in \Gal(L/K)$, $\sigma(\cO_L) \subseteq \cO_L$ and $\sigma(\fm_L) \subseteq \fm_L$ by \autoref{lem:8_2}. Thus $\sigma : L \to L$ induces a map $k_L \to k_L$, which clearly also fixes $k$}. For $\sigma \in \Gal(K_0 / K)$, if $\sigma(\zeta_m) \equiv \zeta_m \pmod{\fm_0}$, then $\sigma(\zeta_m) = \zeta_m$, as $\cO_{K_0}^\times \to k_0^\times$ induces a bijection between $m$\textsuperscript{th} roots of unity by Hensel's lemma. Hence $\res$ is injective. Thus
+    \begin{equation*}
+        [K_0 : K] = \abs{\Gal(K_0 / K)} \le \abs{\Gal(k_0 / k)} = f_{K_0 / K}
+    \end{equation*}
+    We see that the inequality is actually an equality, so $\res$ is an isomorphism, and $K_0 / K$ is unramified.
 
     Since $k_0 = k_L$, we have $f_{L/K} = f_{K_0/K} = [K_0 : K]$. Since $f_{L/K_0} = 1$, $L / K_0$ is totally ramified, and $e_{L/K} = [L : K_0]$ by the tower law.
 \end{proof}
@@ -1822,14 +1831,22 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     For each $n \ge 1$, there is a unique unramified extension of $L/K$ of degree $n$. Moreover $L/K$ is Galois and the natural map $\Gal(L/K) \to \Gal(k_L / k)$ is an isomorphism. In particular, $\Gal(L/K) = \langle \Frob_{L/K} \rangle$ is cyclic, where $\Frob_{L/K}(x) \equiv x^q \pmod{\fm_L}$ for all $x \in \cO_L$.
 \end{theorem}
 \begin{proof}
-    
+    Fix $n \ge 1$. Let $q = \abs{k}$ and $m = q^n - 1$.
+
+    For existence, set $L = K(\zeta_m)$, where $\zeta_m$ is a primitive $m$\textsuperscript{th} root of unity. As in \autoref{thm:13_3}, $\res : \Gal(L/K) \to \Gal(k_L/k)$ is an isomorphism. Thus $[L : K] = f_{L/K}$, i.e. $L/K$ is unramified. Since $\Gal(k_L/k) \cong \Gal(\FF_{q^n}/\FF_q)$ is cyclic generated by the Frobenius $x \mapsto q^n$, $\Gal(L/K)$ is generated by its lift.
+
+    For uniqueness, let $L/K$ be an unramified extension of degree $n$. Then $\abs{k_L} = q^n$. Taking the Teichm\"uller lift of a generator of $k_L^\times$ gives a primitive $m$\textsuperscript{th} root of unity $\zeta_m \in L$. Since $[K(\zeta_m) : K] = n$ by the existence part above, we have $L = K(\zeta_m)$.
 \end{proof}
 
 \begin{corollary}\label{cor:13_5}
     Let $L/K$ be a finite Galois extension. Then the map $\res : \Gal(L/K) \to \Gal(k_L / k)$ is surjective.
 \end{corollary}
 \begin{proof}
-    
+    Let $K_0$ be the maximal unramified subextension as in \autoref{thm:13_3}. Since $k_L = k_0$, we have $\Gal(L/K_0) \subseteq \ker(\res)$. Thus $\res$ factors through the quotient $\Gal(L/K) / \Gal(L / K_0) \cong \Gal(K_0 / K)$ as
+    \begin{equation*}
+        \Gal(L / K) \twoheadrightarrow \Gal(K_0 / K) \xrightarrow{\sim} \Gal(k_L / k)
+    \end{equation*}
+    The second map is an isomorphism by \autoref{thm:13_4}.
 \end{proof}
 
 \begin{definition}
@@ -1842,7 +1859,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{remark}\phantom{}
     \begin{enumerate}
         \item Since $e_{L/K} f_{L/K} = [L:K]$, we have $\abs{I_{L/K}} = e_{L/K}$.
-        \item $I_{L/K} = \Gal(L/K_0)$, where $K_0$ is as in \autoref{thm:13_3}.
+        \item From the proof of \autoref{cor:13_5}, we see that $I_{L/K} = \Gal(L/K_0)$.
     \end{enumerate}
 \end{remark}
 
@@ -1860,7 +1877,7 @@ Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irre
 \end{theorem}
 \begin{proof}\phantom{}
     \begin{enumerate}
-        \item By assumption, $[L : K] = e$. Let $f(X) = X^m + a_{m-1} X^{m-1} + \ldots + a_0 \in \cO_K[X]$ be the minimal polynomial of $\pi_L$. Then $m \le e$. Since $v_L(K^\times) = e \bZ$, we have $v_L(a_i \pi_L^i) \equiv i \pmod{e}$ for $i < m$. Hence the terms have distinct valuations. As $\pi_L^m = -\sum_{i=0}^{m-1} a_i \pi_L^i$, $m = v_L(m) = \min_{0 \le i \le m-1} v_L(a_i \pi_L^i) = \min_{0 \le i \le m-1} (i + e v_K(a_i))$. Thus $v_K(a_i) \ge 1$ for all $i$. Hence $v_k(a_0) = 1$ and $m = e$. Thus $f(X)$ is Eisenstein and $L = K(\pi_L)$.
+        \item By assumption, $[L : K] = e$. Let $f(X) = X^m + a_{m-1} X^{m-1} + \ldots + a_0 \in \cO_K[X]$ be the minimal polynomial of $\pi_L$. Then $m \le e$. Since $v_L(K^\times) = e \ZZ$, we have $v_L(a_i \pi_L^i) \equiv i \pmod{e}$ for $i < m$. Hence the terms have distinct valuations. As $\pi_L^m = -\sum_{i=0}^{m-1} a_i \pi_L^i$, $m = v_L(m) = \min_{0 \le i \le m-1} v_L(a_i \pi_L^i) = \min_{0 \le i \le m-1} (i + e v_K(a_i))$. Thus $v_K(a_i) \ge 1$ for all $i$. Hence $v_k(a_0) = 1$ and $m = e$. Thus $f(X)$ is Eisenstein and $L = K(\pi_L)$.
 
             Now we show that $\cO_L = \cO_K[\pi_L]$. For $y \in L$, write $y = \sum_{i=0}^{e-1} b_i \pi_L^i$, with $b_i \in K$. Then $v_L(y) = \min_{0 \le i \le e-1} (i + e v_K(b_i))$. Thus
             \begin{align*}
@@ -1876,7 +1893,7 @@ Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irre
 
 \subsection*{Structure of Units}
 
-Let $K / \bQ_p$ be a finite extension, $e = e_{K/\bQ_p}$, and $\pi \in \cO_K$ a uniformiser.
+Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a uniformiser.
 
 \begin{proposition}\label{prop:13_9}
     If $r > \frac{e}{p-1}$, then $\exp(x) = \sum_{n=0}^\infty \frac{x^n}{n!}$ converges on $\pi^r \cO_K$ and induces an isomorphism
@@ -1884,5 +1901,152 @@ Let $K / \bQ_p$ be a finite extension, $e = e_{K/\bQ_p}$, and $\pi \in \cO_K$ a 
         (\pi^r \cO_K, +) \cong (1 + \pi^r \cO_K, \times)
     \end{equation*}
 \end{proposition}
+\begin{proof}
+    Fix $x \in \pi^r \cO_K$. From Example Sheet 1, we have
+    \begin{equation*}
+        v_K(n!) = e v_p(n!) = e \frac{n - s_p(n)}{n-1} \le e \frac{n-1}{p-1}
+    \end{equation*}
+    where $s_p(n)$ is the sum of $p$-adic digits of $n$. Fix $n \ge 1$, then
+    \begin{equation*}
+        v_K\left(\frac{x^n}{n!}\right) \ge nr - e \frac{n-1}{p-1} = r + (n-1)\left(r - \frac{e}{p-1}\right)
+    \end{equation*}
+    Thus $v_K\left(\frac{x^n}{n!}\right) \to \infty$ as $n \to \infty$. This shows that $\exp(x)$ converges. Since $v_K\left(\frac{x^n}{n!}\right) \ge r$ for $n \ge 1$, we have $\exp(x) \in 1 + \pi^r \cO_K$.
+
+    Similarly, consider $\log : 1 + \pi^r \cO_K \to \pi^r \cO_K$, defined by $\log(1 + x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} x^n$ for $x \in \pi^r \cO_K$. Since $v_K\left(\frac{(-1)^{n-1}}{n} x^n\right) \ge v_K\left(\frac{x^n}{n!}\right)$, $\log$ converges by the above, and has the stated codomain.
+
+    Recall the identities of formal power series in $\QQ \llbracket X, Y \rrbracket$:
+    \begin{gather*}
+        \exp(X + Y) = \exp(X) \exp(Y)\\
+        \exp(\log(1+X)) = 1 + X\\
+        \log(\exp(X)) = X
+    \end{gather*}
+    This shows that $\exp : (\pi^r \cO_K, +) \to (1 + \pi^r \cO_K, \times)$ is an isomorphism.
+\end{proof}
+
+\noindent For a local field $K$, set $U_K = \cO_K^\times$ and let $\pi \in \cO_K$ be a uniformiser.
+
+\begin{definition}
+    For $s \in \ZZ_{\ge 1}$, the \emph{$s$\textsuperscript{th} unit group} $U_K^{(s)}$ is defined by $U_K^{(s)} = (1 + \pi^s \cO_K, \times)$. Set $U_K^{(0)} = U_K$. Then we have the inclusions $\ldots \subseteq U_K^{(s)} \subseteq U_K^{(s-1)} \subseteq \ldots \subseteq U_K^{(0)} = U_K$.
+\end{definition}
+
+\begin{proposition}\label{prop:13_11}\phantom{}
+    \begin{enumerate}
+        \item $U_K^{(0)} / U_K^{(1)} \cong (k^\times, \times)$,
+        \item $U_K^{(s)} / U_K^{(s+1)} \cong (k, +)$ for $s \ge 1$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item The reduction modulo $\pi$ map $\cO_K^\times \to k^\times$ is surjective with kernel $1 + \pi \cO_K = U_K^{(1)}$.
+
+        \item Suppose $s \ge 1$. Define $f : U_K^{(s)} \to k$ by
+            \begin{equation*}
+                f(1 + \pi^s x) = x \pmod{\pi}
+            \end{equation*}
+            For $x, y \in \cO_K$, we have $(1 + \pi^s x)(1 + \pi^s y) = 1 + \pi^s (x + y + \pi^s x y)$, and $x + y + \pi^s x y \equiv x + y \pmod{\pi}$. Thus $f$ is a group homomorphism. It is surjective, with kernel $U_K^{(s+1)}$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}\label{cor:13_12}
+    Let $K/\QQ_p$ be a finite extension. Then there is a finite index subgroup of $\cO_K^\times$ isomorphic to $(\cO_K, +)$.
+\end{corollary}
+\begin{proof}
+    Pick $r > \frac{e}{p-1}$. Then $U_K^{(r)} \cong (\cO_K, +)$ by \autoref{prop:13_9}. $U_K^{(r)}$ has finite index in $U_K$ by \autoref{prop:13_11}.
+\end{proof}
+
+\begin{remark}
+    The above arguments do not hold if $K$ is a local field of equal characteristic, since in that case $\exp$ is not defined.
+\end{remark}
+
+\begin{example}
+    Consider the group of units of $\ZZ_p$. Take $K = \QQ_p$, so $e = 1$.
+
+    If $p > 2$, then we can take $r = 1$.
+    We have an isomorphism $\ZZ_p^\times \cong (\ZZ / p \ZZ)^\times \times (1 + p \ZZ_p) \cong \ZZ / (p-1) \ZZ \times \ZZ_p$, where the first isomorphism is $x \mapsto (x \pmod{p}, \frac{x}{[x \pmod{p}]})$, where $[\cdot] : \FF_p \to \ZZ_p$ is the Teichm\"uller lift.
+
+    If $p = 2$, then we can take $r = 2$. We have an isomorphism $\ZZ_2^\times \cong (\ZZ / 4 \ZZ)^\times \times (1 + 4 \ZZ_2) \cong \ZZ / 2 \ZZ \times \ZZ_2$, where the first isomorphism is $x \mapsto (x \pmod{4}, \frac{x}{\varepsilon(x)})$, and $\varepsilon$ is defined by
+    \begin{equation*}
+        \varepsilon(x) = \begin{cases}
+            1 & \text{if } x \equiv 1 \pmod{4}\\
+            -1 & \text{if } x \equiv -1 \pmod{4}
+        \end{cases}
+    \end{equation*}
+    From this we can obtain another proof that
+    \begin{equation*}
+        \ZZ_p^\times / (\ZZ_p^\times)^2 \cong
+        \begin{cases}
+            \ZZ / 2 \ZZ & \text{if } p > 2\\
+            (\ZZ / 2 \ZZ)^2 & \text{if } p = 2
+        \end{cases}
+    \end{equation*}
+\end{example}
+
+\subsection{Higher Ramification Groups}
+
+Let $L / K$ be a finite Galois extension of local fields. Let $v_L$ the normalised valuation on $L$, and $\pi_L \in \cO_L$ a uniformiser.
+
+\begin{definition}
+    For $s \in \RR_{\ge -1}$, the $s$\textsuperscript{th} ramification group is
+    \begin{equation*}
+        G_s(L / K) = \{\sigma \in \Gal(L/K) \mid \forall x \in \cO_L, v_L(\sigma(x) - x) \ge s + 1\}
+    \end{equation*}
+\end{definition}
+In particular,
+\begin{align*}
+    G_{-1}(L/K) &= \Gal(L/K)\\
+    G_0(L/K)
+    &= \{\sigma \in \Gal(L/K) \mid \forall x \in \cO_L, \sigma(x) \equiv x \pmod{\pi_L}\}\\
+    &= \ker(\Gal(L/K) \to \Gal(k_L/k))\\
+    &= I_{L/K}
+\end{align*}
+When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
+
+\begin{remark}\phantom{}
+    \begin{enumerate}
+        \item For $s \in \ZZ_{\ge 0}$, $G_s = \ker(\Gal(L/K) \to \Aut(\cO_L / \pi_L^{s+1} \cO_L))$. Thus $G_s$ is a normal subgroup of $\Gal(L/K)$.
+        \item We have a filtration $\Gal(L/K) = G_{-1} \supseteq G_0 \supseteq \ldots \supseteq G_{s-1} \supseteq G_s \supseteq \ldots$.
+        \item $G_s$ only changes at the integers.
+        \item $G_s$ for $s \in \RR_{\ge -1}$ is used to define upper numbering.
+    \end{enumerate}
+\end{remark}
+
+\begin{theorem}\label{thm:14_2}\phantom{}
+    \begin{enumerate}
+        \item For $s \ge 1$, $G_s = \{\sigma \in G_0 \mid v_L(\sigma(\pi_L) - \pi_L) \ge s+1\}$.
+        \item $\bigcap_{s=0}^\infty G_s = \{1\}$.
+        \item Let $s \in \ZZ_{\ge 0}$. Then there exists an injective group homomorphism $G_s / G_{s+1} \hookrightarrow U_L^{(s)} / U_L^{(s+1)}$ induced by $\sigma \mapsto \frac{\sigma(\pi_L)}{\pi_L}$. This map is independent of the choice of $\pi_L$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Let $K_0$ be the maximal unramified subextension of $K$ in $L$. Note that for $s \ge 0$, $G_0(L/K) = \Gal(L/K_0)$ (c.f. \autoref{cor:13_5}). Thus $G_s(L/K_0) = G_s(L/K) \cap \Gal(L/K_0) = G_s(L/K)$. Upon replacing $K$ by $K_0$, we may assume that $L / K$ is totally ramified.
+
+    \begin{enumerate}
+        \item \autoref{thm:13_8} implies that $\cO_L = \cO_K[\pi_L]$. Suppose that $v_L(\sigma(\pi_L) - \pi_L) \ge s+1$. Let $x \in \cO_L$, so $x = f(\pi_L)$ for some $f(X) \in \cO_K[X]$.
+            \begin{align*}
+                \sigma(x) - x
+                &= \sigma(f(\pi_L)) - f(\pi_L)\\
+                &= f(\sigma(\pi_L)) - f(\pi_L)\\
+                &= (\sigma(\pi_L) - \pi_L) g(\pi_L)
+            \end{align*}
+            for some $g(X) \in \cO_K[X]$. Thus $v_L(\sigma(x) - x) = v_L(\sigma(\pi_L) - \pi_L) + v_L(g(\pi_L)) \ge s + 1$. Thus $\sigma \in G_s$ as required.
+
+        \item Suppose that $\sigma \in \bigcap_{s=0}^\infty G_s$. Then for all $x \in \cO_L$, $v_L(\sigma(x) - x) = \infty$, so $\sigma(x) = x$. Thus $\sigma = 1$.
+
+        \item Fix $s \in \ZZ_{\ge 0}$. For $\sigma \in G_s$, $\sigma(\pi_L) \in \pi_L + \pi_L^{s+1} \cO_L$, so $\frac{\sigma(\pi_L)}{\pi_L} \in 1 + \pi_L^s \cO_L = U_L^{(s)}$. Define $\varphi : G_s \to U_L^{(s)} / U_L^{(s+1)}$ by $\varphi(\sigma) = \frac{\sigma(\pi_L)}{\pi_L}$. We claim that this is a group homomorphism with kernel $G_{s+1}$. Let $\sigma, \tau \in G_s$. Write $\tau(\pi_L) = u \pi_L$ for some $u \in \cO_L^\times$. Then
+            \begin{equation*}
+                \frac{\sigma\tau(\pi_L)}{\pi_L} = \frac{\sigma\tau(\pi_L)}{\tau(\pi_L)} \frac{\tau(\pi_L)}{\pi_L} = \frac{\sigma(u)}{u} \frac{\sigma(\pi_L)}{\pi_L} \frac{\tau(\pi_L)}{\pi_L}
+            \end{equation*}
+            but $\sigma(u) \in u + \pi_L^{s+1} \cO_L$, so $\frac{\sigma(u)}{u} \in 1 + \pi_L^{s+1} \cO_L = U_L^{(s+1)}$. Thus
+            \begin{equation*}
+                \frac{\sigma\tau(\pi_L)}{\pi_L} \equiv \frac{\sigma(\pi_L)}{\pi_L} \frac{\tau(\pi_L)}{\pi_L} \pmod{U_L^{(s+1)}}
+            \end{equation*}
+            Thus $\varphi$ is a group homomorphism. Moreover, $\ker(\varphi) = \{\sigma \in G_s \mid \sigma(\pi_L) \equiv \pi_L \pmod{\pi_L^{s+2}}\} = G_{s+1}$ by (i).
+
+            For independence on the choice of uniformiser, let $\pi_L' = u \pi_L$ be another uniformiser, where $u \in \cO_L^\times$. Then
+            \begin{equation*}
+                \frac{\sigma(\pi_L')}{\pi_L'} = \frac{\sigma(u)}{u} \frac{\sigma(\pi_L)}{\pi_L} \equiv \frac{\sigma(\pi_L)}{\pi_L} \pmod{U_L^{(s+1)}}
+            \end{equation*}
+    \end{enumerate}
+\end{proof}
 
 \end{document}

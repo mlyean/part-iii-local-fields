@@ -21,6 +21,7 @@ Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Compl
 Extensions of Dedekind Domains	main.tex	/^\\subsection{Extensions of Dedekind Domains}$/;"	u	section:Dedekind Domains
 Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
+Higher Ramification Groups	main.tex	/^\\subsection{Higher Ramification Groups}$/;"	u	section:Ramification Theory
 Inverse limits	main.tex	/^\\subsubsection*{Inverse limits}$/;"	b	subsection:Basic Theory""\\texorpdfstring{$p$}{p}-adic numbers
 Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
 Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
@@ -32,18 +33,19 @@ Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section
 Unramified and Totally Ramified Extensions of Local Fields	main.tex	/^\\subsection{Unramified and Totally Ramified Extensions of Local Fields}$/;"	u	section:Ramification Theory
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
 \\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
+\\Aut	main.tex	/^\\DeclareMathOperator{\\Aut}{Aut}$/;"	o
+\\CC	main.tex	/^\\newcommand{\\CC}{\\mathbb{C}}$/;"	C
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{char}$/;"	o
+\\FF	main.tex	/^\\newcommand{\\FF}{\\mathbb{F}}$/;"	C
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{Frac}$/;"	o
 \\Frob	main.tex	/^\\DeclareMathOperator{\\Frob}{Frob}$/;"	o
 \\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{Gal}$/;"	o
 \\Int	main.tex	/^\\DeclareMathOperator{\\Int}{int}$/;"	o
+\\NN	main.tex	/^\\newcommand{\\NN}{\\mathbb{N}}$/;"	C
+\\QQ	main.tex	/^\\newcommand{\\QQ}{\\mathbb{Q}}$/;"	C
+\\RR	main.tex	/^\\newcommand{\\RR}{\\mathbb{R}}$/;"	C
 \\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{Tr}$/;"	o
-\\bC	main.tex	/^\\newcommand{\\bC}{\\mathbb{C}}$/;"	C
-\\bF	main.tex	/^\\newcommand{\\bF}{\\mathbb{F}}$/;"	C
-\\bN	main.tex	/^\\newcommand{\\bN}{\\mathbb{N}}$/;"	C
-\\bQ	main.tex	/^\\newcommand{\\bQ}{\\mathbb{Q}}$/;"	C
-\\bR	main.tex	/^\\newcommand{\\bR}{\\mathbb{R}}$/;"	C
-\\bZ	main.tex	/^\\newcommand{\\bZ}{\\mathbb{Z}}$/;"	C
+\\ZZ	main.tex	/^\\newcommand{\\ZZ}{\\mathbb{Z}}$/;"	C
 \\cD	main.tex	/^\\newcommand{\\cD}{\\mathcal{D}}$/;"	C
 \\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
 \\cP	main.tex	/^\\newcommand{\\cP}{\\mathcal{P}}$/;"	C
@@ -62,6 +64,7 @@ cor:11_5	main.tex	/^\\begin{corollary}\\label{cor:11_5}$/;"	l
 cor:11_6	main.tex	/^\\begin{corollary}\\label{cor:11_6}$/;"	l
 cor:12_10	main.tex	/^\\begin{corollary}\\label{cor:12_10}$/;"	l
 cor:12_4	main.tex	/^\\begin{corollary}\\label{cor:12_4}$/;"	l
+cor:13_12	main.tex	/^\\begin{corollary}\\label{cor:13_12}$/;"	l
 cor:13_5	main.tex	/^\\begin{corollary}\\label{cor:13_5}$/;"	l
 cor:2_4	main.tex	/^\\begin{corollary}\\label{cor:2_4}$/;"	l
 cor:3_6	main.tex	/^\\begin{corollary}\\label{cor:3_6}$/;"	l
@@ -101,6 +104,7 @@ lem:9_4	main.tex	/^\\begin{lemma}\\label{lem:9_4}$/;"	l
 lemma	main.tex	/^\\newtheorem{lemma}[definition]{Lemma}$/;"	t
 prop:11_4	main.tex	/^\\begin{proposition}\\label{prop:11_4}$/;"	l
 prop:11_8	main.tex	/^\\begin{proposition}\\label{prop:11_8}$/;"	l
+prop:13_11	main.tex	/^\\begin{proposition}\\label{prop:13_11}\\phantom{}$/;"	l
 prop:13_9	main.tex	/^\\begin{proposition}\\label{prop:13_9}$/;"	l
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
@@ -127,6 +131,7 @@ thm:12_9	main.tex	/^\\begin{theorem}\\label{thm:12_9}$/;"	l
 thm:13_3	main.tex	/^\\begin{theorem}\\label{thm:13_3}$/;"	l
 thm:13_4	main.tex	/^\\begin{theorem}\\label{thm:13_4}$/;"	l
 thm:13_8	main.tex	/^\\begin{theorem}\\label{thm:13_8}\\phantom{}$/;"	l
+thm:14_2	main.tex	/^\\begin{theorem}\\label{thm:14_2}\\phantom{}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
