@@ -44,6 +44,7 @@
 \DeclareMathOperator{\mult}{mult}
 \DeclareMathOperator{\res}{res}
 \DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\id}{id}
 
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\NN}{\mathbb{N}}
@@ -433,11 +434,11 @@ An exercise on Example Sheet 1 shows that $\QQ_p$ is a field, that $\abs{\cdot}_
     Since being dense is transitive\footnote{if $A \subseteq B \subseteq C$, $A$ is dense in $B$ and $B$ is dense in $C$, then $A$ is dense in $C$.}, we are done. The last part follows since $\ZZ_p$ is complete\footnote{as it is closed in $\QQ_p$} and $\ZZ$ is dense in $\ZZ_p$.
 \end{proof}
 
-\subsubsection*{Inverse limits}
+\subsubsection*{Inverse Limits}
 
 Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings together with homomorphisms $\varphi_n : A_{n+1} \to A_n$ called \emph{transition maps}. The \emph{inverse limit} of $(A_n)_{n=1}^\infty$ is the set/group/ring
 \begin{equation*}
-    \varprojlim A_n = \left\{(a_n) \in \prod_{n=1}^\infty A_n \mid \varphi_n(a_{n+1}) = a_n\right\} \subseteq \prod_{n=1}^\infty A_n
+    \varprojlim A_n = \bigg\{(a_n) \in \prod_{n=1}^\infty A_n \,\bigg\vert\, \varphi_n(a_{n+1}) = a_n\bigg\} \subseteq \prod_{n=1}^\infty A_n
 \end{equation*}
 
 \begin{fact}
@@ -994,7 +995,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
     $\QQ_p$ and $\FF_p((t))$ are local fields.
 \end{example}
 
-\subsubsection*{More on inverse limits}
+\subsubsection*{More on Inverse Limits}
 Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{n+1} \to A_n$ homomorphisms.
 
 \begin{definition}
@@ -1606,7 +1607,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite separable extensions\footnote{such an $R$ is an \emph{\'etale $k$-algebra}}. In particular if $k$ is perfect, then the trace form is non-degenerate.
 \end{lemma}
 \begin{proof}
-    Suppose $R$ is not reduced. In this case, $R$ is obviously not a product of fields. Let $0 \neq x \in R$ be nilpotent. For any $y \in R$, $xy$ is nilpotent, so $Tr_{R/k}(xy) = 0$, since the trace of a nilpotent matrix\footnote{the characteristic polynomial of a nilpotent matrix is $X^n$ for some $n$} is $0$.
+    Suppose $R$ is not reduced. In this case, $R$ is obviously not a product of fields. Let $0 \neq x \in R$ be nilpotent. For any $y \in R$, $xy$ is nilpotent, so $\Tr_{R/k}(xy) = 0$, since the trace of a nilpotent matrix\footnote{the characteristic polynomial of a nilpotent matrix is $X^n$ for some $n$} is $0$.
 
     Thus we may assume that $R$ is reduced. Then $R$ is Artinian, since $R$ is a finite-dimensional $k$-vector space, and ideals of $R$ are $k$-subspaces. There are only finitely many maximal ideals $\fm_1, \ldots, \fm_n$ in $R$, whose intersection is the nilradical, which in this case is $0$. Then CRT gives an isomorphism $R \cong R/\fm_1 \times \ldots \times R/\fm_n$. Thus $k_i = R / \fm_i$, up to reordering. $(\cdot, \cdot)_{R/k}$ is non-degenerate iff $(\cdot, \cdot)_{k_i/k}$ is non-degenerate for all $i$.
 
@@ -1983,7 +1984,7 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
 
 \subsection{Higher Ramification Groups}
 
-Let $L / K$ be a finite Galois extension of local fields. Let $v_L$ the normalised valuation on $L$, and $\pi_L \in \cO_L$ a uniformiser.
+Unless otherwise specified, let $L / K$ be a finite Galois extension of local fields. Let $v_L$ the normalised valuation on $L$, and $\pi_L \in \cO_L$ a uniformiser.
 
 \begin{definition}
     For $s \in \RR_{\ge -1}$, the $s$\textsuperscript{th} ramification group is
@@ -2012,7 +2013,7 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
 
 \begin{theorem}\label{thm:14_2}\phantom{}
     \begin{enumerate}
-        \item For $s \ge 1$, $G_s = \{\sigma \in G_0 \mid v_L(\sigma(\pi_L) - \pi_L) \ge s+1\}$.
+        \item For $s \ge 0$, $G_s = \{\sigma \in G_0 \mid v_L(\sigma(\pi_L) - \pi_L) \ge s+1\}$.
         \item $\bigcap_{s=0}^\infty G_s = \{1\}$.
         \item Let $s \in \ZZ_{\ge 0}$. Then there exists an injective group homomorphism $G_s / G_{s+1} \hookrightarrow U_L^{(s)} / U_L^{(s+1)}$ induced by $\sigma \mapsto \frac{\sigma(\pi_L)}{\pi_L}$. This map is independent of the choice of $\pi_L$.
     \end{enumerate}
@@ -2045,8 +2046,164 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
             For independence on the choice of uniformiser, let $\pi_L' = u \pi_L$ be another uniformiser, where $u \in \cO_L^\times$. Then
             \begin{equation*}
                 \frac{\sigma(\pi_L')}{\pi_L'} = \frac{\sigma(u)}{u} \frac{\sigma(\pi_L)}{\pi_L} \equiv \frac{\sigma(\pi_L)}{\pi_L} \pmod{U_L^{(s+1)}}
+                \qedhere
             \end{equation*}
     \end{enumerate}
+\end{proof}
+
+\begin{corollary}\label{cor:14_3}
+    $\Gal(L/K)$ is solvable.
+\end{corollary}
+\begin{proof}
+    For $s \in \ZZ_{\ge 1}$, $G_s / G_{s+1}$ is isomorphic to a subgroup of
+    \begin{equation*}
+        \begin{cases}
+            \Gal(k_L/k) & \text{if } s = -1\\
+            (k_L^\times, \times) & \text{if } s = 0\\
+            (k_L, +) & \text{if } s \ge 1
+        \end{cases}
+    \end{equation*}
+    by \autoref{cor:13_5}, \autoref{prop:13_11}, and \autoref{thm:14_2}. Thus $G_s / G_{s+1}$ is solvable. The filtration is finite by \autoref{thm:14_2} (ii), so we are done.
+\end{proof}
+
+Let $p = \Char{k}$, then $\abs{G_0 / G_1}$ is coprime to $p$, and $\abs{G_1} = p^n$ by the above proof. Thus $G_1$ is the unique Sylow $p$-subgroup of $G_0 = I_{L/K}$, uniqueness follows since $G_1$ is normal in $G_0$.
+
+\begin{definition}
+    The group $G_1$ is called the \emph{wild inertia group}, and $G_0 / G_1$ the tame quotient.
+
+    Let $L/K$ be a finite separable extension of local fields. Say $L/K$ is \emph{tamely ramified} if $p \nmid e_{L/K}$, where $p = \Char k$. Otherwise it is \emph{wildly ramified}.
+\end{definition}
+
+\begin{remark}
+    If $L/K$ is Galois, then $L/K$ is tamely ramified iff $G_1 = \{1\}$. This is because $e_{L/K} = \abs{I_{L/K}} = \abs{G_0}$, and $p \mid \abs{G_0}$ iff $\abs{G_1} > 1$.
+\end{remark}
+
+\begin{theorem}\label{thm:14_5}
+    Let $L/K/\QQ_p$ be finite extensions of local fields. Suppose $\cD_{L/K} = (\pi_L)^{\delta(L/K)}$. Then $\delta(L/K) \ge e_{L/K} - 1$ with equality iff $L/K$ is tamely ramified. In particular, $L/K$ is unramified iff $\cD_{L/K} = \cO_L$.
+\end{theorem}
+\begin{proof}
+    It suffices to prove the claim for when $L/K$ is unramified or totally ramified. Suppose we have done so. Let $K_0$ be the maximal unramified subextension of $L/K$. An exercise on Example Sheet 3 implies that $\cD_{L/K} = \cD_{L/K_0} \cD_{K_0/K}$. Then $e_{L/K_0} = e_{L/K}$, and $\cD_{L/K} = \cD_{L / K_0}$ implies $\delta(L/K) = \delta(L/K_0)$. Note that $L/K_0$ is tamely ramified iff $L/K$ is tamely ramified. Thus the general result follows.
+
+    Now we check the two cases:
+    \begin{enumerate}
+        \item $L/K$ unramified:
+            \autoref{prop:6_12} implies that $\cO_L = \cO_K[\alpha]$ for some $\alpha \in \cO_L$. Then $k_L = k(\overline{\alpha})$. Let $g(X) \in \cO_K[X]$ be the minimal polynomial of $\alpha$. Then $[L : K] = [k_L : k]$ implies that $\overline{g}(X) \in k[X]$ is the minimal polynomial of $\overline{\alpha}$. Thus $\overline{g}(X)$ is separable and hence $g'(\alpha) \not\equiv 0 \pmod{\pi_L}$. By \autoref{thm:12_8}, $\cD_{L/K} = \langle g'(\alpha) \rangle = \cO_L$.
+
+        \item $L/K$ is totally ramified:
+            In this case $[L : K] = e$. By \autoref{thm:13_8}, $\cO_L = \cO_K[\pi_L]$, and the minimal polynomial $g(X) = X^e + \sum_{i=0}^{e-1} a_i X^i \in \cO_K[X]$ of $\pi_L$ is Eisenstein. Then
+            \begin{equation*}
+                g'(\pi_L) = \underbrace{e \pi_L^{e-1}}_{v_L(\cdot) \ge e - 1} + \underbrace{\sum_{i=1}^{e-1} i a_i \pi_L^{i-1}}_{v_L(\cdot) \ge e}
+            \end{equation*}
+            Thus $v_L(g'(\pi_L)) \ge e - 1$ with equality iff $e$ is a unit in $\cO_L$ iff $p \nmid e$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}\label{cor:14_6}
+    Let $L/K$ be an extension of number fields. Suppose that $\cP \mid \fp$, where $\fp, \cP$ are primes of $K, L$ respectively. Then $e_{\cP / \fp} > 1$ iff $\cP \mid \cD_{L/K}$ (c.f. \autoref{cor:12_4}).
+\end{corollary}
+\begin{proof}
+    Since $e_{\cP/\fp} = e_{L_\cP/K_\fp}$, we have
+    \begin{alignat*}{3}
+        e_{\cP/\fp} > 1
+        &\iff L_\cP / K_\fp \text{ is ramified}\\
+        &\iff \cP \mid \cD_{L_\cP / K_\fp} &\quad\text{(by \autoref{thm:14_5})}\\
+        &\iff \cP \mid D_{L/K} &\quad\text{(by \autoref{thm:12_9})}
+    \end{alignat*}
+    as required.
+\end{proof}
+
+\begin{example}
+    Let $K = \QQ_p$ and $L = \QQ_p(\zeta_{p^n})$, where $\zeta_{p^n}$ is a primitive $p^n$-th primitive root of unity. The \emph{$p^n$-th cyclotomic polynomial} is
+    \begin{equation*}
+        \Phi_{p^n}(X) = X^{p^{n-1}(p-1)} + X^{p^{n-1}(p-2)} + \ldots + 1 \in \ZZ_p[X]
+    \end{equation*}
+    An exercise on Example Sheet 3 shows that:
+    \begin{itemize}
+        \item $\Phi_{p^n}(X)$ is irreducible, hence $\Phi_{p^n}(X)$ is the minimal polynomial of $\zeta_{p^n}$;
+        \item $L/\QQ_p$ is Galois, totally ramified, of degree $p^{n-1}(p-1)$;
+        \item $\pi = \zeta_{p^n} - 1$ is a uniformiser of $\cO_L$, so that $\cO_L = \ZZ_p[\zeta_{p^n} - 1] = \ZZ_p[\zeta_{p^n}]$, by \autoref{thm:13_8}.
+        \item $\Gal(L/\QQ_p) \cong (\ZZ / p^n \ZZ)^\times$, where $m \in (\ZZ / p^n \ZZ)^\times$ corresponds to $\sigma_m \in \Gal(L/\QQ_p)$ such that $\sigma_m(\zeta_{p^n}) = \zeta_{p^n}^m$.
+    \end{itemize}
+    We compute the higher ramification groups $G_s$: We have
+    \begin{equation*}
+        v_L(\sigma_m(\pi) - \pi) = v_L(\zeta_{p^n}^m - \zeta_{p^n}) = v_L(\zeta_{p^n}^{m-1} - 1)
+    \end{equation*}
+    Let $k = v_p(m-1)$, so that $\zeta_{p^n}^{m-1}$ is a primitive $p^{n-k}$-th root of unity, and hence (by the above facts) $\pi' = \zeta_{p^n}^{m-1} - 1$ is a uniformiser of $L' = \QQ_p(\zeta_{p^n}^{m-1})$. Continuing the calculation, we have
+    \begin{equation*}
+        v_L(\zeta_{p^n}^{m-1} - 1) = e_{L/L'} = \frac{e_{L/\QQ_p}}{e_{L'/\QQ_p}} = \frac{[L : \QQ_p]}{[L' : \QQ_p]} = \frac{p^{n-1}(p-1)}{p^{n-k-1}(p-1)} = p^k
+    \end{equation*}
+    Since $L/\QQ_p$ is totally ramified, $G_0 = \Gal(L/\QQ_p)$. \autoref{thm:14_2} implies that $\sigma_m \in G_s$ iff $p^k \ge s+1$. Thus
+    \begin{equation*}
+        G_s \cong
+        \begin{cases}
+            (\ZZ / p^n \ZZ)^\times & \text{if } s \le 0\\
+            (1 + p^k\ZZ) / p^n \ZZ & \text{if } p^{k-1} - 1 < s \le p^k - 1 \text{ for } 1 \le k \le n-1\\
+            \{1\} & \text{if } p^{n-1} - 1 < s
+        \end{cases}
+    \end{equation*}
+\end{example}
+
+\section{Local Class Field Theory}
+
+\stepcounter{subsection} % Numbering issue
+
+\subsection{Infinite Galois Theory}
+
+Let $L/K$ be an algebraic extension of fields.
+
+\begin{definition}\phantom{}
+    \begin{enumerate}
+        \item $L/K$ is \emph{separable} if for all $\alpha \in L$, its minimal polynomial $f_\alpha(X) \in K[X]$ is separable.
+        \item $L/K$ is \emph{normal} if for all $\alpha \in L$, $f_\alpha(X)$ splits in $L$.
+        \item $L/K$ is Galois if it is both separable and normal. In this case, we write $\Gal(L/K) = \Aut(L/K)$.
+    \end{enumerate}
+\end{definition}
+If $L/K$ is finite, we have the Galois correspondence:
+\begin{center}
+\begin{tabular}{*{3}{>{$}c<{$}}}
+    \{\text{subextensions } K \subseteq K' \subseteq L\} & \longleftrightarrow & \{\text{subgroups of } \Gal(L/K)\}\\
+    K' & \longmapsto & \Gal(L/K')
+\end{tabular}
+\end{center}
+
+Let $(I, \le)$ be a poset. We say $I$ is a directed set if for all $i, j \in I$, there exists a $k \in I$ such that $i \le k$ and $j \le k$.
+\begin{example}\phantom{}
+    \begin{itemize}
+        \item Any total order (e.g $(\NN, \le)$));
+        \item $N_{\ge 1}$ ordered by divisibility.
+    \end{itemize}
+\end{example}
+
+\begin{definition}
+    Let $(I, \le)$ be a directed set and $(G_i)_{i \in I}$ a collection of groups together with maps $\varphi_{ij} : G_j \to G_i$ whenever $i \le j$, such that
+    \begin{gather*}
+        \varphi_{ik} = \varphi_{ij} \circ \varphi_{jk} \text{ for } i \le j \le k\\
+        \varphi_{ii} = \id
+    \end{gather*}
+    We call $((G_i)_{i \in I}, \varphi_{ij})$ an \emph{inverse system}. The \emph{inverse limit} of $((G_i)_{i \in I}, \varphi_{ij})$ is
+    \begin{equation*}
+        \varprojlim_{i \in I} G_i = \bigg\{(a_i)_i \in \prod_{i \in I} G_i \,\bigg\vert\, \forall i \le j, \varphi_{ij}(g_j) = g_i\bigg\}
+    \end{equation*}
+\end{definition}
+
+\begin{remark}\phantom{}
+    \begin{itemize}
+        \item With the directed set $(\NN, \le)$, we recover the previous definition of inverse limit.
+        \item There are projection maps $\psi_j : \varprojlim_{i \in I} G_i \to G_j$.
+    \end{itemize}
+\end{remark}
+
+Assume that each $G_i$ is finite. The \emph{profinite topology} on $\varprojlim_{i \in I} G_i$ is the weakest topology such that $\psi_j$ is continuous for all $j \in I$, where $G_j$ is given the discrete topology.
+
+\begin{proposition}\label{prop:16_3}
+    Let $L/K$ be Galois, then
+    \begin{enumerate}
+        \item The set $I = \{K \subseteq F \subseteq L \mid F/K \text{ is finite Galois}\}$ is a directed set under $\subseteq$.
+        \item For $F, F' \in I$ with $F \subseteq F'$, there is a restriction map $\res_{F,F'} : \Gal(F'/K) \to \Gal(F/K)$ and the natural map $\Gal(L/K) \to \varprojlim_{F \in I} \Gal(F/K)$ is an isomorphism.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    See Example Sheet 4.
 \end{proof}
 
 \end{document}
