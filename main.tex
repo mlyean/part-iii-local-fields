@@ -79,7 +79,7 @@
 
 \subsection{Absolute Value}
 
-\begin{definition}
+\begin{definition}\label{def:1_1}
     Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \RR_{\ge 0}$ such that
     \begin{enumerate}
         \item (Definiteness) $\forall x \in K,\, \abs{x} = 0 \iff x = 0$
@@ -115,7 +115,7 @@
 
 \noindent An absolute value $\abs{\cdot}$ on $K$ induces a metric $d(x, y) = \abs{x - y}$, which in turn induces a topology on $K$.
 
-\begin{definition}
+\begin{definition}\label{def:1_2}
     Let $\abs{\cdot}, \abs{\cdot}'$ be absolute values on $K$. We say $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent} if they define the same topology.
 
     An equivalence class of absolute values is called a \emph{place}.
@@ -164,7 +164,7 @@
     \noindent (iii) $\Rightarrow$ (i): (iii) implies that the topologies have the same open balls.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:1_4}
     An absolute value $\abs{\cdot}$ on $K$ is \emph{non-archimedean} if it satisfies the \emph{ultrametric inequality}
     \begin{equation*}
         \abs{x + y} \le \max\{\abs{x}, \abs{y}\} \qquad \forall x, y \in K
@@ -224,7 +224,7 @@
     Now (ii) says that $\abs{x_n - x_{n+1}}_5 \le 5^{-n}$, so by \autoref{prop:1_6}, $(x_n)$ is Cauchy in $(\QQ, \abs{\cdot}_5)$. Suppose that $x_n$ converges to $\ell \in \QQ$. Then $x_n^2 \rightarrow \ell^2 \in \QQ$. However (i) implies that $x_n^2 \rightarrow -1$, so that $\ell^2 = -1$. This shows that $(\QQ, \abs{\cdot}_5)$ is not complete.
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{def:1_7}
     The \emph{$p$-adic numbers} $\QQ_p$ is the completion of $\QQ$ with respect to $\abs{\cdot}_p$.
 \end{definition}
 
@@ -262,7 +262,7 @@
 
 \subsection{Valuation Rings}
 
-\begin{definition}
+\begin{definition}\label{def:2_1}
     Let $K$ be a field. A valuation on $K$ is a function $v : K^\times \to \RR$ such that
     \begin{enumerate}
         \item $v(xy) = v(x) + v(y)$
@@ -297,7 +297,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     \end{itemize}
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{def:2_2}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field. The \emph{valuation ring} of $K$ is defined to be
     \begin{equation*}
         \cO_K = \{x \in K \mid \abs{x} \le 1\} = \overline{B}(0, 1)
@@ -335,7 +335,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     $\cO_K$ is a local ring with unique maximal ideal $\fm$.
 \end{corollary}
 
-\begin{definition}
+\begin{definition}\label{def:2_5}
     Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.\footnote{In this case, implicitly $K$ is non-archimedean.}
 
     An element $\pi \in \cO_K$ is a \emph{uniformiser} if $v(\pi) > 0$ and $v(\pi)$ generates $v(K^\times)$.
@@ -380,7 +380,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     Indeed let $y \in K$. Then $\abs{x^n y} \le 1$ for some $n$ sufficiently large. Then $y = x^n y / x^n \in \cO_K[x^{-1}]$.
 \end{remark}
 
-\begin{definition}
+\begin{definition}\label{def:2_7}
     A ring $R$ is called a \emph{discrete valuation ring} (DVR) if it is a PID and has exactly one non-zero prime ideal (necessarily maximal).
 \end{definition}
 
@@ -410,7 +410,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 
 An exercise on Example Sheet 1 shows that $\QQ_p$ is a field, that $\abs{\cdot}_p$ extends to $\QQ_p$, and the associated valuation is discrete.
 
-\begin{definition}
+\begin{definition}\label{def:3_1}
     The ring of \emph{$p$-adic integers} is the valuation ring
     \begin{equation*}
         \ZZ_p = \{x \in \QQ_p \mid \abs{x}_p \le 1\} = \{x \in \QQ_p \mid v_p(x) \ge 0\}
@@ -462,7 +462,7 @@ Let $\theta_m : \varprojlim A_n \to A_m$ denote the natural projection. Then the
     Define $\psi : B \to \prod_{n=1}^\infty A_n$ by $\psi(b) = (\psi_n(b))_n$. Then $\psi_n = \varphi_n \circ \psi_{n+1}$ implies that $\psi(b) \in \varprojlim A_n$. The map is clearly unique, since we want $\theta_m \circ \psi = \psi_m$, and is a homomorphism (of sets/groups/rings).
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:3_4}
     Let $I$ be an ideal of a ring $R$. Then the \emph{$I$-adic completion} of $R$ is the ring
     \begin{equation*}
         \widehat{R} = \varprojlim R/I^n
@@ -643,7 +643,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 
 \subsection{Teichm\"uller Lifts}
 
-\begin{definition}
+\begin{definition}\label{def:5_1}
     A ring $R$ of characteristic $p > 0$ ($p$ prime) is a \emph{perfect ring} if the Frobenius map $x \mapsto x^p$ is a bijection. A field of characteristic $p$ is a \emph{perfect field} if it is perfect as a ring.
 \end{definition}
 
@@ -672,7 +672,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Moreover if $\Char K = p$, then $[\cdot]$ is a ring homomorphism.
 \end{theorem}
 
-\begin{definition}
+\begin{definition}\label{def:5_3}
     The element $[a] \in \cO_K$ constructed in \autoref{thm:5_2} is called the \emph{Teichm\"uller lift} of $a$.
 \end{definition}
 
@@ -775,7 +775,7 @@ More generally, we have
     \end{itemize}
 \end{fact}
 
-\begin{definition}
+\begin{definition}\label{def:6_2}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field, $V$ a vector space over $K$. A \emph{norm} on $V$ is a function $\norm{\cdot} : V \to \RR_{\ge 0}$ satisfying
     \begin{enumerate}
         \item $\norm{x} = 0 \iff x = 0$
@@ -795,7 +795,7 @@ More generally, we have
     Show that $\norm{\cdot}_\mathrm{sup}$ is a norm.
 \end{exercise}
 
-\begin{definition}
+\begin{definition}\label{def:6_3}
     Two norms $\norm{\cdot}_1, \norm{\cdot}_2$ are \emph{equivalent} if there are $C, D \in \RR_{>0}$ such that
     \begin{equation*}
         C \norm{x}_1 \le \norm{x}_2 \le D \norm{x}_1
@@ -836,7 +836,7 @@ More generally, we have
     \renewcommand*{\qedsymbol}{}
 \end{proof}
 
-\begin{definition}\phantom{}
+\begin{definition}\label{def:6_6}\phantom{}
     \begin{itemize}
         \item Let $R$ be a subring of $S$. We say $s \in S$ is \emph{integral over $R$} if there exists a monic polynomial $f(X) \in R[X]$ such that $f(s) = 0$.
         \item The \emph{integral closure} $R^{\Int(S)}$ of $R$ in $S$ is defined to be
@@ -953,7 +953,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 
 \subsection{Local Fields}
 
-\begin{definition}
+\begin{definition}\label{def:7_1}
     Let $(K, \abs{\cdot})$ be a valued field. $K$ is a \emph{local field} if it is complete and locally compact\footnote{every point has a compact neighbourhood}.
 \end{definition}
 
@@ -999,7 +999,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \subsubsection*{More on Inverse Limits}
 Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{n+1} \to A_n$ homomorphisms.
 
-\begin{definition}
+\begin{definition}\label{def:7_3}
     Assume that the $A_n$ are finite. The \emph{profinite topology} on $A = \varprojlim A_n$ is the weakest topology on $A$ such that $A \to A_n$ is continuous for all $n$, where $A_n$ is equipped with the discrete topology.
 \end{definition}
 
@@ -1029,7 +1029,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 
 \stepcounter{definition} % Numbering issue
 
-\begin{definition}
+\begin{definition}\label{def:7_7}
     A non-archimedean valued field $(K, \abs{\cdot})$ is said to have \emph{equal characteristic} if $\Char{K} = \Char{k}$, otherwise it has \emph{mixed characteristic}.
 \end{definition}
 
@@ -1112,7 +1112,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 
 \subsection{Global Fields}
 
-\begin{definition}
+\begin{definition}\label{def:8_1}
     A \emph{global field} is a field which is either
     \begin{enumerate}
         \item an algebraic number field
@@ -1160,7 +1160,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 
 \subsection{Dedekind Domains}
 
-\begin{definition}
+\begin{definition}\label{def:9_1}
     A \emph{Dedekind domain} is a ring $R$ such that
     \begin{enumerate}
         \item $R$ is a Noetherian integral domain
@@ -1253,7 +1253,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
     for some $a_i \in R$ and $s \in S = R \setminus \fp$. Multiplying by $s^{n-1}$, we see that $xs$ is integral over $R$, so $xs \in R$, $x \in R_{(\fp)}$ as required.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:9_6}
     If $R$ is a Dedekind domain, $\fp \subseteq R$ a non-zero prime ideal, then we write $v_p$ for the normalised valuation on $\Frac(R) = \Frac(R_{(\fp)})$ corresponding to the DVR $R_{(\fp)}$.
 \end{definition}
 
@@ -1455,7 +1455,7 @@ Unless specified otherwise, we let $\cO_K$ be a Dedekind domain, $K = \Frac{\cO_
 
 Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp = \cO_K \cap \cP_i$, since $\fp$ is maximal.
 
-\begin{definition}\phantom{}
+\begin{definition}\label{def:11_1}\phantom{}
     \begin{enumerate}
         \item We call $e_i$ the \emph{ramification index} of $\cP_i$ over $\fp$.
         \item We say that $\fp$ \emph{ramifies} in $L$ if $e_i > 1$ for some $i$.
@@ -1468,7 +1468,7 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
     This corresponds geometrically to the degree $n$ covering of Riemann surfaces $\CC \to \CC$ given by $x \mapsto x^n$, which is ramified at $0$ with ramification index $n$.
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{def:11_2}
     $f_i = [\cO_L / \cP_i : \cO_K / \fp]$ is the \emph{residue class degree of} $\cP_i$ over $\fp$.
 \end{definition}
 
@@ -1530,7 +1530,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
     This follows from \autoref{thm:11_3} with $r = 1$, since $\cO_K$ is a DVR, hence a Dedekind domain.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:11_7}
     Let $\cO_K$ be a Dedekind domain, $L/K$ a finite Galois extension. Then the \emph{decomposition group} $G_\cP$ at a prime $\cP$ of $\cO_L$ is the stabilizer of $\cP$ under the action of $\Gal(L/K)$, i.e.
     \begin{equation*}
         G_\cP = \{\sigma \in \Gal(L/K) \mid \sigma(\cP) = \cP\}
@@ -1645,7 +1645,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     By localizing at $\fp$ (as in the proof of \autoref{thm:11_3}), we may assume that $\cO_K$ is a PID. By the structure theorem for finitely generated modules over PIDs, $\cO_L$ is a free $\cO_K$-module. Let $x_1, \ldots, x_n$ be an $\cO_K$-basis for $\cO_L$. Then $x_1, \ldots, x_n$ is a $K$-basis for $L$, and $\overline{x_1}, \ldots, \overline{x_n}$ is a $k$-basis for $R$. Now it is easy to check that for $x \in \cO_L$, the matrix of $\mult(\overline{x})$ is just the matrix of $\mult(x)$ reduced modulo $\fp$, so the same holds for traces.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:12_3}
     The \emph{discriminant} is the ideal $d_{L / K} \subseteq \cO_K$ given by
     \begin{equation*}
         d_{L/K} = \langle \Delta(x_1, \ldots, x_n) \mid x_1, \ldots, x_n \in \cO_L \rangle
@@ -1660,7 +1660,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
     $\fp$ ramifies in $L$ iff $\fp \mid d_{L/K}$.
 \end{corollary}
 
-\begin{definition}
+\begin{definition}\label{def:12_5}
     The \emph{inverse different} is $\cD_{L/K}^{-1} = \{y \in L \mid \forall x \in \cO_L, \Tr_{L/K}(xy) \in \cO_K \}$. It is an $\cO_L$-submodule of $L$ containing $\cO_L$.
 \end{definition}
 
@@ -1795,7 +1795,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     \end{enumerate}
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:13_2}
     The extension $L/K$ is said to be
     \begin{enumerate}
         \item \emph{unramified} if $e_{L/K} = 1$, or equivalently $f_{L/K} = [L : K]$,
@@ -1852,7 +1852,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     The second map is an isomorphism by \autoref{thm:13_4}.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:13_6}
     Let $L/K$ be a finite Galois extension. The \emph{inertia subgroup} is
     \begin{equation*}
         I_{L/K} = \ker(\res : \Gal(L/K) \to \Gal(k_L / k)) \subseteq \Gal(L/K)
@@ -1866,7 +1866,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     \end{enumerate}
 \end{remark}
 
-\begin{definition}
+\begin{definition}\label{def:13_7}
     A monic polynomial $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ is \emph{Eisenstein} if $v_K(a_i) \ge 1$ for all $i$, and $v(a_0) = 1$.
 \end{definition}
 
@@ -1928,7 +1928,7 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
 
 \noindent For a local field $K$, set $U_K = \cO_K^\times$ and let $\pi \in \cO_K$ be a uniformiser.
 
-\begin{definition}
+\begin{definition}\label{def:13_10}
     For $s \in \ZZ_{\ge 1}$, the \emph{$s$\textsuperscript{th} unit group} $U_K^{(s)}$ is defined by $U_K^{(s)} = (1 + \pi^s \cO_K, \times)$. Set $U_K^{(0)} = U_K$. Then we have the inclusions $\ldots \subseteq U_K^{(s)} \subseteq U_K^{(s-1)} \subseteq \ldots \subseteq U_K^{(0)} = U_K$.
 \end{definition}
 
@@ -1988,7 +1988,7 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
 
 Unless otherwise specified, let $L / K$ be a finite Galois extension of local fields. Let $v_L$ the normalised valuation on $L$, and $\pi_L \in \cO_L$ a uniformiser.
 
-\begin{definition}
+\begin{definition}\label{def:14_1}
     For $s \in \RR_{\ge -1}$, the $s$\textsuperscript{th} ramification group is
     \begin{equation*}
         G_s(L / K) = \{\sigma \in \Gal(L/K) \mid \forall x \in \cO_L, v_L(\sigma(x) - x) \ge s + 1\}
@@ -2070,7 +2070,7 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
 
 Let $p = \Char{k}$, then $\abs{G_0 / G_1}$ is coprime to $p$, and $\abs{G_1} = p^n$ by the above proof. Thus $G_1$ is the unique Sylow $p$-subgroup of $G_0 = I_{L/K}$, uniqueness follows since $G_1$ is normal in $G_0$.
 
-\begin{definition}
+\begin{definition}\label{def:14_4}
     The group $G_1$ is called the \emph{wild inertia group}, and $G_0 / G_1$ the tame quotient.
 
     Let $L/K$ be a finite separable extension of local fields. Say $L/K$ is \emph{tamely ramified} if $p \nmid e_{L/K}$, where $p = \Char k$. Otherwise it is \emph{wildly ramified}.
@@ -2153,7 +2153,7 @@ Let $p = \Char{k}$, then $\abs{G_0 / G_1}$ is coprime to $p$, and $\abs{G_1} = p
 
 Let $L/K$ be an algebraic extension of fields.
 
-\begin{definition}\phantom{}
+\begin{definition}\label{def:16_1}\phantom{}
     \begin{enumerate}
         \item $L/K$ is \emph{separable} if for all $\alpha \in L$, its minimal polynomial $f_\alpha(X) \in K[X]$ is separable.
         \item $L/K$ is \emph{normal} if for all $\alpha \in L$, $f_\alpha(X)$ splits in $L$.
@@ -2176,7 +2176,7 @@ Let $(I, \le)$ be a poset. We say $I$ is a directed set if for all $i, j \in I$,
     \end{itemize}
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{def:16_2}
     Let $(I, \le)$ be a directed set and $(G_i)_{i \in I}$ a collection of groups together with maps $\varphi_{ij} : G_j \to G_i$ whenever $i \le j$, such that
     \begin{gather*}
         \varphi_{ik} = \varphi_{ij} \circ \varphi_{jk} \text{ for } i \le j \le k\\
@@ -2257,7 +2257,7 @@ Assume that each $G_i$ is finite. The \emph{profinite topology} on $\varprojlim_
 
 Let $K$ be a local field and $L/K$ a (not necessarily finite) separable extension.
 
-\begin{definition}\phantom{}
+\begin{definition}\label{def:16_5}\phantom{}
     \begin{enumerate}
         \item $L/K$ is \emph{unramified} if $F/K$ is unramified for all finite subextension $F/K$.
         \item $L/K$ is \emph{totally ramified} if $F/K$ is totally ramified for all finite subextension $F/K$.
@@ -2289,7 +2289,7 @@ Let $L/K$ be Galois. Then there is a surjection
 
 Let $\Frob_{k_L/k} \in \Gal(k_L/k)$ denote the Frobenius $x \mapsto x^{\abs{k}}$ and let $\langle \Frob_{k_L/k} \rangle$ be the subgroup generated by $\Frob_{k_L/k}$.
 
-\begin{definition}
+\begin{definition}\label{def:16_7}
     Let $L/K$ be Galois. The \emph{Weil group} is
     \begin{equation*}
         W(L/K) = \res^{-1}(\langle \Frob_{k_L/k} \rangle) \subseteq \Gal(L/K)
