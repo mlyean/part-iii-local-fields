@@ -62,6 +62,7 @@ Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field 
 \\qedsymbol	main.tex	/^    \\renewcommand{\\qedsymbol}{}$/;"	C
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
 \\res	main.tex	/^\\DeclareMathOperator{\\res}{res}$/;"	o
+\\sectionbreak	main.tex	/^\\newcommand{\\sectionbreak}{\\clearpage}$/;"	C
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
 \\thesection	main.tex	/^\\renewcommand\\thesection{\\Roman{section}}$/;"	C
 cor:10_10	main.tex	/^\\begin{corollary}\\label{cor:10_10}$/;"	l

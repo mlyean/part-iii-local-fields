@@ -13,6 +13,7 @@
 \usepackage{thmtools}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{titlesec}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
@@ -75,6 +76,10 @@
 
 \noindent These lecture notes were based on the Part III course Local Fields taught during Michaelmas 2022 by Dr. Rong Zhou.
 
+\tableofcontents
+
+\newcommand{\sectionbreak}{\clearpage}
+
 \section{Basic Theory}
 
 \subsection{Absolute Value}
@@ -82,9 +87,9 @@
 \begin{definition}\label{def:1_1}
     Let $K$ be a field. An \emph{absolute value} on $K$ is a function $\abs{\cdot} : K \to \RR_{\ge 0}$ such that
     \begin{enumerate}
-        \item (Definiteness) $\forall x \in K,\, \abs{x} = 0 \iff x = 0$
-        \item (Multiplicativity) $\forall x, y \in K,\, \abs{x y} = \abs{x} \abs{y}$
-        \item (Triangle inequality) $\forall x, y \in K,\, \abs{x + y} \le \abs{x} + \abs{y}$
+        \item (Definiteness) $\forall x \in K,\, \abs{x} = 0 \iff x = 0$;
+        \item (Multiplicativity) $\forall x, y \in K,\, \abs{x y} = \abs{x} \abs{y}$;
+        \item (Triangle inequality) $\forall x, y \in K,\, \abs{x + y} \le \abs{x} + \abs{y}$.
     \end{enumerate}
     $(K, \abs{\cdot})$ is said to be a \emph{valued field}.
 \end{definition}
@@ -124,9 +129,9 @@
 \begin{proposition}\label{prop:1_3}
     Let $\abs{\cdot}, \abs{\cdot}'$ be non-trivial absolute values on $K$. The following are equivalent:
     \begin{enumerate}
-        \item $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent}
-        \item $\forall x \in K, \abs{x} < 1 \iff \abs{x}' < 1$
-        \item $\exists c \in \RR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$
+        \item $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent};
+        \item $\forall x \in K, \abs{x} < 1 \iff \abs{x}' < 1$;
+        \item $\exists c \in \RR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$.
     \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -208,8 +213,8 @@
 \begin{example}
     We construct a sequence $(x_n)$ in $\ZZ$ such that
     \begin{enumerate}
-        \item $x_n^2 + 1 \equiv 0 \pmod{5^n}$
-        \item $x_{n + 1} \equiv x_n \pmod{5^n}$
+        \item $x_n^2 + 1 \equiv 0 \pmod{5^n}$;
+        \item $x_{n + 1} \equiv x_n \pmod{5^n}$.
     \end{enumerate}
 
     Set $x_1 = 2$. Suppose we have constructed the sequence up to $x_n$, where $n \ge 1$. We have $x_n^2 + 1 = 5^n a$. It suffices to find $b$ such that $x_{n+1} = x_n + 5^n b$. We have
@@ -241,9 +246,9 @@
 \begin{lemma}\label{lem:1_8}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field.
     \begin{enumerate}
-        \item (Open balls don't have centres) If $z \in B(x, r)$, then $B(z, r) = B(x, r)$
-        \item (Closed balls don't have centres) If $z \in \overline{B}(x, r)$, then $\overline{B}(z, r) = \overline{B}(x, r)$
-        \item (Open balls are closed) $B(x, r)$ is closed.
+        \item (Open balls don't have centres) If $z \in B(x, r)$, then $B(z, r) = B(x, r)$;
+        \item (Closed balls don't have centres) If $z \in \overline{B}(x, r)$, then $\overline{B}(z, r) = \overline{B}(x, r)$;
+        \item (Open balls are closed) $B(x, r)$ is closed;
         \item (Closed balls are open) $\overline{B}(x, r)$ is open.
     \end{enumerate}
 \end{lemma}
@@ -265,8 +270,8 @@
 \begin{definition}\label{def:2_1}
     Let $K$ be a field. A valuation on $K$ is a function $v : K^\times \to \RR$ such that
     \begin{enumerate}
-        \item $v(xy) = v(x) + v(y)$
-        \item $v(x + y) \ge \min\{v(x), v(y)\}$
+        \item $v(xy) = v(x) + v(y)$;
+        \item $v(x + y) \ge \min\{v(x), v(y)\}$.
     \end{enumerate}
 \end{definition}
 
@@ -308,9 +313,9 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 \begin{proposition}\label{prop:2_3}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field.
     \begin{enumerate}
-        \item $\cO_K$ is an open subring of $K$.
-        \item The subsets $\{x \in K \mid \abs{x} \le r\}$ and $\{x \in K \mid \abs{x} < r\}$ for $r \le 1$ are open ideals of $\cO_K$.
-        \item $\cO_K^\times = \{x \in K \mid \abs{x} = 1\}$
+        \item $\cO_K$ is an open subring of $K$;
+        \item The subsets $\{x \in K \mid \abs{x} \le r\}$ and $\{x \in K \mid \abs{x} < r\}$ for $r \le 1$ are open ideals of $\cO_K$;
+        \item $\cO_K^\times = \{x \in K \mid \abs{x} = 1\}$.
     \end{enumerate}
 \end{proposition}
 \begin{proof}\phantom{}
@@ -354,10 +359,10 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 \begin{lemma}\label{lem:2_6}
     Let $v$ be a valuation on $K$. The following are equivalent:
     \begin{enumerate}
-        \item $v$ is discrete
-        \item $\cO_K$ is a PID
-        \item $\cO_K$ is Noetherian
-        \item $\fm$ is principal
+        \item $v$ is discrete;
+        \item $\cO_K$ is a PID;
+        \item $\cO_K$ is Noetherian;
+        \item $\fm$ is principal.
     \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -479,7 +484,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{proposition}\label{prop:3_5}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $\pi \in \cO_K$ be such that $\abs{\pi} < 1$. Assume that $K$ is complete with respect to $\abs{\cdot}$. Then
     \begin{enumerate}
-        \item $i : \cO_K \to \varprojlim \cO_K / \pi^n \cO_K$ is an isomorphism ($\cO_K$ is $\pi$-adically complete)
+        \item $i : \cO_K \to \varprojlim \cO_K / \pi^n \cO_K$ is an isomorphism ($\cO_K$ is $\pi$-adically complete);
         \item Fix a set of coset representatives $A$ for $\cO_K / \pi \cO_K$. Then every $x \in \cO_K$ can be written uniquely in the form
             \begin{equation*}
                 x = \sum_{i=0}^\infty a_i \pi^i
@@ -523,7 +528,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{corollary}\label{cor:3_7}\phantom{}
     \begin{enumerate}
         \item $\ZZ_p \cong \varprojlim \ZZ / p^n \ZZ$.
-        \item Every element of $x \in \QQ_p$ can be written uniquely as a Laurent series $x = \sum_{i=n}^\infty a_i p^i$ where $n \in \ZZ$ and $a_i \in \{0, \ldots, p - 1\}$
+        \item Every element of $x \in \QQ_p$ can be written uniquely as a Laurent series $x = \sum_{i=n}^\infty a_i p^i$ where $n \in \ZZ$ and $a_i \in \{0, \ldots, p - 1\}$.
     \end{enumerate}
 \end{corollary}
 \begin{proof}\phantom{}
@@ -559,7 +564,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{proof}
     Let $v$ be a normalised valuation and let $\pi \in \cO_K$ be a uniformiser. Let $r = v(f'(a))$. We shall construct a sequence $(x_n)_{n=1}^\infty$ in $\cO_K$ such that
     \begin{enumerate}
-        \item $f(x_n) \equiv 0 \pmod{\pi^{n + 2r}}$.
+        \item $f(x_n) \equiv 0 \pmod{\pi^{n + 2r}}$;
         \item $x_{n+1} \equiv x_n \pmod{\pi^{n+r}}$.
     \end{enumerate}
     Take $x_1 = a$, then\footnote{$\abs{f(a)} < \abs{f'(a)}^2$ implies $v(f(a)) > 2v(f'(a)) = 2r$, so $v(f(x_1)) \ge 1 + 2r$} $f(x_1) \equiv 0 \pmod{\pi^{1+2r}}$.
@@ -666,8 +671,8 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{theorem}\label{thm:5_2}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field such that $k = \cO_K / \fm$ is a perfect field of characteristic $p$. Then there exists a unique map $[\cdot] : k \to \cO_K$ such that
     \begin{enumerate}
-        \item $a \equiv [a] \pmod{m}$
-        \item $\forall a, b \in k, [a b] = [a] [b]$
+        \item $a \equiv [a] \pmod{m}$;
+        \item $\forall a, b \in k, [a b] = [a] [b]$.
     \end{enumerate}
     Moreover if $\Char K = p$, then $[\cdot]$ is a ring homomorphism.
 \end{theorem}
@@ -759,7 +764,7 @@ More generally, we have
 \begin{theorem}\label{thm:6_1}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field, and $L / K$ a finite extension of degree $n$. Then
     \begin{enumerate}
-        \item $\abs{\cdot}$ extends uniquely to an absolute value $\abs{\cdot}_L$ defined by $\abs{y}_L = \abs{N_{L/K}(y)}^\frac{1}{n}$ for $y \in L$.
+        \item $\abs{\cdot}$ extends uniquely to an absolute value $\abs{\cdot}_L$ defined by $\abs{y}_L = \abs{N_{L/K}(y)}^\frac{1}{n}$ for $y \in L$;
         \item $L$ is complete with respect to $\abs{\cdot}_L$.
     \end{enumerate}
 \end{theorem}
@@ -778,9 +783,9 @@ More generally, we have
 \begin{definition}\label{def:6_2}
     Let $(K, \abs{\cdot})$ be a non-archimedean valued field, $V$ a vector space over $K$. A \emph{norm} on $V$ is a function $\norm{\cdot} : V \to \RR_{\ge 0}$ satisfying
     \begin{enumerate}
-        \item $\norm{x} = 0 \iff x = 0$
-        \item $\forall x \in V, \forall \lambda \in K, \norm{\lambda x} = \abs{\lambda} \norm{x}$
-        \item $\forall x, y \in V, \norm{x + y} \le \max\{\norm{x}, \norm{y}\}$
+        \item $\norm{x} = 0 \iff x = 0$;
+        \item $\forall x \in V, \forall \lambda \in K, \norm{\lambda x} = \abs{\lambda} \norm{x}$;
+        \item $\forall x, y \in V, \norm{x + y} \le \max\{\norm{x}, \norm{y}\}$.
     \end{enumerate}
 \end{definition}
 
@@ -899,7 +904,7 @@ More generally, we have
 \begin{corollary}\label{cor:6_10}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $L / K$ be a finite extension. Then
     \begin{enumerate}
-        \item $L$ is discretely valued with respect to $\abs{\cdot}_L$.
+        \item $L$ is discretely valued with respect to $\abs{\cdot}_L$;
         \item $\cO_L$ is the integral closure of $\cO_K$ in $L$.
     \end{enumerate}
 \end{corollary}
@@ -929,8 +934,8 @@ More generally, we have
 \begin{proposition}\label{prop:6_12}
     Let $L/K$ be a finite extension of complete discretely valued fields. Assume that
     \begin{enumerate}
-        \item $\cO_K$ is compact
-        \item $k_L / k$ is a finite separable extension
+        \item $\cO_K$ is compact;
+        \item $k_L / k$ is a finite separable extension.
     \end{enumerate}
 Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \end{proposition}
@@ -964,8 +969,8 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 \begin{proposition}\label{prop:7_2}
     Let $(K, \abs{\cdot})$ be a non-archimedean complete valued field. The following are equivalent:
     \begin{enumerate}
-        \item $K$ is locally compact
-        \item $\cO_K$ is compact
+        \item $K$ is locally compact;
+        \item $\cO_K$ is compact;
         \item $v$ is discrete and $k = \cO_K / \fm$ is finite.
     \end{enumerate}
 \end{proposition}
@@ -986,7 +991,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 
     Continuing in this fashion, we obtain sequences $(x_{in})_{n=1}^\infty$ for $i \ge 1$ such that
     \begin{enumerate}
-        \item $(x_{i+1, n})_{n=1}^\infty$ is a subsequence of $(x_{i, n})_{n=1}^\infty$
+        \item $(x_{i+1, n})_{n=1}^\infty$ is a subsequence of $(x_{i, n})_{n=1}^\infty$;
         \item For any $i$, there is an $a_i \in \cO_K / \pi^i \cO_K$ such that for all $n \ge 1$, we have $x_{i,n} \equiv a_i \pmod{\pi^i}$.
     \end{enumerate}
     Necessary $a_i \equiv a_{i+1} \pmod{\pi^i}$. Now define $y_i = x_{i,i}$. This defines a subsequence of $(x_n)_{n=1}^\infty$. Moreover, $y_i \equiv a_i \equiv a_{i+1} \equiv y_{i+1} \pmod{\pi^i}$. Thus $y_i$ converges by \autoref{prop:1_6}.
@@ -1105,8 +1110,8 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 
 On Example Sheet 2, we will show that if $K$ is a complete archimedean field, then $K \cong \RR$ or $\CC$. To summarise, if $K$ is a local field, then
 \begin{enumerate}
-    \item if $K$ is archimedean, then $K \cong \RR, \CC$
-    \item if $K$ is non-archimedean of equal characteristic, then $K \cong \FF_{p^n}((t))$ for some prime $p$ and integer $n \ge 1$
+    \item if $K$ is archimedean, then $K \cong \RR, \CC$;
+    \item if $K$ is non-archimedean of equal characteristic, then $K \cong \FF_{p^n}((t))$ for some prime $p$ and integer $n \ge 1$;
     \item if $K$ is non-archimedean of mixed characteristic, then $K$ is a finite extension of $\QQ_p$ for some prime $p$.
 \end{enumerate}
 
@@ -1115,8 +1120,8 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 \begin{definition}\label{def:8_1}
     A \emph{global field} is a field which is either
     \begin{enumerate}
-        \item an algebraic number field
-        \item a global function field, i.e. a finite extension of $\FF_p(t)$
+        \item an algebraic number field;
+        \item a global function field, i.e. a finite extension of $\FF_p(t)$.
     \end{enumerate}
 \end{definition}
 
@@ -1163,9 +1168,9 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 \begin{definition}\label{def:9_1}
     A \emph{Dedekind domain} is a ring $R$ such that
     \begin{enumerate}
-        \item $R$ is a Noetherian integral domain
-        \item $R$ is integrally closed in $\Frac(R)$
-        \item Every non-zero prime ideal is maximal
+        \item $R$ is a Noetherian integral domain;
+        \item $R$ is integrally closed in $\Frac(R)$;
+        \item Every non-zero prime ideal is maximal.
     \end{enumerate}
 \end{definition}
 
@@ -1315,8 +1320,8 @@ On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff t
 \begin{proof}
     Since $\cO_L$ is a subring of $L$, $\cO_L$ is an integral domain. We need to show that
     \begin{enumerate}
-        \item $\cO_L$ is Noetherian,
-        \item $\cO_L$ is integrally closed in $L$,
+        \item $\cO_L$ is Noetherian;
+        \item $\cO_L$ is integrally closed in $L$;
         \item Every non-zero prime ideal $\cP$ in $\cO_L$ is maximal.
     \end{enumerate}
 
@@ -1373,7 +1378,7 @@ Let $K$ be a number field. If $\sigma : K \to \RR, \CC$ is a real or complex emb
 \begin{corollary}\label{cor:10_6}
     Let $K$ be a number field with ring of integers $\cO_K$. Then any absolute value on $K$ is equivalent to
     \begin{enumerate}
-        \item $\abs{\cdot}_\fp$ for some non-zero prime ideal $\fp \subseteq \cO_K$
+        \item $\abs{\cdot}_\fp$ for some non-zero prime ideal $\fp \subseteq \cO_K$; or
         \item $\abs{\cdot}_\sigma$ for some $\sigma : K \to \RR$ or $\CC$.
     \end{enumerate}
 \end{corollary}
@@ -1392,7 +1397,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \begin{lemma}\label{lem:10_7}\phantom{}
     \begin{enumerate}
         \item The natural map $\pi_\cP : L \otimes_K K_\fp \to L_\cP$ is surjective,
-        \item $[L_\cP : K_\fp] \le [L : K]$
+        \item $[L_\cP : K_\fp] \le [L : K]$.
     \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1402,7 +1407,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
 \begin{lemma}[Chinese Remainder Theorem]\label{lem:10_8}
     Let $R$ be a ring and $I_1, \ldots, I_n$ be ideals of $R$ such that $I_i + I_j = R$ for $i \neq j$. Then
     \begin{enumerate}
-        \item $\bigcap_{i=1}^n I_i = \prod_{i=1}^n I_i$
+        \item $\bigcap_{i=1}^n I_i = \prod_{i=1}^n I_i$;
         \item $R / I \cong \prod_{i=1}^n R/I_i$, where $I$ is the ideal in (i).
     \end{enumerate}
 \end{lemma}
@@ -1420,9 +1425,9 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{equation*}
     where the last isomorphism follows from \autoref{lem:10_8}. Set $L_i = K_\fp[X] / (f_i(X))$, which is a finite extension of $K_\fp$. $L_i$ contains $L$, since we have an inclusion $L \cong K[X] / (f(X)) \to K_\fp[X] / (f_i(X)) = L_i$. Also $L$ is dense in $L_i$, since $K$ is dense in $K_\fp$. The theorem follows from the following three claims:
     \begin{enumerate}
-        \item $L_i \cong L_\cP$ for some prime $\cP \mid \fp$,
-        \item Each $\cP$ appears at most once
-        \item Each $\cP$ appears at least once
+        \item $L_i \cong L_\cP$ for some prime $\cP \mid \fp$;
+        \item Each $\cP$ appears at most once;
+        \item Each $\cP$ appears at least once.
     \end{enumerate}
     Proof of claims:
     \begin{enumerate}
@@ -1480,8 +1485,8 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
 \begin{proof}
     Let $S = \cO_K \setminus \fp$. We shall use the following properties of localisation:
     \begin{enumerate}
-        \item $S^{-1} \cO_L$ is the integral closure of $S^{-1} \cO_K$ in $L$,
-        \item $(S^{-1} \fp) (S^{-1} \cO_L) \cong S^{-1}(\cP_1^{e_1} \ldots \cP_r^{e_r})$,
+        \item $S^{-1} \cO_L$ is the integral closure of $S^{-1} \cO_K$ in $L$;
+        \item $(S^{-1} \fp) (S^{-1} \cO_L) \cong S^{-1}(\cP_1^{e_1} \ldots \cP_r^{e_r})$;
         \item $S^{-1} \cO_L / S^{-1} \cP_i \cong \cO_L / \cP_i$, and $S^{-1} \cO_K / S^{-1} \fp \cong \cO_K / \fp$.
     \end{enumerate}
     In particular, (ii) and (iii) imply that $e_i$ and $f_i$ don't change when we replace $\cO_K$ and $\cO_L$ by $S^{-1}\cO_K$ and $S^{-1} \cO_L$.
@@ -1542,7 +1547,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 \begin{proposition}\label{prop:11_8}
     Suppose $L / K$ is Galois and $\cP \mid \fp$ is a prime of $\cO_L$. Then
     \begin{enumerate}
-        \item $L_\cP / K_\fp$ is Galois,
+        \item $L_\cP / K_\fp$ is Galois;
         \item There is a natural map $\res : \Gal(L_\cP / K_\fp) \to \Gal(L / K)$ which is injective and has image $G_\cP$.
     \end{enumerate}
 \end{proposition}
@@ -1565,7 +1570,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 \begin{lemma*}
     Ramification indices and residue class degree do not change under completions, i.e.
     \begin{enumerate}
-        \item $e_{\cP / \fp} = e_{L_\cP / K_\fp}$,
+        \item $e_{\cP / \fp} = e_{L_\cP / K_\fp}$;
         \item $f_{\cP / \fp} = f_{L_\cP / K_\fp}$.
     \end{enumerate}
 \end{lemma*}
@@ -1784,7 +1789,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{lemma}\label{lem:13_1}
     Let $M/L/K$ be finite separable extensions of local fields. Then
     \begin{enumerate}
-        \item $f_{M/K} = f_{M/L} f_{L/K}$,
+        \item $f_{M/K} = f_{M/L} f_{L/K}$;
         \item $e_{M/K} = e_{M/L} e_{L/K}$.
     \end{enumerate}
 \end{lemma}
@@ -1798,8 +1803,8 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{definition}\label{def:13_2}
     The extension $L/K$ is said to be
     \begin{enumerate}
-        \item \emph{unramified} if $e_{L/K} = 1$, or equivalently $f_{L/K} = [L : K]$,
-        \item \emph{ramified} if $e_{L/K} > 1$, or equivalently $f_{L/K} < [L : K]$,
+        \item \emph{unramified} if $e_{L/K} = 1$, or equivalently $f_{L/K} = [L : K]$;
+        \item \emph{ramified} if $e_{L/K} > 1$, or equivalently $f_{L/K} < [L : K]$;
         \item \emph{totally ramified} if $e_{L/K} = [L : K]$, or equivalently $f_{L/K} = 1$.
     \end{enumerate}
 \end{definition}
@@ -1807,7 +1812,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{remark}
     \autoref{lem:13_1} immediately implies that for finite separable extensions of local fields $M/L/K$,
     \begin{enumerate}
-        \item $M/K$ is unramified iff $M/L$ and $L/K$ are unramified,
+        \item $M/K$ is unramified iff $M/L$ and $L/K$ are unramified;
         \item $M/K$ is totally ramified iff $M/L$ and $L/K$ are totally ramified.
     \end{enumerate}
 \end{remark}
@@ -1815,7 +1820,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \begin{theorem}\label{thm:13_3}
     There exists a field $K_0$ such that $K \subseteq K_0 \subseteq L$ such that
     \begin{enumerate}
-        \item $K_0/K$ is unramified,
+        \item $K_0/K$ is unramified;
         \item $L/K_0$ is totally ramified.
     \end{enumerate}
     Moreover, $[K_0 : K] = f_{L/K}$, $[L : K_0] = e_{L/K}$, and $K_0 / K$ is Galois.
@@ -1934,7 +1939,7 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
 
 \begin{proposition}\label{prop:13_11}\phantom{}
     \begin{enumerate}
-        \item $U_K^{(0)} / U_K^{(1)} \cong (k^\times, \times)$,
+        \item $U_K^{(0)} / U_K^{(1)} \cong (k^\times, \times)$;
         \item $U_K^{(s)} / U_K^{(s+1)} \cong (k, +)$ for $s \ge 1$.
     \end{enumerate}
 \end{proposition}
@@ -2015,8 +2020,8 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
 
 \begin{theorem}\label{thm:14_2}\phantom{}
     \begin{enumerate}
-        \item For $s \ge 0$, $G_s = \{\sigma \in G_0 \mid v_L(\sigma(\pi_L) - \pi_L) \ge s+1\}$.
-        \item $\bigcap_{s=0}^\infty G_s = \{1\}$.
+        \item For $s \ge 0$, $G_s = \{\sigma \in G_0 \mid v_L(\sigma(\pi_L) - \pi_L) \ge s+1\}$;
+        \item $\bigcap_{s=0}^\infty G_s = \{1\}$;
         \item Let $s \in \ZZ_{\ge 0}$. Then there exists an injective group homomorphism $G_s / G_{s+1} \hookrightarrow U_L^{(s)} / U_L^{(s+1)}$ induced by $\sigma \mapsto \frac{\sigma(\pi_L)}{\pi_L}$. This map is independent of the choice of $\pi_L$.
     \end{enumerate}
 \end{theorem}
@@ -2198,7 +2203,7 @@ Let $(I, \le)$ be a poset. We say $I$ is a directed set if for all $i, j \in I$,
 Assume that each $G_i$ is finite. The \emph{profinite topology} on $\varprojlim_{i \in I} G_i$ is the weakest topology such that $\psi_j$ is continuous for all $j \in I$, where $G_j$ is given the discrete topology.
 
 \begin{proposition}\label{prop:16_3}
-    Let $L/K$ be Galois, then
+    Let $L/K$ be Galois. Then
     \begin{enumerate}
         \item The set $I = \{K \subseteq F \subseteq L \mid F/K \text{ is finite Galois}\}$ is a directed set under $\subseteq$.
         \item For $F, F' \in I$ with $F \subseteq F'$, there is a restriction map $\res_{F,F'} : \Gal(F'/K) \to \Gal(F/K)$ and the natural map $\Gal(L/K) \to \varprojlim_{F \in I} \Gal(F/K)$ is an isomorphism.
@@ -2319,7 +2324,7 @@ We endow $W(L/K)$ with the weakest topology such that
 i.e. open sets are translates of open sets in $I_{L/K}$ by elements of $W(L/K)$.
 
 \begin{warning}
-    If $k_L/k$ is infinite, this is not the same as the subspace topology on $W(L/K) \subseteq \Gal(L/K)$, $W(L/K)$ is finer than the subspace topology. For example, $I_{L/K}$ is not open in the subspace topology.
+    If $k_L/k$ is infinite, this is finer than the subspace topology on $W(L/K) \subseteq \Gal(L/K)$. For example, $I_{L/K}$ is not open in the subspace topology.
 \end{warning}
 
 \begin{proposition}\label{prop:16_8}
@@ -2327,7 +2332,7 @@ i.e. open sets are translates of open sets in $I_{L/K}$ by elements of $W(L/K)$.
     \begin{enumerate}
         \item $W(L/K)$ is dense in $\Gal(L/K)$;
         \item If $F/K$ is a finite subextension of $L/K$, then $W(L/F) = W(L/K) \cap \Gal(L/F)$;
-        \item If $F/K$ is a finite Galois subextension of $L/K$, then $W(L/K)/W(L/F) \cong \Gal(F/K)$.
+        \item If $F/K$ is a finite Galois subextension, then $W(L/K)/W(L/F) \cong \Gal(F/K)$.
     \end{enumerate}
 \end{proposition}
 \begin{proof}\phantom{}
