@@ -32,8 +32,10 @@ Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture 
 Ramification Theory	main.tex	/^\\section{Ramification Theory}$/;"	s
 Structure of Units	main.tex	/^\\subsection*{Structure of Units}$/;"	u	section:Ramification Theory
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
+Topology on $W(L/K)$	main.tex	/^\\subsubsection*{Topology on $W(L\/K)$}$/;"	b	subsection:Local Class Field Theory""Weil Group
 Unramified and Totally Ramified Extensions of Local Fields	main.tex	/^\\subsection{Unramified and Totally Ramified Extensions of Local Fields}$/;"	u	section:Ramification Theory
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
+Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field Theory
 \\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
 \\Aut	main.tex	/^\\DeclareMathOperator{\\Aut}{Aut}$/;"	o
 \\CC	main.tex	/^\\newcommand{\\CC}{\\mathbb{C}}$/;"	C
@@ -56,6 +58,8 @@ Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic The
 \\fq	main.tex	/^\\newcommand{\\fq}{\\mathfrak{q}}$/;"	C
 \\id	main.tex	/^\\DeclareMathOperator{\\id}{id}$/;"	o
 \\mult	main.tex	/^\\DeclareMathOperator{\\mult}{mult}$/;"	o
+\\proj	main.tex	/^\\DeclareMathOperator{\\proj}{proj}$/;"	o
+\\qedsymbol	main.tex	/^    \\renewcommand{\\qedsymbol}{}$/;"	C
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
 \\res	main.tex	/^\\DeclareMathOperator{\\res}{res}$/;"	o
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
@@ -112,6 +116,8 @@ prop:11_8	main.tex	/^\\begin{proposition}\\label{prop:11_8}$/;"	l
 prop:13_11	main.tex	/^\\begin{proposition}\\label{prop:13_11}\\phantom{}$/;"	l
 prop:13_9	main.tex	/^\\begin{proposition}\\label{prop:13_9}$/;"	l
 prop:16_3	main.tex	/^\\begin{proposition}\\label{prop:16_3}$/;"	l
+prop:16_6	main.tex	/^\\begin{proposition}\\label{prop:16_6}$/;"	l
+prop:16_8	main.tex	/^\\begin{proposition}\\label{prop:16_8}$/;"	l
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
 prop:2_3	main.tex	/^\\begin{proposition}\\label{prop:2_3}$/;"	l
@@ -139,6 +145,7 @@ thm:13_4	main.tex	/^\\begin{theorem}\\label{thm:13_4}$/;"	l
 thm:13_8	main.tex	/^\\begin{theorem}\\label{thm:13_8}\\phantom{}$/;"	l
 thm:14_2	main.tex	/^\\begin{theorem}\\label{thm:14_2}\\phantom{}$/;"	l
 thm:14_5	main.tex	/^\\begin{theorem}\\label{thm:14_5}$/;"	l
+thm:16_4	main.tex	/^\\begin{theorem}[Fundamental Theorem of Galois Theory]\\label{thm:16_4}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
