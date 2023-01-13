@@ -13,6 +13,7 @@ Absolute Value	main.tex	/^\\subsection{Absolute Value}$/;"	u	section:Basic Theor
 Basic Theory	main.tex	/^\\section{Basic Theory}$/;"	s
 Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Completions	main.tex	/^\\subsection*{Completions}$/;"	u	section:Dedekind Domains
+Construction of $\\Art_{\\QQ_p}$	main.tex	/^\\subsubsection*{Construction of $\\Art_{\\QQ_p}$}$/;"	b	subsection:Local Class Field Theory""Statements of Local Class Field Theory
 Decomposition Groups	main.tex	/^\\subsection{Decomposition Groups}$/;"	u	section:Dedekind Domains
 Dedekind Domains	main.tex	/^\\section{Dedekind Domains}$/;"	s
 Dedekind Domains	main.tex	/^\\subsection{Dedekind Domains}$/;"	u	section:Dedekind Domains
@@ -29,7 +30,9 @@ Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
 Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
 More on Inverse Limits	main.tex	/^\\subsubsection*{More on Inverse Limits}$/;"	b	subsection:Local Fields""Local Fields
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
+Properties of the Artin Map	main.tex	/^\\subsubsection*{Properties of the Artin Map}$/;"	b	subsection:Local Class Field Theory""Statements of Local Class Field Theory
 Ramification Theory	main.tex	/^\\section{Ramification Theory}$/;"	s
+Statements of Local Class Field Theory	main.tex	/^\\subsection{Statements of Local Class Field Theory}$/;"	u	section:Local Class Field Theory
 Structure of Units	main.tex	/^\\subsection*{Structure of Units}$/;"	u	section:Ramification Theory
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Topology on $W(L/K)$	main.tex	/^\\subsubsection*{Topology on $W(L\/K)$}$/;"	b	subsection:Local Class Field Theory""Weil Group
@@ -37,6 +40,7 @@ Unramified and Totally Ramified Extensions of Local Fields	main.tex	/^\\subsecti
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
 Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field Theory
 \\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
+\\Art	main.tex	/^\\DeclareMathOperator{\\Art}{Art}$/;"	o
 \\Aut	main.tex	/^\\DeclareMathOperator{\\Aut}{Aut}$/;"	o
 \\CC	main.tex	/^\\newcommand{\\CC}{\\mathbb{C}}$/;"	C
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{char}$/;"	o
@@ -50,6 +54,7 @@ Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field 
 \\RR	main.tex	/^\\newcommand{\\RR}{\\mathbb{R}}$/;"	C
 \\Tr	main.tex	/^\\DeclareMathOperator{\\Tr}{Tr}$/;"	o
 \\ZZ	main.tex	/^\\newcommand{\\ZZ}{\\mathbb{Z}}$/;"	C
+\\ab	main.tex	/^\\newcommand{\\ab}{\\mathrm{ab}}$/;"	C
 \\cD	main.tex	/^\\newcommand{\\cD}{\\mathcal{D}}$/;"	C
 \\cO	main.tex	/^\\newcommand{\\cO}{\\mathcal{O}}$/;"	C
 \\cP	main.tex	/^\\newcommand{\\cP}{\\mathcal{P}}$/;"	C
@@ -59,12 +64,13 @@ Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field 
 \\id	main.tex	/^\\DeclareMathOperator{\\id}{id}$/;"	o
 \\mult	main.tex	/^\\DeclareMathOperator{\\mult}{mult}$/;"	o
 \\proj	main.tex	/^\\DeclareMathOperator{\\proj}{proj}$/;"	o
-\\qedsymbol	main.tex	/^    \\renewcommand{\\qedsymbol}{}$/;"	C
 \\qedsymbol	main.tex	/^\\renewcommand{\\qedsymbol}{$\\blacksquare$}$/;"	C
 \\res	main.tex	/^\\DeclareMathOperator{\\res}{res}$/;"	o
 \\sectionbreak	main.tex	/^\\newcommand{\\sectionbreak}{\\clearpage}$/;"	C
+\\sep	main.tex	/^\\newcommand{\\sep}{\\mathrm{sep}}$/;"	C
 \\texorpdfstring{$p$}{p}-adic numbers	main.tex	/^\\subsection{\\texorpdfstring{$p$}{p}-adic numbers}$/;"	u	section:Basic Theory
 \\thesection	main.tex	/^\\renewcommand\\thesection{\\Roman{section}}$/;"	C
+\\ur	main.tex	/^\\newcommand{\\ur}{\\mathrm{ur}}$/;"	C
 cor:10_10	main.tex	/^\\begin{corollary}\\label{cor:10_10}$/;"	l
 cor:10_3	main.tex	/^\\begin{corollary}\\label{cor:10_3}$/;"	l
 cor:10_6	main.tex	/^\\begin{corollary}\\label{cor:10_6}$/;"	l
@@ -101,6 +107,7 @@ def:16_1	main.tex	/^\\begin{definition}\\label{def:16_1}\\phantom{}$/;"	l
 def:16_2	main.tex	/^\\begin{definition}\\label{def:16_2}$/;"	l
 def:16_5	main.tex	/^\\begin{definition}\\label{def:16_5}\\phantom{}$/;"	l
 def:16_7	main.tex	/^\\begin{definition}\\label{def:16_7}$/;"	l
+def:17_1	main.tex	/^\\begin{definition}\\label{def:17_1}$/;"	l
 def:1_1	main.tex	/^\\begin{definition}\\label{def:1_1}$/;"	l
 def:1_2	main.tex	/^\\begin{definition}\\label{def:1_2}$/;"	l
 def:1_4	main.tex	/^\\begin{definition}\\label{def:1_4}$/;"	l
@@ -155,6 +162,7 @@ prop:13_9	main.tex	/^\\begin{proposition}\\label{prop:13_9}$/;"	l
 prop:16_3	main.tex	/^\\begin{proposition}\\label{prop:16_3}$/;"	l
 prop:16_6	main.tex	/^\\begin{proposition}\\label{prop:16_6}$/;"	l
 prop:16_8	main.tex	/^\\begin{proposition}\\label{prop:16_8}$/;"	l
+prop:17_3	main.tex	/^\\begin{proposition}\\label{prop:17_3}$/;"	l
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
 prop:2_3	main.tex	/^\\begin{proposition}\\label{prop:2_3}$/;"	l
@@ -183,6 +191,8 @@ thm:13_8	main.tex	/^\\begin{theorem}\\label{thm:13_8}\\phantom{}$/;"	l
 thm:14_2	main.tex	/^\\begin{theorem}\\label{thm:14_2}\\phantom{}$/;"	l
 thm:14_5	main.tex	/^\\begin{theorem}\\label{thm:14_5}$/;"	l
 thm:16_4	main.tex	/^\\begin{theorem}[Fundamental Theorem of Galois Theory]\\label{thm:16_4}$/;"	l
+thm:17_2	main.tex	/^\\begin{theorem}\\label{thm:17_2}\\phantom{}$/;"	l
+thm:17_4	main.tex	/^\\begin{theorem}[Local Kronecker-Weber Theorem]\\label{thm:17_4}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
