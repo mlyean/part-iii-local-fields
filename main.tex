@@ -14,6 +14,9 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{titlesec}
+\usepackage{tocloft}
+
+\setlength{\cftsecnumwidth}{2.5em}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
@@ -48,6 +51,7 @@
 \DeclareMathOperator{\Frob}{Frob}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Art}{Art}
+\DeclareMathOperator{\End}{End}
 
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\NN}{\mathbb{N}}
@@ -64,6 +68,7 @@
 \newcommand{\ab}{\mathrm{ab}}
 \newcommand{\sep}{\mathrm{sep}}
 \newcommand{\ur}{\mathrm{ur}}
+\newcommand{\Ghat}{\widehat{\mathbb{G}}}
 
 \renewcommand\thesection{\Roman{section}}
 \counterwithout{subsection}{section}
@@ -2532,5 +2537,151 @@ The image of this map lies in $W(\QQ_p^\ab / \QQ_p)$.
 \begin{remark}
     The definition of $\Art_{\QQ_p}$ involves a choice of a totally ramified extension $\QQ_p(\zeta_{p^\infty})$ and a choice of uniformiser defining the isomorphism $\ZZ \times \ZZ_p^\times \cong \QQ_p^\times$. These choices are related and they ``cancel out'', so that $\Art_{\QQ_p}$ is canonical.
 \end{remark}
+
+\subsubsection*{Construction of $\Art_K$}
+We now return to the general situation. Let $K$ be a local field and $\pi$ a uniformiser of $K$.
+
+Suppose that we have constructed totally ramified Galois extensions $K_{\pi, n}/K$ for $n \ge 1$, such that
+\begin{enumerate}
+    \item $K \subseteq \ldots \subseteq K_{\pi, n} \subseteq K_{\pi, n+1} \subseteq \ldots$;
+
+    \item For $n \ge m \ge 1$, we have a commutative diagram
+        \begin{equation*}
+        \begin{tikzcd}
+            \Gal(K_{\pi,n}/K) \arrow[r, twoheadrightarrow] \arrow[d, "\psi_n", "\sim"'] & \Gal(K_{\pi,m}/K) \arrow[d, "\psi_m", "\sim"']\\
+            \cO_K^\times / U_K^{(n)} \arrow[r, twoheadrightarrow, "\proj"] & \cO_K^\times / U_K^{(m)}
+        \end{tikzcd}
+        \end{equation*}
+
+    \item Setting $K_{\pi, \infty} = \bigcup_{n=1}^\infty K_{\pi,n}$, we have $K^\ab = K_{\pi, \infty}$.
+\end{enumerate}
+Then (ii) implies that there is an isomorphism $\psi : \Gal(K_{\pi,\infty}/K) \xrightarrow{\sim} \varprojlim_{n} \cO_K^\times / U_K^{(n)} \cong \cO_K^\times$. Define $\Art_K : K^\times \to W(K^\ab / K)$ by
+\begin{equation*}
+    \Art_K(\pi^n u) = (\Frob_{K^\ur/K}^n, \psi^{-1}(u)) \in \Gal(K^\ur / K) \times \Gal(K_{\pi,\infty}/K) \cong \Gal(K^\ab/K)
+\end{equation*}
+where we used the isomorphism $\ZZ \times \cO_K^\times \xrightarrow{\sim} K^\times$ given by $(n, u) \mapsto \pi^n u$
+
+\begin{remark}
+    Both $K_{\pi, \infty}$ and the isomorphism $\ZZ \times \cO_K^\times \cong K^\times$ depend on $\pi$. For different choices of $\pi$, the maps agree, so $\Art_K$ is canonical.
+\end{remark}
+
+Our goal now is to construct $K_{\pi,n}$.
+
+\section{Lubin-Tate Theory}
+
+\subsection{Formal Group Laws}
+
+Let $R$ be a ring.
+\begin{equation*}
+    R\llbracket X_1, \ldots, X_n \rrbracket = \bigg\{\sum_{k_1, \ldots, k_n \in \ZZ_{\ge 0}} a_{k_1, \ldots, k_n} X_1^{k_1} \ldots X_n^{k_n} \,\bigg\vert\, a_{k_1, \ldots, k_n} \in R\bigg\}
+\end{equation*}
+is the ring of formal power series in $n$-variables over $R$.
+
+\begin{definition}\label{def:18_1}
+    A (1-dimensional commutative) formal group law over $R$ is a power series $F(X, Y) \in R\llbracket X, Y \rrbracket$ satisfying
+    \begin{enumerate}
+        \item $F(X, Y) \equiv X + Y \pmod{(X^2, XY, Y^2)}$;
+        \item (Associativity) $F(X, F(Y, Z)) = F(F(X, Y), Z)$;
+        \item (Commutativity) $F(X, Y) = F(Y, X)$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}\phantom{}
+    \begin{itemize}
+        \item $\Ghat_a(X, Y) = X + Y$, the formal additive group;
+        \item $\Ghat_m(X, Y) = X + Y + XY$, the formal multiplicative group.
+    \end{itemize}
+\end{example}
+
+\begin{lemma}\label{lem:18_2}
+    Let $F$ be a formal group law over $R$. Then
+    \begin{enumerate}
+        \item $F(X, 0) = X$, $F(0, Y) = Y$;
+        \item There is a unique $i(X) \in X R\llbracket X \rrbracket$ such that $F(X, i(X)) = 0$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    See Example Sheet 4.
+\end{proof}
+
+Let $K$ be a non-archimedean valued field, $F$ a formal group law over $\cO_K$. Then $F(x, y)$ converges for all $x, y \in \fm_K$ to an element of $\fm_K$. Defining $x \cdot_F y = F(x, y)$ turns $(\fm_K, \cdot_F)$ into a commutative group.
+
+\begin{example}
+    Consider the formal multiplicative group $\Ghat_m$ over $\ZZ_p$. For $x, y \in p \ZZ_p$, we have $x \cdot_{\Ghat_m} y = x + y + xy$. We have an isomorphism
+    \begin{center}
+    \begin{tabular}{*{3}{>{$}c<{$}}}
+        (p \ZZ_p) & \cong & (1 + p \ZZ_p, \times)\\
+        x & \longmapsto & 1 + x
+    \end{tabular}
+    \end{center}
+\end{example}
+
+\begin{definition}\label{def:18_3}
+    Let $F, G$ be formal group laws over $R$. A \emph{homomorphism} $f : F \to G$ is an element $f \in X R\llbracket X \rrbracket$ such that $f(F(x, y)) = G(f(X), f(Y))$.
+
+    A homomorphism $f : F \to G$ is an \emph{isomorphism} if there is a homomorphism $g : G \to F$ such that $f(g(X)) = X$ and $g(f(X)) = X$.
+
+    Define $\End_R(F)$ to be the set of all homomorphisms $f : F \to F$.
+\end{definition}
+
+\begin{proposition}\label{prop:18_4}
+    Let $R$ be a $\QQ$-algebra. There is an isomorphism of formal group laws $\exp : \Ghat_a \to \Ghat_m$ defined by $\exp(X) = \sum_{n=1}^\infty \frac{X^n}{n!}$.
+\end{proposition}
+\begin{proof}
+    Define $\log(X) = \sum_{n=1}^\infty (-1)^{n-1} \frac{X^n}{n}$. Then we have equalities of formal power series $\log(\exp(X)) = X$, $\exp(\log(X)) = X$, and $\exp(\Ghat_a(X, Y)) = \Ghat_m(\exp(X), \exp(Y))$.
+\end{proof}
+
+\begin{lemma}\label{lem:18_5}
+    $\End_R(F)$ is a ring with addition
+    \begin{equation*}
+        (f +_F g)(X) = F(f(X), g(X))
+    \end{equation*}
+    and multiplication given by composition.
+\end{lemma}
+\begin{proof}
+    Let $f, g \in \End_R(F)$. Then
+    \begin{align*}
+        (f +_F g) \circ F(X, Y)
+        &= F(f(F(X, Y)), g(F(X, Y)))\\
+        &= F(F(f(X), f(Y)), F(g(X), g(Y)))\\
+        &= F(F(f(X), g(X)), F(f(Y), g(Y)))\\
+        &= F((f +_F g)(X), (f +_F g)(Y))
+    \end{align*}
+    Thus $f +_F g \in \End_R(F)$.
+    \begin{align*}
+        f \circ g \circ F(X, Y)
+        &= f \circ F(g(X), g(Y))\\
+        &= F(f \circ g(X), f \circ g(Y))
+    \end{align*}
+    Thus $f \circ g \in \End_R(F)$.
+
+    The ring axioms are left as an exercise.
+\end{proof}
+
+\subsection{Lubin-Tate Formal Groups}
+
+Let $K$ be a local field and $q = \abs{k}$.
+
+\begin{definition}\label{def:19_1}
+    A \emph{formal $\cO_K$-module over $\cO_K$} is a formal group law $F(X, Y) \in \cO_K\llbracket X, Y \rrbracket$ together with a ring homomorphism
+    \begin{equation*}
+        [\cdot]_F : \cO_K \to \End_{\cO_K}(F)
+    \end{equation*}
+    such that for all $a \in \cO_K$, $[a]_F(X) \equiv a X \pmod{X^2}$.
+
+    A homomorphism/isomorphism $f : F \to G$ of formal $\cO_K$-modules is a homomorphism/isomorphism of formal group laws such that for all $a \in \cO_K$, $f \circ [a]_F = [a]_G \circ f$.
+\end{definition}
+
+\begin{definition}\label{def:19_2}
+    Let $\pi \in \cO_K$ be a uniformiser. A \emph{Lubin-Tate} series for $\pi$ is a power series $f(X) \in \cO_K \llbracket X \rrbracket$ such that
+    \begin{enumerate}
+        \item $f(X) \equiv \pi X \pmod{X^2}$;
+        \item $f(X) \equiv X^q \pmod{\pi}$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    For $K = \QQ_p$, $f(X) = (X+1)^p-1$ is a Lubin-Tate series for $p$.
+\end{example}
 
 \end{document}

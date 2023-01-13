@@ -13,6 +13,7 @@ Absolute Value	main.tex	/^\\subsection{Absolute Value}$/;"	u	section:Basic Theor
 Basic Theory	main.tex	/^\\section{Basic Theory}$/;"	s
 Complete Valued Fields	main.tex	/^\\section{Complete Valued Fields}$/;"	s
 Completions	main.tex	/^\\subsection*{Completions}$/;"	u	section:Dedekind Domains
+Construction of $\\Art_K$	main.tex	/^\\subsubsection*{Construction of $\\Art_K$}$/;"	b	subsection:Local Class Field Theory""Statements of Local Class Field Theory
 Construction of $\\Art_{\\QQ_p}$	main.tex	/^\\subsubsection*{Construction of $\\Art_{\\QQ_p}$}$/;"	b	subsection:Local Class Field Theory""Statements of Local Class Field Theory
 Decomposition Groups	main.tex	/^\\subsection{Decomposition Groups}$/;"	u	section:Dedekind Domains
 Dedekind Domains	main.tex	/^\\section{Dedekind Domains}$/;"	s
@@ -20,6 +21,7 @@ Dedekind Domains	main.tex	/^\\subsection{Dedekind Domains}$/;"	u	section:Dedekin
 Different and Discriminant	main.tex	/^\\subsection{Different and Discriminant}$/;"	u	section:Ramification Theory
 Extensions of Complete Valued Fields	main.tex	/^\\subsection{Extensions of Complete Valued Fields}$/;"	u	section:Complete Valued Fields
 Extensions of Dedekind Domains	main.tex	/^\\subsection{Extensions of Dedekind Domains}$/;"	u	section:Dedekind Domains
+Formal Group Laws	main.tex	/^\\subsection{Formal Group Laws}$/;"	u	section:Lubin-Tate Theory
 Global Fields	main.tex	/^\\subsection{Global Fields}$/;"	u	section:Local Fields
 Hensel's Lemma	main.tex	/^\\subsection{Hensel's Lemma}$/;"	u	section:Complete Valued Fields
 Higher Ramification Groups	main.tex	/^\\subsection{Higher Ramification Groups}$/;"	u	section:Ramification Theory
@@ -28,6 +30,8 @@ Inverse Limits	main.tex	/^\\subsubsection*{Inverse Limits}$/;"	b	subsection:Basi
 Local Class Field Theory	main.tex	/^\\section{Local Class Field Theory}$/;"	s
 Local Fields	main.tex	/^\\section{Local Fields}$/;"	s
 Local Fields	main.tex	/^\\subsection{Local Fields}$/;"	u	section:Local Fields
+Lubin-Tate Formal Groups	main.tex	/^\\subsection{Lubin-Tate Formal Groups}$/;"	u	section:Lubin-Tate Theory
+Lubin-Tate Theory	main.tex	/^\\section{Lubin-Tate Theory}$/;"	s
 More on Inverse Limits	main.tex	/^\\subsubsection*{More on Inverse Limits}$/;"	b	subsection:Local Fields""Local Fields
 Part III Local Fields Lecture Notes	README.md	/^# Part III Local Fields Lecture Notes$/;"	c
 Properties of the Artin Map	main.tex	/^\\subsubsection*{Properties of the Artin Map}$/;"	b	subsection:Local Class Field Theory""Statements of Local Class Field Theory
@@ -44,10 +48,12 @@ Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field 
 \\Aut	main.tex	/^\\DeclareMathOperator{\\Aut}{Aut}$/;"	o
 \\CC	main.tex	/^\\newcommand{\\CC}{\\mathbb{C}}$/;"	C
 \\Char	main.tex	/^\\DeclareMathOperator{\\Char}{char}$/;"	o
+\\End	main.tex	/^\\DeclareMathOperator{\\End}{End}$/;"	o
 \\FF	main.tex	/^\\newcommand{\\FF}{\\mathbb{F}}$/;"	C
 \\Frac	main.tex	/^\\DeclareMathOperator{\\Frac}{Frac}$/;"	o
 \\Frob	main.tex	/^\\DeclareMathOperator{\\Frob}{Frob}$/;"	o
 \\Gal	main.tex	/^\\DeclareMathOperator{\\Gal}{Gal}$/;"	o
+\\Ghat	main.tex	/^\\newcommand{\\Ghat}{\\widehat{\\mathbb{G}}}$/;"	C
 \\Int	main.tex	/^\\DeclareMathOperator{\\Int}{int}$/;"	o
 \\NN	main.tex	/^\\newcommand{\\NN}{\\mathbb{N}}$/;"	C
 \\QQ	main.tex	/^\\newcommand{\\QQ}{\\mathbb{Q}}$/;"	C
@@ -108,6 +114,10 @@ def:16_2	main.tex	/^\\begin{definition}\\label{def:16_2}$/;"	l
 def:16_5	main.tex	/^\\begin{definition}\\label{def:16_5}\\phantom{}$/;"	l
 def:16_7	main.tex	/^\\begin{definition}\\label{def:16_7}$/;"	l
 def:17_1	main.tex	/^\\begin{definition}\\label{def:17_1}$/;"	l
+def:18_1	main.tex	/^\\begin{definition}\\label{def:18_1}$/;"	l
+def:18_3	main.tex	/^\\begin{definition}\\label{def:18_3}$/;"	l
+def:19_1	main.tex	/^\\begin{definition}\\label{def:19_1}$/;"	l
+def:19_2	main.tex	/^\\begin{definition}\\label{def:19_2}$/;"	l
 def:1_1	main.tex	/^\\begin{definition}\\label{def:1_1}$/;"	l
 def:1_2	main.tex	/^\\begin{definition}\\label{def:1_2}$/;"	l
 def:1_4	main.tex	/^\\begin{definition}\\label{def:1_4}$/;"	l
@@ -140,6 +150,8 @@ lem:10_8	main.tex	/^\\begin{lemma}[Chinese Remainder Theorem]\\label{lem:10_8}$/
 lem:12_1	main.tex	/^\\begin{lemma}\\label{lem:12_1}$/;"	l
 lem:12_6	main.tex	/^\\begin{lemma}\\label{lem:12_6}$/;"	l
 lem:13_1	main.tex	/^\\begin{lemma}\\label{lem:13_1}$/;"	l
+lem:18_2	main.tex	/^\\begin{lemma}\\label{lem:18_2}$/;"	l
+lem:18_5	main.tex	/^\\begin{lemma}\\label{lem:18_5}$/;"	l
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
 lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
 lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
@@ -163,6 +175,7 @@ prop:16_3	main.tex	/^\\begin{proposition}\\label{prop:16_3}$/;"	l
 prop:16_6	main.tex	/^\\begin{proposition}\\label{prop:16_6}$/;"	l
 prop:16_8	main.tex	/^\\begin{proposition}\\label{prop:16_8}$/;"	l
 prop:17_3	main.tex	/^\\begin{proposition}\\label{prop:17_3}$/;"	l
+prop:18_4	main.tex	/^\\begin{proposition}\\label{prop:18_4}$/;"	l
 prop:1_3	main.tex	/^\\begin{proposition}\\label{prop:1_3}$/;"	l
 prop:1_6	main.tex	/^\\begin{proposition}\\label{prop:1_6}$/;"	l
 prop:2_3	main.tex	/^\\begin{proposition}\\label{prop:2_3}$/;"	l
