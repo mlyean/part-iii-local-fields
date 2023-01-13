@@ -2580,7 +2580,7 @@ is the ring of formal power series in $n$-variables over $R$.
 \begin{definition}\label{def:18_1}
     A (1-dimensional commutative) formal group law over $R$ is a power series $F(X, Y) \in R\llbracket X, Y \rrbracket$ satisfying
     \begin{enumerate}
-        \item $F(X, Y) \equiv X + Y \pmod{(X^2, XY, Y^2)}$;
+        \item $F(X, Y) \equiv X + Y \pmod{\textrm{degree}\,2}$;
         \item (Associativity) $F(X, F(Y, Z)) = F(F(X, Y), Z)$;
         \item (Commutativity) $F(X, Y) = F(Y, X)$.
     \end{enumerate}
@@ -2648,11 +2648,9 @@ Let $K$ be a non-archimedean valued field, $F$ a formal group law over $\cO_K$. 
         &= F((f +_F g)(X), (f +_F g)(Y))
     \end{align*}
     Thus $f +_F g \in \End_R(F)$.
-    \begin{align*}
-        f \circ g \circ F(X, Y)
-        &= f \circ F(g(X), g(Y))\\
-        &= F(f \circ g(X), f \circ g(Y))
-    \end{align*}
+    \begin{equation*}
+        f \circ g \circ F = f \circ F \circ g = F \circ f \circ g
+    \end{equation*}
     Thus $f \circ g \in \End_R(F)$.
 
     The ring axioms are left as an exercise.
@@ -2660,7 +2658,7 @@ Let $K$ be a non-archimedean valued field, $F$ a formal group law over $\cO_K$. 
 
 \subsection{Lubin-Tate Formal Groups}
 
-Let $K$ be a local field and $q = \abs{k}$.
+Let $K$ be a local field with uniformiser $\pi$, and let $q = \abs{k}$.
 
 \begin{definition}\label{def:19_1}
     A \emph{formal $\cO_K$-module over $\cO_K$} is a formal group law $F(X, Y) \in \cO_K\llbracket X, Y \rrbracket$ together with a ring homomorphism
@@ -2673,7 +2671,7 @@ Let $K$ be a local field and $q = \abs{k}$.
 \end{definition}
 
 \begin{definition}\label{def:19_2}
-    Let $\pi \in \cO_K$ be a uniformiser. A \emph{Lubin-Tate} series for $\pi$ is a power series $f(X) \in \cO_K \llbracket X \rrbracket$ such that
+    A \emph{Lubin-Tate series} for $\pi$ is a power series $f(X) \in \cO_K \llbracket X \rrbracket$ such that
     \begin{enumerate}
         \item $f(X) \equiv \pi X \pmod{X^2}$;
         \item $f(X) \equiv X^q \pmod{\pi}$.
@@ -2683,5 +2681,102 @@ Let $K$ be a local field and $q = \abs{k}$.
 \begin{example}
     For $K = \QQ_p$, $f(X) = (X+1)^p-1$ is a Lubin-Tate series for $p$.
 \end{example}
+
+\begin{theorem}\label{thm:19_3}
+    Let $f(X)$ be a Lubin-Tate series for $\pi$. Then
+    \begin{enumerate}
+        \item There exists a unique formal group law $F_f$ over $\cO_K$ such that $f \in \End_{\cO_K}(F_f)$;
+        \item There is a ring homomorphism $[\cdot]_{F_f} : \cO_K \to \End_{\cO_K}(F_f)$ satisfying $[\pi]_{F_f}(X) = f(X)$ which makes $F_f$ a formal $\cO_K$-module over $\cO_K$;
+        \item If $g(X)$ is another Lubin-Tate series for $\pi$, then $F_f \cong F_g$ as formal $\cO_K$-modules.
+    \end{enumerate}
+    $F_f$ is called the \emph{Lubin-Tate formal group law} for $\pi$, it only depends on $\pi$ up to isomorphism.
+\end{theorem}
+
+\begin{example}
+    For $K = \QQ_p$ and $f(X) = (X+1)^p - 1$, the Lubin-Tate formal group $F_f$ is $\Ghat_m$.
+\end{example}
+
+\noindent To prove \autoref{thm:19_3}, we need a lemma:
+
+\begin{lemma}[Key Lemma]\label{lem:19_4}
+    Let $f(X), g(X)$ be Lubin-Tate series for $\pi$. Let $L(X_1, \ldots, X_n) = \sum_{i=1}^n a_i X_i$, $a_i \in \cO_K$. Then there is a unique power series $F(X_1, \ldots, X_n) \in \cO_K \llbracket X_1, \ldots, X_n \rrbracket$ such that
+    \begin{enumerate}
+        \item $F(X_1, \ldots, X_n) \equiv L(X_1, \ldots, X_n) \pmod{\mathrm{degree}\,2}$;
+        \item $f(F(X_1, \ldots, X_n)) = F(g(X_1), \ldots, g(X_n))$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    We show by induction that there exists a unique $F_m \in \cO_K[X_1, \ldots, X_n]$ of total degree at most $m$ such that
+    \begin{enumerate}[label=(\alph*)]
+        \item $f(F_m(X_1, \ldots, X_n)) \equiv F_m(g(X_1), \ldots, g(X_n)) \pmod{\mathrm{degree}\,m + 1}$;
+        \item $F_m(X_1, \ldots, X_n) \equiv L(X_1, \ldots, X_n) \pmod{\mathrm{degree}\,2}$;
+        \item $F_m \equiv F_{m+1} \pmod{\mathrm{degree}\,m+1}$.
+    \end{enumerate}
+    For $m = 1$, take $F_1 = L$, so that (b) is satisfied.
+    \begin{align*}
+        f(F_1(X_1, \ldots, X_n))
+        &\equiv \pi L(X_1, \ldots, X_n) \pmod{\mathrm{degree}\,2}\\
+        &= L(\pi X_1, \ldots, \pi X_n)\\
+        &\equiv F_1(g(X_1), \ldots, g(X_n)) \pmod{\mathrm{degree}\,2}
+    \end{align*}
+    so (a) is satisfied.
+
+    Suppose we have constructed $F_m$ for $m \ge 1$. Set $F_{m+1} = F_m + h$, where $h \in \cO_K\llbracket X_1, \ldots, X_n \rrbracket$ is homogeneous of degree $m+1$. Then since $f(X+Y) = f(X) + f'(X) Y + Y^2 (\ldots)$ and $f'(X) \equiv \pi \pmod{X}$,
+    \begin{equation*}
+        f \circ (F_m + h) = f \circ F_m + \pi h \pmod{\mathrm{degree}\,m+2}
+    \end{equation*}
+    Similarly,
+    \begin{align*}
+        (F_m + h) \circ g
+        &\equiv F_m \circ g + h(\pi X_1, \ldots, \pi X_n) \pmod{\mathrm{degree}\,m+2}\\
+        &\equiv F_m \circ g + \pi^{m+1} h(X_1, \ldots, X_n) \pmod{\mathrm{degree}\,m+2}
+    \end{align*}
+    Thus (a)--(c) are satisfied iff $f \circ F_m - F_m \circ g \equiv (\pi^{m+1} - \pi) h \pmod{\mathrm{degree}\,m+2}$. Since $f(X) \equiv g(X) \equiv X^q \pmod{\pi}$, we have
+    \begin{align*}
+        f \circ F_m - F_m \circ
+        &\equiv F_m(X_1, \ldots, X_n)^q - F_m(X_1^q, \ldots, X_n^q) \pmod{\pi}\\
+        &\equiv 0 \pmod{\pi}
+    \end{align*}
+    recalling that $\cO_K/\pi = k$ is a finite field of cardinality $q$. Thus $f \circ F_m - F_m \circ g \in \pi \cO_K \llbracket X_1, \ldots, X_n \rrbracket$. Let $r(X_1, \ldots, X_n)$ be the degree $m+1$ part in $f \circ F_m - F_m \circ g$. We take $h = \frac{1}{\pi(\pi^m-1)} r \in \cO_K[X_1, \ldots, X_n]$, so that $F_{m+1}$ satisfies (a)--(c). $F_{m+1}$ is unique since it is determined by (a).
+
+    Finally, by (c), we can set $F = \lim_{m \to \infty} F_m \in \cO_K \llbracket X_1, \ldots, X_n \rrbracket$. Then $F(X_1, \ldots, X_n)$ satisfies (i) and (ii). The uniqueness of $F$ follows from the uniqueness of $F_m$.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:19_3}]\phantom{}
+    \begin{enumerate}
+        \item By \autoref{lem:19_4}, there exists a unique $F_f(X, Y) \in \cO_K \llbracket X, Y \rrbracket$ such that
+            \begin{itemize}
+                \item $F_f(X, Y) \equiv X + Y \pmod{\textrm{degree}\,2}$
+                \item $f(F_f(X, Y)) \equiv F_f(f(X), f(Y))$
+            \end{itemize}
+            For associativity, we have
+            \begin{equation*}
+                F_f(X, F_f(Y, Z)) \equiv X + Y + Z \equiv F_f(F_f(X, Y), Z) \pmod{\textrm{degree}\,2}
+            \end{equation*}
+            and
+            \begin{equation*}
+                f \circ F_f(X, F_f(Y, Z)) = F_f(f(X), f \circ F_f(Y, Z)) = F_f(f(X), F_f(f(Y), f(Z)))
+            \end{equation*}
+            Similarly, $f \circ F_f(F_f(X, Y), Z) = F_f(F_f(f(X), f(Y)), f(Z))$. Thus $F_f(X, F_f(Y, Z)) = F_f(F_f(X, Y), Z)$ by the uniqueness part of \autoref{lem:19_4}.
+
+            Commutativity is shown similarly.
+
+        \item Fix $a \in \cO_K$. By \autoref{lem:19_4}, there is a unique $[a]_{F_f} \in \cO_K \llbracket X \rrbracket$ such that
+            \begin{itemize}
+                \item $[a]_{F_f} \equiv a X \pmod{X^2}$;
+                \item $f \circ [a]_{F_f} = [a]_{F_f} \circ f$.
+            \end{itemize}
+
+            By applying \autoref{lem:19_4}, we find that $[a]_{F_f} \circ F_f = F_f \circ [a]_{F_f}$, i.e. $[a]_{F_f} \in \End_{\cO_K}(F_f)$. The map $[\cdot]_{F_f} : \cO_K \to \End_{\cO_K}(F)$  is a ring homomorphism (again by uniqueness). Thus $F_f$ is a formal $\cO_K$-module over $\cO_K$.
+
+            For $a = \pi$, $f$ satisfies the properties for $[\pi]_{F_f}$, so $[\pi]_{F_f} = f$ by uniqueness.
+
+        \item Let $g$ be another Lubin-Tate series for $\pi$. Let $\theta(X) \in \cO_K\llbracket X \rrbracket$ be a unique power series such that $\theta(X) \equiv X \pmod{X^2}$, and $\theta \circ f = g \circ \theta$. Then $\theta \circ F_f = F_g \circ \theta$ (by uniqueness), so $\theta : F_f \to F_g$ is a homomorphism. By reversing the roles of $f$ and $g$ we obtain $\theta^{-1} : F_g \to F_f$.
+
+            By uniqueness, $\theta^{-1} \circ \theta(X) = X$, and $\theta \circ \theta^{-1}(X) = X$. Thus $\theta$ is an isomorphism.
+
+            Fix $a \in \cO_K$. Then uniqueness shows that $\theta \circ [a]_{F_f} = [a]_{F_g} \circ \theta$. Hence $\theta$ is an isomorphism of formal $\cO_K$-modules. \qedhere
+    \end{enumerate}
+\end{proof}
 
 \end{document}

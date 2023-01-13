@@ -152,6 +152,7 @@ lem:12_6	main.tex	/^\\begin{lemma}\\label{lem:12_6}$/;"	l
 lem:13_1	main.tex	/^\\begin{lemma}\\label{lem:13_1}$/;"	l
 lem:18_2	main.tex	/^\\begin{lemma}\\label{lem:18_2}$/;"	l
 lem:18_5	main.tex	/^\\begin{lemma}\\label{lem:18_5}$/;"	l
+lem:19_4	main.tex	/^\\begin{lemma}[Key Lemma]\\label{lem:19_4}$/;"	l
 lem:1_5	main.tex	/^\\begin{lemma}[All triangles are isoceles]\\label{lem:1_5}$/;"	l
 lem:1_8	main.tex	/^\\begin{lemma}\\label{lem:1_8}$/;"	l
 lem:2_6	main.tex	/^\\begin{lemma}\\label{lem:2_6}$/;"	l
@@ -206,6 +207,7 @@ thm:14_5	main.tex	/^\\begin{theorem}\\label{thm:14_5}$/;"	l
 thm:16_4	main.tex	/^\\begin{theorem}[Fundamental Theorem of Galois Theory]\\label{thm:16_4}$/;"	l
 thm:17_2	main.tex	/^\\begin{theorem}\\label{thm:17_2}\\phantom{}$/;"	l
 thm:17_4	main.tex	/^\\begin{theorem}[Local Kronecker-Weber Theorem]\\label{thm:17_4}$/;"	l
+thm:19_3	main.tex	/^\\begin{theorem}\\label{thm:19_3}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
