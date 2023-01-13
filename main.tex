@@ -1904,7 +1904,7 @@ Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irre
                 &\iff y \in \cO_K[\pi_L]
             \end{align*}
 
-        \item Let $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ be an Eisenstein polynomial. Let $\alpha$ be a root of $f$, $L = K(a)$, and $e = e_{L/K}$. Then $v_L(a_i) \ge e$, and $v_L(a_0) = e$. If $v_L \le 0$, then $v_L(\alpha^n) < v_L(\sum_{i=1}^{n-1} a_i \alpha^i)$, contradiction. Thus $v_L(\alpha) > 0$. For $i \neq 0$, $v_L(a_i \alpha^i) > e = v_L(a_0)$. Therefore, $n v_L(\alpha) = v_L(\alpha^n) = v_L(-\sum_{i=0}^{n-1} a_i \alpha_i) = e$. Since $n = [L : K] \ge e$, we have $n = e$ and $v_L(\alpha) = 1$.\qedhere
+        \item Let $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ be an Eisenstein polynomial. Let $\alpha$ be a root of $f$, $L = K(a)$, and $e = e_{L/K}$. Then $v_L(a_i) \ge e$, and $v_L(a_0) = e$. If $v_L(\alpha) \le 0$, then $v_L(\alpha^n) < v_L(\sum_{i=1}^{n-1} a_i \alpha^i)$, contradiction. Thus $v_L(\alpha) > 0$. For $i \neq 0$, $v_L(a_i \alpha^i) > e = v_L(a_0)$. Therefore, $n v_L(\alpha) = v_L(\alpha^n) = v_L(-\sum_{i=0}^{n-1} a_i \alpha_i) = e$. Since $n = [L : K] \ge e$, we have $n = e$ and $v_L(\alpha) = 1$.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -2777,6 +2777,114 @@ Let $K$ be a local field with uniformiser $\pi$, and let $q = \abs{k}$.
 
             Fix $a \in \cO_K$. Then uniqueness shows that $\theta \circ [a]_{F_f} = [a]_{F_g} \circ \theta$. Hence $\theta$ is an isomorphism of formal $\cO_K$-modules. \qedhere
     \end{enumerate}
+\end{proof}
+
+\subsection{Lubin-Tate Extensions}
+Let $K$ be a local field with uniformiser $\pi$, and $q = \abs{k}$. Let $\overline{K}$ denote the algebraic closure of $K$, and $\overline{\fm}$ be the maximal ideal of $\cO_{\overline{K}}$.
+
+\begin{lemma}\label{lem:20_1}
+    Let $F$ be a formal $\cO_K$-module over $\cO_K$. Then $\overline{\fm}$ becomes a (genuine) $\cO_K$-module with
+    \begin{alignat*}{3}
+        x +_F y &= F(x, y) &&\qquad (x, y \in \overline{\fm})\\
+        a \cdot_F x &= [a]_F(x) &&\qquad (x \in \overline{\fm}, a \in \cO_K)
+    \end{alignat*}
+\end{lemma}
+\begin{proof}
+    Note that $\overline{K}$ is not complete, however every element $x \in \overline{\fm}$ is contained in $\fm_L$ for some finite extension $L/K$.
+
+    Let $x \in \overline{\fm}$ and $a \in \cO_K$. Let $L/K$ be a finite extension containing $x$ as described above. Since $[a]_F \in X \cO_K \llbracket X \rrbracket$, $[a]_{F}(x)$ converges in $L$. Since $\fm_L$ is closed, $[a]_{F}(x) \in \fm_L \subseteq \overline{\fm}$. Similarly, $x +_F y \in \overline{\fm}$.
+
+    The module structure follows from the definitions.
+\end{proof}
+
+\begin{definition}
+    Let $f(X)$ be a Lubin-Tate series for $\pi$, and $F_f$ the Lubin-Tate formal group law. The \emph{$\pi^n$-torsion group} is
+    \begin{align*}
+        \mu_{f, n}
+        &= \{x \in \overline{\fm} \mid \pi^n \cdot_{F_f} x = 0\}\\
+        &= \{x \in \overline{\fm} \mid f_n(x) = 0\}
+    \end{align*}
+    where $f_n = \underbrace{f \circ \ldots \circ f}_n$.
+\end{definition}
+
+\begin{fact}\phantom{}
+    \begin{itemize}
+        \item $\mu_{f,n}$ is an $\cO_K$-module.
+        \item $\mu_{f,n} \subseteq \mu_{f,n+1}$.
+    \end{itemize}
+\end{fact}
+
+\begin{example}
+    Let $K = \QQ_p$, $f(X) = (X+1)^p - 1$. Then
+    \begin{equation*}
+        [p^n](X) = \underbrace{f \circ \ldots \circ f}_n(X) = (X+1)^{p^n} - 1
+    \end{equation*}
+    Thus $\mu_{f,n} = \{\zeta_{p^n}^i - 1 \mid 0 \le i \le p^n-1\}$.
+\end{example}
+
+Now let $f(X) = \pi X + X^q$, which is a Lubin-Tate series for $\pi$. We have
+\begin{align*}
+    f_n(X)
+    &= f \circ f_{n-1}(X)\\
+    &= (\pi + f_{n-1}(X)^{q-1})f_{n-1}(X)
+\end{align*}
+For $n \ge 1$, set $h_n(X) = \frac{f_n(X)}{f_{n-1}(X)} = \pi + f_{n-1}(X)^{q-1}$, where we take $f_0(X) = X$.
+
+\begin{proposition}\label{prop:20_3}
+    $h_n(X) \in \cO_K[X]$ is a separable Eisenstein polynomial of degree $q^{n-1}(q-1)$.
+\end{proposition}
+\begin{proof}
+    It is clear that $h_n(X)$ is monic of degree $q^{n-1}(q-1)$. $f(X) \equiv X^q \pmod{\pi}$ implies that $f_{n-1}(X)^{q-1} \equiv X^{q^{n-1}(q-1)} \pmod{\pi}$. Since $f_{n-1}(X)$ has $0$ constant term, $h_n(X) = \pi + f_{n-1}(X)^{q-1}$ has constant term $\pi$. Thus $h_n(X)$ is Eisenstein.
+
+    Since $h_n(X)$ is irreducible, it is separable if $\Char K = 0$ or $\Char K = p > 0$ and $h_n'(X) \neq 0$.
+
+    Assume that $\Char K = p$. We use strong induction on $n \ge 1$.
+
+    Suppose that $h_1(X), \ldots, h_{n-1}(X)$ are irreducible. Then $f_{n-1}(X) = h_1(X) \ldots h_{n-1}(X)$ is a product of separable irreducible polynomials of distinct degrees, hence separable. We have
+    \begin{equation*}
+        h_n'(X) = (q-1) f_{n-1}'(X) f_{n-1}(X)^{q-2} \neq 0
+    \end{equation*}
+    Hence $h_n(X)$ is separable.
+\end{proof}
+
+\begin{proposition}\label{prop:20:4}\phantom{}
+    \begin{enumerate}
+        \item $\mu_{f,n}$ is a free-module of rank $1$ over $\cO_K / \pi^n \cO_K$.
+        \item If $g$ is another Lubin-Tate series for $\pi$, then $\mu_{f, n} \cong \mu_{g, n}$ as $\cO_K$-modules and $K(\mu_{f,n}) = K(\mu_{g, n})$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}\phantom{}
+    \begin{enumerate}
+        \item Let $\alpha \in \overline{K}$ be a root of $h_n(X)$, $\alpha \in \overline{\fm}$ by \autoref{thm:13_8}. Since $h_n(X)$ and $f_{n-1}(X)$ are coprime, $\alpha \in \mu_{f,n} \setminus \mu_{f,n-1}$. Thus the map $\widetilde{\varphi} : \cO_K \to \mu_{f, n}$, defined by $\widetilde{\varphi}(a) = a \cdot_{F_f} \alpha$ is an $\cO_K$-module homomorphism with $\pi^n \cO_K \subseteq \ker{\widetilde{\varphi}}$ since $\alpha \in \mu_{f,n}$. As $\alpha \notin \mu_{f,n-1}$, $\pi^{n-1} \cdot_{F_f} \alpha \neq 0$, so $\ker(\widetilde{\varphi}) = \pi^n \cO_K$. Thus $\widetilde{\varphi}$ induces an injection $\varphi : \cO_K / \pi^n \cO_K \to \mu_{f,n}$. Since $f_n(X)$ is separable and all its roots lie in $\overline{\fm}$, $\abs{\mu_{f,n}} = \deg f_n = q^n = \abs{\cO_K / \pi^n \cO_K}$. Thus $\varphi$ is an isomorphism by counting.
+
+        \item By \autoref{thm:19_3}, there is an isomorphism $\theta : F_f \xrightarrow{\sim} F_g$ of formal $\cO_K$-modules. Then $\theta$ induces an isomorphism $\theta : (\overline{\fm}, +_{F_f}, \cdot_{F_f}) \to (\overline{\fm}, +_{F_g}, \cdot_{F_g})$ of $\cO_K$-modules, and hence $\mu_{f,n} \cong \mu_{g,n}$.
+
+            Since $\mu_{f,n}$ is a finite set of algebraic elements over $K$, $K(\mu_{f,n})/K$ is finite hence complete. Since $\theta(X) \in \cO_K \llbracket X \rrbracket$, for $x \in \mu_{f,n}$, $\theta(x) \in K(\mu_{f,n})$. Thus $K(\mu_{g,n}) \subseteq K(\mu_{f,n})$. Replacing $\theta$ by $\theta^{-1}$ gives $K(\mu_{f,n}) \subseteq K(\mu_{g,n})$, so $K(\mu_{f,n}) = K(\mu_{g,n})$ as required. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}\label{def:20_5}
+    Define $K_{\pi,n} = K(\mu_{f,n})$. These are known as \emph{Lubin-Tate extensions}.
+\end{definition}
+
+\begin{remark}\phantom{}
+    \begin{enumerate}
+        \item $K_{\pi,n}$ does not depend on $f$ by \autoref{prop:20:4}.
+        \item $K_{\pi, n} \subseteq K_{\pi, n+1}$.
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}\label{prop:20_6}
+    $K_{\pi,n}$ is a totally ramified Galois extension of degree $q^{n-1} (q-1)$.
+\end{proposition}
+\begin{proof}
+    By \autoref{prop:20:4}, we may choose $f(X) = \pi X + X^q$. $K_{\pi,n}/K$ is Galois since it is the splitting field of $f_n(X)$, which is separable by \autoref{prop:20_3}.
+
+    Let $\alpha$ be a root of $h_n(X)$. By \autoref{prop:20_3}, it suffices to show that $K(\alpha) = K(\mu_{f,n})$.
+
+    \noindent ($\subseteq$) Clear.
+
+    \noindent ($\supseteq$) By \autoref{prop:20:4}, every $x \in \mu_{f,n}$ has the form $x = a \cdot_{F_f} \alpha$ for some $a \in \cO_K$. Since $K(\alpha)$ is complete and $[a]_{F_f}(X) \in \cO_K \llbracket X \rrbracket$, $x = a \cdot_{F_f} \alpha \in K(\alpha)$. Thus $\mu_{f, n} \subseteq K(\alpha)$ as required.
 \end{proof}
 
 \end{document}
