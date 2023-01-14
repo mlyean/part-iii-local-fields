@@ -2521,7 +2521,7 @@ commutes. Set $\QQ_p(\zeta_{p^\infty}) = \bigcup_{n=1}^\infty \QQ_p(\zeta_{p^n})
     \Gal(\QQ_p^\ur \QQ_p(\zeta_{p^\infty}) / \QQ_p) \cong \Gal(\QQ_p^\ur / \QQ_p) \times \Gal(\QQ_p(\zeta_{p^\infty}) / \QQ_p) \cong \widehat{\ZZ} \times \ZZ_p^\times
 \end{equation*}
 
-\begin{theorem}[Local Kronecker-Weber Theorem]\label{thm:17_4}
+\begin{theorem}[Local Kronecker-Weber]\label{thm:17_4}
     $\QQ_p^\ab = \QQ_p^\ur \QQ_p(\zeta_{p^\infty})$.
 \end{theorem}
 \begin{proof}
@@ -2699,7 +2699,7 @@ Let $K$ be a local field with uniformiser $\pi$, and let $q = \abs{k}$.
 \noindent To prove \autoref{thm:19_3}, we need a lemma:
 
 \begin{lemma}[Key Lemma]\label{lem:19_4}
-    Let $f(X), g(X)$ be Lubin-Tate series for $\pi$. Let $L(X_1, \ldots, X_n) = \sum_{i=1}^n a_i X_i$, $a_i \in \cO_K$. Then there is a unique power series $F(X_1, \ldots, X_n) \in \cO_K \llbracket X_1, \ldots, X_n \rrbracket$ such that
+    Let $f(X)$ and $g(X)$ be Lubin-Tate series for $\pi$. Let $L(X_1, \ldots, X_n) = \sum_{i=1}^n a_i X_i$, where $a_i \in \cO_K$. Then there is a unique power series $F(X_1, \ldots, X_n) \in \cO_K \llbracket X_1, \ldots, X_n \rrbracket$ such that
     \begin{enumerate}
         \item $F(X_1, \ldots, X_n) \equiv L(X_1, \ldots, X_n) \pmod{\mathrm{degree}\,2}$;
         \item $f(F(X_1, \ldots, X_n)) = F(g(X_1), \ldots, g(X_n))$.
@@ -2757,7 +2757,14 @@ Let $K$ be a local field with uniformiser $\pi$, and let $q = \abs{k}$.
             \begin{equation*}
                 f \circ F_f(X, F_f(Y, Z)) = F_f(f(X), f \circ F_f(Y, Z)) = F_f(f(X), F_f(f(Y), f(Z)))
             \end{equation*}
-            Similarly, $f \circ F_f(F_f(X, Y), Z) = F_f(F_f(f(X), f(Y)), f(Z))$. Thus $F_f(X, F_f(Y, Z)) = F_f(F_f(X, Y), Z)$ by the uniqueness part of \autoref{lem:19_4}.
+            Similarly,
+            \begin{equation*}
+                f \circ F_f(F_f(X, Y), Z) = F_f(F_f(f(X), f(Y)), f(Z))
+            \end{equation*}
+            Thus by the uniqueness part of \autoref{lem:19_4},
+            \begin{equation*}
+                F_f(X, F_f(Y, Z)) = F_f(F_f(X, Y), Z)
+            \end{equation*}
 
             Commutativity is shown similarly.
 
@@ -2838,9 +2845,7 @@ For $n \ge 1$, set $h_n(X) = \frac{f_n(X)}{f_{n-1}(X)} = \pi + f_{n-1}(X)^{q-1}$
 
     Since $h_n(X)$ is irreducible, it is separable if $\Char K = 0$ or $\Char K = p > 0$ and $h_n'(X) \neq 0$.
 
-    Assume that $\Char K = p$. We use strong induction on $n \ge 1$.
-
-    Suppose that $h_1(X), \ldots, h_{n-1}(X)$ are irreducible. Then $f_{n-1}(X) = h_1(X) \ldots h_{n-1}(X)$ is a product of separable irreducible polynomials of distinct degrees, hence separable. We have
+    Assume that $\Char K = p$. We use strong induction on $n \ge 1$. Suppose that $h_1(X), \ldots, h_{n-1}(X)$ are irreducible. Then $f_{n-1}(X) = h_1(X) \ldots h_{n-1}(X)$ is a product of separable irreducible polynomials of distinct degrees, hence separable. We have
     \begin{equation*}
         h_n'(X) = (q-1) f_{n-1}'(X) f_{n-1}(X)^{q-2} \neq 0
     \end{equation*}
@@ -2886,5 +2891,97 @@ For $n \ge 1$, set $h_n(X) = \frac{f_n(X)}{f_{n-1}(X)} = \pi + f_{n-1}(X)^{q-1}$
 
     \noindent ($\supseteq$) By \autoref{prop:20:4}, every $x \in \mu_{f,n}$ has the form $x = a \cdot_{F_f} \alpha$ for some $a \in \cO_K$. Since $K(\alpha)$ is complete and $[a]_{F_f}(X) \in \cO_K \llbracket X \rrbracket$, $x = a \cdot_{F_f} \alpha \in K(\alpha)$. Thus $\mu_{f, n} \subseteq K(\alpha)$ as required.
 \end{proof}
+
+\begin{theorem}\label{thm:20_7}
+    There are isomorphisms
+    \begin{equation*}
+        \psi_n : \Gal(K_{\pi,n}/K) \xrightarrow{\sim} (\cO_K / \pi \cO_K)^\times
+    \end{equation*}
+    characterized by
+    \begin{equation*}
+        \psi_n(\sigma) \cdot_{F_f} x = \sigma(x)
+    \end{equation*}
+    for all $x \in \mu_{f,n}$ and $\sigma \in \Gal(K_{\pi,n}/K)$. Moreover, $\psi_n$ does not depend on $f$.
+\end{theorem}
+\begin{proof}
+    Let $\sigma \in \Gal(K_{\pi,n}/K)$. Then $\sigma$ preserves $\mu_{f,n}$ (as $\mu_{f,n}$ is the set of roots of $f_n \in \cO_K$), and acts continuously on $K_{\pi,n}$. Since $F_f(X, Y) \in \cO_K \llbracket X, Y \rrbracket$, and $[a]_{F_f} \in \cO \llbracket X \rrbracket$ for all $a \in \cO_K$, we have
+    \begin{alignat*}{3}
+        \sigma(x +_{F_f} y) &= \sigma(x) +_{F_f} \sigma(y) &&\qquad (\forall x, y \in \mu_{f,n})\\
+        \sigma(a \cdot_{F_f} x) &= a \cdot_{f_F} \sigma(x) &&\qquad (\forall x \in \mu_{f,n}, a \in \cO_K)
+    \end{alignat*}
+    Thus $\sigma \in \Aut_{\cO_K}(\mu_{f,n})$, i.e. is an automorphism on $\cO_K$-modules. This induces a group homomorphism $\Gal(K_{\pi,n}/K) \hookrightarrow \Aut_{\cO_K}(\mu_{f,n})$, which is injective since $K_{\pi,n} = K(\mu_{f,n})$. Since $\mu_{f,n} \cong \cO_K / \pi^n \cO_K$ as $\cO_K$-modules,
+    \begin{equation*}
+        \Aut_{\cO_K}(\mu_{f,n}) = \Aut_{\cO_K / \pi^n \cO_K}(\mu_{f,n}) \cong (\cO_K / \pi^n \cO_K)^\times
+    \end{equation*}
+    Thus we get a map $\psi_n : \Gal(K_{\pi,n}/K) \hookrightarrow (\cO_K / \pi^n \cO_K)^\times$, where $\psi_n(\sigma) \in (\cO_K / \pi^n \cO_K)^\times$ is the unique element with $\psi_n(\sigma) \cdot_{F_f} x = \sigma(x)$ for all $x \in \mu_{f,n}$. Since $[K_{\pi,n} : K] = q^{n-1} (q-1) = \abs{(\cO_K / \pi^n \cO_K)^\times}$, $\psi_n$ is surjective by counting.
+
+    Let $g$ be another Lubin-Tate series, with corresponding map $\psi_n' : \Gal(K_{\pi,n}/K) \xrightarrow{\sim} (\cO_K / \pi^n \cO_K)^\times$. Let $\theta : F_f \to F_g$ be an isomorphism of formal $\cO_K$-modules, inducing an isomorphism $\theta : \mu_{f,n} \to \mu_{g,n}$ of $\cO_K$-modules (c.f. \autoref{prop:20:4}). Then for $x \in \mu_{f,n}$,
+    \begin{equation*}
+        \theta(\psi_n(\sigma) \cdot_{F_f} x) = \psi_n(\sigma) \cdot_{F_g} \theta(x)
+    \end{equation*}
+    Since $\theta(X) \in \cO_K \llbracket X \rrbracket$, by continuity we have $\theta(\sigma(x)) = \sigma(\theta(x))$. Thus
+    \begin{equation*}
+        \theta(\psi_n(\sigma) \cdot_{F_f} x) = \theta(\sigma(x)) = \sigma(\theta(x)) = \psi_n'(\sigma) \cdot_{F_g} \theta(x)
+    \end{equation*}
+    Since $\psi_n(\sigma)$ and $\psi_n'(\sigma)$ act identically on the free $\cO_K / \pi^n \cO_K$-module $\mu_{f,n}$, we have $\psi_n(\sigma) = \psi_n'(\sigma)$ as required.
+\end{proof}
+
+Set $K_{\pi, \infty} = \bigcup_{n=1}^\infty K_{\pi,n}$. Then the $\psi_n$ induce an isomorphism $\psi : \Gal(K_{\pi,\infty}/K) \xrightarrow{\sim} \varprojlim_n (\cO_K / \pi^n \cO_K)^\times \cong \cO_K^\times$.
+\begin{theorem}[Generalized Local Kronecker-Weber]
+    $K^\ab = K^\ur K_{\pi, \infty}$
+\end{theorem}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+Thus we have completed the construction of the Artin map $\Art_K$.
+
+\subsection{Upper-Numbering of Ramification}
+
+Let $L/K$ be finite Galois. Define the function $\phi = \phi_{L/K} : \RR_{\ge 1} \to \RR$ by
+\begin{equation*}
+    \phi(s) = \int_0^s \frac{1}{[G_0 : G_t]} dt
+\end{equation*}
+where for $t \in [-1, 0]$, we take $\frac{1}{[G_0 : G_t]} = [G_t : G_0]$. If $m \in \ZZ_{\ge 1}$ is such that $m \le s < m + 1$, then
+\begin{equation*}
+    \phi(s) =
+    \begin{cases}
+        s [G_{-1} : G_0] & \text{if } m = -1\\
+        \frac{1}{\abs{G_0}} (\abs{G_1} + \ldots + \abs{G_m} + (s - m) \abs{G_{m+1}}) & \text{if } m \ge 0\\
+    \end{cases}
+\end{equation*}
+Thus $\phi$ is continuous, piecewise linear, and strictly increasing. We define $\psi_{L/K} = \phi_{L/K}$.
+
+\begin{definition}\label{def:21_1}
+    The higher ramification groups in the upper numbering is defined by
+    \begin{equation*}
+        G^s(L/K) = G_{\psi_{L/K}(s)}(L/K) \subseteq \Gal(L/K)
+    \end{equation*}
+\end{definition}
+
+The key point is that $G_s(L/K)$ behaves well with respect to subgroups, whereas $G^s(L/K)$ behaves well with respect to quotients: Let $L/F/K$ be field extensions with $L/K$ Galois. Then $G_s(L/F) = G_s(L/K) \cap \Gal(L/F)$. If $F/K$ is Galois, then Herbrand's theorem states that $G^t(L/K) \Gal(L/F) / \Gal(L/F) \cong G^t(F/K)$.
+
+\begin{example}
+    Let $K = \QQ_p$ and $L = \QQ_p(\zeta_{p^n})$. Let $k \in \ZZ$, $1 \le k \le n-1$. For $p^{k-1} - 1 < s \le p^k - 1$,
+    \begin{equation*}
+        G_s \cong \{m \in (\ZZ / p^n \ZZ)^\times \mid m \equiv 1 \pmod{p^k}\} \cong U_{\QQ_p}^{(k)} / U_{\QQ_p}^{(n)}
+    \end{equation*}
+\end{example}
+$G_s$ jumps at $p^k - 1$, so $\phi_{L/K}$ is linear on $[p^{k-1} - 1, p^k - 1]$. Thus to compute $\phi_{L/K}$, it suffices to compute $\phi_{L/K}(p^k-1)$.
+\begin{align*}
+    \phi_{L/K}(p^k-1)
+    &= (p-1) \frac{1}{p-1} + \frac{(p^2 - 1) - (p - 1)}{p(p-1)} + \ldots\\
+    &= k
+\end{align*}
+for $1 \le k \le n-1$. Thus
+\begin{equation*}
+    G^s \cong
+    \begin{cases}
+        (\ZZ / p^n \ZZ)^\times & \text{if } s \le 0\\
+        (1 + p^k \ZZ) / p^n \ZZ & \text{if } k-1 < s \le k, 1 \le k \le n - 1\\
+        \{1\} & \text{if } s > n-1
+    \end{cases}
+\end{equation*}
+In particular, $G^k \cong U_{\QQ_p}^{(k)} / U_{\QQ_p}^{(n)}$.
 
 \end{document}

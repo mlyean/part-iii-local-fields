@@ -42,6 +42,7 @@ Structure of Units	main.tex	/^\\subsection*{Structure of Units}$/;"	u	section:Ra
 Teichm\\"uller Lifts	main.tex	/^\\subsection{Teichm\\"uller Lifts}$/;"	u	section:Complete Valued Fields
 Topology on $W(L/K)$	main.tex	/^\\subsubsection*{Topology on $W(L\/K)$}$/;"	b	subsection:Local Class Field Theory""Weil Group
 Unramified and Totally Ramified Extensions of Local Fields	main.tex	/^\\subsection{Unramified and Totally Ramified Extensions of Local Fields}$/;"	u	section:Ramification Theory
+Upper-Numbering of Ramification	main.tex	/^\\subsection{Upper-Numbering of Ramification}$/;"	u	section:Lubin-Tate Theory
 Valuation Rings	main.tex	/^\\subsection{Valuation Rings}$/;"	u	section:Basic Theory
 Weil Group	main.tex	/^\\subsection*{Weil Group}$/;"	u	section:Local Class Field Theory
 \\Adj	main.tex	/^\\DeclareMathOperator{\\Adj}{Adj}$/;"	o
@@ -124,6 +125,7 @@ def:1_2	main.tex	/^\\begin{definition}\\label{def:1_2}$/;"	l
 def:1_4	main.tex	/^\\begin{definition}\\label{def:1_4}$/;"	l
 def:1_7	main.tex	/^\\begin{definition}\\label{def:1_7}$/;"	l
 def:20_5	main.tex	/^\\begin{definition}\\label{def:20_5}$/;"	l
+def:21_1	main.tex	/^\\begin{definition}\\label{def:21_1}$/;"	l
 def:2_1	main.tex	/^\\begin{definition}\\label{def:2_1}$/;"	l
 def:2_2	main.tex	/^\\begin{definition}\\label{def:2_2}$/;"	l
 def:2_5	main.tex	/^\\begin{definition}\\label{def:2_5}$/;"	l
@@ -212,8 +214,9 @@ thm:14_2	main.tex	/^\\begin{theorem}\\label{thm:14_2}\\phantom{}$/;"	l
 thm:14_5	main.tex	/^\\begin{theorem}\\label{thm:14_5}$/;"	l
 thm:16_4	main.tex	/^\\begin{theorem}[Fundamental Theorem of Galois Theory]\\label{thm:16_4}$/;"	l
 thm:17_2	main.tex	/^\\begin{theorem}\\label{thm:17_2}\\phantom{}$/;"	l
-thm:17_4	main.tex	/^\\begin{theorem}[Local Kronecker-Weber Theorem]\\label{thm:17_4}$/;"	l
+thm:17_4	main.tex	/^\\begin{theorem}[Local Kronecker-Weber]\\label{thm:17_4}$/;"	l
 thm:19_3	main.tex	/^\\begin{theorem}\\label{thm:19_3}$/;"	l
+thm:20_7	main.tex	/^\\begin{theorem}\\label{thm:20_7}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
