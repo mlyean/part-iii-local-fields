@@ -2171,7 +2171,7 @@ Let $L/K$ be an algebraic extension of fields.
     \begin{enumerate}
         \item $L/K$ is \emph{separable} if for all $\alpha \in L$, its minimal polynomial $f_\alpha(X) \in K[X]$ is separable.
         \item $L/K$ is \emph{normal} if for all $\alpha \in L$, $f_\alpha(X)$ splits in $L$.
-        \item $L/K$ is Galois if it is both separable and normal. In this case, we write $\Gal(L/K) = \Aut(L/K)$.
+        \item $L/K$ is \emph{Galois} if it is both separable and normal. In this case, we write $\Gal(L/K) = \Aut(L/K)$.
     \end{enumerate}
 \end{definition}
 If $L/K$ is finite, we have the Galois correspondence:
@@ -2182,11 +2182,11 @@ If $L/K$ is finite, we have the Galois correspondence:
 \end{tabular}
 \end{center}
 
-Let $(I, \le)$ be a poset. We say $I$ is a directed set if for all $i, j \in I$, there exists a $k \in I$ such that $i \le k$ and $j \le k$.
+Let $(I, \le)$ be a poset. We say $I$ is a \emph{directed set} if for all $i, j \in I$, there exists a $k \in I$ such that $i \le k$ and $j \le k$.
 \begin{example}\phantom{}
     \begin{itemize}
-        \item Any total order (e.g $(\NN, \le)$));
-        \item $N_{\ge 1}$ ordered by divisibility.
+        \item Any total order, e.g $(\NN, \le)$;
+        \item $\NN_{\ge 1}$ ordered by divisibility.
     \end{itemize}
 \end{example}
 
@@ -2198,7 +2198,7 @@ Let $(I, \le)$ be a poset. We say $I$ is a directed set if for all $i, j \in I$,
     \end{gather*}
     We call $((G_i)_{i \in I}, \varphi_{ij})$ an \emph{inverse system}. The \emph{inverse limit} of $((G_i)_{i \in I}, \varphi_{ij})$ is
     \begin{equation*}
-        \varprojlim_{i \in I} G_i = \bigg\{(a_i)_i \in \prod_{i \in I} G_i \,\bigg\vert\, \forall i \le j, \varphi_{ij}(g_j) = g_i\bigg\}
+        \varprojlim_{i \in I} G_i = \bigg\{(g_i)_i \in \prod_{i \in I} G_i \,\bigg\vert\, \forall i \le j, \varphi_{ij}(g_j) = g_i\bigg\}
     \end{equation*}
 \end{definition}
 
