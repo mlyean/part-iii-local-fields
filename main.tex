@@ -603,7 +603,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{remark}
 
 \begin{corollary}\label{cor:4_2}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field, $f(X) \in \cO[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field, $f(X) \in \cO_K[X]$, and let $\overline{c} \in k = \cO_K / \fm$ be a simple root of $\overline{f}(X) = f(X) \pmod{\fm}$ in $k[X]$. Then there is a unique $x \in \cO_K$ such that $f(x) = 0$ and $x \equiv \overline{c} \pmod{\fm}$.
 \end{corollary}
 \begin{proof}
     Apply \autoref{thm:4_1} to a lift $c \in \cO_K$ of $\overline{c}$. Then $\abs{f(c)} < 1 = \abs{f'(c)}^2$ since $\overline{c}$ is a simple root.
@@ -1518,7 +1518,7 @@ Note that for any $i$, $\fp \subseteq \cO_K \cap \cP_i \subsetneq \cO_K$ so $\fp
 Now assume that $L / K$ is Galois. Then for $\sigma \in \Gal(L / K)$, $\sigma(\cP_i) \cap \cO_K = \fp$, and hence $\sigma(\cP_i) \in \{\cP_1, \ldots, \cP_r\}$. Thus $\Gal(L / K)$ acts on $\{\cP_1, \ldots, \cP_r\}$. We can say more:
 
 \begin{proposition}\label{prop:11_4}
-    The action of $\Gal(L / K)$ on $\cP_1, \ldots, \cP_r$ is transitive.
+    The action of $\Gal(L / K)$ on $\{\cP_1, \ldots, \cP_r\}$ is transitive.
 \end{proposition}
 \begin{proof}
     Suppose that there are $i \neq j$ such that $\sigma(\cP_i) \neq \cP_j$ for any $\sigma \in \Gal(L / K)$. By CRT, there is an $x \in \cO_L$ such that $x \equiv 0 \pmod{\cP_i}$ and $x \equiv 1 \pmod{\sigma(\cP_j)}$ for all $\sigma \in \Gal(L/K)$. Consider
