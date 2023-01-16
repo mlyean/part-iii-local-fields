@@ -1600,7 +1600,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
 \begin{notation}
     For $x_1, \ldots, x_n \in L$, define
     \begin{equation*}
-        \Delta(x_1, \ldots, x_n) = \det(\Tr_{x_i x_j}) = \det(\sigma_i(x_j))^2 \in K
+        \Delta(x_1, \ldots, x_n) = \det(\Tr_{L/K}(x_i x_j)) = \det(\sigma_i(x_j))^2 \in K
     \end{equation*}
     where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L/K$ in an algebraic closure.
 \end{notation}
@@ -1629,7 +1629,7 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
 
     We are left to show that a finite extension $L/K$ is separable iff the trace form $(\cdot, \cdot)_{L/K}$ is non-degenerate.
 
-    \noindent ($\Rightarrow$) Suppose that $L/K$ is separable. By the primitive element theorem, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix of the trace form with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$, where $n = [L : K]$. We have $\det(\Tr_{L/K}(\alpha^{i+j})) = \det(\sigma_i(\alpha)^j)^2 \neq 0$, where $\sigma_i : L \to \overline{K}$ are the distinct embeddings of $L/K$.
+    \noindent ($\Rightarrow$) This is \autoref{lem:10_1}.
 
     \noindent ($\Leftarrow$) Suppose that $L/K$ is not separable. Then $\Char K = p > 0$. First assume that $L = K(\alpha)$, where $\alpha \in L$ is a purely inseparable element of degree $p$. $\alpha$ has minimal polynomial $X^p - a$ for some $a \in K$. $L / K$ has basis $1, \alpha, \ldots, \alpha^{p-1}$. We have $\Tr_{L/K}(1) = [L : K] = p = 0$, and for $1 \le i \le p-1$, $\alpha^i$ has minimal polynomial $X^p - a^i$, so $\Tr_{L/K}(\alpha^i) = 0$. This shows that $\Tr_{L/K} = 0$.
 
@@ -1706,7 +1706,7 @@ Let $I_L, I_K$ denote the groups of fractional ideals in $L$ and $K$ respectivel
 Define a group homomorphism $N_{L/K} : I_L \to I_K$ by $\cP \mapsto \fp^f$, where $\fp = \cP \cap \cO_K$, $f = f_{\cP / \fp}$. We have natural group homomorphisms $K^\times \to I_K$ and $L^\times \to I_L$ sending a unit to the principal fractional ideal that it generates.
 
 \begin{remark}
-    Consider the extension $K / \QQ$. For an ideal $I \subseteq \cO_K$ $N_{K / \QQ}(I) = [\cO_K : I]$.
+    If $K$ is an algebraic number field, then for an ideal $I \subseteq \cO_K$, $N_{K / \QQ}(I) = [\cO_K : I]$.
 \end{remark}
 
 \begin{fact} The diagram
