@@ -277,7 +277,7 @@
 \subsection{Valuation Rings}
 
 \begin{definition}\label{def:2_1}
-    Let $K$ be a field. A valuation on $K$ is a function $v : K^\times \to \RR$ such that
+    Let $K$ be a field. A \emph{valuation} on $K$ is a function $v : K^\times \to \RR$ such that
     \begin{enumerate}
         \item $v(xy) = v(x) + v(y)$;
         \item $v(x + y) \ge \min\{v(x), v(y)\}$.
@@ -294,13 +294,13 @@
 \end{equation*}
 determines a non-archimedean absolute value on $K$.
 
-Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_\alpha \abs{x}$.
+Conversely, a non-archimedean absolute value determines a valuation $v(x) = \log_\alpha \abs{x}$.
 
-\begin{remark}
-    We ignore the trivial valuation $v(x) = 0 \quad \forall x \in K^\times$.
-\end{remark}
-\begin{remark}
-    We say that $v_1, v_2$ are \emph{equivalent} if $\exists c \in \RR_{> 0}, \forall x \in K^\times, v_1(x) = c v_2(x)$.
+\begin{remark}\phantom{}
+    \begin{itemize}
+        \item We ignore the trivial valuation $v(x) = 0 \quad \forall x \in K^\times$.
+        \item We say that $v_1, v_2$ are \emph{equivalent} if $\exists c \in \RR_{> 0}, \forall x \in K^\times, v_1(x) = c v_2(x)$.
+    \end{itemize}
 \end{remark}
 
 \begin{example}\phantom{}
@@ -343,14 +343,18 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     \end{enumerate}
 \end{proof}
 
-\noindent The above proposition shows that $\cO_K$ is a local ring with maximal ideal $\fm = \{x \in K \mid \abs{x} < 1\} = \{x \in K \mid v(x) > 0\}$. We let $k = \cO_K / \fm$ denote the residue field.
+\noindent The above proposition shows that $\cO_K$ is a local ring with maximal ideal
+\begin{equation*}
+    \fm = \{x \in K \mid \abs{x} < 1\} = \{x \in K \mid v(x) > 0\}
+\end{equation*}
+We let $k = \cO_K / \fm$ denote the residue field.
 
 \begin{corollary}\label{cor:2_4}
     $\cO_K$ is a local ring with unique maximal ideal $\fm$.
 \end{corollary}
 
 \begin{definition}\label{def:2_5}
-    Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.\footnote{In this case, implicitly $K$ is non-archimedean.}
+    Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.
 
     An element $\pi \in \cO_K$ is a \emph{uniformiser} if $v(\pi) > 0$ and $v(\pi)$ generates $v(K^\times)$.
 \end{definition}
@@ -375,7 +379,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
     \end{enumerate}
 \end{lemma}
 \begin{proof}
-    (i) $\rightarrow$ (ii): $\cO_K$ is a domain since it is a subring of the field $K$.
+    (i) $\Rightarrow$ (ii): $\cO_K$ is a domain since it is a subring of the field $K$.
 
     Let $I \subseteq \cO_K$ be a non-zero ideal. Let $x \in I \setminus 0$ be such that $v(x)$ is minimal. We show that $I = x \cO_K$.
 
@@ -389,9 +393,7 @@ Conversely a non-archimedean absolute value determines a valuation $v(x) = \log_
 \end{proof}
 
 \begin{remark}
-    Let $(K, \abs{\cdot})$ be a non-archimedean valued field. Then $\cO_K[x^{-1}] = K$ for any $x \in \fm$. In particular, $K = \Frac(\cO_K)$.
-
-    Indeed let $y \in K$. Then $\abs{x^n y} \le 1$ for some $n$ sufficiently large. Then $y = x^n y / x^n \in \cO_K[x^{-1}]$.
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field. Then $\cO_K[x^{-1}] = K$ for any $x \in \fm$. In particular, $K = \Frac(\cO_K)$. Indeed let $y \in K$. Then $\abs{x^n y} \le 1$ for some $n$ sufficiently large. Then $y = x^n y / x^n \in \cO_K[x^{-1}]$. This shows that $\cO_K$ is a maximal subring of $K$.
 \end{remark}
 
 \begin{definition}\label{def:2_7}
@@ -1179,7 +1181,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     \begin{enumerate}
         \item $R$ is a Noetherian integral domain;
         \item $R$ is integrally closed in $\Frac(R)$;
-        \item Every non-zero prime ideal is maximal.
+        \item Every non-zero prime ideal in $R$ is maximal.
     \end{enumerate}
 \end{definition}
 
@@ -2003,12 +2005,12 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
 Unless otherwise specified, let $L / K$ be a finite Galois extension of local fields. Let $v_L$ the normalised valuation on $L$, and $\pi_L \in \cO_L$ a uniformiser.
 
 \begin{definition}\label{def:14_1}
-    For $s \in \RR_{\ge -1}$, the $s$\textsuperscript{th} ramification group is
+    For $s \in \RR_{\ge -1}$, the \emph{$s$\textsuperscript{th} ramification group} is
     \begin{equation*}
         G_s(L / K) = \{\sigma \in \Gal(L/K) \mid \forall x \in \cO_L, v_L(\sigma(x) - x) \ge s + 1\}
     \end{equation*}
 \end{definition}
-In particular,
+\noindent In particular,
 \begin{align*}
     G_{-1}(L/K) &= \Gal(L/K)\\
     G_0(L/K)
@@ -2085,7 +2087,7 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
 Let $p = \Char{k}$, then $\abs{G_0 / G_1}$ is coprime to $p$, and $\abs{G_1} = p^n$ by the above proof. Thus $G_1$ is the unique Sylow $p$-subgroup of $G_0 = I_{L/K}$, uniqueness follows since $G_1$ is normal in $G_0$.
 
 \begin{definition}\label{def:14_4}
-    The group $G_1$ is called the \emph{wild inertia group}, and $G_0 / G_1$ the tame quotient.
+    The group $G_1$ is called the \emph{wild inertia group}, and $G_0 / G_1$ the \emph{tame quotient}.
 
     Let $L/K$ be a finite separable extension of local fields. Say $L/K$ is \emph{tamely ramified} if $p \nmid e_{L/K}$, where $p = \Char k$. Otherwise it is \emph{wildly ramified}.
 \end{definition}
@@ -2578,7 +2580,7 @@ Let $R$ be a ring.
 is the ring of formal power series in $n$-variables over $R$.
 
 \begin{definition}\label{def:18_1}
-    A (1-dimensional commutative) formal group law over $R$ is a power series $F(X, Y) \in R\llbracket X, Y \rrbracket$ satisfying
+    A \emph{(1-dimensional commutative) formal group law over $R$} is a power series $F(X, Y) \in R\llbracket X, Y \rrbracket$ satisfying
     \begin{enumerate}
         \item $F(X, Y) \equiv X + Y \pmod{\textrm{degree}\,2}$;
         \item (Associativity) $F(X, F(Y, Z)) = F(F(X, Y), Z)$;
@@ -2953,7 +2955,7 @@ where for $t \in [-1, 0]$, we take $\frac{1}{[G_0 : G_t]} = [G_t : G_0]$. If $m 
 Thus $\phi$ is continuous, piecewise linear, and strictly increasing. We define $\psi_{L/K} = \phi_{L/K}^{-1}$.
 
 \begin{definition}\label{def:21_1}
-    The higher ramification groups in the upper numbering is defined by
+    The \emph{higher ramification groups in the upper numbering} are defined by
     \begin{equation*}
         G^s(L/K) = G_{\psi_{L/K}(s)}(L/K) \subseteq \Gal(L/K)
     \end{equation*}
