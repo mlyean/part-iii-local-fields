@@ -7,6 +7,7 @@
 \usepackage{array}
 \usepackage{chngcntr}
 \usepackage{commath}
+\usepackage{comment}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{stmaryrd}
@@ -75,6 +76,9 @@
 
 \setlist[enumerate,1]{label=(\roman*), nosep}
 \setlist[itemize,1]{nosep}
+
+% Uncomment to exclude proofs
+% \excludecomment{proof}
 
 \title{Part III Local Fields Lecture Notes}
 \author{Ming Yean Lim}
@@ -748,7 +752,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Take $K = \QQ_p$, then $[\cdot] : \FF_p \to \ZZ_p$. Take $a \in \FF_p^\times$. Then $[a]^{p-1} = [a^{p-1}] = [1] = 1$, so $[a]$ is a $(p-1)$\textsuperscript{th} root of unity.
 \end{example}
 
-More generally, we have
+\noindent More generally, we have
 
 \stepcounter{definition} % Numbering issue
 
@@ -1131,7 +1135,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 \begin{definition}\label{def:8_1}
     A \emph{global field} is a field which is either
     \begin{enumerate}
-        \item an algebraic number field;
+        \item an algebraic number field; or
         \item a global function field, i.e. a finite extension of $\FF_p(t)$.
     \end{enumerate}
 \end{definition}
@@ -1886,7 +1890,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
     A monic polynomial $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ is \emph{Eisenstein} if $v_K(a_i) \ge 1$ for all $i$, and $v(a_0) = 1$.
 \end{definition}
 
-Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irreducible.
+\noindent Eisenstein's criterion implies that if $f(X)$ is Eisenstein, then $f(X)$ is irreducible.
 
 \begin{theorem}\label{thm:13_8}\phantom{}
     \begin{enumerate}
@@ -2929,14 +2933,15 @@ For $n \ge 1$, set $h_n(X) = \frac{f_n(X)}{f_{n-1}(X)} = \pi + f_{n-1}(X)^{q-1}$
 \end{proof}
 
 Set $K_{\pi, \infty} = \bigcup_{n=1}^\infty K_{\pi,n}$. Then the $\psi_n$ induce an isomorphism $\psi : \Gal(K_{\pi,\infty}/K) \xrightarrow{\sim} \varprojlim_n (\cO_K / \pi^n \cO_K)^\times \cong \cO_K^\times$.
-\begin{theorem}[Generalized Local Kronecker-Weber]
+
+\begin{theorem}[Generalized Local Kronecker-Weber]\label{thm:20_8}
     $K^\ab = K^\ur K_{\pi, \infty}$
 \end{theorem}
 \begin{proof}
     Omitted.
 \end{proof}
 
-Thus we have completed the construction of the Artin map $\Art_K$.
+\noindent Thus we have completed the construction of the Artin map $\Art_K$.
 
 \subsection{Upper-Numbering of Ramification}
 

@@ -217,6 +217,7 @@ thm:17_2	main.tex	/^\\begin{theorem}\\label{thm:17_2}\\phantom{}$/;"	l
 thm:17_4	main.tex	/^\\begin{theorem}[Local Kronecker-Weber]\\label{thm:17_4}$/;"	l
 thm:19_3	main.tex	/^\\begin{theorem}\\label{thm:19_3}$/;"	l
 thm:20_7	main.tex	/^\\begin{theorem}\\label{thm:20_7}$/;"	l
+thm:20_8	main.tex	/^\\begin{theorem}[Generalized Local Kronecker-Weber]\\label{thm:20_8}$/;"	l
 thm:4_1	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 1]\\label{thm:4_1}$/;"	l
 thm:4_4	main.tex	/^\\begin{theorem}[Hensel's Lemma Version 2]\\label{thm:4_4}$/;"	l
 thm:5_2	main.tex	/^\\begin{theorem}\\label{thm:5_2}$/;"	l
