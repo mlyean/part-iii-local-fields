@@ -142,7 +142,7 @@
 \begin{proposition}\label{prop:1_3}
     Let $\abs{\cdot}, \abs{\cdot}'$ be non-trivial absolute values on $K$. The following are equivalent:
     \begin{enumerate}
-        \item $\abs{\cdot}$ and $\abs{\cdot}'$ are \emph{equivalent};
+        \item $\abs{\cdot}$ and $\abs{\cdot}'$ are equivalent;
         \item $\forall x \in K, \abs{x} < 1 \iff \abs{x}' < 1$;
         \item $\exists c \in \RR_{> 0}, \forall x \in K, \abs{x}' = \abs{x}^c$.
     \end{enumerate}
@@ -209,9 +209,7 @@
 \end{proof}
 
 \begin{proposition}\label{prop:1_6}
-    Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $(x_n)_{n=1}^\infty$ be a sequence in $K$. If $\abs{x_n - x_{n+1}} \to 0$, then $(x_n)_{n=1}^\infty$ is Cauchy.
-
-    In particular, if in addition $K$ is complete, then $(x_n)$ converges.
+    Let $(K, \abs{\cdot})$ be a non-archimedean valued field and let $(x_n)_{n=1}^\infty$ be a sequence in $K$. If $\abs{x_n - x_{n+1}} \to 0$, then $(x_n)_{n=1}^\infty$ is Cauchy. If in addition $K$ is complete, then $(x_n)$ converges.
 \end{proposition}
 \begin{proof}
     Fix $\varepsilon > 0$. Choose $N$ such that $\forall n \ge N, \abs{x_n - x_{n+1}} < \varepsilon$. Then for $m \ge n \ge N$, we have
@@ -358,9 +356,7 @@ We let $k = \cO_K / \fm$ denote the residue field.
 \end{corollary}
 
 \begin{definition}\label{def:2_5}
-    Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}.
-
-    An element $\pi \in \cO_K$ is a \emph{uniformiser} if $v(\pi) > 0$ and $v(\pi)$ generates $v(K^\times)$.
+    Let $v : K^\times \to \RR$ be a valuation. If $v(K^\times) \cong \ZZ$, then we say that $v$ is a \emph{discrete valuation} and that $K$ is \emph{discretely valued}. An element $\pi \in \cO_K$ is a \emph{uniformiser} if $v(\pi) > 0$ and $v(\pi)$ generates $v(K^\times)$.
 \end{definition}
 
 \begin{example}
@@ -368,9 +364,7 @@ We let $k = \cO_K / \fm$ denote the residue field.
 \end{example}
 
 \begin{remark}
-    If $v$ is a discrete valuation, we can always replace it with an equivalent one such that $v(K^\times) = \ZZ$. Such a $v$ will be called a \emph{normalised valuation}.
-
-    In this case, $v(\pi) = 1$ iff $\pi$ is a uniformiser.
+    If $v$ is a discrete valuation, we can always replace it with an equivalent one such that $v(K^\times) = \ZZ$. Such a $v$ will be called a \emph{normalised valuation}. In this case, $v(\pi) = 1$ iff $\pi$ is a uniformiser.
 \end{remark}
 
 \begin{lemma}\label{lem:2_6}
@@ -471,7 +465,7 @@ Let $\theta_m : \varprojlim A_n \to A_m$ denote the natural projection. Then the
 \begin{proposition}\label{prop:3_3}
     For any set/group/ring $B$ together with homomorphisms $\psi_n : B \to A_n$ such that
     \begin{equation*}
-    \begin{tikzcd}
+    \begin{tikzcd}[column sep=small]
         & B \arrow[ld, "\psi_{n+1}"'] \arrow[rd, "\psi_n"] &\\
         A_{n+1} \arrow[rr, "\varphi_n"'] & & A_n
     \end{tikzcd}
@@ -514,10 +508,10 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
             \begin{align*}
                 x \in \ker i
                 &\implies x \in \bigcap_{n=1}^\infty \pi^n \cO_K\\
-                &\implies \forall n \ge 1, v(x) \ge v(\pi)\\
+                &\implies \forall n \ge 1, v(x) \ge n v(\pi)\\
                 &\implies x = 0
             \end{align*}
-            $i$ is surjective: Let $(x_n) \in \varprojlim \cO_K / \pi^n \cO_K$. For each $n$, let $y_n \in \cO_K$ be a lift of $x_n$. Then $y_n - y_{n+1} \in \pi^n \cO_K$, so that $v(y_n - y_{n+1}) \ge n v(\pi)$. In terms of absolute values, $\abs{y_n - y_{n+1}} \le \abs{\pi}^n \to 0$. Thus by \autoref{prop:1_6}, $(y_n)$ converges, say $y_n \to y \in \cO_K$. We show that $i(y) = (x_n)$.
+            $i$ is surjective: Let $(x_n)_{n=1}^\infty \in \varprojlim \cO_K / \pi^n \cO_K$. For each $n$, let $y_n \in \cO_K$ be a lift of $x_n$. Then $y_n - y_{n+1} \in \pi^n \cO_K$, so that $v(y_n - y_{n+1}) \ge n v(\pi)$. In terms of absolute values, $\abs{y_n - y_{n+1}} \le \abs{\pi}^n \to 0$. Thus by \autoref{prop:1_6}, $(y_n)$ converges, say $y_n \to y \in \cO_K$. We show that $i(y) = (x_n)$.
 
             This is equivalent to showing $y_n - y \in \pi^n \cO_K$ for each $n$, or in terms of absolute values, $\abs{y_n - y} \le \abs{\pi}^n$. This follows because for $m > n$, we have
             \begin{equation*}
@@ -605,7 +599,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{remark}
-    The proof above uses the iteration $x_{n=1} = x_n - \frac{f(x_n)}{f'(x_n)}$. This is the non-archimedean analogue of the Newton-Raphson method.
+    The proof above uses the iteration $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$. This is the non-archimedean analogue of the Newton-Raphson method.
 \end{remark}
 
 \begin{corollary}\label{cor:4_2}
@@ -631,7 +625,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{proof}
     Case $p > 2$: Let $b \in \ZZ_p^\times$. Applying \autoref{cor:4_2} to $f(X) = X^2 - b$, we find that $b \in (\ZZ_p^\times)^2$ iff $\overline{b} \in (\FF_p^\times)^2$. Thus we have an isomorphism $\ZZ_p^\times / (\ZZ_p^\times)^2 \cong \FF_p^\times / (\FF_p^\times)^2 \cong \ZZ / 2\ZZ$.
 
-    We have an isomorphism $\ZZ_p^\times \times \ZZ \xrightarrow{\sim} \QQ_p^\times$ given by $(u, n) \mapsto u p^n$, so $\QQ_p^\times / (\QQ_p)^2 \cong \ZZ_p^\times / (\ZZ_p^\times)^2 \times \ZZ / 2\ZZ \cong (\ZZ / 2\ZZ)^2$
+    We have an isomorphism $\ZZ_p^\times \times \ZZ \xrightarrow{\sim} \QQ_p^\times$ given by $(u, n) \mapsto u p^n$, so $\QQ_p^\times / (\QQ_p^\times)^2 \cong \ZZ_p^\times / (\ZZ_p^\times)^2 \times \ZZ / 2\ZZ \cong (\ZZ / 2\ZZ)^2$
 
     Case $p = 2$: Let $b \in \ZZ_2^\times$. Consider $f(X) = X^2 - b$. We have $f'(X) = 2X \equiv 0 \pmod{2}$.
 
@@ -2699,7 +2693,7 @@ Let $K$ be a local field with uniformiser $\pi$, and let $q = \abs{k}$.
 \end{theorem}
 
 \begin{example}
-    For $K = \QQ_p$ and $f(X) = (X+1)^p - 1$, the Lubin-Tate formal group $F_f$ is $\Ghat_m$.
+    For $K = \QQ_p$ and $f(X) = (X+1)^p - 1$, the Lubin-Tate formal group $F_f$ is $\Ghat_m$: it suffices to check that $f(\Ghat_m(X, Y)) = \Ghat_m(f(X), f(Y))$.
 \end{example}
 
 \noindent To prove \autoref{thm:19_3}, we need a lemma:
@@ -2830,7 +2824,7 @@ Let $K$ be a local field with uniformiser $\pi$, and $q = \abs{k}$. Let $\overli
 \begin{example}
     Let $K = \QQ_p$, $f(X) = (X+1)^p - 1$. Then
     \begin{equation*}
-        [p^n](X) = \underbrace{f \circ \ldots \circ f}_n(X) = (X+1)^{p^n} - 1
+        [p^n]_{F_f}(X) = \underbrace{f \circ \ldots \circ f}_n(X) = (X+1)^{p^n} - 1
     \end{equation*}
     Thus $\mu_{f,n} = \{\zeta_{p^n}^i - 1 \mid 0 \le i \le p^n-1\}$.
 \end{example}
