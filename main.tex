@@ -644,7 +644,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \end{proof}
 
 \begin{corollary}\label{cor:4_5}
-    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $f(X) = a_n X^n + \ldots + a_0 \in K[X]$, with $a_0, \ldots, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
+    Let $(K, \abs{\cdot})$ be a complete discretely valued field. Let $f(X) = a_n X^n + \ldots + a_0 \in K[X]$, with $a_0, a_n \neq 0$. If $f(X)$ is irreducible, then $\abs{a_i} \le \max\{\abs{a_0}, \abs{a_n}\}$ for all $i$.
 \end{corollary}
 
 \begin{proof}
@@ -763,7 +763,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{proof}
     Since $K = \Frac{\cO_K}$, it suffices to show that $\cO_K \cong k\llbracket t \rrbracket$ as rings. Fix a uniformiser $\pi \in \cO_K$. Let $[\cdot] : k \to \cO_K$ be the Teichm\"uller lift. Define $\varphi : k\llbracket t \rrbracket \to \cO_K$ by
     \begin{equation*}
-        \varphi(\sum_{i=0}^\infty a_i t_i) = \sum_{i=0}^\infty [a_i] \pi^i
+        \varphi\left(\sum_{i=0}^\infty a_i t^i\right) = \sum_{i=0}^\infty [a_i] \pi^i
     \end{equation*}
     Then $\varphi$ is a ring homomorphism since $[\cdot]$ is and it is a bijection by \autoref{prop:3_5} (ii).
 \end{proof}
