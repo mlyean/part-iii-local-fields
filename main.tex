@@ -1029,7 +1029,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
     given by \autoref{prop:3_5}, the topology on $\cO_K$ coincides with the profinite topology.
 \end{proposition}
 \begin{proof}
-    We check that $\mathcal{B} = \{a + \pi^n\cO_K \mid n \ge 1, a \in \cO_K\}$ is a basis of open sets for both topologies. Note that $\mathcal{B}$ indeed defines a basis. For the topology given by $\abs{\cdot}$, this is clear. For the profinite topology, note that $\cO_K \to \cO_K \pi^n \cO_K$ is continuous iff $a + \pi^n \cO_K$ is open for all $a \in \cO_K$.
+    We check that $\mathcal{B} = \{a + \pi^n\cO_K \mid n \ge 1, a \in \cO_K\}$ is a basis of open sets for both topologies. Note that $\mathcal{B}$ indeed defines a basis. For the topology given by $\abs{\cdot}$, this is clear. For the profinite topology, note that $\cO_K \to \cO_K / \pi^n \cO_K$ is continuous iff $a + \pi^n \cO_K$ is open for all $a \in \cO_K$.
 \end{proof}
 
 \begin{lemma}\label{lem:7_5}
@@ -1130,7 +1130,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     A \emph{global field} is a field which is either
     \begin{enumerate}
         \item an algebraic number field; or
-        \item a global function field, i.e. a finite extension of $\FF_p(t)$.
+        \item a global function field, i.e. a finite extension of $\FF_q(t)$.
     \end{enumerate}
 \end{definition}
 
@@ -1156,7 +1156,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
     \begin{equation*}
         \abs{g'(\alpha_1)} = \abs{f'(\alpha_1)} = \prod_{i=2}^n \abs{\alpha_1 - \alpha_i} \le \abs{\alpha_1 - \alpha_i}
     \end{equation*}
-    for each $2 \le i \le n$, since $\abs{\alpha_1 - \alpha_i} \le 1$ by \autoref{lem:6_8}. Since $\abs{\beta - \alpha_1} < \abs{\alpha_1 - \alpha_1} = \abs{\beta - \alpha_i}$. By \autoref{lem:8_3}, $\alpha \in K(\beta)$, so $K(\beta) = K(\alpha_1)$.
+    for each $2 \le i \le n$, since $\abs{\alpha_1 - \alpha_i} \le 1$ by \autoref{lem:6_8}. Since $\abs{\beta - \alpha_1} < \abs{\alpha_1 - \alpha_i} = \abs{\beta - \alpha_i}$. By \autoref{lem:8_3}, $\alpha \in K(\beta)$, so $K(\beta) = K(\alpha_1)$.
 \end{proof}
 
 \begin{theorem}\label{thm:8_5}
@@ -1223,7 +1223,7 @@ On Example Sheet 2, we will show that if $K$ is a complete archimedean field, th
 
     \noindent \underline{Step 2:} $R$ is a PID.
 
-    Let $I \subseteq R$ be a non-zero ideal. Consider the sequence of fractional ideals $I \subseteq \pi^{-1} I \subseteq \pi^{-2} I \subseteq \ldots$ in $K$. Since $\pi^{-1} \notin R$, $\pi^{-k} I \neq \pi^{-(k+1)} I$ by \autoref{lem:9_4}. Since $R$ is Noetherian, we may choose $n$ maximal such that $\pi^{-n} \subseteq R$. If $\pi^{-n} I \neq R$, then $\pi^{-n} I \subseteq \fm = (\pi)$, so $\pi^{-(n+1)} I \subseteq R$, contradiction.
+    Let $I \subseteq R$ be a non-zero ideal. Consider the sequence of fractional ideals $I \subseteq \pi^{-1} I \subseteq \pi^{-2} I \subseteq \ldots$ in $K$. Since $\pi^{-1} \notin R$, $\pi^{-k} I \neq \pi^{-(k+1)} I$ by \autoref{lem:9_4}. Since $R$ is Noetherian, we may choose $n$ maximal such that $\pi^{-n} I \subseteq R$. If $\pi^{-n} I \neq R$, then $\pi^{-n} I \subseteq \fm = (\pi)$, so $\pi^{-(n+1)} I \subseteq R$, contradiction.
 
     Thus $\pi^{-n} I = R$, so $I = (\pi^n)$.
 \end{proof}
@@ -1461,7 +1461,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{equation*}
 \end{corollary}
 \begin{proof}
-    Let $B_1, \ldots, B_r$ be bases for $L_{\cP_1}, \ldots, L_{\cP_r}$ as $K_\fp$-vector spaces, where $\cP_i$ are the primes dividing $\fp$. Then $B = \cup B_i$ is a basis for $L \otimes K_\fp$ over $K_\fp$ by \autoref{thm:10_9}. Let $[\mathrm{mult}(x)]_B$ and $[\mathrm{mult}(x)]_{B_i}$ denote the matrices for $\mult(x) : L \otimes K_\fp \to L \otimes K_\fp$ with respect to the basis $B$ and $\mult(x) : L_{\cP_i} \to L_{\cP_i}$ with respect to the basis $B_i$ respectively. Then $[\mult(x)]_B$ is a block-diagonal matrix with blocks $[\mult(x)]_{B_i}$. Thus taking determinants, $N_{L/K}(x) = \det [\mult(x)]_B = \prod_{i=1}^r \det [\mult(x)]_{B_i} = \prod_{i=1}^r N_{L_{\cP_i} / K_\fp}(x)$.\footnote{The first equality follows since if $v_1, \ldots, v_n$ is a basis for $L$ as a $K$-vector space, then $v_1 \otimes 1, \ldots v_n \otimes 1$ is a basis for $L \otimes_K K_\fp$ as a $K_\fp$-vector space, and multiplying by $x$ gives the same basis in either case.}
+    Let $B_1, \ldots, B_r$ be bases for $L_{\cP_1}, \ldots, L_{\cP_r}$ as $K_\fp$-vector spaces, where $\cP_i$ are the primes dividing $\fp$. Then $B = \cup B_i$ is a basis for $L \otimes K_\fp$ over $K_\fp$ by \autoref{thm:10_9}. Let $[\mathrm{mult}(x)]_B$ and $[\mathrm{mult}(x)]_{B_i}$ denote the matrices for $\mult(x) : L \otimes K_\fp \to L \otimes K_\fp$ with respect to the basis $B$ and $\mult(x) : L_{\cP_i} \to L_{\cP_i}$ with respect to the basis $B_i$ respectively. Then $[\mult(x)]_B$ is a block-diagonal matrix with blocks $[\mult(x)]_{B_i}$. Thus taking determinants, $N_{L/K}(x) = \det [\mult(x)]_B = \prod_{i=1}^r \det [\mult(x)]_{B_i} = \prod_{i=1}^r N_{L_{\cP_i} / K_\fp}(x)$.\footnote{The first equality follows since if $v_1, \ldots, v_n$ is a basis for $L$ as a $K$-vector space, then $v_1 \otimes 1, \ldots, v_n \otimes 1$ is a basis for $L \otimes_K K_\fp$ as a $K_\fp$-vector space, and multiplying by $x$ gives the same matrix in either case.}
 \end{proof}
 
 \subsection{Decomposition Groups}
