@@ -1894,7 +1894,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
 \end{theorem}
 \begin{proof}\phantom{}
     \begin{enumerate}
-        \item By assumption, $[L : K] = e$. Let $f(X) = X^m + a_{m-1} X^{m-1} + \ldots + a_0 \in \cO_K[X]$ be the minimal polynomial of $\pi_L$. Then $m \le e$. Since $v_L(K^\times) = e \ZZ$, we have $v_L(a_i \pi_L^i) \equiv i \pmod{e}$ for $i < m$. Hence the terms have distinct valuations. As $\pi_L^m = -\sum_{i=0}^{m-1} a_i \pi_L^i$, $m = v_L(m) = \min_{0 \le i \le m-1} v_L(a_i \pi_L^i) = \min_{0 \le i \le m-1} (i + e v_K(a_i))$. Thus $v_K(a_i) \ge 1$ for all $i$. Hence $v_k(a_0) = 1$ and $m = e$. Thus $f(X)$ is Eisenstein and $L = K(\pi_L)$.
+        \item By assumption, $[L : K] = e$. Let $f(X) = X^m + a_{m-1} X^{m-1} + \ldots + a_0 \in \cO_K[X]$ be the minimal polynomial of $\pi_L$. Then $m \le e$. Since $v_L(K^\times) = e \ZZ$, we have $v_L(a_i \pi_L^i) \equiv i \pmod{e}$ for $i < m$. Hence the terms have distinct valuations. As $\pi_L^m = -\sum_{i=0}^{m-1} a_i \pi_L^i$, $m = v_L(\pi_L^m) = \min_{0 \le i \le m-1} v_L(a_i \pi_L^i) = \min_{0 \le i \le m-1} (i + e v_K(a_i))$. Thus $v_K(a_i) \ge 1$ for all $i$. Hence $v_K(a_0) = 1$ and $m = e$. Thus $f(X)$ is Eisenstein and $L = K(\pi_L)$.
 
             Now we show that $\cO_L = \cO_K[\pi_L]$. For $y \in L$, write $y = \sum_{i=0}^{e-1} b_i \pi_L^i$, with $b_i \in K$. Then $v_L(y) = \min_{0 \le i \le e-1} (i + e v_K(b_i))$. Thus
             \begin{align*}
@@ -1904,7 +1904,7 @@ Recall from \autoref{cor:11_6} that $[L : K] = e_{L/K} f_{L/K}$.
                 &\iff y \in \cO_K[\pi_L]
             \end{align*}
 
-        \item Let $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ be an Eisenstein polynomial. Let $\alpha$ be a root of $f$, $L = K(a)$, and $e = e_{L/K}$. Then $v_L(a_i) \ge e$, and $v_L(a_0) = e$. If $v_L(\alpha) \le 0$, then $v_L(\alpha^n) < v_L(\sum_{i=1}^{n-1} a_i \alpha^i)$, contradiction. Thus $v_L(\alpha) > 0$. For $i \neq 0$, $v_L(a_i \alpha^i) > e = v_L(a_0)$. Therefore, $n v_L(\alpha) = v_L(\alpha^n) = v_L(-\sum_{i=0}^{n-1} a_i \alpha_i) = e$. Since $n = [L : K] \ge e$, we have $n = e$ and $v_L(\alpha) = 1$.\qedhere
+        \item Let $f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_0 \in \cO_K[X]$ be an Eisenstein polynomial. Let $\alpha$ be a root of $f$, $L = K(\alpha)$, and $e = e_{L/K}$. Then $v_L(a_i) \ge e$, and $v_L(a_0) = e$. If $v_L(\alpha) \le 0$, then $v_L(\alpha^n) < v_L(\sum_{i=1}^{n-1} a_i \alpha^i)$, contradiction. Thus $v_L(\alpha) > 0$. For $i \neq 0$, $v_L(a_i \alpha^i) > e = v_L(a_0)$. Therefore, $n v_L(\alpha) = v_L(\alpha^n) = v_L(-\sum_{i=0}^{n-1} a_i \alpha_i) = e$. Since $n = [L : K] \ge e$, we have $n = e$ and $v_L(\alpha) = 1$.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -1979,7 +1979,7 @@ Let $K / \QQ_p$ be a finite extension, $e = e_{K/\QQ_p}$, and $\pi \in \cO_K$ a 
     Consider the group of units of $\ZZ_p$. Take $K = \QQ_p$, so $e = 1$.
 
     If $p > 2$, then we can take $r = 1$.
-    We have an isomorphism $\ZZ_p^\times \cong (\ZZ / p \ZZ)^\times \times (1 + p \ZZ_p) \cong \ZZ / (p-1) \ZZ \times \ZZ_p$, where the first isomorphism is $x \mapsto (x \pmod{p}, \frac{x}{[x \pmod{p}]})$, where $[\cdot] : \FF_p \to \ZZ_p$ is the Teichm\"uller lift.
+    We have an isomorphism $\ZZ_p^\times \cong (\ZZ / p \ZZ)^\times \times (1 + p \ZZ_p) \cong \ZZ / (p-1) \ZZ \times \ZZ_p$, where the first isomorphism is $x \mapsto (x \pmod{p}, \frac{x}{[x \pmod{p}]})$, where $[\cdot] : \FF_p \to \ZZ_p$ is the Teichm\"uller lift.\footnote{The existence of the Teichm\"uller lift makes the exact sequence $1 \rightarrow 1 + p \ZZ_p \rightarrow \ZZ_p^\times \rightarrow (\ZZ / p \ZZ)^\times \rightarrow 1$ split.}
 
     If $p = 2$, then we can take $r = 2$. We have an isomorphism $\ZZ_2^\times \cong (\ZZ / 4 \ZZ)^\times \times (1 + 4 \ZZ_2) \cong \ZZ / 2 \ZZ \times \ZZ_2$, where the first isomorphism is $x \mapsto (x \pmod{4}, \frac{x}{\varepsilon(x)})$, and $\varepsilon$ is defined by
     \begin{equation*}
@@ -2071,7 +2071,7 @@ When the extension is clear, we will simply write $G_s$ for $G_s(L/K)$.
     $\Gal(L/K)$ is solvable.
 \end{corollary}
 \begin{proof}
-    For $s \in \ZZ_{\ge 1}$, $G_s / G_{s+1}$ is isomorphic to a subgroup of
+    For $s \in \ZZ_{\ge -1}$, $G_s / G_{s+1}$ is isomorphic to a subgroup of
     \begin{equation*}
         \begin{cases}
             \Gal(k_L/k) & \text{if } s = -1\\
