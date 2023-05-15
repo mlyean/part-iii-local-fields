@@ -831,11 +831,11 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     Let $(K, \abs{\cdot})$ be a complete non-archimedean valued field, and $V$ a finite-dimensional vector space over $K$. Then any two norms on $V$ are equivalent. In particular, $V$ is complete with respect to any norm.
 \end{theorem}
 \begin{proof}
-    Since equivalence defines an equivalence relation on the set of norms, it suffices to show that any norm is equivalent to $\norm{\cdot}_\mathrm{sup}$.
+    Since equivalence defines an equivalence relation on the set of norms, it suffices to show that any norm $\norm{\cdot}$ is equivalent to $\norm{\cdot}_\mathrm{sup}$.
 
     Let $e_1, \ldots, e_n$ be a basis for $V$ used to define $\norm{\cdot}_\mathrm{sup}$. Set $D = \max_i \norm{e_i}$. Then for $x = \sum_{i=1}^n x_i e_i$, we have $\norm{x} \le \max_i \norm{x_i e_i} = \max_i \abs{x_i} \norm{e_i} \le D \norm{x}_\mathrm{sup}$.
 
-    To find $C$ such that $C \norm{\cdot}_\mathrm{sup} \le \norm{\cdot}$, we induct on $n = \dim{V}$. For $n = 1$, $\norm{x} = \norm{x_1 e_1} = \abs{x_1}\norm{e_1} = \norm{x}_\mathrm{sup} \norm{e_1}$, so we may take $C = \norm{e_1}$. Now suppose $n > 1$. Set $V_i = \langle e_1, \ldots, e_{i-1}, e_{i+1}, \ldots, e_n \rangle$. By induction, $V_i$ is complete with respect to $\norm{\cdot}$, hence is closed. Then $e_i + V_i$ is closed for all $i$, hence $S = \bigcup_{i=1}^n e_i + V_i$ is a closed subset not containing $0$. Thus there is a $C > 0$ such that $B(0, c) \cap S = \emptyset$. Let $x = \sum_{i=1}^n x_i e_i \neq 0$ and let $j$ be such that $\abs{x_j} = \max_i \abs{x_i}$. Then $\norm{x}_\mathrm{sup} = \abs{x_j}$, and $x_j^{-1} x \in S$. Thus $\norm{x_j^{-1} x} \ge C$, which implies that $\norm{x} \ge C \abs{x_j} = C \norm{x}_\mathrm{sup}$.
+    To find $C$ such that $C \norm{\cdot}_\mathrm{sup} \le \norm{\cdot}$, we induct on $n = \dim{V}$. For $n = 1$, $\norm{x} = \norm{x_1 e_1} = \abs{x_1}\norm{e_1} = \norm{x}_\mathrm{sup} \norm{e_1}$, so we may take $C = \norm{e_1}$. Now suppose $n > 1$. Set $V_i = \langle e_1, \ldots, e_{i-1}, e_{i+1}, \ldots, e_n \rangle$. By induction, $V_i$ is complete with respect to $\norm{\cdot}$, hence is closed. Then $e_i + V_i$ is closed for all $i$, hence $S = \bigcup_{i=1}^n e_i + V_i$ is a closed subset not containing $0$. Thus there is a $C > 0$ such that $B(0, C) \cap S = \emptyset$. Let $x = \sum_{i=1}^n x_i e_i \neq 0$ and let $j$ be such that $\abs{x_j} = \max_i \abs{x_i}$. Then $\norm{x}_\mathrm{sup} = \abs{x_j}$, and $x_j^{-1} x \in S$. Thus $\norm{x_j^{-1} x} \ge C$, which implies that $\norm{x} \ge C \abs{x_j} = C \norm{x}_\mathrm{sup}$.
 
     The completeness of $V$ follows by \autoref{prop:6_4}.
 \end{proof}
@@ -990,7 +990,7 @@ Then there is an $\alpha \in \cO_L$ such that $\cO_L = \cO_K[\alpha]$.
 
     \noindent (ii) $\Rightarrow$ (iii): Let $x \in \fm$ and $A_x$ be a set of coset representatives for $\cO_K / x \cO_K$. Then $\cO_K = \bigcup_{y \in A_x} y + x \cO_K$ is a disjoint open cover. Thus $A_x$ is finite by compactness, and so $\cO_K / x \cO_K$ is finite. It follows that $k$ is finite, since we have a surjection $\cO_K / x \cO_K \to k$.
 
-    Suppose that $v$ is not discrete. Let $x = x_1, x_2, \ldots$ be such that $v(x_1) > v(x_2) > \ldots$. Then $x \cO_K = x_1 \cO_K \subsetneq x_2 \cO_K \subsetneq \ldots \subsetneq \cO_K$. This contradicts the fact that $\cO_K / x \cO_K$ is finite.
+    Suppose that $v$ is not discrete. Let $x = x_1, x_2, \ldots$ be such that $v(x_1) > v(x_2) > \ldots > 0$. Then $x \cO_K = x_1 \cO_K \subsetneq x_2 \cO_K \subsetneq \ldots \subseteq \cO_K$. This contradicts the fact that $\cO_K / x \cO_K$ is finite.
 
     \noindent (iii) $\Rightarrow$ (ii): Since $\cO_K$ is a metric space, it suffices to show that $\cO_K$ is sequentially compact. Let $(x_n)_{n=1}^\infty$ be a sequence in $\cO_K$ and let $\pi \in \cO_K$ be a uniformiser. Since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong k$, we have that $\cO_K / \pi^i \cO_K$ is finite for all $i$.
 
@@ -1081,7 +1081,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
     \underline{Case 1:} $\abs{\cdot}$ is archimedean.
     By \autoref{lem:7_9}, there is a integer $b > 1$ such that $\abs{b} > 1$. Let $a > 1$ be an integer and write $b^n$ in base $a$:
     \begin{equation*}
-        b^n = c_m a^m + c_{m-1} + a^{m-1} + \ldots + c
+        b^n = c_m a^m + c_{m-1} a^{m-1} + \ldots + c_0
     \end{equation*}
     where $0 \le c_i < a$ and $c_m \neq 0$. Let $B = \max_{0 \le c < a} \abs{c}$, then we have
     \begin{equation*}
