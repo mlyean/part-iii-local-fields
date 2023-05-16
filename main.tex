@@ -1106,7 +1106,7 @@ Let $(A_n)_{n=1}^\infty$ be a sequence of sets/groups/rings and $\varphi_n : A_{
 \begin{proof}
     Since $K$ is mixed characteristic, $\Char{K} = 0$, so $\QQ \subseteq K$. Since $(K, \abs{\cdot})$ is non-archimedean, so is $(\QQ, \abs{\cdot} \vert_\QQ)$ by \autoref{lem:7_9}. Thus $\abs{\cdot} \vert_\QQ$ is equivalent to $\abs{\cdot}_p$ for some prime $p$. Since $K$ is complete, $\QQ_p \subseteq K$.
 
-    To show that $K / \QQ_p$ is finite, it suffices to show that $\cO_K$ is finite as a $\ZZ_p$-module\footnote{the generators of $\cO_K$ as a $\ZZ_p$-module span generate $K$ as a $\QQ$-vector space}. Let $\pi \in \cO_K$ be a uniformiser, $v$ the normalised valuation on $K$, and set $e = v(p)$. Then $\cO_K / p \cO_K = \cO_K / \pi^e \cO_K$ is finite, since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong \cO_K / \pi \cO_K$ is finite. Via the map $\FF_p \cong \ZZ_p / p \ZZ_p \to \cO_K / p \cO_K$, $\cO_K / p \cO_K$ is a finite-dimensional $\FF_p$-vector space. Let $x_1, \ldots, x_n \in \cO_K$ be coset representatives for a $\FF_p$-basis of $\cO_K / p \cO_K$. Then $\{\sum_{j=1}^n a_j x_j \mid a_j \in \{0, \ldots, p-1\}\}$ is a set of coset representatives for $\cO_K / p \cO_K$.
+    To show that $K / \QQ_p$ is finite, it suffices to show that $\cO_K$ is finite as a $\ZZ_p$-module\footnote{the generators of $\cO_K$ as a $\ZZ_p$-module span generate $K$ as a $\QQ_p$-vector space}. Let $\pi \in \cO_K$ be a uniformiser, $v$ the normalised valuation on $K$, and set $e = v(p)$. Then $\cO_K / p \cO_K = \cO_K / \pi^e \cO_K$ is finite, since $\pi^i \cO_K / \pi^{i+1} \cO_K \cong \cO_K / \pi \cO_K$ is finite. Via the map $\FF_p \cong \ZZ_p / p \ZZ_p \to \cO_K / p \cO_K$, $\cO_K / p \cO_K$ is a finite-dimensional $\FF_p$-vector space. Let $x_1, \ldots, x_n \in \cO_K$ be coset representatives for a $\FF_p$-basis of $\cO_K / p \cO_K$. Then $\{\sum_{j=1}^n a_j x_j \mid a_j \in \{0, \ldots, p-1\}\}$ is a set of coset representatives for $\cO_K / p \cO_K$.
 
     Let $y \in \cO_K$. By \autoref{prop:3_5} (ii), there are $a_{ij} \in \{0, \ldots, p-1\}$ such that
     \begin{align*}
@@ -1268,7 +1268,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
 \end{proof}
 
 \begin{definition}\label{def:9_6}
-    If $R$ is a Dedekind domain, $\fp \subseteq R$ a non-zero prime ideal, then we write $v_p$ for the normalised valuation on $\Frac(R) = \Frac(R_{(\fp)})$ corresponding to the DVR $R_{(\fp)}$.
+    If $R$ is a Dedekind domain, $\fp \subseteq R$ a non-zero prime ideal, then we write $v_{\fp}$ for the normalised valuation on $\Frac(R) = \Frac(R_{(\fp)})$ corresponding to the DVR $R_{(\fp)}$.
 \end{definition}
 
 \begin{example}
@@ -1461,7 +1461,7 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{equation*}
 \end{corollary}
 \begin{proof}
-    Let $B_1, \ldots, B_r$ be bases for $L_{\cP_1}, \ldots, L_{\cP_r}$ as $K_\fp$-vector spaces, where $\cP_i$ are the primes dividing $\fp$. Then $B = \cup B_i$ is a basis for $L \otimes K_\fp$ over $K_\fp$ by \autoref{thm:10_9}. Let $[\mathrm{mult}(x)]_B$ and $[\mathrm{mult}(x)]_{B_i}$ denote the matrices for $\mult(x) : L \otimes K_\fp \to L \otimes K_\fp$ with respect to the basis $B$ and $\mult(x) : L_{\cP_i} \to L_{\cP_i}$ with respect to the basis $B_i$ respectively. Then $[\mult(x)]_B$ is a block-diagonal matrix with blocks $[\mult(x)]_{B_i}$. Thus taking determinants, $N_{L/K}(x) = \det [\mult(x)]_B = \prod_{i=1}^r \det [\mult(x)]_{B_i} = \prod_{i=1}^r N_{L_{\cP_i} / K_\fp}(x)$.\footnote{The first equality follows since if $v_1, \ldots, v_n$ is a basis for $L$ as a $K$-vector space, then $v_1 \otimes 1, \ldots, v_n \otimes 1$ is a basis for $L \otimes_K K_\fp$ as a $K_\fp$-vector space, and multiplying by $x$ gives the same matrix in either case.}
+    Let $B_1, \ldots, B_r$ be bases for $L_{\cP_1}, \ldots, L_{\cP_r}$ as $K_\fp$-vector spaces, where $\cP_i$ are the primes dividing $\fp$. Then $B = \cup B_i$ is a basis for $L \otimes_K K_\fp$ over $K_\fp$ by \autoref{thm:10_9}. Let $[\mathrm{mult}(x)]_B$ and $[\mathrm{mult}(x)]_{B_i}$ denote the matrices for $\mult(x) : L \otimes_K K_\fp \to L \otimes_K K_\fp$ with respect to the basis $B$ and $\mult(x) : L_{\cP_i} \to L_{\cP_i}$ with respect to the basis $B_i$ respectively. Then $[\mult(x)]_B$ is a block-diagonal matrix with blocks $[\mult(x)]_{B_i}$. Taking determinants, $N_{L/K}(x) = \det [\mult(x)]_B = \prod_{i=1}^r \det [\mult(x)]_{B_i} = \prod_{i=1}^r N_{L_{\cP_i} / K_\fp}(x)$.\footnote{The first equality follows since if $v_1, \ldots, v_n$ is a basis for $L$ as a $K$-vector space, then $v_1 \otimes 1, \ldots, v_n \otimes 1$ is a basis for $L \otimes_K K_\fp$ as a $K_\fp$-vector space, and multiplying by $x$ gives the same matrix in either case.}
 \end{proof}
 
 \subsection{Decomposition Groups}
@@ -1532,7 +1532,7 @@ Now assume that $L / K$ is Galois. Then for $\sigma \in \Gal(L / K)$, $\sigma(\c
     Suppose that $L/K$ is Galois. Then $e_1 = \ldots = e_r$ and $f_1 = \ldots = f_r$. Let $e$ and $f$ denote this common value. Then $n = e f r$.
 \end{corollary}
 \begin{proof}
-    Let $1 \le i \le r$ and $\sigma \in \Gal(L/K)$ be such that $\sigma(\cP_1) = \cP_i$. Then considering the factorisation of $\fp \cO_L = \sigma(\fp) \cO_L$ gives $e_1 = e_i$. Also $\sigma$ induces a $\cO_K / \fp$-vector space isomorphism $\cO_L / \cP_1 \cong \cO_L / \cP_i$, so $f_1 = f_i$.
+    Let $1 \le i \le r$ and $\sigma \in \Gal(L/K)$ be such that $\sigma(\cP_1) = \cP_i$. Then considering the factorisation of $\fp \cO_L = \sigma(\fp) \cO_L$ gives $e_1 = e_i$. Also $\sigma$ induces an $\cO_K / \fp$-vector space isomorphism $\cO_L / \cP_1 \cong \cO_L / \cP_i$, so $f_1 = f_i$.
 \end{proof}
 
 If $L / K$ is an extension of complete discretely valued fields with normalised valuations $v_L$ and $v_K$ and uniformisers $\pi_L$ and $\pi_K$ respectively, we define the \emph{ramification index} to be $e = e_{L/K} = v_L(\pi_K)$, i.e. such that $\pi_K \cO_L = \pi_L^e \cO_L$, and the \emph{residue class degree} to be $f = f_{L/K} = [k_L : k]$.
@@ -1595,7 +1595,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
 
 \subsection{Different and Discriminant}
 
-Let $L / K$ be an extension of algebraic number fields of degree $n$.
+Let $L / K$ be a degree $n$ extension of algebraic number fields.
 
 \begin{notation}
     For $x_1, \ldots, x_n \in L$, define
@@ -1665,10 +1665,6 @@ Let $L / K$ be an extension of algebraic number fields of degree $n$.
         d_{L/K} = \langle \Delta(x_1, \ldots, x_n) \mid x_1, \ldots, x_n \in \cO_L \rangle
     \end{equation*}
 \end{definition}
-
-\begin{remark}
-    The discriminant (and later the inverse different and different) although denoted by $d_{L/K}$, depends on $\cO_K$ and $\cO_L$, not just $K$ and $L$.
-\end{remark}
 
 \begin{corollary}\label{cor:12_4}
     $\fp$ ramifies in $L$ iff $\fp \mid d_{L/K}$.
