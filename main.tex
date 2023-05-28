@@ -765,7 +765,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
     \begin{equation*}
         \varphi\left(\sum_{i=0}^\infty a_i t^i\right) = \sum_{i=0}^\infty [a_i] \pi^i
     \end{equation*}
-    Then $\varphi$ is a ring homomorphism since $[\cdot]$ is and it is a bijection by \autoref{prop:3_5} (ii).
+    Then $\varphi$ is a ring homomorphism since $[\cdot]$ is, and it is a bijection by \autoref{prop:3_5} (ii).
 \end{proof}
 
 \subsection{Extensions of Complete Valued Fields}
@@ -1278,7 +1278,7 @@ If $\fp$ is a prime ideal of $R$, we write $R_{(\fp)}$ for the localisation with
 \begin{theorem}\label{thm:9_7}
     Let $R$ be a Dedekind domain. Then every non-zero ideal in $I \subseteq R$ can be uniquely written as a product of prime ideals
     \begin{equation*}
-        I = \fp_1^{e_1} \ldots \fp_r^{e_1}
+        I = \fp_1^{e_1} \ldots \fp_r^{e_r}
     \end{equation*}
     where $\fp$ are distinct primes, and $e_i > 0$.
 \end{theorem}
@@ -1314,14 +1314,14 @@ Let $L / K$ be a finite extension. For $x \in L$, we write $\Tr_{L/K}(x) \in K$ 
 \begin{proof}
     Since $L/K$ is separable, $L = K(\alpha)$ for some $\alpha \in L$. Consider the matrix $A$ of $(\cdot, \cdot)$ with respect to the basis $1, \alpha, \ldots, \alpha^{n-1}$. We have
     \begin{equation*}
-        A_{ij} = Tr_{L/K}(\alpha^{i+j}) = [B B^t]_{ij}
+        A_{ij} = \Tr_{L/K}(\alpha^{i+j}) = [B B^t]_{ij}
     \end{equation*}
     where $B_{ij} = \sigma_j(\alpha^i)$.
 
     Then $\det(A) = \det(B)^2 = \prod_{1 \le i < j \le n} (\sigma_i(\alpha) - \sigma_j(\alpha))^2 \neq 0$, since $\sigma_i(\alpha) \neq \sigma_j(\alpha)$ for $i \neq j$ by separability.
 \end{proof}
 
-On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff the trace form is non-degenerate.
+On Example Sheet 3 we will see that a finite extension $L/K$ is separable iff the trace form is non-degenerate.
 
 \begin{theorem}\label{thm:10_2}
     Let $\cO_K$ be a Dedekind domain and $L$ a finite separable extension of $K = \Frac(\cO_K)$. Then the integral closure $\cO_L$ of $\cO_K$ in $L$ is also a Dedekind domain.
@@ -1337,7 +1337,7 @@ On Exercise Sheet 3 we will see that a finite extension $L/K$ is separable iff t
     \begin{enumerate}
         \item Let $e_1, \ldots, e_n \in L$ be a $K$-basis for $L$. Upon rescaling by $K$, we may assume that $e_i \in \cO_L$ for all $i$. Let $f_1, \ldots, f_n$ be the dual basis for $e_1, \ldots, e_n$ with respect to the trace form $(\cdot, \cdot)$, i.e. $(e_i, f_j) = \delta_{ij}$.
 
-            Let $x \in \cO_L$ and write $x = \sum_{i=1}^n \lambda_i f_i$, with $\lambda_i \in K$. Then $\lambda_i = \Tr_{L/K}(x e_i) \in \cO_K$. Thus $\cO_L \subseteq \cO_K f_1 + \ldots \cO_K f_n$, which is a finitely generated $\cO_K$-module. Since $\cO_K$ is Noetherian, it follows that $\cO_L$ is a finitely generated $\cO_K$-module, hence Noetherian.
+            Let $x \in \cO_L$ and write $x = \sum_{i=1}^n \lambda_i f_i$, with $\lambda_i \in K$. Then $\lambda_i = \Tr_{L/K}(x e_i) \in \cO_K$. Thus $\cO_L \subseteq \cO_K f_1 + \ldots + \cO_K f_n$, which is a finitely generated $\cO_K$-module. Since $\cO_K$ is Noetherian, it follows that $\cO_L$ is a finitely generated $\cO_K$-module, hence Noetherian.
 
         \item This is an exercise on Example Sheet 2.
 
@@ -1434,14 +1434,14 @@ Note that the inclusions $K \subseteq L \subseteq L_\cP$ induce an inclusion $K_
     \end{equation*}
     where the last isomorphism follows from \autoref{lem:10_8}. Set $L_i = K_\fp[X] / (f_i(X))$, which is a finite extension of $K_\fp$. $L_i$ contains $L$, since we have an inclusion $L \cong K[X] / (f(X)) \to K_\fp[X] / (f_i(X)) = L_i$. Also $L$ is dense in $L_i$, since $K$ is dense in $K_\fp$. The theorem follows from the following three claims:
     \begin{enumerate}
-        \item $L_i \cong L_\cP$ for some prime $\cP \mid \fp$;
+        \item $L_i \cong L_\cP$ (over $L$ and $K_\fp$) for some prime $\cP \mid \fp$;
         \item Each $\cP$ appears at most once;
         \item Each $\cP$ appears at least once.
     \end{enumerate}
     Proof of claims:
     \begin{enumerate}
         \item Since $L_i/K_\fp$ is a finite extension, there is a unique absolute value on $L_i$ extending $\abs{\cdot}_\fp$ by \autoref{thm:6_1}. By \autoref{thm:10_5}, $\abs{\cdot} \vert_L$ is equivalent to $\abs{\cdot} \vert_\cP$ for some $\cP \mid \fp$. Since $L$ is dense in $L_i$ and $L_i$ is complete, we have $L_i \cong L_\cP$.
-        \item Suppose $\phi_i : L_i \xrightarrow{\sim} L_j$ is an isomorphism preserving $L$ and $K_\fp$. Then $\varphi : K_\fp[X] / f_i(X) \to K_\fp[X] / f_j(X)$ takes $X$ to $X$, so $f_i = f_j$, and $i = j$.
+        \item Suppose $\phi_i : L_i \xrightarrow{\sim} L_j$ is an isomorphism preserving $L$ and $K_\fp$. Then $\varphi : K_\fp[X] / (f_i(X)) \to K_\fp[X] / (f_j(X))$ takes $X$ to $X$, so $f_i = f_j$, and $i = j$.
         \item By \autoref{lem:10_7}, the natural map $\pi_\cP : L \otimes_K K_\fp \to L_\cP$ is surjective for any $\cP \mid \fp$. Since $L_\cP$ is a field, $\pi_\cP$ factors through $L_i$ for some $i$, and hence $L_i \cong L_\cP$ by surjectivity. \qedhere
     \end{enumerate}
 \end{proof}
@@ -1620,7 +1620,7 @@ Let $L / K$ be a degree $n$ extension of algebraic number fields.
     \begin{equation*}
         (x, y) = \Tr_{R/k}(xy) = \Tr(\mult(xy))
     \end{equation*}
-    is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite separable extensions\footnote{such an $R$ is an \emph{\'etale $k$-algebra}}. In particular if $k$ is perfect, then the trace form is non-degenerate.
+    is non-degenerate iff $R \cong k_1 \times \ldots \times k_n$, where $k_i / k$ are finite separable extensions\footnote{such an $R$ is an \emph{\'etale $k$-algebra}}.
 \end{lemma}
 \begin{proof}
     Suppose $R$ is not reduced. In this case, $R$ is obviously not a product of fields. Let $0 \neq x \in R$ be nilpotent. For any $y \in R$, $xy$ is nilpotent, so $\Tr_{R/k}(xy) = 0$, since the trace of a nilpotent matrix\footnote{the characteristic polynomial of a nilpotent matrix is $X^n$ for some $n$} is $0$.
@@ -1653,7 +1653,7 @@ Let $L / K$ be a degree $n$ extension of algebraic number fields.
 \end{proof}
 
 \begin{lemma*}
-    Let $R$, $k$ be as in the proof of \autoref{thm:12_2} above. Then for $x \in \cO_L$, we have $Tr_{R/k}(\overline{x}) = \overline{Tr_{L/K}(x)}$.
+    Let $R$, $k$ be as in the proof of \autoref{thm:12_2} above. Then for $x \in \cO_L$, we have $\Tr_{R/k}(\overline{x}) = \overline{\Tr_{L/K}(x)}$.
 \end{lemma*}
 \begin{proof}
     By localizing at $\fp$ (as in the proof of \autoref{thm:11_3}), we may assume that $\cO_K$ is a PID. By the structure theorem for finitely generated modules over PIDs, $\cO_L$ is a free $\cO_K$-module. Let $x_1, \ldots, x_n$ be an $\cO_K$-basis for $\cO_L$. Then $x_1, \ldots, x_n$ is a $K$-basis for $L$, and $\overline{x_1}, \ldots, \overline{x_n}$ is a $k$-basis for $R$. Now it is easy to check that for $x \in \cO_L$, the matrix of $\mult(\overline{x})$ is just the matrix of $\mult(x)$ reduced modulo $\fp$, so the same holds for traces.
@@ -1683,7 +1683,7 @@ Let $L / K$ be a degree $n$ extension of algebraic number fields.
         A
         \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{pmatrix}
         =
-        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_1) \end{pmatrix}
+        \begin{pmatrix} \Tr_{L/K}(x x_1) \\ \vdots \\ \Tr_{L/K}(x x_n) \end{pmatrix}
     \end{equation*}
     Multiplying both sides by $\Adj(A) \in M_n(\cO_K)$, we get
     \begin{equation*}
@@ -1764,19 +1764,22 @@ Let $\cP$ be a non-zero prime of $\cO_L$, and $\fp = \cP \cap \cO_K$. We can def
     $\cD_{L/K} = \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}$.
 \end{theorem}
 \begin{proof}
-    For $x \in L$ and $\fp$ a non-zero prime in $\cO_K$, we have (c.f. \autoref{cor:10_10})
+    We show that $\cD_{L/K}^{-1} = \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. For $x \in L$ and $\fp$ a non-zero prime in $\cO_K$, we have (c.f. \autoref{cor:10_10})
     \begin{equation}\label{eq:3}
         \Tr_{L/K}(x) = \sum_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(x)
     \end{equation}
-    We show that $\cD_{L/K}^{-1} = \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. Fix a non-zero prime $\cP$ in $\cO_L$ and let $\fp = \cP \cap \cO_K$.
 
-    \noindent ($\subseteq$) Fix $\cP \mid \fp$. It suffices to show that $\cD_{L/K}^{-1} \subseteq \cD_{L_\cP / K_\fp}^{-1}$. Let $x \in \cD_{L/K}^{-1}$, $y \in \cO_{L_\cP}$. We need to show that $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$. For $\cP' \mid \fp$, the map $L \to K_\fp$ given by $z \mapsto \Tr_{L_{\cP'} / K_\fp}(x z)$ is continuous. By Weak Approximation (see Example Sheet 1), for any $\varepsilon > 0$, there is an $\eta \in L$ such that $\abs{\eta - y}_\cP < \varepsilon$ and $\abs{\eta}_{\cP'} < \varepsilon$ for $\cP' \neq \cP$. By \eqref{eq:3}, we have
+    \noindent ($\subseteq$) Fix a prime $\cP$ in $\cO_L$ and let $\fp = \cP \cap \cO_K$. Let $x \in L$ be such that $v_\cP(x) = v_\fp(\cD_{L/K}^{-1})$ and $v_{\cP'}(x) \ge 0$ for $\cP \neq \cP' \mid \fp$. Then for $y \in \cO_L$,
     \begin{equation*}
-        \Tr_{L_\cP / K_\fp}(xy) = \left(\Tr_{L_\cP / K_\fp}(xy) - \Tr_{L_\cP / K_\fp}(x \eta)\right) + \underbrace{\Tr_{L/K}(x \eta)}_{\in \cO_K} - \sum_{\substack{\cP' \mid \fp\\\cP' \neq \cP}} \Tr_{L_{\cP'} / K_\fp}(x \eta)
+        \Tr_{L_\cP/K_\fp}(xy) = \underbrace{\Tr_{L/K}(xy)}_{\in \cO_K} - \sum_{\substack{\cP' \mid \fp \\ \cP' \neq \cP}} \underbrace{\Tr_{L_{\cP'}/K_\fp}(xy)}_{\in \cO_{K_\fp}} \in \cO_{K_\fp}
     \end{equation*}
-    By choosing $\varepsilon$ sufficiently small, we may ensure that the bracketed terms and summands are in $\cO_{K_\fp}$. Thus $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$ as required.
+    By continuity of $\Tr_{L_\cP / K_\fp}(x \cdot -) : L_\cP \to K_\fp$, we also have $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_p}$ for all $y \in \cO_{L_\cP}$, which is the closure of $\cO_L$ in $L_\cP$. Thus $x \in \cD_{L_\cP / K_\fp}^{-1}$.
 
-    \noindent ($\supseteq$) Let $x \in \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. For fixed $\cP \mid \fp$, we have $x \in \cD_{L_\cP / K_\fp}^{-1}$, so that for all $y \in \cO_L \subseteq \cO_{L_\cP}$, $\Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}$. Allowing $\cP$ to vary, \eqref{eq:3} shows that for any $y \in \cO_L$, $\Tr_{L/K}(xy) \in \cO_{K_\fp}$. Allowing $\fp$ to vary, we see that for any $y \in \cO_L$, $Tr_{L/K}(xy) \in \bigcap_\fp \cO_{K_\fp} = \cO_K$. Thus $x \in \cD_{L/K}^{-1}$.
+    \noindent ($\supseteq$) Let $x \in \prod_{\cP \mid \fp} \cD_{L_\cP / K_\fp}^{-1}$. For $y \in \cO_L$ and $\fp$ a prime of $K$,
+    \begin{equation*}
+        \Tr_{L/K}(xy) = \sum_{\cP \mid \fp} \Tr_{L_\cP / K_\fp}(xy) \in \cO_{K_\fp}
+    \end{equation*}
+    as $x \in \cD_{L_\cP / K_\fp}^{-1}$ and $y \in \cO_{L_\cP}$. Since $\fp$ was arbitrary, $\Tr_{L/K}(xy) \in \cO_K$. Thus $x \in \cD_{L/K}^{-1}$.
 \end{proof}
 
 \begin{corollary}\label{cor:12_10}
