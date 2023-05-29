@@ -2239,7 +2239,7 @@ Assume that each $G_i$ is finite. The \emph{profinite topology} on $\varprojlim_
     Thus \autoref{prop:16_3} implies that
     \begin{center}
     \begin{tabular}{*{3}{>{$}c<{$}}}
-        \Gal(\overline{\FF_q}/\FF_q)& \cong & \varprojlim_{n \in (\NN_{\ge 1}, \mid)} \ZZ / n \ZZ =: \widehat{\ZZ}\\
+        \Gal(\overline{\FF_q}/\FF_q)& \cong & \displaystyle\varprojlim_{n \in (\NN_{\ge 1}, \mid)} \ZZ / n \ZZ =: \widehat{\ZZ}\\
         \Frob_q & \longleftrightarrow & 1
     \end{tabular}
     \end{center}
@@ -2387,12 +2387,12 @@ i.e. open sets are translates of open sets in $I_{L/K}$ by elements of $W(L/K)$.
         \item Compute that
             \begin{alignat*}{3}
                 \frac{W(L/K)}{W(L/F)}
-                &= \frac{W(L/K)}{W(L/K) \cap \Gal(L/F)} &\quad\text{(by (ii))}\\
+                &= \frac{W(L/K)}{W(L/K) \cap \Gal(L/F)} &\quad\text{by (ii)}\\
                 &\cong \frac{W(L/K) \Gal(L/F)}{\Gal(L/F)}\\
-                &= \frac{\Gal(L/K)}{\Gal(L/F)} &\quad\text{(by (i))}\\
+                &= \frac{\Gal(L/K)}{\Gal(L/F)} &\quad\text{by (i)}\\
                 &\cong \Gal(F/K)
             \end{alignat*}
-            \qedhere
+            as required. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -2414,7 +2414,7 @@ Let $K$ be a local field.
             \end{equation*}
     \end{enumerate}
 \end{fact}
-Fact (i) above implies that there is a maximal abelian extension $K^\ab$ inside $K^\sep$.
+\noindent Fact (i) above implies that there is a maximal abelian extension $K^\ab$ inside $K^\sep$.
 
 \begin{example}
     Let $K^\ur$ denote the maximal unramified subextension of $K$ inside $K^\sep$. Then by \autoref{thm:13_4}, $K^\ur = \bigcup_{m=1}^\infty K(\zeta_{q^m-1})$, where $q = \abs{k}$, and $k_{K^\ur} = \overline{\FF_q}$. By \autoref{prop:16_6}, we have an isomorphism
@@ -2485,13 +2485,16 @@ Fact (i) above implies that there is a maximal abelian extension $K^\ab$ inside 
     Let $L/K$ be a finite abelian extension of degree $n$. Then $e_{L/K} = [\cO_K^\times : N_{L/K}(\cO_L^\times)]$.
 \end{proposition}
 \begin{proof}
-    For $x \in L^\times$, we have $v_K(N_{L/K}(x)) = f_{L/K} v_L(x)$. Thus we have a surjection
+    We have a commutative diagram
     \begin{equation*}
-        \frac{K^\times}{N_{L/K}(L^\times)} \twoheadrightarrow \frac{\ZZ}{f_{L/K} \ZZ}
+    \begin{tikzcd}
+        1 \arrow[r] & \cO_L^\times \arrow[r] \arrow[d, "N_{L/K}"] & L^\times \arrow[r] \arrow[d ,"N_{L/K}"] & \ZZ \arrow[r] \arrow[d, "f_{L/K}"] & 0 \\
+        1 \arrow[r] & \cO_K^\times \arrow[r] & K^\times \arrow[r] & \ZZ \arrow[r] & 0
+    \end{tikzcd}
     \end{equation*}
-    with kernel
+    with exact rows. The snake lemma gives an exact sequence
     \begin{equation*}
-        \frac{\cO_K^\times N_{L/K}(L^\times)}{N_{L/K}(L^\times)} \cong \frac{\cO_K^\times}{\cO_K^\times \cap N_{L/K}(L^\times)} = \frac{\cO_K^\times}{N_{L/K}(\cO_L^\times)}
+        0 \longrightarrow \frac{\cO_K^\times}{N_{L/K}(\cO_L^\times)} \longrightarrow \frac{K^\times}{N_{L/K}(L^\times)} \longrightarrow \frac{\ZZ}{f_{L/K}\ZZ} \longrightarrow 0
     \end{equation*}
     \autoref{thm:17_2} (2) implies that
     \begin{equation*}
