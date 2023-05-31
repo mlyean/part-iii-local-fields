@@ -680,7 +680,7 @@ Note that there is a natural map $i : R \to \widehat{R}$ induced by the natural 
 \begin{theorem}\label{thm:5_2}
     Let $(K, \abs{\cdot})$ be a complete discretely valued field such that $k = \cO_K / \fm$ is a perfect field of characteristic $p$. Then there exists a unique map $[\cdot] : k \to \cO_K$ such that
     \begin{enumerate}
-        \item $a \equiv [a] \pmod{m}$;
+        \item $a \equiv [a] \pmod{\fm}$;
         \item $\forall a, b \in k, [a b] = [a] [b]$.
     \end{enumerate}
     Moreover if $\Char K = p$, then $[\cdot]$ is a ring homomorphism.
@@ -1587,7 +1587,7 @@ If $L / K$ is an extension of complete discretely valued fields with normalised 
     \begin{enumerate}
         \item $\pi \in \fp \setminus \fp^2$. Then $e_{\cP / \fp} =v_\cP(x) = e_{L_\cP / K_\fp}$, where the first follows by considering the factorisation of $x \cO_L$, and the second follows since $x$ is a uniformiser of $K_\fp$.
 
-        \item The inclusion $\cO_K \to \cO_{K_\fp}$ induces an inclusion $\cO_K / \fp \to \cO_{K_\fp} / \fp \cO_{K_\fp}$. This is surjective: Let $\overline{c} \in \cO_{K_\fp} / \fp\cO_{K_\fp}$, and let $c \in \cO_{K_\fp}$ be a lift of $\overline{x}$. Since $\cO_K$ is dense in $\cO_{K_\fp}$, there is an $x \in \cO_K$ such that $x \in c + \fp \cO_{K_\fp}$. Thus $x$ maps to $\overline{c}$. We have shown that $\cO_K / \fp \cong \cO_{K_\fp} / \fp \cO_{K_\fp}$. Similarly, $\cO_L / \cP \cong \cO_{L_\cP} / \fp \cO_{L_\cP}$. Thus the ramification indices are the same. \qedhere
+        \item The inclusion $\cO_K \to \cO_{K_\fp}$ induces an inclusion $\cO_K / \fp \to \cO_{K_\fp} / \fp \cO_{K_\fp}$. This is surjective: Let $\overline{c} \in \cO_{K_\fp} / \fp\cO_{K_\fp}$, and let $c \in \cO_{K_\fp}$ be a lift of $\overline{x}$. Since $\cO_K$ is dense in $\cO_{K_\fp}$, there is an $x \in \cO_K$ such that $x \in c + \fp \cO_{K_\fp}$. Thus $x$ maps to $\overline{c}$. We have shown that $\cO_K / \fp \cong \cO_{K_\fp} / \fp \cO_{K_\fp}$. Similarly, $\cO_L / \cP \cong \cO_{L_\cP} / \cP \cO_{L_\cP}$. Thus the ramification indices are the same. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -1607,7 +1607,7 @@ Let $L / K$ be a degree $n$ extension of algebraic number fields.
 
 \begin{remark}\phantom{}
     \begin{enumerate}
-        \item If $y = \sum_{j=1}^n a_{ij}x_j$, where $a_{ij} \in K$, then
+        \item If $y_i = \sum_{j=1}^n a_{ij}x_j$, where $a_{ij} \in K$, then
             \begin{equation*}
                 \Delta(y_1, \ldots, y_n) = \det(A)^2 \Delta(x_1, \ldots, x_n)
             \end{equation*}
@@ -2619,7 +2619,7 @@ Let $K$ be a non-archimedean valued field, $F$ a formal group law over $\cO_K$. 
 \end{example}
 
 \begin{definition}\label{def:18_3}
-    Let $F, G$ be formal group laws over $R$. A \emph{homomorphism} $f : F \to G$ is an element $f \in X R\llbracket X \rrbracket$ such that $f(F(x, y)) = G(f(X), f(Y))$.
+    Let $F, G$ be formal group laws over $R$. A \emph{homomorphism} $f : F \to G$ is an element $f \in X R\llbracket X \rrbracket$ such that $f(F(X, Y)) = G(f(X), f(Y))$.
 
     A homomorphism $f : F \to G$ is an \emph{isomorphism} if there is a homomorphism $g : G \to F$ such that $f(g(X)) = X$ and $g(f(X)) = X$.
 
@@ -2847,7 +2847,7 @@ For $n \ge 1$, set $h_n(X) = \frac{f_n(X)}{f_{n-1}(X)} = \pi + f_{n-1}(X)^{q-1}$
 
     Since $h_n(X)$ is irreducible, it is separable if $\Char K = 0$ or $\Char K = p > 0$ and $h_n'(X) \neq 0$.
 
-    Assume that $\Char K = p$. We use strong induction on $n \ge 1$. Suppose that $h_1(X), \ldots, h_{n-1}(X)$ are irreducible. Then $f_{n-1}(X) = h_1(X) \ldots h_{n-1}(X)$ is a product of separable irreducible polynomials of distinct degrees, hence separable. We have
+    Assume that $\Char K = p$. We use strong induction on $n \ge 1$. Suppose that $h_1(X), \ldots, h_{n-1}(X)$ are irreducible. Then $f_{n-1}(X) = f_0(X) h_1(X) \ldots h_{n-1}(X)$ is a product of separable irreducible polynomials of distinct degrees, hence separable. We have
     \begin{equation*}
         h_n'(X) = (q-1) f_{n-1}'(X) f_{n-1}(X)^{q-2} \neq 0
     \end{equation*}
